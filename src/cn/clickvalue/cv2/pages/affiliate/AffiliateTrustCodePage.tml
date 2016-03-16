@@ -1,0 +1,30 @@
+﻿<t:affiliate.Layout t:pageTitle="${message:gain_code}" t:pageGroup="trust" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers">
+		<div class="title">${message:gain_ad'scode}</div>
+	</div>
+	<t:messagebanner t:id="message" type="type"/>
+	<t:form t:id="form">
+		<t:errors />
+		<h2>${message:chosesite}</h2>
+		${message:website}：<select t:type="select" value="formSite" model="sitesSelectionModel" encoder="sitesValueEncoder" blankLabel="${message:please_choose}"/>
+		
+		<h2>${message:ad_size}</h2>
+		${message:size}：<select t:type="select" value="formWH" model="WHsSelectionModel" encoder="WHsValueEncoder" blankLabel="${message:please_choose}"/>
+		<div style="margin-left: 50px;margin-top: 20px;">
+			<t:submit t:value="${message:takeCode}" />
+		</div>
+	</t:form>
+	<t:if test="canShowCode">
+		<div style="margin-top: 20px;">
+			<t:outputraw value="context" />
+		</div>
+		<div style="margin-left: 50px;">
+			<div class="css_button">
+				<a class="without_decoration" href="/affiliate/trustcodepage:preview" target="_blank">${message:Advertisement_preview}</a>
+			</div>
+			<br />
+			<br />
+			<br />
+		</div>
+	</t:if>
+</t:affiliate.Layout>

@@ -1,0 +1,40 @@
+<t:admin.Layout pageTitle="CampaignList" navigation="佣金匹配" pageGroup="commission_match" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <body>
+    	<script>
+    	var sessionId = "${uid}";
+    	</script>
+		    <table style="BORDER-COLLAPSE: collapse;" borderColor="#ced5b1" cellSpacing="0" cellPadding="0" width="100%" border="1"
+	             t:id="myGrid" t:type="Grid" source="dataSource" row="matchTask" model="beanModel" pagerPosition="literal:bottom" rowsPerPage="${noOfRowsPerPage}">
+	             <t:parameter name="taskDataTotalCell">
+	             	${taskDataTotal}
+	             </t:parameter>
+	             <t:parameter name="exeStarttimeCell">
+	             	${dateformat:matchTask.exeStarttime=yyyy-MM-dd HH:mm:ss}
+	             </t:parameter>
+	             <t:parameter name="exeEndtimeCell">
+	             	${dateformat:matchTask.exeEndtime=yyyy-MM-dd HH:mm:ss}
+	             </t:parameter>
+				<t:parameter name="dataFromCell">
+					${dataFrom}
+				</t:parameter>
+				<t:parameter name="exeStatusCell">
+					${exeStatus}
+				</t:parameter>
+				<t:parameter name="operateCell">
+					<a href="/commision/userManage/DataListPage/${matchTask.taskId}" >查看数据</a>
+					<span t:type="t5components/Equals" left="prop:matchTask.restartTask.toString()" right="literal:0">
+						 | <t:eventlink t:id="startTask" context="matchTask.taskId" onclick="return confirm('您确信要启动任务吗?\n这个操作不可逆！')">启动任务</t:eventlink>
+           			</span>
+           			<span t:type="t5components/Equals" left="prop:matchTask.exeStatus.toString()" right="literal:3">
+						 | <t:eventlink t:id="restartTask" context="matchTask.taskId" onclick="return confirm('您确信要重启任务吗?\n这个操作不可逆！')">重启任务</t:eventlink>
+           			</span>
+					
+				</t:parameter>
+		    </table>
+		    <div style="text-align:right;">
+		    	<input type="button" onclick="window.location.href='/commision/userManage/CampaignListPage'" value="返回" style="margin-right:5px;"/>
+		    	<input type="button" onclick="window.location.reload();" value="刷新" style="margin-right:20px;"/>
+		    </div>
+		    <script language="javascript" src="/assets/javascripts/msglib.js"></script>	
+    </body>
+</t:admin.Layout>

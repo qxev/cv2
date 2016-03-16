@@ -1,0 +1,51 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<script language="javascript" src="/assets/javascripts/commisionrule.js"></script>
+<t:form>
+<tr>
+<td class="greenwithe_bg">${message:campaign_name}</td>
+<td class="greenwithe">
+${campaign.name}
+</td>
+<td class="greenwithe_bg"><span>${message:rule_tip_camp}</span></td>
+</tr>
+
+<tr>
+<td class="greenwithe_bg">${message:commision_tracking_code}</td>
+<td class="greenwithe"><input t:type="textfield" value="CommissionRule.trackCode" /></td>
+<td class="greenwithe_bg"><span>${message:rule_tip_code}</span></td>
+</tr>
+
+<tr>
+<td class="greenwithe_bg">${message:commision_type}</td>
+<td class="greenwithe">
+	
+<t:select value="commissionRule.actionType"  model="literal:1= CPC,2=CPS,3=CPL" onchange="changeDiv()" />
+
+</td>
+<td class="greenwithe_bg"><span class="red_star"></span></td>
+</tr>
+
+<tr id="style1" style="display:none">
+<td class="greenwithe_bg"></td>
+<td class="greenwithe">
+	
+<t:select value="CommissionRule.commissionType" t:id="valueType" model="literal:1=固定值,2=百分比"/>
+
+&nbsp;&nbsp;
+<input t:type="textfield" t:value="CommissionRule.commissionValue" size="30" />
+</td>
+<td class="greenwithe_bg"><span class="red_star"></span></td>
+</tr>	
+
+<tr>
+<td class="green_bg" colspan="3">
+<input type="submit" t:type="submit" t:id="saveRule" value="${message:save_and_back_list}"/>&nbsp;&nbsp;
+<input type="submit" t:type="submit" t:id="saveAndContinue" value="${message:save_and_continue_add}"/>&nbsp;&nbsp;
+<input type="submit" t:type="submit" t:id="back" value="${message:back}"/>			
+</td>
+</tr>
+</t:form>
+
+</html>

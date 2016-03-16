@@ -1,0 +1,51 @@
+<t:advertiser.Layout t:pageTitle="${message:advertisement}" pageGroup="campaign" t:navigation="${message:campaign_manage} > ${message:campaigns}" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers" style="width:600px;">
+		<div class="title">
+			${message:campaign}: <a href="/advertiser/campaignviewpage/${campaign.id}">${campaign.name}</a> > 
+			<a href="/advertiser/bannerlistpage/${campaign.id}">${message:banners}</a> >
+			${message:new}${bannerType}${message:advertisement}
+		</div>
+		<t:form class="form" t:id="bannerForm">
+			<t:errors />
+			<table class="form_edit">
+				<tr class="roweven">
+					<td>${message:pay_attention_to}：${message:can_only_upload_is_not_bigger_than}</td>
+				</tr>
+				<tr class="rowodd">
+					<td class="field_value">${message:banners}1: <t:upload t:id="file1" /></td>
+				</tr>
+				<tr class="roweven">
+					<td class="field_value">${message:banners}2: <t:upload t:id="file2" /></td>
+				</tr>
+				<tr class="rowodd">
+					<td class="field_value">${message:banners}3: <t:upload t:id="file3" /></td>
+				</tr>
+				<tr class="roweven">
+					<td class="field_value">${message:banners}4: <t:upload t:id="file4" /></td>
+				</tr>
+				<tr class="rowodd">
+					<td class="field_value">${message:banners}5: <t:upload t:id="file5" /></td>
+				</tr>
+				<tr class="roweven">
+					<td class="field_value">${message:banners}6: <t:upload t:id="file6" /></td>
+				</tr>
+				<tr class="rowodd">
+					<td class="field_value">${message:banners}7: <t:upload t:id="file7" /></td>
+				</tr>
+				<tr class="roweven">
+					<td class="field_value">${message:banners}8: <t:upload t:id="file8" /></td>
+				</tr>
+				<tr class="rowodd">
+					<td class="field_value">${message:banners}9: <t:upload t:id="file9" /></td>
+				</tr>
+				<tr class="rowodd">
+					<td colspan="2" class="center">
+						<input t:type="submit" t:id="add" value="${message:save_and_back_list}" class="button_margin"/>
+						<input t:type="submit" t:id="saveAndAddLandingPage" value="${message:save_the_page_and_add_advertising_objectives}" class="button_margin"/>
+						<button t:type="commons/button">${message:back}</button>
+					</td>
+				</tr>
+			</table>
+		</t:form>
+	</div>
+</t:advertiser.Layout>

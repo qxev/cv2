@@ -1,0 +1,105 @@
+<t:admin.Layout t:pageTitle="CampaignList" t:navigation="银行帐号管理 > 详细信息" pageGroup="system" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <body>
+    	<table style="BORDER-COLLAPSE: collapse;width:100%" borderColor="#ced5b1" 
+            cellSpacing="0" cellPadding="0" width="100%" border="1">
+			<tr>
+				<td class="green_bg" colspan="2"><strong>银行帐户详细信息</strong></td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">用户名</td>
+				<td class="greenwithe">
+				    ${account.user.name} 
+				</td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">银行帐号</td>
+				<td class="greenwithe">
+				    ${account.cardNumber}
+				</td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">银行名称</td>
+				<td class="greenwithe">
+				    ${account.bankName} 
+				</td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">开户省</td>
+				<td class="greenwithe">
+				    ${account.province}
+				</td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">开户市</td>
+				<td class="greenwithe">
+				    ${account.city}
+				</td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">支行名称</td>
+				<td class="greenwithe">
+				    ${account.subBank} 	
+				</td>
+			</tr>
+			<tr>
+				<td class="green_bg" colspan="2"><strong>开户人信息</strong></td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">姓名</td>
+				<td class="greenwithe">
+				    ${account.ownerName} 
+				</td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">身份证号</td>
+				<td class="greenwithe">
+				    ${account.idCardNumber} 
+				</td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">电话</td>
+				<td class="greenwithe">
+				    ${account.ownerTelephone}
+				</td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">地址</td>
+				<td class="greenwithe">
+				    ${account.ownerAddress}
+				</td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">邮编</td>
+				<td class="greenwithe">
+				    ${account.postcode}
+				</td>
+			</tr>
+			<tr>
+				<td class="green_bg" colspan="2"><strong>状态</strong></td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">审核状态</td>
+				<td class="greenwithe">
+				    ${verified}
+				</td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">是否默认帐户</td>
+				<td class="greenwithe">
+				    ${account.defaultAccounts}
+				</td>
+			</tr>
+			<span t:type="t5components/Equals" left="prop:account.verified.toString()" right="literal:3">
+				<tr>
+					<td class="greenwithe_bg">拒绝理由</td>
+					<td class="greenwithe">
+					    ${account.refuseReason}
+					</td>
+				</tr>
+	        </span>
+		</table>
+		<div class="center">
+			<input type="button" onclick="window.location.href='/admin/account/listPage'" value="back" />
+		</div>
+    </body>
+</t:admin.Layout>

@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:admin.Layout t:pageTitle="CheatingNew" pageGroup="payment_report" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<style type="text/css">
+	table.t-data-grid tbody tr td.checkbox {
+		text-align:center;
+	}
+</style>
+	<div class="page_headers">
+		<div class="title">作弊记录 > 新增作弊记录</div>
+		<h3>广告 — 推广者 关系表</h3>
+		<span style="color:#336600;">如果下面某网站主在推广广告活动时作弊，请勾选对应的记录，建议输入一个推广者信息和一个广告信息来筛选关系表</span>
+	</div>
+		<t:form t:id="searchForm" class="search_form">
+			<t:errors />
+			网站主名称<t:textfield value="formAffiliateName" style="margin:0 5px 0 3px;" />
+			网站名称<t:textfield value="formSiteName" style="margin:0 5px 0 3px;" />
+		 	网站地址<t:textfield value="formSiteUrl" style="margin:0 5px 0 3px;" />
+			广告主名称<t:textfield value="formAdvertiseName" style="margin:0 5px 0 3px;" />
+			广告活动<t:textfield value="formCampaignName" style="margin:0 5px 0 3px;" />
+		 	<t:submit id="search" value="查询" style="margin:0 0 0 5px;" />
+		</t:form>
+		<t:form t:id="createForm">
+			<t:errors />
+			<div t:type="grid" source="dataSource" row="campaignSite" model="beanModel" pagerPosition="literal:bottom" rowsPerPage="noOfRowsPerPage" width="100%">
+				<t:parameter name="checkboxheader">
+					<input t:type="checkbox" t:id="chkall" onclick="checkAll(this.form)"/>
+				</t:parameter>
+				<t:parameter name="checkboxCell">
+					<t:checkbox t:id="checkbox" value="checked" />
+				</t:parameter>
+			</div>
+			<h3>作弊时间和描述</h3>
+			<span style="color:#336600;">如果您勾选了多条记录，他们将共享您输入的描述和作弊时间</span>
+			<div>
+				<table>
+					<tbody>
+						<tr>
+							<td>作弊时间</td>
+							<td>
+								<t:daterange t:dateBegin="startDate" t:dateEnd="endDate" />
+							</td>
+						</tr>
+						<tr>
+							<td>描述</td>
+							<td>
+								<t:textarea t:value="description" cols="60" rows="10"/>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div style="padding:0 0 0 55px;">
+				<t:submit t:id="create" value="保存并返回列表" />
+				<t:submit t:id="continueCreate" value="保存并继续添加" />
+				<input type="button" value="返回" onclick="window.location.href='/admin/cheating/listpage'" />
+			</div>
+		</t:form>
+	<br class="clear" />
+</t:admin.Layout>

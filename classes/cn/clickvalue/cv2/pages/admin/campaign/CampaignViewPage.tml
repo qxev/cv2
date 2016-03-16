@@ -1,0 +1,147 @@
+<t:admin.Layout t:pageTitle="CampaignList" t:navigation="${message:campaign_manage} > ${message:campaigns} > 详细信息" pageGroup="system" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <body>
+    	<!-- campaign start -->
+    	<table style="BORDER-COLLAPSE: collapse;width:100%" borderColor="#ced5b1" 
+            cellSpacing="0" cellPadding="0" width="100%" border="1">
+            <tbody>
+				<tr>
+					<td class="green_bg" colspan="2"><strong>广告活动详细信息</strong></td>
+				</tr>
+				<tr>
+					<td class="greenwithe_bg">广告活动名称</td>
+					<td class="greenwithe">
+					    ${campaign.name} 
+					</td>
+				</tr>
+				<tr>
+					<td class="greenwithe_bg">广告活动介绍</td>
+					<td class="greenwithe">
+						<t:OutputRaw value="campaign.description"></t:OutputRaw>
+					</td>
+				</tr>
+				<tr>
+					<td class="greenwithe_bg">广告目标页面数</td>
+					<td class="greenwithe">
+					    ${landingPageList.size()} 
+					</td>
+				</tr>
+				<tr>
+					<td class="greenwithe_bg">佣金规则数</td>
+					<td class="greenwithe">
+					    ${commissionRuleList.size()} 
+					</td>
+				</tr>
+				<tr>
+					<td class="greenwithe_bg">申请状态</td>
+					<td class="greenwithe">
+					    ${status:campaign.verified}
+					</td>
+				</tr>
+				<tr>
+					<td class="greenwithe_bg">审核方式</td>
+					<td class="greenwithe">
+					    ${affiliateVerified:campaign.affiliateVerified}
+					</td>
+				</tr>
+				<tr>
+					<td class="greenwithe_bg">COOKIE期限</td>
+					<td class="greenwithe">
+					    ${campaign.cookieMaxage} 
+					</td>
+				</tr>
+				<tr>
+					<td class="greenwithe_bg">广告投放区域</td>
+					<td class="greenwithe">
+					    ${campaign.region} 
+					</td>
+				</tr>
+				<tr>
+					<td class="greenwithe_bg">${message:industry_category}</td>
+					<td class="greenwithe">
+					    ${industry} 
+					</td>
+				</tr>
+				<tr>
+					<td class="greenwithe_bg">起始日期</td>
+					<td class="greenwithe">
+					    ${dateformat:campaign.startDate} 
+					</td>
+				</tr>
+				<tr>
+					<td class="greenwithe_bg">结束日期</td>
+					<td class="greenwithe">
+					    ${dateformat:campaign.endDate} 
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- campaign end -->
+		<!-- commission start -->
+		<table style="BORDER-COLLAPSE: collapse;width:100%" borderColor="#ced5b1" 
+            cellSpacing="0" cellPadding="0" width="100%" border="1">
+			<tr>
+				<td class="green_bg" colspan="5"><strong>佣金规则</strong></td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">佣金规则类型</td>
+				<td class="greenwithe_bg">佣金</td>
+				<td class="greenwithe_bg">佣金说明</td>
+				<td class="greenwithe_bg">开始时间</td>
+				<td class="greenwithe_bg">结束时间</td>
+			</tr>
+			<t:loop source="commissionRuleList" value="commissionRule">
+				<tr>
+					<td class="greenwithe">
+					    ${commissionruleformat:commissionRule=%t} 
+					</td>
+					<td class="greenwithe">
+					    ${commissionruleformat:commissionRule=%v} 
+					</td>
+					<td class="greenwithe">
+					   <t:OutputRaw value="commissionRule.description"></t:OutputRaw>
+					</td>
+					<td class="greenwithe">
+						${dateformat:commissionRule.startDate}
+					</td>
+					<td class="greenwithe">
+						${dateformat:commissionRule.endDate}
+					</td>
+				</tr>
+			</t:loop>
+		</table>
+		<!-- commission end -->
+		<!-- landingPage start -->
+		<table style="BORDER-COLLAPSE: collapse;width:100%" borderColor="#ced5b1" 
+            cellSpacing="0" cellPadding="0" width="100%" border="1">
+			<tr>
+				<td class="green_bg" colspan="4"><strong>广告目标页面</strong></td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">广告目标页面名称</td>
+				<td class="greenwithe_bg">广告数</td>
+				<td class="greenwithe_bg">广告目标页面说明</td>
+				<td class="greenwithe_bg">目标网址</td>
+			</tr>
+			<t:loop source="landingPageList" value="landingPage">
+				<tr>
+					<td class="greenwithe">
+					    ${landingPage.name} 
+					</td>
+					<td class="greenwithe">
+						${bannerSize}
+					</td>
+					<td class="greenwithe">
+					    ${landingPage.description} 
+					</td>
+					<td class="greenwithe">
+					    ${landingPage.url} 
+					</td>
+				</tr>
+			</t:loop>
+		</table>
+		<!-- landingPage end -->
+		<div class="center">
+			<input type="button" onclick="window.location.href='/${backUrl}'" value="back" />
+		</div>
+    </body>
+</t:admin.Layout>

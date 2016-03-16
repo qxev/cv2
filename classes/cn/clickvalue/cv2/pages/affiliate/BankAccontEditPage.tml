@@ -1,0 +1,89 @@
+<t:affiliate.Layout t:pageTitle="${editOrAdd}" t:pageGroup="account" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers" style="width: 600px;">
+		<div class="title">${message:Bank_account_management} > ${editOrAdd}</div>
+		<form t:type="form" t:id="editBankAccountForm" class="form">
+			<t:errors />
+			<table class="form_edit">
+				<tr class="rowodd">
+					<td class="field_name">${message:bank_name}<span class="red_star">*</span></td>
+					<td class="field_value">
+						<t:select t:id="operate" model="operateModel" value= "account.bankName" blankOption="never"/>
+					</td>
+				</tr>
+				
+				<tr class="roweven">
+					<td class="field_name">${message:bank_account_number}<span class="red_star">*</span></td>
+					<td class="field_value">
+						<input t:type="textfield" t:value="account.cardNumber"/>
+					</td>
+				</tr>
+				
+				<tr class="rowodd">
+					<td class="field_name">${message:Bank_Branch}<span class="red_star">*</span></td>
+					<td class="field_value">
+						<select t:type="man/ParentSelect" t:id="country" model="fatherSelectModel" value="account.province" style="margin-right: 10px;"/> 
+						<select t:type="man/ChildSelect" t:id="province" parent="country" models="childSelectModels" value="account.city" style="margin-right: 10px;"/>   
+						<input type="textfield" t:id="subBank"/>
+					</td>
+				</tr>
+				
+				<tr class="roweven">
+					<td class="field_name">${message:Owner_of_account}<span class="red_star">*</span></td>
+					<td class="field_value">
+						<input t:type="textfield" t:value="account.ownerName"/>
+					</td>
+				</tr>
+				
+				<tr class="rowodd">
+					<td class="field_name">${message:Owner_of_account's_telephone}<span class="red_star">*</span></td>
+					<td class="field_value">
+						<input t:type="textfield" t:value="account.ownerTelephone"/>
+					</td>
+				</tr>
+				
+				<tr class="roweven">
+					<td class="field_name">${message:Owner_of_account's_address}<span class="red_star">*</span></td>
+					<td class="field_value">
+						<input t:type="textfield" t:value="account.ownerAddress"/>
+					</td>
+				</tr>
+				
+				<tr class="rowodd">
+					<td class="field_name">${message:Owner_of_account's_ID_card}<span class="red_star">*</span></td>
+					<td class="field_value">
+						<input t:type="textfield" t:value="account.idCardNumber"/>
+					</td>
+				</tr>
+				
+				<tr class="roweven">
+					<td class="field_name">${message:post_code}<span class="red_star">*</span></td>
+					<td class="field_value">
+						<input t:type="textfield" t:value="account.postcode" />
+					</td>
+				</tr>
+				
+				<tr class="rowodd">
+					<td class="field_name">${message:Whether_is_default_condition}</td>
+					<td class="field_value">
+						<t:checkbox t:id="showall" value="isCheck"/> 
+					</td>
+				</tr>
+				
+				<tr class="roweven">
+					<td colspan="2" style="text-align: center;">
+						<t:if test="account.id">
+							<button type="submit" class="positive">${message:updete}</button>
+							<t:parameter name="else"> 
+							<button type="submit" class="positive">${message:add}</button>
+							</t:parameter> 
+						</t:if>
+						
+						<button t:type="t5components/Button" type="button" event="clicked" style="margin-left: 30px;">
+							${message:return_to}
+						</button>
+					</td>
+				</tr>		
+			</table>
+		</form>
+	</div>
+</t:affiliate.Layout>

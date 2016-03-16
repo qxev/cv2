@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<models>
+	<model id="AffiliateSummaryDailyModel" class="cn.clickvalue.cv2.excel.model.AffiliateSummaryDailyModel">
+		<property name="summaryDate" column="1" excelTitleName="报告日期" dataType="Date" maxLength="15" fixity="" codeTableName="" default=""/>
+		<property name="pendingApprovalWebSites" column="2" excelTitleName="新提交审核网站数" dataType="Integer" maxLength="15" fixity="" codeTableName="" default=""/>
+		<property name="approvedWebsites" column="3" excelTitleName="审批通过网站数" dataType="Integer" maxLength="15" fixity="" codeTableName="" default=""/>
+		<property name="declinedWebsites" column="4" excelTitleName="拒绝网站数" dataType="Integer" maxLength="15" fixity="" codeTableName="" default=""/>
+		<property name="dailyActivedWebsites" column="5" excelTitleName="活跃网站数" dataType="Integer" maxLength="15" fixity="" codeTableName="" default=""/>
+		
+		<property name="activedWebsitesForOneMonth" column="6" excelTitleName="累计活跃网站数(1个月)" dataType="Integer" maxLength="15" fixity="" codeTableName="" default=""/>
+		<property name="activedWebsitesForThreeMonth" column="7" excelTitleName="累计活跃网站数(3个月)" dataType="Integer" maxLength="15" fixity="" codeTableName="" default=""/>
+		<property name="activedWebsitesForHalfAYear" column="8" excelTitleName="累计活跃网站数(6个月)" dataType="Integer" maxLength="15" fixity="" codeTableName="" default=""/>
+		<property name="affiliateClicks" column="9" excelTitleName="广告有效点击数" dataType="Integer" maxLength="15" fixity="" codeTableName="" default=""/>
+		
+		<property name="beClickedAds" column="10" excelTitleName="被点击广告数" dataType="Integer" maxLength="15" fixity="" codeTableName="" default=""/>
+		<property name="beClickedCampaigns" column="11" excelTitleName="被点击广告活动数" dataType="Integer" maxLength="15" fixity="" codeTableName="" default=""/>
+		<property name="beAppliedCampaigns" column="12" excelTitleName="被申请广告活动数" dataType="Integer" maxLength="15" fixity="" codeTableName="" default=""/>
+		<property name="gotCodes" column="13" excelTitleName="获取代码数" dataType="Integer" maxLength="15" fixity="" codeTableName="" default=""/>
+		
+		<property name="newCampaigns" column="14" excelTitleName="新增广告活动数" dataType="Integer" maxLength="15" fixity="" codeTableName="" default=""/>
+		
+		<property name="newAds" column="15" excelTitleName="新增广告数" dataType="Integer" maxLength="15" fixity="" codeTableName="" default=""/>
+		<property name="validAds" column="16" excelTitleName="有效广告数" dataType="Integer" maxLength="15" fixity="" codeTableName="" default=""/>
+		<property name="pageView" column="17" excelTitleName="被展示广告数" dataType="Integer" maxLength="15" fixity="" codeTableName="" default=""/>
+		
+	</model>
+	
+	<!-- column :指excel没有表头名称时,可以对应所排的列号 -->
+</models>

@@ -1,0 +1,45 @@
+<t:affiliate.Layout t:pageTitle="${message:The_ad_campaign_management_tabulates}" t:pageGroup="campaign" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<t:form t:id="SearchForm" >
+	
+		<div class="page_headers">
+			<div class="title">${message:search} > ${message:my_focus_campaigns}</div>
+			<div class="form">
+				${message:campaign}
+				<input t:type="textfield" t:id="campaignName"/>
+				${message:commision_rule}
+				<select t:type="select" t:id="cpa"/>
+				
+				<t:submit t:id="search" class="search" value="${message:search}"/>
+  		
+		  		<div class="table_clear" style="width: 100%;">
+		  			<table t:id="myGrid" style="width: 100%;">
+						
+						<t:parameter name="campaignnameCell">
+							<t:pagelink page="affiliate/AffiliateCampaignViewPage" context="affiliateCampaign.campaign.id">${affiliateCampaign.campaign.name}</t:pagelink>
+						</t:parameter>
+						
+						<t:parameter name="campaignusernameCell">
+							<img src="${affiliateCampaign.campaign.site.logo}" width="120" height="60" title="${affiliateCampaign.campaign.user.name}" alt="${affiliateCampaign.campaign.user.name}"/>
+						</t:parameter>
+						
+						<t:parameter name="campaigncpaCell">
+							<t:outputraw value="affiliateCampaign.campaign.cpa" />
+						</t:parameter>
+						
+						<t:parameter name="campaignStartDateCell">
+							${dateformat:affiliateCampaign.campaign.startDate}
+						</t:parameter>
+						
+						<t:parameter name="campaignEndDateCell">
+							${dateformat:affiliateCampaign.campaign.endDate}
+						</t:parameter>
+						
+						<t:parameter name="operateCell">
+							<t:select t:id="operate" model="operateModel" blankLabel="${message:select}" onChange="redirect(this);"/>
+						</t:parameter>
+			    	</table>
+		  		</div>			
+			</div>
+		</div>
+	</t:form>
+</t:affiliate.Layout>

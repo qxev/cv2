@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:admin.Layout t:pageTitle="affiliate category list" t:navigation="广告托管 > 网站分类" pageGroup="trust" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<body>
+	<span style="color: red;">第二步：选择匹配的网站类型</span>
+	<t:form t:id="form">
+		<t:errors />
+		<table class="form_edit">
+			<tr>
+				<td class="field_value">
+					<div style="display: block;">
+						<t:common.affiliateCategoryRegion t:maxCategoryNumber="literal:0" t:checkedObjs="affiliateCategories" />
+					</div>
+				</td>
+			</tr>
+		</table>
+		<input type="button" value="上一步" onclick="window.location.href='/admin/trust/untrustlistpage'" style="margin:0 0 0 55px;" />
+		<t:submit t:id="createBonus" value="保存" onclick="return confirm('确定？');" style="margin:0 0 0 55px;" />
+	</t:form>
+</body>
+</t:admin.Layout>

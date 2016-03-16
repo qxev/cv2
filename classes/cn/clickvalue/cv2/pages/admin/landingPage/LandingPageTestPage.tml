@@ -1,0 +1,14 @@
+<t:admin.Layout t:pageTitle="CampaignList" t:navigation="广告活动管理 > 广告测试 > 选择目标地址" pageGroup="campaign" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<body>
+		<div style="margin: 0px auto; width: 99%;">
+		    <table style="BORDER-COLLAPSE: collapse;" borderColor="#ced5b1" cellSpacing="0" cellPadding="0" width="100%" border="1" t:id="myGrid" t:type="Grid" source="dataSource" row="advertise" model="beanModel" pagerPosition="literal:bottom" rowsPerPage="${noOfRowsPerPage}">
+				<t:parameter name="landingPageUrlCell">
+					<a href="${advertise.landingPage.url}">${advertise.landingPage.url}</a>
+				</t:parameter>
+				<t:parameter name="testCell">
+					<t:actionlink t:id="test" context="advertise.id">点击测试</t:actionlink>
+				</t:parameter>
+		    </table>
+	    </div>
+	</body>
+</t:admin.Layout>

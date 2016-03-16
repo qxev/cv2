@@ -1,0 +1,103 @@
+<t:advertiser.Layout pageTitle="${addOrEdit}" pageGroup="campaign" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers" style="width:700px;">
+		<div class="title">
+			${message:campaign}:
+			<t:if test="campaign">
+				<a href="/advertiser/campaignviewpage/${campaign.id}">${campaign.name}</a> > 
+				<a href="/advertiser/landingpagelist/${campaign.id}">${message:advertisement_goal_page}</a> > 
+				${addOrEdit}
+			</t:if>
+		</div>
+		
+		<t:if test="campaign">
+			<t:form class="form" t:id="landingPageForm">
+				<t:errors />
+				<table class="form_edit">
+					<tr class="rowodd">
+						<td class="field_name">${message:campaign_name}</td>
+						<td class="field_value">
+							${campaign.name}
+						</td>
+					</tr>
+					
+					<tr class="roweven">
+						<td class="field_name">${message:landingPage_name}<span class="red_star">*</span></td>
+						<td class="field_value"><input t:type="textfield" t:value="landingPage.name" size="30" /></td>
+					</tr>
+			
+					<tr class="rowodd">
+						<td class="field_name">${message:destination_url}<span class="red_star">*</span></td>
+						<td class="field_value"><input type="text" t:type="textfield" t:value="landingPage.url" size="60" />
+						</td>
+					</tr>
+			
+					<tr class="roweven">
+						<td class="field_name">${message:banners}(${message:optional})</td>
+						<td class="field_value">
+				
+							<!-- Banner Table -->
+							<table t:id="myGrid" t:type="Grid" source="dataSource" row="banner" model="beanModel" rowsperpage="10" pagerPosition="literal:bottom" style="width:100%">
+								<t:parameter name="checkboxheader">
+									<input type="checkbox" name="chkall" onclick="checkAll(this.form)"/>
+								</t:parameter>
+					
+								<t:parameter name="checkboxCell">
+									<t:if test="isSelected()">
+										<input type="checkbox" value="${banner.id}" name="checkedBannerIds" checked="true" />
+									</t:if>
+									
+									<t:unless test="isSelected()">
+										<input type="checkbox" value="${banner.id}" name="checkedBannerIds" />
+									</t:unless>
+									
+									<input type="hidden" value="${banner.id}" name="bannerIds" />
+									
+								</t:parameter>
+					
+								<t:parameter name="bannerTypeCell">
+									${bannerType}
+								</t:parameter>
+					
+								<t:parameter name="sizeCell">
+									${banner.width}*${banner.height}
+								</t:parameter>
+					
+								<t:parameter name="contentCell">
+									<t:bannerContent banner="prop:banner" isExact="false" />
+								</t:parameter>
+							</table>
+							
+						</td>
+					</tr>
+			
+					<tr class="rowodd">
+						<td class="field_name">${message:landingPage_category}<span class="red_star">*</span></td>
+						<td class="field_value">
+							<select t:type="select" value="categoryId" model="categoryModel" blankLabel="${message:select}"  />
+						</td>
+					</tr>
+				
+					<tr class="roweven">
+						<td class="field_name">${message:landingPage_desc}<span class="red_star">*</span></td>
+						<td class="field_value">
+							<textarea t:type="textarea" t:value="landingPage.description" rows="8" cols="40" />	
+						</td>
+					</tr>
+				
+					<tr class="rowodd">
+						<td class="center" colspan="2">
+							<input type="submit" t:type="submit" value="${message:save}" t:id="save" class="button_margin"/>
+							<input type="submit" t:type="submit" value="${message:save_and_back_list}" t:id="saveLandingPage" class="button_margin"/>
+							<input type="submit" t:type="submit" value="${message:preserved_and_newly_built_picture_advertisement}" t:id="saveAndAddBanner" class="button_margin"/>
+							<button t:type="commons/button">${message:back}</button>
+						</td>
+					</tr>
+				</table>
+			</t:form>    
+		</t:if>
+		
+		<t:unless test="campaign">
+			${message:no_right_to_edit_any_page_ad}
+		</t:unless>
+	</div>
+</t:advertiser.Layout>

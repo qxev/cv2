@@ -1,0 +1,27 @@
+﻿/*下拉菜单样式*/
+
+*{margin:0;padding:0;border:0;}
+.navgation{font-size:1.2em; float:left; color:#FFFFFF; width:980px; line-height:33px; height:42px;}
+.navgation ul{margin:0; padding:0; list-style:none;}
+
+#nav { line-height: 30px;  margin:0;}   /*控制一级菜单行高；上边距5px；*/  
+#nav a:hover {color:#C00;text-decoration:none;}                /* 鼠标在链接上 */ 
+
+
+#nav li {float: left;  }    
+#nav li a{ display: block; text-align:left; color:#cceeba; font-weight:bold; font-size:16px; padding:5px 13px; margin:0 15px 0 0; } /*一级菜单链接总体样式：每个菜单的宽，居中对齐，文字大小*/ 
+#nav li a:hover{background:url(../images/navi-bg.gif) repeat-x left bottom; color:#FFFFFF; }     /* 鼠标在一级菜单上改变其背景色 */ 
+
+#nav li ul {line-height: 24px; background:#FFF; list-style-type: none;text-align:left;left: -999em; width:165px; position: absolute; border:#a9b9a0 1px solid; padding:0;}             /*二级菜单总体样式：行高24px；背景颜色；外框宽度；相对位置；边框一个象素，上边没样式，左右下边实线，边框颜色#003399；内边距1个象素*/
+
+#nav li ul a{display:block; width: 160px;text-align:left;  background:#ebf4e6; font-size:0.8em; font-weight:normal; }                 /* 二级菜单链接样式；背景宽度、左对齐，左缩进2 */                                /* 已访问的链接 */
+
+
+#nav li ul li a{display:block; width: 160px;text-align:left;  background:#ebf4e6; font-size:0.8em; margin:0; padding:0; border-bottom:#a9b9a0 1px solid; padding-left:5px; color:#333333;} 
+#nav li ul li a:hover  {color:#FFF; text-decoration:none; font-weight:normal; background:#378d08;}
+
+#nav li:hover ul {left: auto;}
+#nav li.Sfhover ul {left: auto;}
+
+.nav-now a{background:url(../images/navi-bg.gif) repeat-x left bottom; color:#FFFFFF; margin:0; }
+

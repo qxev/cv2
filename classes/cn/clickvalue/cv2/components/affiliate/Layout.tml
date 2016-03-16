@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<head>
+	<title>${pageTitle}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="${asset:context:/assets/base.css}" type="text/css" />
+	<script language="javascript" src="/assets/javascripts/menu.js"></script>
+	<script language="javascript" src="/assets/javascripts/jquery.js"></script>
+	<script language="JavaScript">
+		var old_menu_id = "${pageGroup}";
+	</script>
+</head>
+
+<body>
+	<div class="wrap">
+		<!--head begin-->  	
+		<div class="head">
+			<a href="/index.html"><img name="logo" src="/assets/images/logo.gif" width="335" height="75" border="0" id="logo" alt="searchvalue_logo" /></a>
+			<p class="user_nav">
+				<span style="color:green;">${user.name}(ID:${user.id})</span> | 
+				<a href="/public/affiance_1.html">${message:help_center}</a> | <a href="#" t:type="actionlink" t:id="logout">${message:logout}</a><br />
+				<span style="color:green;">${message:current_date}: ${currentDate}</span>
+			</p>
+		</div>
+		<!--navigation begin-->
+		<div class="navigation">
+			<ul class="nav">
+				<li><a id="home" href="/affiliate/HomePage" onmouseover="change_submenu('home')" onmouseout="restore_submenu();">${message:homepage}</a></li>
+				<li><a id="campaign" href="/affiliate/campaignlistpage" onmouseover="change_submenu('campaign')" onmouseout="restore_submenu();">${message:campaign}</a></li>
+				<li><a id="resultReport" href="/affiliate/report/effectReport" onmouseover="change_submenu('resultReport');" onmouseout="restore_submenu();">${message:effect_report}</a></li>
+				<li><a id="paymentReport" href="/affiliate/affiliateperaccountpage" onmouseover="change_submenu('paymentReport');" onmouseout="restore_submenu();">${message:revenue_report}</a></li>
+				<li><a id="account" href="/affiliate/sitelistpage" onmouseover="change_submenu('account');" onmouseout="restore_submenu();">${message:user_management}</a></li>
+				<li><a id="trust" href="/affiliate/trustcodepage" onmouseover="change_submenu('trust');" onmouseout="restore_submenu();">${message:Ad_trust}</a></li>
+				<li><a id="bbs" href="http://bbs.clickvalue.cn" target="_blank" onmouseover="change_submenu('bbs')" onmouseout="restore_submenu();">${message:cv_bbs}</a></li>
+				<li><a id="pim" href="/affiliate/pimoverviewpage" onmouseover="change_submenu('pim');" onmouseout="restore_submenu();">${message:points}</a><img src="/assets/images/new.gif" class="new"/></li>
+			</ul>
+
+			<!-- js menu begin -->
+
+			<!-- home menu -->
+			<div class="submenu" id="submenu_home" style="display:none" onmouseover="change_submenu('home');" onmouseout="restore_submenu();">
+				&nbsp;
+			</div>
+
+			<!--campaign menu -->
+			<div class="submenu" id="submenu_campaign" style="display:none" onmouseover="change_submenu('campaign');" onmouseout="restore_submenu();">
+				<a href="/affiliate/CampaignListPage">${message:campaign_list}</a>
+				<a href="/affiliate/CampaignRelationListPage">${message:my_focus_campaigns}</a>
+				<a href="/affiliate/CampaignSiteViewPage">${message:has_applied_campaign}</a>
+			</div>
+
+			<!-- account menu -->
+			<div class="submenu" id="submenu_account" style="display:none" onmouseover="change_submenu('account');" onmouseout="restore_submenu();">
+				<a href="/affiliate/sitelistpage">${message:website}</a>
+				<a href="/affiliate/affiliateusereditpage">${message:personal_information_modify}</a>
+				<a href="/affiliate/alipayaccountlistpage">支付宝帐号管理</a>
+				<a href="/affiliate/userpasseditpage">${message:personal_password_modify}</a>
+				<a href="/affiliate/affiliatesysinfopage">${message:system_mail_modify}</a>
+				<a href="/affiliate/systeminfopage">${message:language_setting}</a>
+			</div>
+
+			<!-- result report menu -->
+			<div class="submenu" id="submenu_resultReport" style="display:none" onmouseover="change_submenu('resultReport');" onmouseout="restore_submenu();">
+				<a href="/affiliate/report/effectreport">${message:effect_report}</a>
+				<a href="/affiliate/report/detail:cpl">${message:detail_report_cpl}</a>
+				<a href="/affiliate/report/detail:cps">${message:detail_report_cps}</a>
+			</div>
+
+			<!-- payment report menu -->
+			<div class="submenu" id="submenu_paymentReport" style="display:none" onmouseover="change_submenu('paymentReport');" onmouseout="restore_submenu();">
+				<a href="/affiliate/affiliateperaccountpage">${message:commision_report}</a>
+				<a href="/affiliate/report/affiliatehistorycommission">${message:commision_payment_history}</a>
+			</div>
+			
+			<!-- trust menu -->
+			<div class="submenu" id="submenu_trust" style="display:none" onmouseover="change_submenu('trust');" onmouseout="restore_submenu();">
+				<a href="/affiliate/trustcodepage">${message:Ad_trust}</a>
+			</div>
+			
+			<!-- bbs menu -->
+			<div class="submenu" id="submenu_bbs" style="display:none" onmouseover="change_submenu('bbs');" onmouseout="restore_submenu();">
+				&nbsp;
+			</div>
+
+			<!-- pim menu -->
+			<div class="submenu" id="submenu_pim" style="display:none" onmouseover="change_submenu('pim');" onmouseout="restore_submenu();">
+				<a href="/affiliate/pimoverviewpage">${message:pim_summary}</a>
+				<a href="/affiliate/pimperformancelistpage">${message:performance_points}</a>
+				<a href="/affiliate/pimbonuslistpage">${message:bonus_points}</a>
+				<a href="/affiliate/pimsummaryreportpage">${message:pim_summary_report}</a>
+				<a href="/affiliate/pimcommissionbonuspage">${message:rewards_by_points}</a>
+				<a href="/public/pim" target="_blank">${message:pim_FAQ}</a>
+			</div>
+			
+			<!-- added service menu -->
+			<div class="submenu" id="submenu_addedService" style="display:none" onmouseover="change_submenu('addedService');" onmouseout="restore_submenu();">
+				<strong>coding...</strong>
+			</div>
+			<!-- js menu end -->
+		</div>
+
+		<!--main begin-->
+		<div class="main">
+			<t:if test="access">
+				<t:body/>
+				<t:parameter name="else">
+					<span style="color: red;">${message:you_have_not_permission_to_access_this_page}</span>
+				</t:parameter>
+			</t:if>
+		</div>
+		<!--bottom begin-->
+
+		<div  class="buttom">
+			<a href="/public/about_us.html">${message:about_us}</a> | 
+			<a href="/public/contact.html">${message:Contact_us}</a>
+			<br />
+			沪ICP备08015558号
+			<br />
+			Copyright © 2006 - 2010 Darwin Marketing.
+		</div>
+
+	</div>
+	<t:if test="userMessages">
+		<div id="user_messages">
+			<t:unless test="user.hasSite">
+				<div class="prompt">
+					${message:you_have_not_add_personal_site}，<a href="/affiliate/sitelistpage:add">${message:click_here_and_add}</a>
+				</div>
+			</t:unless>
+			<t:unless test="user.hasContact">
+				<div class="prompt">
+					${message:you_have_not_add_personal_information}，<a href="/affiliate/AffiliateUserEditPage">${message:click_here_and_add}</a>
+				</div>
+			</t:unless>
+			<t:unless test="user.hasBank">
+				<div class="prompt">
+					${message:you_have_not_add_personal_bank_account}，<a href="/affiliate/alipayaccountlistpage">${message:click_here_and_add}</a>
+				</div>
+			</t:unless>
+		</div>
+	</t:if>	
+</body>
+</html>

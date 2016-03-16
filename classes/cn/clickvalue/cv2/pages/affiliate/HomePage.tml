@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:affiliate.Layout t:pageTitle="${message:main_page}" t:pageGroup="home" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<script type="text/javascript" src="/assets/javascripts/qq.js"></script>
+<script type="text/javascript" src="/assets/javascripts/jquery.query_params.js"></script>
+	<t:form id= "form">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr valign="top">
+				<td width="250">
+					<div class="page_headers">
+						<div class="title">${message:the_alliance_announces}</div>
+						<div class="form">
+							<table id="bulletin" width="100%">
+								<tr t:id="bulletinLoop">
+									<td><a href="BulletinViewPage/${bulletin.id}" target="_blank">${bulletin.subject}</a></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+	
+					<div class="page_headers" style="display:none;">
+						<div class="title">${message:Station_Mail}</div>
+						<div class="form">
+							<ul>
+								<li><a href="">${message:Notice}</a></li>
+							</ul>
+						</div>
+					</div>
+					
+					<div class="box">
+						<div class="title">${message:customer_service_of_darwin}</div>
+						<table class="form_edit">
+							<tr>
+								<td rowspan="3">QQ (${message:for_publishers})</td>
+								<td><a name="qq" href="http://sighttp.qq.com/cgi-bin/check?sigkey=47e7a602c87f7b14bb45356e0702226e1d2e12949faeb7d97b53ff1863e09069" target="_blank" ><img border="0" src='http://wpa.qq.com/pa?p=1:1069649032:41' alt="" /></a></td>
+							</tr>
+							<tr>
+								<td><a name="qq" href="http://sighttp.qq.com/cgi-bin/check?sigkey=908bb2324fa6beda267e6417339275267d419d843dffc3aa7580adcbc55af438" target="_blank" ><img border="0" src='http://wpa.qq.com/pa?p=1:1064766288:41' alt="" /></a></td>
+							</tr>
+							<tr>
+								<td><a name="qq" href="http://sighttp.qq.com/cgi-bin/check?sigkey=a6eaa2c58601094fdf365d965a85117b54180220ce70a017fdb67581c5a4407a" target="_blank" ><img border="0" src='http://wpa.qq.com/pa?p=1:1048076541:41' alt="" /></a></td>
+							</tr>
+							<tr>
+								<td rowspan="7">QQ ${message:groups}</td>
+								<td>39850659(<font color="blue">${message:new1}</font>)</td>
+							</tr>
+							<tr>
+								<td>华北地区 38072331</td>
+							</tr>
+							<tr>
+								<td>东北地区 39850659</td>
+							</tr>
+							<tr>
+								<td>华东地区 76550982</td>
+							</tr>
+							<tr>
+								<td>中南地区 339002</td>
+							</tr>
+							<tr>
+								<td>西南地区 37349844</td>
+							</tr>
+							<tr>
+								<td>西北地区 57224651</td>
+							</tr>
+	
+							<tr>
+								<td style="white-space:nowrap;">MSN (${message:for_publishers})</td>
+								<td><div title="clickvalue_affiliate # hotmail.com" >clickvalue_affiliate[at]hotmail.com</div></td>
+							</tr>
+							<tr>
+								<td>${message:e-mail}</td>
+								<td><div>clickvalue[at]darwinmarketing.com</div></td>
+							</tr>
+						</table>
+					</div>
+			  	</td>
+			  	<td> 
+			  		<span style="margin-left: 5px;" /> 
+			  	</td>
+				<td>
+					<div class="page_headers">
+				  		<div class="title">${message:Did_not_confirm_the_payment_of_commission}</div>
+				  		<div class="form">
+					  		<table class="t-data-grid" style="width: 100%;">
+								<thead>
+									<tr>
+										<th>${message:campaign}</th>
+										<th>${message:the_commission_before_match}</th>
+										<th>${message:the_commission_after_match}</th>
+									</tr>
+								</thead>
+								<tr t:id="summaryCommissionLoop">
+									<td><t:pagelink page="affiliate/AffiliateCampaignViewPage" context="resultObject.value1">${resultObject.value2}</t:pagelink></td>
+									<td>${resultObject.value4}</td>
+									<td>${resultObject.value5}</td>
+								</tr>
+			    			</table>
+			    		</div>
+				  	</div>
+					<div class="page_headers">
+						<div class="title">${message:the_latest_ad}</div>
+				  		<div class="form">
+							<table class="t-data-grid" style="width: 100%;">
+								<thead>
+									<tr>
+										<th>${message:campaign}</th>
+										<th>${message:website}</th>
+										<th>${message:commision_rule}</th>
+										<th>${message:begin_time}</th>
+										<th>${message:end_time}</th>
+										<th>${message:operate}</th>
+									</tr>
+								</thead>
+								<tr t:id="campaignLoop">
+									<td><t:pagelink page="affiliate/AffiliateCampaignViewPage" context="campaign">${campaign.name}</t:pagelink></td>
+									<td><a href="${campaign.site.url}" target="_blank">${campaign.site.name}</a></td>
+									<td><t:outputraw value="campaign.cpa" /></td>
+									<td>${dateformat:campaign.startDate}</td>
+									<td>${dateformat:campaign.endDate}</td>
+									<td class="operate"><t:select t:id="operate" model="operateModel" blankLabel="${message:select}" onChange="redirect(this);" /></td>
+								</tr>
+			    			</table>
+			    			<t:SliderDoor text="${message:more}" href="/affiliate/CampaignListPage" clear="true" style="float:right;margin-right:0;"/>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</t:form>
+	<script type="text/javascript">
+		var _qqClientId="1";
+		var _qqStepId=2;
+		var _qqSVCD="1412934_119087469";
+		var _qqDWLP="http:";
+		var _qqDWDN="//sv.dmclick.cn/";
+		var _qqInterface=_qqDWLP + _qqDWDN + "_v.gif";
+		var _qqAffiliateId="${user.id}";
+		var _qqCP = window.location.href;
+	</script>
+</t:affiliate.Layout>

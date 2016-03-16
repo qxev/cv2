@@ -1,0 +1,14 @@
+<t:admin.Layout pageTitle="网站导出" pageGroup="system" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+	<div style="height:30px"></div>
+	<div class="">
+		<t:form>
+			<t:radiogroup t:value="roleType">
+				<t:radio value="0" />网站主
+				<t:radio value="1" />广告主
+  			</t:radiogroup>
+	
+			<input type="submit" value="导出网站" />
+		</t:form>
+	</div>	
+</t:admin.Layout>

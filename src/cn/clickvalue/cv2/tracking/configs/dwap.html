@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> Advertising Player Version 1.0 </TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="/player.js"></script>
+</HEAD>
+<style type="text/css">
+BODY{
+background:none;
+}
+</style>
+<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<!--Campaigns List Begin-->
+<script>
+var categories = {c2:['1','2','3','4','5']};
+categories.hascross= function(cpId,scIds){
+    var psIds = this['c'+cpId];
+    for(scod in scIds){
+        for(psod in psIds){
+            if(scIds[scod] === psIds[psod]){
+                return true;
+            }
+        }
+    }
+    return false;
+}
+categories.put = function(cpId,ccIds){
+    this['c'+cpId] = ccIds;
+}
+var cps = new Array();
+var pos = 0;
+${trust_js}
+</script>
+<!--Campaigns List End-->
+<!--Find Adv Begin-->
+
+<script>
+var cp = new Campaign(2,"达闻2008联盟网站主招募",true);//default campaign
+var semId = 0;
+var cpId = 0;
+var adId = 0;
+var adAfId = 0;//don't change it,set it to zero
+//parse height and width
+var ws = Player._rsPP["rs"];
+var sc = Player._rsPP["sc"];
+var wsv = ws.split("_");
+var scs = sc.split("-");
+var width = (wsv.length > 0)?parseInt(wsv[0]):0;
+var height = (wsv.length > 1)?parseInt(wsv[1]):1;
+var ratios = width/height;
+//execute to find a good ad for display
+var nears = 50;
+var cwh = [0,0];
+var wcps = new Array();
+var adCache = new Array();
+var crtos = 0;
+var tosep = 0;
+for(var c=0;c<cps.length;c++){
+    if(categories.hascross(cps[c].id,scs)){
+	    var passed = false;
+	    for(od in cps[c].ads){
+		    cwh[0] = cps[c].ads[od].banner.width;
+		    cwh[1] = cps[c].ads[od].banner.height;
+		    crtos = cwh[0]/cwh[1];
+		    tosep = Math.abs(crtos - ratios);
+		    if(tosep < 0.2){
+			    var cidv = cps[c].ads[od].id;
+                if(adCache["C"+cps[c].id] == undefined){
+                    adCache["C"+cps[c].id] = new Array();
+                }
+			    adCache["C"+cps[c].id].push(cps[c].ads[od]);
+			    passed = true;
+		    }
+	    }
+	    if(passed) wcps[wcps.length] = cps[c];
+    }
+}
+var wcpsl=wcps.length;
+if(wcps.length > 0){
+    cp = wcps[Math.round(Math.random()*cps.length)%wcps.length];
+}
+var maxW = 100000;
+var sepW = 0;
+var maxAd = 0;
+for(od in adCache["C"+cp.id]){
+	cwh[0] = adCache["C"+cp.id][od].banner.width;
+	sepW = Math.abs(width - cwh[0]);
+	if(sepW < maxW){
+	    maxW = sepW;
+		maxAd = adCache["C"+cp.id][od].id;
+	}
+}
+var playit = true;
+//set ids
+semId = cp.semId;
+cpId = cp.id;
+adId = maxAd;
+if(semId==0 || adId == 0){
+	semId = 1;
+	cpId = 2;
+	adId = 136;
+	cp = cps[0];
+}
+</script>
+<!--Find Adv End-->
+<!--Change Code Begin-->
+<script>
+var cvcd = Player._rsPP["_cv_code"];
+var codes = cvcd.split("-");
+if(codes.length < 6){
+	playit = false;
+}else{
+	codes[0] = semId;
+	codes[1] = cpId;
+	codes[2] = adId;
+	codes[5] = adAfId;
+	var ncds = codes.join("-");
+	Player._rsPP["_cv_code"] = ncds;
+	Player._rsPP["trk_cid"] = semId;
+}
+</script>
+<!--Change Code End-->
+<table border="0" width="100%" height="100%" cellspacing="0" cellpadding="0">
+<tr>
+	<td id="adPlayer"></td>
+</tr>
+</table>
+<!--Playing begin-->
+<script>
+if(playit){
+	Player.start("adPlayer",cp,new AdReader("_cv_code"),["_cv_code","trk_cid","loc","rd"],new TStyle("ps"),[["_cv_code","_cv_code"]]);
+}else document.write("No Ads.");
+</script>
+<!--Playing end-->
+
+</BODY>
+</HTML>
+

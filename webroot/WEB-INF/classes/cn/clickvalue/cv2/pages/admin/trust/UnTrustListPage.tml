@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:admin.Layout t:pageTitle="untrust list" t:navigation="广告托管 > 未托管的广告" pageGroup="trust" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<style type="text/css">
+	table.t-data-grid tbody tr td.checkbox {
+		text-align:center;
+	}
+	div.t-data-grid-pager .right {
+		float:right;
+		text-align:right;
+		width:50%;
+	}
+	div.t-data-grid-pager .left {
+		float:left;
+		font-size:12px;
+		text-align:left;
+		width:50%;
+	}
+</style>
+    <body>
+    	<div class="form">
+	    	<t:form t:id="searchForm">
+		    		广告主名称:
+		    		<input t:type="autoCompleter" value="formAdvertiserName" source="advertiserNames" />
+		    		广告活动名称:
+		    		<input t:type="autoCompleter" value="formCampaignName" source="campaignNames"/>
+		    		行业类型:
+		    		<t:industryForCampaignSelect value="formIndustry" displayModel="literal:main" blankOption="ALWAYS" blankLabel="全部"/>
+		    		<input t:type="submit" value="查询" t:id="searchButton" />
+			</t:form>
+		</div>	
+		<t:form t:id="listForm">
+			<t:errors />
+			<div style="width:50%;">
+				<table style="BORDER-COLLAPSE: collapse;" borderColor="#ced5b1" cellSpacing="0" cellPadding="0" width="100%" border="1"
+	             t:id="myGrid" t:type="Grid" source="dataSource" row="campaign" model="beanModel" pagerPosition="literal:bottom" rowsPerPage="${noOfRowsPerPage}">
+	             	<t:parameter name="checkboxheader">
+						<input type="checkbox" id="chkall" onclick="checkAll(this.form)"/>
+					</t:parameter>
+					<t:parameter name="checkboxCell">
+						<t:checkbox t:id="checkbox" value="checked" />
+					</t:parameter>
+					<t:parameter name="nameCell">
+						<t:pagelink page="admin/campaign/Viewpage" context="prop:viewParameters">${campaign.name}</t:pagelink>
+					</t:parameter>
+					<t:parameter name="IndustrySubseriesCell">
+						${industry}
+					</t:parameter>
+	   			</table>
+	   			<div style="padding:0 0 0 55px;">
+					<t:submit t:id="createBonus" value="下一步" />
+				</div>
+			</div>
+   		</t:form>
+    </body>
+</t:admin.Layout>

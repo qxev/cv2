@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:admin.Layout t:pageTitle="${title}梯度佣金" pageGroup="campaign" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<script language="javascript" src="/assets/javascripts/commissionLadder.js"></script>
+	<!-- 导航 -->
+	<div class="page_headers">
+		<div class="title">${campaign.name} > 梯度佣金 > ${title}</div>
+	</div>
+	<div class="page_headers" style="width:600px;">
+		<t:form class="form" t:id="form">
+			<t:errors />
+			<table class="form_edit">
+			
+				<tr class="roweven">
+					<td class="field_name">是否范围佣金<span class="red_star">*</span></td>
+					<td class="field_value">
+						<t:radiogroup value="commissionLadder.isRange">
+							<t:radio value="0" onclick="changeRange(this);" t:id="noRange"/>否
+							<t:radio value="1" onclick="changeRange(this);" t:id="isRange"/>是
+						</t:radiogroup>
+					</td>
+				</tr>
+			
+				<tr class="roweven">
+					<td class="field_name">范围佣金<span class="red_star">*</span></td>
+					<td class="field_value" id="endCommission">
+						<t:textfield value="commissionLadder.startCommission" /><span> - <t:textfield value="commissionLadder.endCommission"/></span>
+					</td>
+				</tr>
+			
+				<tr class="roweven">
+					<td class="field_name">网站主佣金<span class="red_star">*</span></td>
+					<td class="field_value">
+						<t:textfield value="commissionLadder.siteCommissionValue" />
+					</td>
+				</tr>
+				
+				<tr class="roweven">
+					<td class="field_name">达闻佣金<span class="red_star">*</span></td>
+					<td class="field_value">
+						<t:textfield value="commissionLadder.darwinCommissionValue" />
+					</td>
+				</tr>
+				
+				<tr class="roweven">
+					<td class="field_name">开始时间<span class="red_star">*</span></td>
+					<td class="field_value">
+						<t:datefield value="commissionLadder.startDate" readonly="readonly" />
+					</td>
+				</tr>
+				
+				<tr class="roweven">
+					<td class="field_name">结束时间<span class="red_star">*</span></td>
+					<td class="field_value">
+						<t:datefield value="commissionLadder.endDate" readonly="readonly" />
+					</td>
+				</tr>
+				
+				<tr class="roweven">
+					<td class="field_name">描述<span class="red_star">*</span></td>
+					<td class="field_value">
+						<t:textarea t:value="commissionLadder.description" cols="40" rows="8"/>
+					</td>
+				</tr>
+				
+				<tr class="rowodd">
+					<td colspan="2" style="text-align:center;">
+						<input type="submit" t:type="submit" t:id="saveRule" value="保存" class="button_margin"/>
+						<input type="button" value="返回" onclick="window.location.href='/admin/commissionRule/commissionladderlistpage/${campaign.id}'" />
+					</td>
+				</tr>
+			</table>
+		</t:form>
+	</div>
+	<script>
+		
+	</script>
+</t:admin.Layout>

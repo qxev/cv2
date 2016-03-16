@@ -1,0 +1,16 @@
+<t:admin.Layout navigation="广告主跟踪代码" pageTitle="广告主跟踪代码" pageGroup="system" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<t:form>
+	  <t:loop source="codes" value="code">
+	  	<table class="t-data-grid">
+			<tr>
+				<td class="green_bg" colspan="3"><strong>${code.label}代码</strong></td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">
+					<textarea t:type="textarea" onmouseover="this.select();" t:value="code.value" rows="16" cols="100" />
+				</td>
+			</tr>
+		</table>
+	  </t:loop>
+	</t:form>
+</t:admin.Layout>

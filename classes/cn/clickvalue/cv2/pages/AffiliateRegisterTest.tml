@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<head>
+		<title>${message:adrReg_title}</title>
+		<meta name="keywords" content="营销，网络营销，联盟营销，广告营销，广告，网络广告，联盟广告，营销广告，营销联盟，广告主，网站主，网站联盟，广告联盟，按效果付费" />
+		<meta name="description" content="达闻网络营销致力于打造全国最大的网络营销平台，为网站主提供广告主的商品销售、会员注册、有效点击等效果广告, 营销效果优化分析, 及相应的全程服务；同时通过其成千上万的网站主网站，为广告主提供强大网络销售渠道的网络营销服务" />
+		<link rel="stylesheet" href="${asset:context:/assets/stylesheets/public.css}" type="text/css" />
+	</head>
+
+	<body>
+		<div id="wrap">
+		<!--头部begin-->
+			<script src="public/searchfrom.html" type="text/javascript"></script>
+		<!--头部end-->
+			<div id="nav">
+				<li ><a href="../">首页</a></li>
+				<li ><a href="public/about_us.html">关于我们</a></li>
+				<li class="now" >广告主</li>
+				<li ><a href="public/affiance_1.html">网站主</a></li>
+				<li ><a href="public/faq_1.html">帮助中心</a></li>
+				<li ><a href="public/contact.html">联系我们</a></li>
+				<li ><a href="http://bbs.clickvalue.cn/">联盟论坛</a></li>
+			</div>
+			<div id="main">
+				<div id="content">
+					<div id="submenu">
+						<a href="public/advert_1.html">广告主简介</a>　|　
+						<a href="public/advert_2.html">广告主加盟利益</a>　|　
+						<a href="public/advert_3.html">广告主操作流程</a>　|　
+						<a href="public/advert_4.html">服务过的客户</a>　|　
+						广告主注册
+					</div>
+					<div class="all_content">
+        				<div class="head2">
+          					<div class="title">
+            					<div class="big">基本信息</div>
+          					</div>
+
+							<t:form t:id="registrationForm">
+							<div><t:errors /></div>
+							    <table bordercolor="#ced5b1" cellSpacing="0" cellPadding="0" width="100%" border="0" class="list">
+								    <tr class="row1">
+								      	<td width="20%">
+								      		用户名:
+								      	</td>
+								      	<td width="33%">
+								      		<t:textfield value="name" t:id="name" maxlength="250" />
+								      	</td>
+								      	<td></td>
+								    </tr>
+								    <tr class="row1">
+								    	<td>
+								    		密码:
+								    	</td>
+								      	<td>
+											<t:passwordfield t:value="userPassword" t:id="userPassword"  maxlength="16" />
+								      	</td>
+								      	<td></td>
+								    </tr>
+								    <tr class="row1">
+								      	<td>
+								      		重复密码:
+								      	</td>
+								      	<td>
+								      		<t:passwordfield t:value="userRepassword" t:id="userRepassword"  maxlength="16" />
+								      	</td>
+								      	<td></td>
+								      	
+								    </tr>
+								    <tr class="row1">
+								      	<td width="10%">
+								      		用户邮箱:
+								      	</td>
+								      	<td width="10%">
+								      		<t:textfield t:value="email" t:id="email" maxlength="250" />
+								      	</td>
+								      	<td></td>
+								    </tr>
+								    <tr class="row1">
+								    	<td height="20" colspan="3"></td>
+								    </tr>
+								    <tr align="center" class="row1">
+								      	<td width="86%" colspan="3">
+											<input type="submit" t:type="submit" t:id="submitButton" value="注册" class="go" />
+											&nbsp;&nbsp;&nbsp;
+											<input type="reset" value="重置" class="cancel" />
+								        </td>
+								    </tr>
+							  	</table>
+							</t:form>
+						</div>
+					</div>
+				</div>
+			</div>
+  			<!--底部begin-->
+			<div id="bottom">
+				<p>
+					<a href="../">首页</a> :: 
+					<a href="public/about_us.html">关于我们</a> :: 
+					<a href="public/affiance_1.html">网站主</a> :: 
+					<a href="public/advert_1.html">广告主</a> :: 
+					<a href="public/faq_1.html">常见问题</a> :: 
+					<a href="http://bbs.clickvalue.cn/">联盟论坛</a> :: 
+					<a href="public/contact.html">联系我们</a> :: 
+					<a href="public/indexbugDevice.php">意见反馈</a> :: 
+					<a href="public/friend.html">友情链接</a> :: 
+					<a href="http://www.darwinmarketing.com">达闻营销</a>
+					<br />
+					Copyright © 2007 Darwin Marketing
+					<br />
+					沪ICP备06035438号
+				</p>
+    			<a href="../">
+    				<img src="assets/images/public/index2007/bottom_logo.gif" alt="达闻联盟营销LOGO" width="223" height="50" border="0" />
+    			</a>
+    		</div>
+			<!--底部end-->
+		</div>
+	</body>
+</html>

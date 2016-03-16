@@ -1,0 +1,15 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">      
+	<head>      
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>      
+		<title>Un Activated</title>
+		<link rel="stylesheet" href="${asset:context:/assets/base.css}" type="text/css" />
+	</head>  
+	<body>
+		<div id="msg">
+			<p>用户未激活，请先到您注册的邮箱中查收激活邮件，激活帐号，然后<a href="userlogin">重新登陆</a></p>
+			<hr/>
+			<p>如果没有收到激活码，请点击这里<t:actionlink t:id="refid">重发激活码</t:actionlink></p>
+		</div>
+	</body>
+</html>

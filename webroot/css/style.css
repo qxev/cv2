@@ -1,0 +1,104 @@
+/* CSS Document */
+* {
+margin:0;
+padding:0
+} 
+
+body {
+	margin:0px;
+	color: #A0505F;
+	line-height: 18px;
+	background-color:#EE7735;
+}
+#tab{
+	width:870px;
+	height:2179px;
+	background-color:#FCD463;
+	margin:auto;
+}
+#top{
+    width:870px;
+	height:417px;
+    float:left;
+}
+
+.top_t{
+    width:870px;
+	height:192px;
+	background-image:url(../images/newyear_cps_01.jpg);
+}
+.top_font{
+    width:870px;
+	height:186px;
+	float:left;
+	background-image:url(../images/newyear_cps_02.jpg);
+}
+.top_title{
+    width:307px;
+	height:39px;
+	float:left;
+	background-image:url(../images/newyear_cps_03.jpg);
+}
+
+#mid{
+    width:770px;
+	margin:0 auto;
+	height:auto;    
+
+}
+#form{
+	width:350px;
+	height:257px;
+	margin-left:10px;
+	margin-right:20px;
+	margin-top:10px;
+	float:left;
+	background-image:url(../images/newyear_cps_tab.jpg);
+	
+}
+#form_mid{
+    width:296px;
+	height:207px; 
+	margin-left:29px;
+	margin-top:23px;
+	text-align: center;
+}
+
+.from_tab_tit{
+    width:296px;
+    height:18px;
+	margin-bottom:6px;
+	text-align:left;
+	padding-left:5px;
+
+}
+.from_tab_font{
+	width:288px;
+	height:25px;
+}
+.from_tab_pic{
+    width:100%;
+	height:113px;
+}
+.from_tab_br{
+    width:288px;
+	height:12px;
+    margin-top:10px;
+	background:url(../images/newyear_cps_33.jpg) repeat-x;
+}
+.from_tab_button{
+    width:175px;
+	height:20px;
+	margin-top:4px;
+	margin-right:14px;
+	float:right;
+}
+
+
+#foot{
+    width:870px;
+	height:154px;
+	float:left;
+	background-image:url(../images/newyear_cps_146.jpg)
+    
+}

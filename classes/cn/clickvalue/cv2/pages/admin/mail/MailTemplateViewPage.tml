@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:admin.Layout t:pageTitle="CampaignList" t:navigation="邮件管理 > Email模板 > 新增" pageGroup="email_manage" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <body>
+    	<t:form t:id="form">
+	    	<table style="BORDER-COLLAPSE: collapse;width:80%" borderColor="#ced5b1" 
+	            cellSpacing="0" cellPadding="0" width="100%" border="1">
+				<tr>
+					<td class="green_bg" colspan="3"><strong>Email模板详细信息</strong></td>
+				</tr>
+				<tr>
+					<td class="greenwithe_bg">模板类型</td>
+					<td class="greenwithe">
+					    ${template.mailType.name}
+					</td>
+				</tr>
+				<tr>
+					<td class="greenwithe_bg">语言</td>
+					<td class="greenwithe">
+					    ${template.language}
+					</td>
+				</tr>
+				<tr>
+					<td class="greenwithe_bg">模板主题</td>
+					<td class="greenwithe">
+					    ${template.subject}
+					</td>
+				</tr>
+				<tr>
+					<td class="greenwithe_bg">模板内容</td>
+					<td class="greenwithe">
+						<t:OutputRaw value="template.body"></t:OutputRaw>
+					</td>
+				</tr>
+				<tr>
+					<td class="green_bg" colspan="2">
+						<input type="button" onclick="window.location.href='/admin/mail/mailTemplateListPage'" value="back" />
+					</td>
+				</tr>
+			</table>
+			
+		</t:form>
+    </body>
+</t:admin.Layout>

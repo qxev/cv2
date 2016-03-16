@@ -1,0 +1,57 @@
+<t:affiliate.Layout pageTitle="Iframe${message:advertisement}" pageGroup="campaign" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers">
+		<div class="title">${message:campaign}: ${campaign.name} > Iframe${message:advertisement}</div>
+		<t:form t:id="form" class="form">
+			<t:errors />
+			<table class="form_edit">
+				<tr>
+					<td>
+					</td>
+					<td>
+						<button t:type="t5components/Button" type="button" event="download" style="margin-right: 30px;">
+							点击下载Iframe模板页面
+						</button>
+					</td>
+					<td rowspan="5">
+						Iframe广告说明：<br/>
+				1．请先点击下载按钮，下载Iframe页面。<br/>
+                2．将页面上传到您的网站上，并记录iframe页面的url<br/>
+                3．制作iframe的head页面，并上传到您的网站上，记录下head的地址<br/>
+                4．填写head页面地址，iframe页面地址，和head页面的高度<br/>
+                5．点击获取广告代码.
+						
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Head页面地址
+					</td>
+					<td>
+						<input t:type="textfield" t:value="headUrl" size="50" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Iframe页面地址
+					</td>
+					<td>
+						<input t:type="textfield" t:value="siteUrl" size="50" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						head页面高度
+					</td>
+					<td>
+						<input t:type="textfield" t:value="headHeight" size="5" />
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3">
+						<t:SliderDoorSubmit form="form" value="${message:gain_ad'scode}"/>
+					</td>
+				</tr>
+			</table>
+		</t:form>
+	</div>
+</t:affiliate.Layout>

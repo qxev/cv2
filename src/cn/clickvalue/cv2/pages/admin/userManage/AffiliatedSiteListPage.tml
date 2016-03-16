@@ -1,0 +1,43 @@
+<t:admin.Layout pageTitle="加盟网站管理" pageGroup="affiliated" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers">
+		<div class="title">加盟网站 > 网站主审核</div>
+		<t:form class="form">
+			广告活动
+			<select t:type="select" value="campaign" model="campaignListSelectionModel" blankLabel="--请选择--" encoder="campaignListValueEncoder"/>	
+			网站主站点
+			<input t:type="textfield" t:id="siteName"/>
+			网站地址
+			<input t:type="textfield" t:id="url"/>
+			加入状态
+			<t:select t:id="verified" model="literal:=--请选择--,1=待审核,2=已批准,3=已拒绝"  blankOption="never"/>
+			<input t:id="search" t:type="submit" class="search" value="查询"/>
+			<input t:type="submit" value="报表导出" t:id="export"/>
+			<table t:id="myGrid" t:type="Grid" source="dataSource" row="campaignSite" model="beanModel" pagerPosition="literal:bottom" rowsPerPage="${noOfRowsPerPage}" style="width:100%;">
+				<t:parameter name="siteUrlCell">
+					<a href="${campaignSite.site.url}" target="_blank">${campaignSite.site.url}</a>
+				</t:parameter>
+				
+				<t:parameter name="verifiedCell">
+					${verifiedStatus}
+				</t:parameter>
+				
+				<t:parameter name="operateCell">
+					<select onchange="redirect(this)">
+						<option value="">--选择操作--</option>
+						<span t:type="t5components/Equals" left="prop:campaignsite.verified.toString()" right="literal:1">
+							<option value="/advertiser/affiliatedsitelistpage/apply/${campaignsite.id}" msg="确定批准?">批准</option>
+							<option value="/advertiser/affiliatedsitelistpage/refuse/${campaignsite.id}" msg="确定拒绝?">拒绝</option>
+						</span>
+						<span t:type="t5components/Equals" left="prop:campaignsite.verified.toString()" right="literal:2">
+							<option value="/advertiser/affiliatedsitelistpage/refuse/${campaignsite.id}" msg="确定拒绝?">拒绝</option>
+						</span>
+						<span t:type="t5components/Equals" left="prop:campaignsite.verified.toString()" right="literal:3">
+							<option value="/advertiser/affiliatedsitelistpage/apply/${campaignsite.id}" msg="确定批准?">批准</option>
+						</span>
+					</select>	
+				</t:parameter>
+			</table>
+				    
+		</t:form>
+	</div>
+</t:admin.Layout>

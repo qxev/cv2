@@ -1,0 +1,20 @@
+<t:admin.Layout t:pageTitle="Advertiser Deposit page" pageGroup="payment_report" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <head>
+        <title>Commission RuleList page</title>
+    </head>
+    <body>
+    	<div class="page_headers">
+    		<!-- 导航 -->
+			<div class="title">${message:commission_report} > ${message:advertiser_deposit}</div>
+	    	<t:form t:id="searchForm" class="form">
+	    		广告主:
+	    		<input t:type="autoCompleter" value="formAdvertiserName" source="advertiserNames" />
+	    		<input t:type="submit" value="查询" t:id="searchButton" />
+	    	</t:form>
+		</div>
+		<t:sliderdoor text="帐户充值" href="/admin/userManage/AdvertiserDepositAddPage" clear="true"/>
+		<table width="70%" t:id="myGrid" t:type="Grid" source="dataSource" row="advertiserDeposit" model="beanModel" pagerPosition="literal:bottom" rowsPerPage="${noOfRowsPerPage}">
+	    </table>
+	    
+    </body>
+</t:admin.Layout>

@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:admin.Layout t:pageTitle="pim adjustment list" t:navigation="积分机制 > 奖惩记录" pageGroup="pim" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<script type="text/javascript" src="/assets/fancybox/jquery.mousewheel-3.0.2.pack.js"></script>
+	<script type="text/javascript" src="/assets/fancybox/jquery.fancybox-1.3.1.js"></script>
+	<link rel="stylesheet" type="text/css" href="/assets/fancybox/jquery.fancybox-1.3.1.css" media="screen" />
+	<script type="text/javascript">
+		var $j = jQuery.noConflict();
+		$j(function(){
+			$j("#various1").fancybox({
+				'transitionIn'		: 'none',
+				'transitionOut'		: 'none'
+			});
+			$j("#various2").fancybox({
+				'transitionIn'		: 'none',
+				'transitionOut'		: 'none'
+			});
+			if($j(".t-error", "#uploaddiv").length){
+				$j("#various1").click();
+			}
+			if($j(".t-error", "#uploadeditdiv").length){
+				$j("#various2").click();
+			}
+		});
+	</script>
+	<div class="page_headers">
+		<!-- 快速查询表单 -->
+		<t:form t:id="searchForm" class="form">
+			<label for="formAffiliateName">网站主</label>
+			<t:textfield t:id="formAffiliateName" style="margin:0 5px 0 3px;" />
+			
+			<label for="datefield_1">时间</label>
+			<t:daterange t:dateBegin="formStartDate" t:dateEnd="formEndDate" t:showShortcut="false" t:readonly="false" style="margin:0 5px 0 3px;"/>
+		 	<t:submit id="search" value="查询" style="margin:0 0 0 5px;" />
+		</t:form>
+	</div>
+	<div><t:messagebanner t:id="message" type="type"/></div>
+	<!-- 新增按钮 -->
+	<div class="css_button">
+		<t:pagelink page="admin/pim/adjustmenteditpage" title="新增奖惩记录">新增奖惩记录</t:pagelink>
+	</div>
+	<!-- 上传按钮 -->
+	<div class="css_button">
+		<a id="various1" href="#uploaddiv" title="批量新增奖惩记录">批量新增奖惩</a>
+	</div>
+	<!-- 上传按钮 -->
+	<div class="css_button">
+		<a id="various2" href="#uploadeditdiv" title="批量编辑奖惩记录">批量编辑奖惩</a>
+	</div>
+	<!-- 记录导出按钮 -->
+	<div class="css_button">
+		<t:eventlink event="exportresult" title="导出奖惩记录">导出奖惩记录</t:eventlink>
+	</div>
+	<!-- 模板导出按钮 -->
+	<div class="css_button">
+		<t:eventlink event="exporttemplate" title="导出奖惩记录">导出Excel模板</t:eventlink>
+	</div>
+	<div class="clear"></div>
+	
+	<!-- grid -->
+	<div t:id="grid" style="width: 100%">
+		<t:parameter name="bonusValueCell">
+			${formatBonusValue}
+		</t:parameter>
+		<t:parameter name="operateCell">
+			<t:pagelink page="admin/pim/adjustmenteditpage" context="pimAdjustment.id">编辑</t:pagelink>
+		</t:parameter>
+	</div>
+	
+	<!-- 新增上传表单 -->
+	<div style="display: none;">
+		<div id="uploaddiv" style="width:400px;height:100px;overflow:auto;">
+			<t:form t:id="uploadForm" class="form">
+				<t:errors />
+				<label for="file">导入Excel</label>
+				<t:upload value="file" />
+			 	<t:submit id="upload" value="上传" style="margin:0 0 0 5px;" />
+			</t:form>
+		</div>
+	</div>
+	<!-- 编辑上传表单 -->
+	<div style="display: none;">
+		<div id="uploadeditdiv" style="width:400px;height:100px;overflow:auto;">
+			<t:form t:id="uploadEditForm" class="form">
+				<t:errors />
+				<label for="file">导入Excel</label>
+				<t:upload value="file" />
+			 	<t:submit id="uploadedit" value="上传" style="margin:0 0 0 5px;" />
+			</t:form>
+		</div>
+	</div>
+</t:admin.Layout>

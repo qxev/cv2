@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<t:affiliate.Layout t:pageTitle="pim overview" t:pageGroup="pim" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="content">
+      	<div class="page_headers">
+      		<div class="title">
+      			${message:points} &gt; ${message:pim_summary}
+			</div>
+			
+			<div class="form">
+			<table width="100%;">
+				<tr>
+					<td>
+						<label for="totalPoints">${message:total_points}:</label><span id="totalPoints" style="margin-right: 40px;">${totalPoints}</span>
+						<label for="grade">${message:pim_grade}:</label><span id="grade" style="margin-right: 40px;">${grade}</span>
+						<label for="rate">${message:pim_return_rate}:</label><span id="rate">${rate}%</span>
+					</td>
+				</tr>
+			</table>
+			</div>
+		</div>
+		
+		<div class="clear"></div>
+		<div style="width: 100%;">
+			<div class="page_headers">
+				<div class="title">${message:performance_points}</div>
+				<div class="form">
+					<table class="t-data-grid" style="width: 100%;">
+						<thead>
+							<tr>
+								<th>${message:campaign}</th>
+								<th>${message:website}</th>
+								<th>${message:points}</th>
+								<th>${message:bonus_date}</th>
+								<th>${message:confirm_rate}</th>
+								<th>${message:Commission_match_starting_time1}</th>
+								<th>${message:Commission_match_ending_time1}</th>
+								<th>${message:Commission_before_confirmed}</th>
+								<th>${message:Commission_after_confirmed}</th>
+							</tr>
+						</thead>
+						
+						<tr t:id="pimReportDatasLoop">
+							<td>${pimReportData.campaign.name}</td>
+							<td>${pimReportData.site.name}</td>
+							<td>${pimReportData.points}</td>
+							<td>${dateformat:pimReportData.bonusDate}</td>
+							<td>${pimReportData.confirmRate}</td>
+							<td>${dateformat:pimReportData.startDate}</td>
+							<td>${dateformat:pimReportData.endDate}</td>
+							<td>${pimReportData.commission}</td>
+							<td>${pimReportData.confirmedCommission}</td>
+						</tr>
+					</table>
+					<table style="width: 100%; padding-top: 10px">
+						<tr>
+							<td></td>
+							<td style="width:60px;">
+								<a href="/affiliate/pimperformancelistpage">${message:show_all}</a>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>	
+		</div>
+		<div style="width: 100%;">
+			<div class="page_headers">
+				<div class="title">${message:bonus_points}</div>
+				<div class="form">
+					<table class="t-data-grid" style="width: 100%;">
+						<thead>
+							<tr>
+								<th>${message:points}</th>
+								<th>${message:Reward_and_punishment_reason}</th>
+								<th>${message:date}</th>
+							</tr>
+						</thead>
+						
+						<tr t:id="pimBonusLoop">
+							<td>${formatBonusValue}</td>
+							<td>${pimBonu.description}</td>
+							<td>${pimBonu.createdAt}</td>
+						</tr>
+					</table>
+					<table style="width: 100%; padding-top: 10px">
+						<tr>
+							<td></td>
+							<td style="width:60px;">
+								<a href="/affiliate/pimbonuslistpage">${message:show_all}</a>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>	
+		</div>
+	</div>
+	<div style="clear: both;"> </div>
+</t:affiliate.Layout>

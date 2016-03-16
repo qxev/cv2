@@ -1,0 +1,130 @@
+<t:advertiser.Layout pageTitle="${addOrEdit}" pageGroup="campaign"  xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers" style="width:600px;">
+		<div class="title">${message:campaign} > ${addOrEdit}</div>
+		
+		<t:if test="campaign">
+			<t:form class="form" t:id="campaignForm">
+				<t:errors />
+				<table class="form_edit">
+					<tr class="rowodd">
+						<td class="field_name">${message:campaign_name}<span class="red_star">*</span></td>
+						<td class="field_value">
+							<t:if test="campaign.actived">
+								${campaign.name}
+								<t:parameter name="else">
+		 							<input t:type="textfield" t:value="Campaign.name" size="30"/>
+		 						</t:parameter>
+	 						</t:if>
+						</td>
+					</tr>
+			
+					<tr class="roweven">
+						<td class="field_name">${message:website}<span class="red_star">*</span></td>
+						<td class="field_value">
+							<t:if test="campaign.actived">
+								${campaign.site.name}
+								<t:parameter name="else">
+									<select t:type="select" value="site" model="siteListSelectionModel" encoder="siteListValueEncoder" blankLabel="${message:select}" />
+		 						</t:parameter>
+	 						</t:if>
+						</td>
+					</tr>
+			
+					<tr class="rowodd">
+						<td class="field_name">${message:description}<span class="red_star">*</span></td>
+						<td class="field_value">
+							<textarea t:id="editor" t:value="Campaign.description" width="100%">Blub</textarea>
+						</td>
+					</tr>
+					
+					<tr class="roweven">
+						<td class="field_name">${message:region}<span class="red_star">*</span></td>
+						<td class="field_value">
+							<t:if test="campaign.actived">
+								${campaign.region}
+								<t:parameter name="else">
+									<t:common.CAdRegion/>
+		 						</t:parameter>
+	 						</t:if>
+						</td>
+					</tr>
+			
+					<tr class="rowodd">
+						<td class="field_name">${message:industry_category}<span class="red_star">*</span></td>
+						<td class="field_value">
+							<t:industryForCampaignSelect value="industry" displayModel="literal:both" />
+						</td>
+					</tr>
+					
+					<tr class="roweven">
+						<td class="field_name">${message:cookies_limit}<span class="red_star">*</span></td>
+						<td class="field_value">
+							<t:if test="campaign.actived">
+								${campaign.cookieMaxage} ${message:day}
+								<t:parameter name="else">
+									<input t:type="textfield" size="3" value="Campaign.cookieMaxage" />${message:day}
+		 						</t:parameter>
+	 						</t:if>
+						</td>
+					</tr>
+				
+					<tr class="rowodd">
+						<td class="field_name">${message:verification_way}<span class="red_star">*</span></td>
+						<td class="field_value">
+							<t:if test="campaign.actived">
+								<t:if test="campaign.affiliateVerified">
+									${message:automatic}
+									<t:parameter name="else">
+										${message:artificial}
+									</t:parameter>
+								</t:if>
+								<t:parameter name="else">
+									<t:radiogroup  value="campaign.affiliateVerified">
+										<t:radio value="0" />${message:artificial}
+										<t:radio value="1" />${message:automatic}
+									</t:radiogroup>
+		 						</t:parameter>
+	 						</t:if>
+						</td>
+					</tr>
+					
+					<tr class="roweven">
+						<td class="field_name">${message:begin_time}<span class="red_star">*</span></td>
+						<td class="field_value">
+							<t:if test="campaign.actived">
+								${dateformat:campaign.startDate}
+								<t:parameter name="else">
+									<input size="10" t:type="datefield" t:value="Campaign.startDate" readonly="readonly" />
+		 						</t:parameter>
+	 						</t:if>
+						</td>
+					</tr>
+			
+					<tr class="rowodd">
+						<td class="field_name">${message:end_time}<span class="red_star">*</span></td>
+						<td class="field_value">
+							<t:if test="campaign.actived">
+								${dateformat:campaign.endDate}
+								<t:parameter name="else">
+									<input size="10" t:type="datefield" t:value="Campaign.endDate" readonly="readonly" />
+		 						</t:parameter>
+	 						</t:if>
+						</td>
+					</tr>
+			
+					<tr class="roweven">
+						<td colspan="2" style="text-align:center;">
+							<input type="submit" t:type="submit" t:id="saveCampaign" value="${message:save_and_back_list}" class="button_margin"/>
+							<input type="submit" t:type="submit" t:id="saveAndAddRule" value="${message:preserves_and_increases_commission_rule}" class="button_margin"/>
+							<button t:type="commons/button">${message:cancel}</button>
+						</td>
+					</tr>
+				</table>
+			</t:form>
+		</t:if>
+		
+		<t:unless test="campaign">
+			${message:has_no_right_to_revise_advertizing_information}
+		</t:unless>
+	</div>
+</t:advertiser.Layout>

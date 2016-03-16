@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:admin.Layout pageTitle="CampaignList" navigation="广告主管理" pageGroup="system" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<body>
+		<t:form t:id="searchForm">
+			<t:sliderdoor text="新增公告" href="/admin/bulletin/editpage" clear="true"/>
+			<table width="60%"
+	             t:id="myGrid" t:type="Grid" source="dataSource" row="bulletin" model="beanModel" pagerPosition="literal:bottom" rowsPerPage="${noOfRowsPerPage}">
+	             <t:parameter name="typeCell">
+	             	${type}
+	             </t:parameter>
+	             <t:parameter name="operateCell">
+	             	<select onchange="redirect(this);">
+	             		<option value="">--选择操作--</option>
+	             		<option value="/admin/bulletin/viewpage/${bulletin.id}">查看</option>
+	             		<option value="/admin/bulletin/editpage/${bulletin.id}">编辑</option>
+	             	</select>
+	             </t:parameter>
+			</table>
+		</t:form>
+	</body>
+</t:admin.Layout>

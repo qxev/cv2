@@ -1,0 +1,8 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div>${text}</div>
+	<t:form t:id="form">
+	<t:errors/>
+		<t:textfield t:id="text" />
+		<t:submit />
+	</t:form>
+</html>

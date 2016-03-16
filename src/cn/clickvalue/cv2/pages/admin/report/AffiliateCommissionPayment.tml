@@ -1,0 +1,48 @@
+<t:admin.Layout t:pageTitle="Commission History page" pageGroup="payment_report" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<style type="text/css">
+	table.t-data-grid tbody tr td.checkbox {
+		text-align:center;
+	}
+</style>
+	<div class="page_headers">
+		<!-- 导航 -->
+		<div class="title">${message:commission_report} > ${message:commission_payment}</div>
+    	<t:form t:id="searchForm" class="form">
+    		网站主:
+    		<input t:type="autoCompleter" value="formAffiliateName" source="affiliateNames" />
+    		<input t:type="submit" value="查询" t:id="searchButton" />
+    		<t:if test="applyDay">
+	    		<span style="color: green;">每月的18号到23号是网站主申请佣金支付的时间，这期间不能做支付和导出</span>
+    		</t:if>
+    		<t:unless test="applyDay">
+    			<t:unless test="runTaxSuccess">
+					<input type="button" value="算税" onclick="window.location.href='/admin/report/affiliatecommissionpayment:runTax'" />
+				</t:unless>
+				<t:if test="runTaxSuccess">
+	    			<input t:type="submit" value="报表导出" t:id="export"/>
+	    		</t:if>
+    		</t:unless>
+    	</t:form>
+	</div>
+	<t:form t:id="grid">
+	<div><t:errors /></div>
+		<table width="100%" t:id="myGrid" t:type="Grid" source="dataSource" row="commissionExpense" model="beanModel" pagerPosition="literal:bottom" rowsPerPage="${noOfRowsPerPage}">
+			<t:parameter name="checkboxheader">
+				<input t:type="checkbox" t:id="chkall" onclick="checkAll(this.form)"/>
+			</t:parameter>
+			<t:parameter name="checkboxCell">
+				<t:checkbox t:id="checkbox" value="checked" />
+			</t:parameter>
+			<t:parameter name="accountNameCell">
+				${accountName}
+			</t:parameter>
+	    </table>
+	    <div>
+    		<t:unless test="applyDay">
+    			<t:if test="runTaxSuccess">
+    				<input t:type="submit" t:id="batchpay" value="批量支付" />
+    			</t:if>
+    		</t:unless>
+	    </div>
+	</t:form>
+</t:admin.Layout>

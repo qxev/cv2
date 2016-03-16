@@ -1,0 +1,77 @@
+﻿<t:affiliate.Layout t:pageTitle="${editOrAdd}" t:pageGroup="account" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers" style="width: 500px;">
+		<div class="title">${message:user_management} > ${editOrAdd}</div>
+		
+			<form t:type="form" t:id="editSiteForm" class="form">
+				<t:errors />
+				<t:if test="site">
+					<table class="form_edit">
+						<tr class="rowodd">
+							<td class="field_name">${message:User_Name}</td>
+							<td class="field_value">
+								${clientSession.userName}
+							</td>
+						</tr>
+				
+						<tr class="roweven">
+							<td class="field_name">${message:website}<span class="red_star">*</span></td>
+							<td class="field_value">
+								<input t:id="siteName" />
+							</td>
+						</tr>
+				
+						<tr class="rowodd">
+							<td class="field_name">URL<span class="red_star">*</span></td>
+							<td class="field_value">
+								<input t:id="siteUrl" />
+							</td>
+						</tr>
+				
+						<tr class="roweven">
+							<td class="field_name">${message:description}<span class="red_star">*</span></td>
+							<td class="field_value">
+								<input t:id="siteDescription" />
+							</td>
+						</tr>
+				
+						<tr class="rowodd">
+							<td class="field_name">Logo</td>
+							<td class="field_value">
+								<input t:id="file" style="float:left;margin-top:5px;"/>
+								<t:if test="site.logo">
+									<img src="${site.logo}" height="30" width="60" style="float:right;margin-right:20px;"/>
+								</t:if>						
+							</td>
+						</tr>
+				
+						<tr class="roweven">
+							<td class="field_name">${message:Self-assessment_daily_flow}</td>
+							<td class="field_value">
+								<t:select t:id="pvPerDay" value="site.pvPerDay"  model="literal:0= 0 - 100,1=101 - 500,2=501 - 2000,3=2001 - 5000,4=5001 - 10000,5=10001-100000,6=1000000-"  blankOption="never" /> pv/day
+							</td>
+						</tr>
+						
+						<tr class="rowodd">
+							<td class="field_name">${message:Categories}</td>
+							<td class="field_value">
+								<div style="display: block;">
+									<span style="color:green;">(${message:You_can_only_choose_at_most_five_kinds})</span>
+									<t:common.affiliateCategoryRegion />
+								</div>
+							</td>
+						</tr>
+						
+						<tr class="roweven">
+							<td colspan="2" style="text-align: center;">
+								<button type="submit" class="button_margin">${message:submit}</button>
+								<button t:type="t5components/Button"> ${message:back} </button>
+							</td>
+						</tr>		
+					</table>
+					<t:parameter name="else">
+						${message:the_site_does_not_exist}
+					</t:parameter>
+				</t:if>
+			</form>
+	</div>
+</t:affiliate.Layout>

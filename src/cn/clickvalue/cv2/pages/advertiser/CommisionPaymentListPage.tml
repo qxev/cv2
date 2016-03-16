@@ -1,0 +1,30 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:advertiser.Layout pageTitle="${message:payment_of_commission_history}" pageGroup="paymentReport"  xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+<p class="welcome">${message:payment_of_commission_history}</p>
+
+<div class="page_headers">
+	<div class="title">${message:remaining_money}:<font color="red">${balances}</font>${message:yuan}</div>
+<div class="form">
+	<table t:id="myGrid" t:type="Grid" source="dataSource" row="campaignHistory" model="beanModel" pagerPosition="literal:bottom" rowsPerPage="${noOfRowsPerPage}">
+		
+	 <t:parameter name="startDateCell">
+        	${dateformat:campaignHistory.startDate}
+     </t:parameter>
+        
+     <t:parameter name="endDateCell">
+        	${dateformat:campaignHistory.endDate}
+     </t:parameter>
+     
+     <t:parameter name="confirmDateCell">
+        	${dateformat:campaignHistory.confirmDate}
+     </t:parameter>	
+     
+    </table>
+
+</div>
+</div>
+  
+
+</t:advertiser.Layout>

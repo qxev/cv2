@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<head>      
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>      
+		<title>Action Result Messages</title>
+		<link rel="stylesheet" href="${asset:context:/assets/base.css}" type="text/css" />
+	</head>  
+	<body>
+		<div id="msg">
+			<p>${message:operation_message}</p>
+			<hr/>
+			<p>${message}</p>
+			<p>${second} 秒钟后自动重定向到 <a href="${target}" >${nextPage}</a> 页面。</p>
+		</div>
+		<script type="text/javascript">
+			 setTimeout(function(){location.href="${target}";}, ${second} * 1000);
+		</script>
+		<div style="display: none;">
+			<t:outputraw value="hidden" />
+		</div>
+	</body>   
+</html>

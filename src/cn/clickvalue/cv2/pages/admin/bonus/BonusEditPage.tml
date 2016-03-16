@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:admin.Layout t:pageTitle="BonusEditPage" pageGroup="payment_report" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<script language="javascript" src="/assets/javascripts/commissionLadder.js"></script>
+	<div class="page_headers">
+		<div class="title">奖惩记录 > 修改</div>
+	</div>
+	<t:form t:id="form">
+	<t:errors />
+		<table width="50%">
+			<tr class="roweven">
+				<td>网站主</td>
+				<td>${bonu.user.name}</td>
+			</tr>
+			<tr class="rowodd">
+				<td>广告活动</td>
+				<td>${bonu.campaign.name}</td>
+			</tr>
+			<tr class="roweven">
+				<td>奖惩</td>
+				<td>
+					<t:radiogroup t:id="sign">
+						<t:radio value="1"  onclick="showOrHidenByRadio(this,'bonusValue',this.value==0)" />奖励
+						<t:radio value="-1"  onclick="showOrHidenByRadio(this,'bonusValue',this.value==0)" />惩罚
+						<!--<t:radio t:id="clear" value="0" onclick="showOrHidenByRadio(this,'bonusValue',this.value==0)" />佣金清零-->
+					</t:radiogroup>
+					<t:textfield t:id="bonusValue" />元(<span style="color:red;">只接受正数</span>)
+				</td>
+			</tr>
+			<tr class="rowodd">
+				<td>描述</td>
+				<td>
+					<t:textarea value="bonu.description" cols="40" rows="8"/>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align:right;">
+					<t:submit t:id="modify" value="修改" style="margin:0 20px 0 0;" />
+					<input type="button" value="返回" onclick="window.location.href='/admin/bonus/listpage'" style="margin:0 100px 0 0;" />
+				</td>
+			</tr>
+		</table>
+	</t:form>
+</t:admin.Layout>

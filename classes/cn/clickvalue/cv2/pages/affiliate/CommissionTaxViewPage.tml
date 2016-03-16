@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:affiliate.Layout t:pageTitle="${message:tax_record}" pageGroup="paymentReport" access="access" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+	<div class="page_headers">
+		<!-- ${message:Guidance} -->
+		<div class="title">${message:tax_record}</div>
+	
+	</div>
+	
+	<!-- ${message:The_inquiry_result_demonstrates} -->
+	<div style="width:100%;" t:id="myGrid" t:type="Grid" source="dataSource" row="commissionExpense" model="beanModel" rowsPerPage="${noOfRowsPerPage}" pagerPosition="literal:bottom">
+		
+		<!-- 
+		<t:parameter name="paidCell">
+			${paid:bonu.paid}
+		</t:parameter>
+		 -->
+	</div>
+	<div>
+		<span>${message:ID_card}:</span><span style="margin: 0 20px 0 10px;">${commissionTax.idCardNumber}</span>
+		<span>${message:the_final_commision}:</span><span style="margin: 0 20px 0 10px;">${commissionTax.commission}</span>
+		<span>${message:tax}:</span><span style="margin: 0 20px 0 10px;">${commissionTax.personTax}</span>
+	</div>
+	<div style="margin-top:5px; text-align: right;">
+		<input type="button"  onclick="window.history.go(-1);" value="${message:return_to}" style="margin-right: 10px;"/>
+	</div>
+</t:affiliate.Layout>

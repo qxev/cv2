@@ -1,0 +1,3 @@
+<t:advertiser.Layout t:pageTitle="${message:personal_password_modify}" t:pageGroup="account" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<t:passwordEdit />
+</t:advertiser.Layout>

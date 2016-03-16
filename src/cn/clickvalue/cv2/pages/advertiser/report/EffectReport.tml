@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:advertiser.Layout t:pageTitle="${message:effect_report}" t:pageGroup="resultReport" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers">
+		<div class="title">${message:effect_report} > ${message:search}</div>
+		
+		   <br/>
+			<div align="center">
+				${message:effect_report_des1}<br/>
+				${message:effect_report_des2}
+			</div>
+			<br/>
+			
+		<t:form t:id="reportForm">
+			<t:errors />
+			<div class="">
+				
+					<table border="0" cellspacing="0" cellpadding="1" width="60%" align="center">
+						<tbody>
+						<tr>
+							<td>
+								<table border="1" cellspacing="0" cellpadding="1" width="100%">
+						<tbody>
+								<tr>
+								<td class="td_title">${message:summary_type}</td>
+								<td>
+									<div align="left">
+										<t:radiogroup t:value="summaryType">
+											<t:radio value="0" />${message:effect_report_date}
+											<t:radio value="1" />${message:effect_report_action}
+								  		</t:radiogroup>
+							  		</div>
+					  			</td>
+					    	</tr>
+					    		<tr>
+				       			<td class="td_title">${message:campaigns}</td>	
+				       			<td>
+				       				<div align="left">
+				       					<select t:type="select" value="campaignId" model="campaignModel" blankLabel="${message:select}" />
+				       				</div>
+				      			</td>
+				      		</tr>
+				      		<tr>
+				      			<td class="td_title">${message:publisher}</td>
+				      			<td>
+				      				<div align="left">
+				      					<select t:type="select" value="siteId" model="siteModel" blankLabel="${message:select}"  />
+				      				</div>	
+						    	</td>
+							</tr>
+					    
+							<tr>
+								<td class="td_title">${message:date}</td>
+								<td>
+									<div align="left">
+					       				<t:daterange t:dateBegin="dateBegin" t:dateEnd="dateEnd" />
+				       				</div>
+				       			</td>
+				       		</tr>
+				       		<tr>
+					    		<td class="td_title">${message:filter}</td>
+					    		<td>
+					    			<div align="left">
+										<t:checkbox t:id="filterByCampaign" /> ${message:according}${message:campaigns}
+										<t:checkbox t:id="filterBySite" /> ${message:according}${message:publisher}
+									</div>
+								</td>	
+							</tr>
+						
+					    </tbody>	
+				 	</table>
+							</td>	
+							<td width="50" valign="middle" align="center">
+								<div align="center">
+									<input type="submit" value="${message:submit}" />
+								</div>	
+							</td>	
+						</tr>
+						</tbody>
+					</table>
+		 	</div>
+		</t:form>
+		
+		<div style="height:40px;">
+		</div>
+			
+		<div class="form">
+			<div class="table_clear">
+						<table cellspacing="5" cellpadding="0" border="0">
+							<tbody>
+								<tr>
+							    	<td><b>${message:commission_summary}:&nbsp;&nbsp;<font color="green">${totalMoney}${message:yuan}</font><t:if test="${ognl:isNotZero(confirmedTotalMoney)}"><span class="blue">(${confirmedTotalMoney})${message:yuan}</span></t:if></b></td>
+						        </tr>
+					        	<tr>
+					        		<td>${message:impressions}:&nbsp;&nbsp;${CpmSum}<t:if test="${ognl:isNotZero(confirmedCpmSum)}"><span class="blue">(${confirmedCpmSum})</span></t:if></td>
+							    	<td>${message:clicks}:&nbsp;&nbsp;${cpcSum}<t:if test="${ognl:isNotZero(confirmedCpcSum)}"><span class="blue">(${confirmedCpcSum})</span></t:if></td>	
+							    	<td>${message:leads}:&nbsp;&nbsp;${cplSum}<t:if test="${ognl:isNotZero(confirmedCplSum)}"><span class="blue">(${confirmedCplSum})</span></t:if></td>	
+							    	<td>${message:sales}:&nbsp;&nbsp;${cpsSum}<t:if test="${ognl:isNotZero(confirmedCpsSum)}"><span class="blue">(${confirmedCpsSum})</span></t:if></td>	
+							    </tr>	
+							    <tr>
+							       	<td>CPM${message:commission}:&nbsp;&nbsp;${CpmMoney}${message:yuan}<t:if test="${ognl:isNotZero(confirmedCpmMoney)}"><span class="blue">(${confirmedCpmMoney})${message:yuan}</span></t:if></td>
+							    	<td>CPC${message:commission}:&nbsp;&nbsp;${cpcMoney}${message:yuan}<t:if test="${ognl:isNotZero(confirmedCpcMoney)}"><span class="blue">(${confirmedCpcMoney})${message:yuan}</span></t:if></td>	
+							    	<td>CPL${message:commission}:&nbsp;&nbsp;${cplMoney}${message:yuan}<t:if test="${ognl:isNotZero(confirmedCplMoney)}"><span class="blue">(${confirmedCplMoney})${message:yuan}</span></t:if></td>	
+							    	<td>CPS${message:commission}:&nbsp;&nbsp;${cpsMoney}${message:yuan}<t:if test="${ognl:isNotZero(confirmedCpsMoney)}"><span class="blue">(${confirmedCpsMoney})${message:yuan}</span></t:if></td>	
+							    </tr>	
+						    </tbody>
+						</table>	
+			</div>
+		</div>		
+		
+		<div t:id="grid" style="width:100%;">
+		
+			<t:parameter name="siteUrlCell">
+				<a href="${report.siteUrl}" target="_blank">${report.siteUrl}</a>
+			</t:parameter>
+			
+			<t:parameter name="sumCpmCountOldCell">
+				${report.sumCpmCountOld} <t:if test="${ognl:isNotZero(report.sumCpmCountNew)}"><font color="blue">(${report.sumCpmCountNew})</font></t:if>
+			</t:parameter>
+					
+			<t:parameter name="CpmCommisionOldCell">
+				${report.CpmCommisionOld} <t:if test="${ognl:isNotZero(report.CpmCommisionNew)}"><font color="blue">(${report.CpmCommisionNew})</font></t:if>
+			</t:parameter>
+			
+			<t:parameter name="sumCpcCountOldCell">
+				${report.sumCpcCountOld} <t:if test="${ognl:isNotZero(report.sumCpcCountNew)}"><font color="blue">(${report.sumCpcCountNew})</font></t:if>
+			</t:parameter>
+					
+			<t:parameter name="cpcCommisionOldCell">
+				${report.cpcCommisionOld} <t:if test="${ognl:isNotZero(report.cpcCommisionNew)}"><font color="blue">(${report.cpcCommisionNew})</font></t:if>
+			</t:parameter>
+					
+			<t:parameter name="sumCplCountOldCell">
+				${report.sumCplCountOld} <t:if test="${ognl:isNotZero(report.sumCplCountNew)}"><font color="blue">(${report.sumCplCountNew})</font></t:if>
+			</t:parameter>
+					
+			<t:parameter name="cplCommisionOldCell">
+				${report.cplCommisionOld} <t:if test="${ognl:isNotZero(report.cplCommisionNew)}"><font color="blue">(${report.cplCommisionNew})</font></t:if>
+			</t:parameter>
+					
+			<t:parameter name="sumCpsCountOldCell">
+				${report.sumCpsCountOld} <t:if test="${ognl:isNotZero(report.sumCpsCountNew)}"><font color="blue">(${report.sumCpsCountNew})</font></t:if>
+			</t:parameter>
+					
+			<t:parameter name="cpsCommisionOldCell">
+				${report.cpsCommisionOld} <t:if test="${ognl:isNotZero(report.cpsCommisionNew)}"><font color="blue">(${report.cpsCommisionNew})</font></t:if>
+			</t:parameter>
+					
+			<t:parameter name="sumDarwcommisionTotalOldCell">
+				${report.sumDarwcommisionTotalOld} <t:if test="${ognl:isNotZero(report.sumDarwcommisionTotalNew)}"><font color="blue">(${report.sumDarwcommisionTotalNew})</font></t:if>
+			</t:parameter>
+					
+			<t:parameter name="totalCommisionOldCell">
+				${report.totalCommisionOld} <t:if test="${ognl:isNotZero(report.totalCommisionNew)}"><font color="blue">(${report.totalCommisionNew})</font></t:if>
+			</t:parameter>
+		</div>
+	</div>
+</t:advertiser.Layout>

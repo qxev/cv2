@@ -1,0 +1,52 @@
+<t:advertiser.Layout pageTitle="${message:establish_commission_rule}" pageGroup="campaign" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<script language="javascript" src="/assets/javascripts/commisionrule.js"></script>
+	<div class="page_headers" style="width:600px;">
+		<div class="title">${message:campaign}: <a href="/advertiser/campaignviewpage/${campaign.id}">${campaign.name}</a> > ${message:new} ${message:commision_rule}</div>
+		<t:form class="form" t:id="commisionRuleForm">
+			<t:errors />
+			<table class="form_edit">
+				<tr class="rowodd">
+					<td class="field_name">${message:campaign_name}</td>
+					<td class="field_value">
+						<a href="/advertiser/campaignviewpage/${campaign.id}">${campaign.name}</a>
+					</td>
+				</tr>
+				
+				<tr class="roweven">
+					<td class="field_name">${message:commision_type}<span class="red_star">*</span><br/>
+						${message:publisher_commision}
+					</td>
+					<td class="field_value">
+						<t:select value="commissionRule.ruleType"  model="literal:100=CPC,101=CPL,102=CPS,105=CPM" blankLabel="${message:select_ad_type}" onchange="changeDiv()" />
+						<div id="style1" style="display:none">
+							<t:select value="CommissionRule.commissionType" t:id="valueType" model="1=${message:fixed_value},2=${message:percentage}" blankOption="never" />
+							<input t:type="textfield" t:value="CommissionRule.commissionValue" size="30" />
+						</div>
+					</td>
+				</tr>
+				
+				<tr class="rowodd">
+					<td class="field_name">${message:darwin_commision}<span class="red_star">*</span></td>
+					<td class="field_value">
+						<input size="35" t:type="textfield" t:value="CommissionRule.darwinCommissionValue"/>
+					</td>
+				</tr>
+				
+				<tr class="roweven">
+					<td class="field_name">${message:description}<span class="red_star">*</span></td>
+					<td class="field_value">
+						<t:textarea t:value="CommissionRule.description" cols="40" rows="8"/>
+					</td>
+				</tr>
+				
+				<tr class="rowodd">
+					<td colspan="2" style="text-align:center;">
+						<input type="submit" t:type="submit" t:id="saveRule" value="${message:save_and_back_list}" class="button_margin"/>
+						<input type="submit" t:type="submit" t:id="saveAndAddLandingPage" value="${message:save_the_page_and_add_advertising_objectives}" class="button_margin"/>
+						<button t:type="commons/button">${message:cancel}</button>
+					</td>
+				</tr>
+			</table>
+		</t:form>
+	</div>
+</t:advertiser.Layout>

@@ -1,0 +1,22 @@
+<t:admin.Layout pageTitle="佣金匹配报表导出" pageGroup="commission_match" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<t:form t:id="excelOutput">
+<table border="1" cellspacing="0" cellpadding="1" width="80%">
+	<tr>
+		<t:errors />
+		<td class="td_title">选择日期</td>
+		<td>
+			<input t:id="startDate" />
+       		至<input t:id="endDate" /> 
+       	</td>
+       	<td class="td_title">广告活动</td>
+       	<td>
+       		DGM
+       	</td>
+       	<td>
+       		<input type="submit" value="导出报表"/>
+   		</td>
+   	</tr>
+</table>
+</t:form>
+
+</t:admin.Layout>

@@ -1,0 +1,4 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd"> 
+	<a href="#" t:type="actionLink" t:id="chinese" style="margin-right: 10px; line-height: 22px;">中文</a>
+	<a href="#" t:type="actionLink" t:id="english">english</a>
+</html>

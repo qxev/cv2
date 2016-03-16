@@ -1,0 +1,105 @@
+<t:advertiser.Layout pageTitle="${message:campaign_details}" pageGroup="campaign" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers">
+		<t:if test="campaign">
+			<div class="title"> ${message:campaign}: ${campaign.name} > ${message:campaign_details} </div>
+			<div class="form">
+		    	<table style="width:100%;">
+					<tr class="rowodd">
+						<td style="width: 15%; white-space: nowrap;">${message:ad_campaign_name}</td>
+						<td>
+						    ${campaign.name} 
+						</td>
+					</tr>
+					<tr class="roweven">
+						<td>${message:campaign_introduction}</td>
+						<td>
+						    <t:outputraw value="campaign.description"/> 
+						</td>
+					</tr>
+					<tr class="rowodd">
+						<td>${message:the_advertisement_goal_page_counts}</td>
+						<td>
+						    ${bannerCount}
+						</td>
+					</tr>
+					<tr class="roweven">
+						<td>${message:the_commission_rule_counts}</td>
+						<td>
+						    ${commissionRuleList.size()} 
+						</td>
+					</tr>
+					<tr class="rowodd">
+						<td>${message:application_condition}</td>
+						<td>
+						    ${ognl:@cn.clickvalue.cv2.common.constants.Constants@formatVerified(messages, campaign.verified)} 
+						</td>
+					</tr>
+					<tr class="roweven">
+						<td>${message:verification_way}</td>
+						<td>
+						    ${affiliateVerified}
+						</td>
+					</tr>
+					<tr class="rowodd">
+						<td>COOKIE${message:deadline}</td>
+						<td>
+						    ${campaign.cookieMaxage} 天
+						</td>
+					</tr>
+					<tr class="roweven">
+						<td>${message:the_advertisement_puts_in_region}</td>
+						<td>
+						    ${campaign.region} 
+						</td>
+					</tr>
+					<tr class="rowodd">
+						<td>${message:industry_category}</td>
+						<td>
+						    ${industry}
+						</td>
+					</tr>
+					<tr class="roweven">
+						<td>${message:outset_date}</td>
+						<td>
+						    ${dateformat:campaign.startDate} 
+						</td>
+					</tr>
+					<tr class="rowodd">
+						<td>${message:end_date}</td>
+						<td>
+						    ${dateformat:campaign.endDate} 
+						</td>
+					</tr>
+				</table>
+			</div>
+			<!-- commission start -->
+			<div class="page_headers">	
+				<div class="title"> <a href="/advertiser/commisionrulelistpage/${campaign.id}">${message:commission_rule}</a> </div>
+				<div class="form">
+					<t:grid source="commissionRuleList" row="commissionRule"  model="beanModel">
+						<t:parameter name="ruleTypeCell">
+							${ognl:@cn.clickvalue.cv2.common.constants.Constants@formatCommissionType(commissionRule)} 
+						</t:parameter>
+					</t:grid>
+				</div>
+		
+				<t:form id="form">
+					<span t:type="t5components/Equals" left="prop:campaign.verified.toString()" right="literal:2">
+						<t:SliderDoor text="${message:review_the_main_site}" href="/advertiser/AffiliateListPage/${campaign.id}"/>
+					</span>
+					<span t:type="t5components/Equals" left="prop:campaign.verified.toString()" right="literal:0">
+						<t:SliderDoorSubmit value="${message:submit_apply}"/>
+					</span>
+					<t:SliderDoor text="${message:back}" href="/advertiser/campaignlistpage" clear="true"/>
+				</t:form>
+			</div>
+			<!-- commission end -->
+		</t:if>
+		<t:unless test="campaign">
+			${message:does_not_have_the_right_to_visit_this_ad_campaign}
+		</t:unless>
+	</div>
+	<!-- campaign end -->
+	
+	
+</t:advertiser.Layout>

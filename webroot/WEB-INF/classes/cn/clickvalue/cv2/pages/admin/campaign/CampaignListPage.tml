@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:admin.Layout t:pageTitle="CampaignList" t:navigation="${message:campaign_manage} > ${message:campaigns}" pageGroup="campaign" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <body>
+    	<script language="javascript" src="/assets/javascripts/menu.js"></script>
+    	
+    	<div class="form">
+	    	<t:form t:id="searchForm">
+	    		广告主名称:
+	    		<input t:type="autoCompleter" value="formAdvertiserName" source="advertiserNames" />
+	    		广告活动名称:
+	    		<input t:type="autoCompleter" value="formCampaignName" source="campaignNames"/>
+	    		行业类型:
+	    		<t:industryForCampaignSelect value="formIndustry" displayModel="literal:main" blankOption="ALWAYS" blankLabel="全部"/>
+	    		申请状态:
+	    		<select t:type="select" value="formVerified" model="verifiedsSelectionModel" encoder="verifiedsValueEncoder" blankLabel="所有状态"/>
+	    		<input t:type="submit" value="查询" t:id="searchButton" />
+	    		<input t:type="submit" value="报表导出" t:id="export"/>
+			</t:form>
+		</div>	
+			<table style="BORDER-COLLAPSE: collapse;" borderColor="#ced5b1" cellSpacing="0" cellPadding="0" width="100%" border="1"
+             t:id="myGrid" t:type="Grid" source="dataSource" row="campaign" model="beanModel" pagerPosition="literal:bottom" rowsPerPage="${noOfRowsPerPage}">
+	            <t:parameter name="logoCell">
+					<img src="${campaign.site.logo}" width="120" alt="站点logo" />
+				</t:parameter>
+				<t:parameter name="nameCell">
+					<t:pagelink page="admin/campaign/Viewpage" context="prop:viewParameters">${campaign.name}</t:pagelink>
+				</t:parameter>
+				<t:parameter name="cpaCell">
+					<t:pagelink page="admin/commissionRule/listPage" context="prop:campaign.id"><t:outputraw value="campaign.cpa"/></t:pagelink>
+				</t:parameter>
+				<t:parameter name="affiliateVerifiedCell">
+					${affiliateVerified:campaign.affiliateVerified}
+				</t:parameter>
+				<t:parameter name="VerifiedCell">
+					${verified}
+				</t:parameter>
+				<t:parameter name="IndustrySubseriesCell">
+					${industry}
+				</t:parameter>
+				<t:parameter name="onlineStatusCell">
+					${onlineStatus}
+				</t:parameter>
+				<t:parameter name="operateCell">
+					<select onchange="redirect(this)">
+						<option value="" >--选择操作--</option>
+						<option value="/admin/campaign/Viewpage/${campaign.id}" >查看详细信息</option>
+						<option value="/admin/campaign/editPage/${campaign.id}" >编辑广告活动</option>
+						<option value="/admin/campaign/CustomBannerListPage/${campaign.id}" >查看自定义代码记录</option>
+						<option value="/admin/commissionRule/listPage/${campaign.id}" >查看佣金规则</option>
+						<option value="/admin/landingpage/listPage/${campaign.id}" >${message:view_landingPage}</option>
+	           			<option value="/admin/commissionRule/CommissionLadderListPage/${campaign.id}">查看梯度佣金</option>
+						<span t:type="t5components/Equals" left="prop:campaign.verified.toString()" right="literal:1">
+							<option msg="批准广告活动[${campaign.name}]上线？" value="/admin/campaign/listpage/passOnline/${campaign.id}" >批准上线</option>
+							<option msg="拒绝广告活动[${campaign.name}]上线？" value="/admin/campaign/listpage/refuseOnline/${campaign.id}" >拒绝上线</option>
+	           			</span>
+	           			<span t:type="t5components/Equals" left="prop:campaign.verified.toString()" right="literal:4">
+	           				<option msg="批准广告活动[${campaign.name}]下线？" value="/admin/campaign/listpage/passOffline/${campaign.id}" >批准下线</option>
+							<option msg="拒绝广告活动[${campaign.name}]下线？" value="/admin/campaign/listpage/refuseOffline/${campaign.id}" >拒绝下线</option>
+	           			</span>
+					</select>
+				</t:parameter>
+	   	</table>
+    </body>
+</t:admin.Layout>

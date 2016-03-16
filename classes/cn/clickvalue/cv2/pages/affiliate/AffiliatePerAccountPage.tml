@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<t:affiliate.Layout t:pageTitle="${message:my_account}" t:pageGroup="paymentReport" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="content">
+      	<div class="page_headers">
+      		<div class="title">
+      			${message:Statistical_data}
+			</div>
+			<div class="form">
+			<table width="100%;">
+				<tr>
+					<td>
+						${message:Has_paid_commission}:${paidCommission}${message:yuan}
+						<span style="margin-left: 20px;">
+							${message:Has_not_paid_commission}:${unpaidCommission}${message:yuan}
+							<span style="color: blue; margin-left: 5px;">
+								(${message:the_commision_that_wati_to_pay}:${appliedCommission}${message:yuan})
+							</span>
+						</span>
+					</td>
+					<td>
+						<div class="css_button">
+							<t:eventlink t:id="applyAccount">
+								${message:The_commission_applies_to_pay}
+							</t:eventlink>
+						</div>
+					</td>
+				</tr>
+			</table>
+			</div>
+		</div>
+		
+		<div class="clear"></div>
+		<div style="width: 100%;">
+			<div class="page_headers">
+				<div class="title">${message:confirmed_commission}</div>
+				<div class="form">
+					<table class="t-data-grid" style="width: 100%;">
+						<thead>
+							<tr>
+								<th>${message:campaign}</th>
+								<th>${message:Commission_match_starting_time1}</th>
+								<th>${message:Commission_match_ending_time1}</th>
+								<th>${message:Commission_acknowledging_time}</th>
+								<th>${message:Sub-site}</th>
+								<th>${message:Commission_before_confirmed}</th>
+								<th>${message:Commission_after_confirmed}</th>
+							</tr>
+						</thead>
+						
+						<tr t:id="commissionIncomesLoop">
+							<td>${commissionIncome.campaign.name}</td>
+							<td>${dateformat:commissionIncome.startDate}</td>
+							<td>${dateformat:commissionIncome.endDate}</td>
+							<td>${dateformat:commissionIncome.balanceDate}</td>
+							<td><a href="${commissionIncome.site.url}" target="_blank">${commissionIncome.site.name}</a></td>
+							<td>${commissionIncome.commission}</td>
+							<td>${commissionIncome.confirmedCommission}</td>
+						</tr>
+					</table>
+				
+		        	<t:messagebanner t:id="message" type="type"/>
+				</div>
+			</div>	
+		</div>
+
+		<div style="width: 39.6%; float: left">
+			<div class="page_headers"><div class="title">${message:Commission_that_has_not_confirmed}</div>
+			<div class="form">
+				<div class="page_style"></div>
+					<table class="t-data-grid" width="100%">
+						<thead>
+							<tr>
+								<th>${message:campaign}</th>
+								<th>${message:Commission_that_has_not_confirmed}</th>
+							</tr>
+						</thead>
+						<tr t:id="summaryCommissionLoop">
+							<td t:type="loop" source="obj" value="value">
+					            ${value}
+					        </td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+				
+		<div style="width: 60%; float: left; margin-left: 5px;">
+			<div class="page_headers"><div class="title">${message:Reward_and_punishment_records}</div>
+			<div class="form">
+				<div class="page_style"></div>
+					<table class="t-data-grid" width="100%">
+						<thead>
+							<tr>
+								<th>${message:Reward_and_punishment_reason}</th>
+								<th>${message:campaign}</th>
+								<th>${message:amout}</th>
+								<th>${message:date}</th>
+							</tr>
+						</thead>
+						<tr t:id="bonusLoop">
+							<td> ${bonus.description} </td>
+							<td> ${bonus.campaign.name} </td>
+							<td> ${bonus.bonusValue} </td>
+							<td> ${dateformat:bonus.createdAt} </td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<div style="clear: both;"> </div>
+</t:affiliate.Layout>

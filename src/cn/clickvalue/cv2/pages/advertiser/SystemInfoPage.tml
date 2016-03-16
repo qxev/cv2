@@ -1,0 +1,26 @@
+<t:advertiser.Layout pageTitle="${message:system_settings}" pageGroup="account" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers" style="width: 500px;">
+		<div class="title">${message:user_management} > ${message:language_setting}</div>
+		<form t:type="form" t:id="editSysInfoForm" class="form">
+			<t:errors />
+			<table class="form_edit">
+				<tr class="rowoadd">
+					<td>${message:system_language}</td>
+					<td class="field_value">
+						<t:localswitch />
+					</td>
+				</tr>
+				<t:loop source="checkBoxItems" index="row_count">
+					<tr>
+						<td>
+							${checkBoxItem.name}			
+						</td>
+						<td>
+							<t:checkbox value="select" />
+						</td>
+					</tr>
+				</t:loop>
+			</table>
+		</form>
+	</div>
+</t:advertiser.Layout>

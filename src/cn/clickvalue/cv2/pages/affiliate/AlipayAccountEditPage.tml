@@ -1,0 +1,34 @@
+<t:affiliate.Layout t:pageTitle="${editOrAdd}" t:pageGroup="account" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers" style="width: 600px;">
+		<div class="title">支付宝帐号管理 > ${editOrAdd}</div>
+		<form t:type="form" t:id="form" class="form">
+			<t:errors />
+			<table class="form_edit">
+				<tr class="roweven">
+					<td class="field_name">支付宝帐号<span class="red_star">*</span></td>
+					<td class="field_value">
+						<input t:type="textfield" t:value="account.cardNumber"/>
+					</td>
+				</tr>
+				<tr class="roweven">
+					<td class="field_name">开户人姓名<span class="red_star">*</span></td>
+					<td class="field_value">
+						<input t:type="textfield" t:value="account.ownerName"/>
+					</td>
+				</tr>
+				<tr class="roweven">
+					<td class="field_name">${message:Whether_is_default_condition}</td>
+					<td class="field_value">
+						<t:checkbox t:id="showall" value="isCheck"/> 
+					</td>
+				</tr>
+				<tr class="roweven">
+					<td colspan="2" style="text-align: right;">
+						<button type="submit" class="positive">保存</button>
+						<button type="reset" class="positive">重置</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</t:affiliate.Layout>

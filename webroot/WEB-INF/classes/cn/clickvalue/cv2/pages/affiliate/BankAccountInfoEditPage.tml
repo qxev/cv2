@@ -1,0 +1,126 @@
+<t:affiliate.Layout t:pageTitle="${editOrAdd}" t:pageGroup="account" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers" style="width: 600px;">
+		<div class="title">${message:Bank_account_management} > ${editOrAdd}</div>
+		<form t:type="form" t:id="editBankAccountForm" class="form">
+			<t:messageBanner message="message" type="type"/>
+			<t:errors />
+			<table class="form_edit">
+				<tr class="rowodd">
+					<td class="field_name">${message:account}<span class="red_star">*</span></td>
+					<td class="field_value">
+						${account.cardNumber}
+					</td>
+				</tr>
+			
+				<tr class="roweven">
+					<td class="field_name">${message:bank}<span class="red_star">*</span></td>
+					<td class="field_value">
+						<t:if test="disable">
+							${account.bankName}
+							<t:parameter name="else">
+								<t:select t:id="operate" model="operateModel" value= "account.bankName" blankOption="never"/>
+							</t:parameter>
+						</t:if>
+						
+					</td>
+				</tr>
+				
+				<tr class="rowodd">
+					<td class="field_name">${message:Bank_Branch}<span class="red_star">*</span></td>
+					<td class="field_value">
+						<t:if test="disable">
+							<span style="margin-right: 10px;">${account.province}</span>
+							<span style="margin-right: 10px;">${account.city}</span>
+							<span>${account.subBank}</span>
+							<t:parameter name="else">
+								<select t:type="man/ParentSelect" t:id="country" model="fatherSelectModel" value="account.province" style="margin-right: 10px;"/> 
+								<select t:type="man/ChildSelect" t:id="province" parent="country" models="childSelectModels" value="account.city" style="margin-right: 10px;"/>   
+								<input type="textfield" t:id="subBank"/>
+							</t:parameter>
+						</t:if>
+					</td>
+				</tr>
+				
+				<tr class="roweven">
+					<td class="field_name">${message:Owner_of_account}<span class="red_star">*</span></td>
+					<td class="field_value">
+						<t:if test="disable">
+							${account.ownerName}
+							<t:parameter name="else">
+								<input t:type="textfield" t:value="account.ownerName"/>
+							</t:parameter>
+						</t:if>
+					</td>
+				</tr>
+				
+				<tr class="rowodd">
+					<td class="field_name">${message:telephone}<span class="red_star">*</span></td>
+					<td class="field_value">
+						<t:if test="disable">
+							${account.ownerTelephone}
+							<t:parameter name="else">
+								<input t:type="textfield" t:value="account.ownerTelephone"/>
+							</t:parameter>
+						</t:if>
+						
+					</td>
+				</tr>
+				
+				<tr class="roweven">
+					<td class="field_name">${message:address}<span class="red_star">*</span></td>
+					<td class="field_value">
+						<t:if test="disable">
+							${account.ownerAddress}
+							<t:parameter name="else">
+								<input t:type="textfield" t:value="account.ownerAddress"/>
+							</t:parameter>
+						</t:if>
+					</td>
+				</tr>
+				
+				<tr class="rowodd">
+					<td class="field_name">${message:Owner_of_account's_ID_card}<span class="red_star">*</span></td>
+					<td class="field_value">
+						<t:if test="disable">
+							${account.idCardNumber}
+							<t:parameter name="else">
+								<input t:type="textfield" t:value="account.idCardNumber"/>
+							</t:parameter>
+						</t:if>
+					</td>
+				</tr>
+				
+				<tr class="roweven">
+					<td class="field_name">${message:post_code}<span class="red_star">*</span></td>
+					<td class="field_value">
+						<t:if test="disable">
+							${account.postcode}
+							<t:parameter name="else">
+								<input t:type="textfield" t:value="account.postcode" />
+							</t:parameter>
+						</t:if>
+					</td>
+				</tr>
+				
+				<tr class="rowodd">
+					<td class="field_name">${message:Whether_is_default_condition}</td>
+					<td class="field_value">
+						<t:checkbox t:id="showall" value="isCheck"/> 
+					</td>
+				</tr>
+				
+				<tr class="roweven">
+					<td colspan="2" style="text-align: center;">
+						<button type="submit" class="positive">${message:save}</button>
+						<button t:type="t5components/Button" type="button" event="clicked" style="margin-left: 30px;">
+							${message:back}
+						</button>
+					</td>
+				</tr>
+			</table>
+			<t:if test="disable">
+				<span style="color: red;">注意:${message:above}信息中现在不能${message:Revises}的将来也不能${message:Revises}，并且会导致您其他账号中相应的银行账号不能${message:Revises}，确认请点${message:save}，否则点${message:cancle}。</span>
+			</t:if>
+		</form>
+	</div>
+</t:affiliate.Layout>

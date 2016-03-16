@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:admin.Layout t:pageTitle="track code info" pageGroup="system" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+	<div class="page_headers">
+		<!-- 导航 -->
+		<div class="title">track code info</div>
+	
+		<!-- 快速查询表单 -->
+		<t:form t:id="form" class="form">
+			标识:<input type="text" t:type="textarea" value="formTrackCode" cols="100" rows="4" title="请用逗号(,)或回车分隔多个标识" />
+			<input type="submit" t:type="submit" value="查询" style="margin-left:5px;" />
+			<input type="button" value="导出" style="margin-left:5px;" onclick="window.location.href='/admin/system/trackcodeinfopage:exportresult'" />
+		</t:form>
+	</div>
+	<div><t:messagebanner t:id="message" type="type"/></div>
+	<!-- 查询结果显示 -->
+	
+	<t:if test="query">
+		<div style="width:100%;" t:id="myGrid">
+			<t:parameter name="trackCodeCell">
+				${trackCode}
+			</t:parameter>
+		</div>
+	</t:if>
+</t:admin.Layout>

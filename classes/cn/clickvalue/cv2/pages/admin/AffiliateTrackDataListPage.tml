@@ -1,0 +1,45 @@
+<t:admin.Layout t:navigation="${message:campaign_manage} > ${message:campaigns}" t:pageTitle="CampaignList" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <body>
+    	<t:form>
+    	<div class="form">
+	    	TrackCode:
+	    	<t:textfield value="trackCode" />
+	    	IP:
+	    	<t:textfield value="trackIP" />
+	    	RuleType:
+	    	<select t:type="select" value="ruleType" model="ruleTypesSelectionModel" encoder="ruleTypesValueEncoder" blankLabel="所有"/>
+	    	<t:submit value="查询" />
+		</div>
+	    <br />
+		   <table width="100%" class="t-data-grid">
+		   	<thead>
+			   	<tr>
+			   		<t:Loop source="cols" value="col">
+						<th>
+			   				${col}
+			   			</th>
+					</t:Loop>
+			   	</tr>
+			</thead>
+			
+		   	<t:loop source="affiliateTrackDatas" value="affiliateTrackData">
+		   		<tr>
+		   			<t:Loop source="attrs" value="attr">
+						<td>
+							${value}
+			   			</td>
+					</t:Loop>
+		   		</tr>
+		   	</t:loop>
+		   	
+		   </table>
+		</t:form>
+<script>
+	function redirect(select){
+		var url = select.value;
+		select.selectedIndex = 0;
+		window.location = url;
+	}
+</script>
+    </body>
+</t:admin.Layout>

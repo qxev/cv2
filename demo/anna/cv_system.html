@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Darwin Marketing CV2 System Management</title>
+<link href="style/base.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+<!--
+function MM_jumpMenu(targ,selObj,restore){ //v3.0
+  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+  if (restore) selObj.selectedIndex=0;
+}
+//-->
+</script>
+</head>
+
+<body>
+<div class="wrap">
+<!--head begin-->
+<div class="head"><a href="index.html"><img name="logo" src="images/logo.png" width="335" height="75" border="0" id="logo" alt="searchvalue_logo" /></a>
+<p>ljtint@gmail.com | <a href="#">帮助</a> | <a href="#">注销</a><br /> 
+<font class="green">日期: 2007-10-15 </font></p>
+</div>
+<!--navigation begin-->
+<div class="navigation">
+<ul class="nav">
+<li ><a href="cv-ads-manage.html">广告活动管理</a></li>
+<li ><a href="cv_report.html">效果报表</a></li>
+<li><a href="cv_match.html">佣金匹配</a></li>
+<li><a href="cv_payment.html">支付报表</a></li>
+<li><a href="cv_email.html"> 邮件管理</a></li>
+<li class="nav_now">系统信息管理</li>
+</ul>
+<div class="submenu"><strong>用户管理</strong>     <a href="admin_adminMessage.html" target="ifrm_data">管理员管理</a>     <a href="admin_Codes.html" target="ifrm_data">跟踪代码</a>     <a href="admin_system_Set.html" target="ifrm_data">系统全局设置</a>       <a href="#"></a></div>
+
+</div>
+<!--main begin-->
+<div class="main">
+<p class="system"><span class="nav_now">系统信息管理</span> 用户管理</p>
+<div class="add">
+<form id="form1" name="form1" method="post" action="">
+<ul class="add_right">
+<li><strong>快速查询:</strong>用户名
+  <input maxlength="20" size="25" name="user_name" />
+用户邮箱
+<input maxlength="40" size="35" name="user_mail" />
+用户类型:
+<input type="radio" checked="checked" value="1" />
+所有
+<input type="radio" value="1" />
+网站主
+<input type="radio" value="1" />
+广告主
+<input type="radio" value="1" />
+BBS <br />
+网站名称
+<input maxlength="40" size="51" name="link_name" />
+网址
+<input maxlength="80" size="44" name="link_url" />
+<br />
+加入状态
+<select name="user_status">
+  <option value="" selected="selected">所有状态</option>
+  <option value="0">待审核</option>
+  <option value="1">已批准</option>
+  <option value="2">已拒绝</option>
+</select>
+激活状态
+<select name="user_actived">
+  <option value="" selected="selected">所有状态</option>
+  <option value="0">未激活</option>
+  <option value="1">已激活</option>
+</select>
+删除状态
+<select name="user_deleted">
+  <option value="" selected="selected">所有状态</option>
+  <option value="0">有效</option>
+  <option value="1">无效</option>
+</select>
+<br />
+从
+<input id="sel1" value="2006-01-01" name="sel1" />
+<input onclick="return showCalendar('sel1', '%Y-%m-%d',false,true);" type="reset" value="选择起始日期" />
+到
+<input id="sel3" value="2008-04-08" name="sel3" />
+<input onclick="return showCalendar('sel3', '%Y-%m-%d',false,true);" type="reset" value="选择结束日期" />
+<label>
+  <input name="Submit" type="submit" class="search" value="查询" />
+  </label>
+</li>  
+  </ul>
+<div class="add">
+<ul class="add_left">
+<li class="add_left_menu1"><a href="biaodan.html">新增广告主</a></li>
+<li class="add_left_menu10"><a href="#">新增网站主</a></li>
+<li class="add_left_menu2"><a href="#">银行帐户管理</a></li>
+</ul>
+</div>
+  </form>
+</div>
+<div class="clear">
+    <form id="form3" name="form3" method="post" action="">
+    <table style="BORDER-COLLAPSE: collapse" borderColor=#ced5b1 
+            cellSpacing=0 cellPadding=0 width="100%" border=1>
+    
+    <tr class="bold">
+      <td width="11%" bgcolor="#faf8e3">用户LOGO<img src="images/sort_down.gif" width="11" height="10" /></td>
+      <td width="7%" bgcolor="#faf8e3">用户名<img src="images/sort_down.gif" width="11" height="10" /> </td>
+      <td width="8%" bgcolor="#faf8e3">用户所属<img src="images/sort_down.gif" width="11" height="10" /></td>
+      <td width="8%" bgcolor="#faf8e3">网站名称<img src="images/sort_down.gif" width="11" height="10" /></td>
+      <td width="7%" bgcolor="#faf8e3">网址<img src="images/sort_down.gif" width="11" height="10" /></td>
+      <td width="8%" bgcolor="#faf8e3">审核状态<img src="images/sort_down.gif" width="11" height="10" /></td>
+      <td width="8%" bgcolor="#faf8e3">激活状态<img src="images/sort_down.gif" width="11" height="10" /></td>
+      <td width="8%" bgcolor="#faf8e3">删除状态<img src="images/sort_down.gif" width="11" height="10" /></td>
+      <td width="8%" bgcolor="#faf8e3">网站分类</a><img src="images/sort_down.gif" alt="" width="11" height="10" /></td>
+      <td width="7%" bgcolor="#faf8e3">审核时间<img src="images/sort_down.gif" alt="" width="11" height="10" /></td>
+      <td width="8%" bgcolor="#faf8e3">创建日期<img src="images/sort_down.gif" width="11" height="10" /></td>
+      <td width="12%" bgcolor="#acefb7">操作</td>
+    </tr>
+    <tr>
+      <td><img src="images/none_logo.gif" alt="" width="88" height="47" /></td>
+      <td>而</td>
+      <td>广告主</td>
+      <td>520交友论坛...</td>
+      <td><a href="#">210.000</a></td>
+      <td>待审查</td>
+      <td>已激活</td>
+      <td>有效</td>
+      <td>交友/社区</td>
+      <td>0000-00-00 00:00:00</td>
+      <td>2008-04-04 19:41:12</td>
+      <td><select name="jumpMenu" id="jumpMenu" onchange="MM_jumpMenu('parent',this,0)">
+          <option>请选择操作</option>
+          <option>查看佣金</option>
+      </select></td>
+    </tr>
+    <tr class="gray">
+      <td><img src="images/none_logo.gif" width="88" height="47" /></td>
+      <td>QQ3444</td>
+      <td>网站主</td>
+      <td>520交友论坛...</td>
+      <td><a href="#">210.000</a></td>
+      <td>待审查</td>
+      <td>已激活</td>
+      <td>有效</td>
+      <td>交友/社区</td>
+      <td>0000-00-00 00:00:00</td>
+      <td>2008-04-04 19:41:12</td>
+      <td><select name="jumpMenu3" id="jumpMenu3" onchange="MM_jumpMenu('parent',this,0)">
+          <option>请选择操作</option>
+          <option>查看佣金</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td><img src="images/none_logo.gif" alt="" width="88" height="47" /></td>
+      <td>而</td>
+      <td>广告主</td>
+      <td>520交友论坛...</td>
+      <td><a href="#">210.000</a></td>
+      <td>待审查</td>
+      <td>已激活</td>
+      <td>有效</td>
+      <td>交友/社区</td>
+      <td>0000-00-00 00:00:00</td>
+      <td>2008-04-04 19:41:12</td>
+      <td><select name="jumpMenu2" id="jumpMenu4" onchange="MM_jumpMenu('parent',this,0)">
+          <option>请选择操作</option>
+          <option>查看佣金</option>
+      </select></td>
+    </tr>
+    <tr class="gray">
+      <td><img src="images/none_logo.gif" width="88" height="47" /></td>
+      <td>QQ3444</td>
+      <td>网站主</td>
+      <td>520交友论坛...</td>
+      <td><a href="#">210.000</a></td>
+      <td>待审查</td>
+      <td>已激活</td>
+      <td>有效</td>
+      <td>交友/社区</td>
+      <td>0000-00-00 00:00:00</td>
+      <td>2008-04-04 19:41:12</td>
+      <td><select name="jumpMenu2" id="jumpMenu2" onchange="MM_jumpMenu('parent',this,0)">
+          <option>请选择操作</option>
+          <option>查看佣金</option>
+      </select></td>
+    </tr>
+  </table>
+  </form>
+  <p class="center"><a href="#">上一页</a> 1 <a href="#">2</a>   <a href="#">下一页</a><br /><br />
+    <input name="Submit2" type="submit" class="export" value="导出报表" /></p>
+
+</div>
+</div>
+<!--bottom begin-->
+<div  class="buttom">关于我们 | 联系我们 | 论坛<br />
+沪ICP备06035438号<br />
+Copyright © 2007 - 2010 Darwin Marketing.</div>
+</div>
+</body>
+</html>

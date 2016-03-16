@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:admin.Layout t:pageTitle="BonusListPage" pageGroup="payment_report" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+	<div class="page_headers">
+		<!-- 导航 -->
+		<div class="title">奖惩记录</div>
+	
+		<!-- 快速查询表单 -->
+		<t:form t:id="form" class="form">
+			<t:errors />
+			网站主:<input type="text" t:type="textfield" value="formAffiliateName" />
+			广告活动:<input type="text" t:type="textfield" value="formCampaignName" />
+			时间:<t:daterange t:dateBegin="formStartDate" t:dateEnd="formEndDate"/>
+			<input type="submit" t:type="submit" value="查询" style="margin-left:5px;" />
+		</t:form>
+	</div>
+	
+	<!-- 新增按钮 -->
+	<t:sliderdoor text="新增奖惩记录" href="/admin/campaign/affiliatecampaignlistpage" clear="true"/>
+	
+	<!-- 查询结果显示 -->
+	<div style="width:100%;" t:id="myGrid" t:type="Grid" source="dataSource" row="bonu" model="beanModel" rowsPerPage="${noOfRowsPerPage}" pagerPosition="literal:bottom">
+		
+		<t:parameter name="bonusValueCell">
+			${formatBonusValue}
+		</t:parameter>
+		<t:parameter name="operateCell">
+			<!-- 操作 -->
+			<select onchange="redirect(this)">
+				<option value="" >--选择操作--</option>
+				<!--<option msg="确定删除吗？" value="/admin/bonus/listpage/${bonu.id}/delete" >删除</option>-->
+				<option value="/admin/bonus/editpage/${bonu.id}" >编辑</option>
+			</select>
+		</t:parameter>
+	</div>
+</t:admin.Layout>

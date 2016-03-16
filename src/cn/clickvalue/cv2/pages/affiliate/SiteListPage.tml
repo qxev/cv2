@@ -1,0 +1,41 @@
+<t:affiliate.Layout t:pageTitle="${message:website}" t:pageGroup="account" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<t:form t:id="SearchForm" >
+		<div class="page_headers">
+			<div class="title">${message:user_management} > ${message:website}</div>
+			<div class="form">
+				${message:Verification_condition}: 
+				<t:select t:id="siteState" value="siteState"  model="0=${message:have_not_approved},1=${message:wait_for_verify},2=${message:have_benn_approved},3=${message:has_rejected}"  blankLabel="${message:all}" />
+				<t:submit t:id="search" class="search" value="${message:search}"/>
+				<t:sliderdoor text="${message:add_website}" href="/affiliate/siteeditpage" clear="true"/>
+				
+				<div class="table_clear" style="width: 100%">
+					<table t:id="myGrid" style="width: 100%">
+						<t:parameter name="logoCell">
+							<img src="${site.logo}" width="120" height="60" alt="${message:site}logo" />
+						</t:parameter>
+						
+						<t:parameter name="nameCell">
+							<t:pagelink page="affiliate/SiteViewPage" context="site.id">${site.name}</t:pagelink>
+						</t:parameter>
+						
+						<t:parameter name="urlCell">
+							<a href="${site.url}">${site.url}</a>
+						</t:parameter>
+						
+						<t:parameter name="DescriptionCell">
+							<t:outputraw value="site.description"/>
+						</t:parameter>
+						
+						<t:parameter name="verifiedCell">
+							${status:site.verified}
+						</t:parameter>
+						
+				   		<t:parameter name="operateCell">
+							<t:select t:id="operate" model="operateModel" blankLabel="${message:select}" onChange="redirect(this);"/>
+						</t:parameter>
+			    	</table>
+				</div>
+			</div>					
+		</div>
+	</t:form>
+</t:affiliate.Layout>

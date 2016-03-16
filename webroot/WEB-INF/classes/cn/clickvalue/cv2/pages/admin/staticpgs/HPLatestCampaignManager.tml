@@ -1,0 +1,62 @@
+<t:admin.Layout pageTitle="${hpBlock.displayName}" pageGroup="static" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<style type="text/css">
+
+	table.t-data-grid tbody tr td.sequence {
+		text-align:center;
+	}
+	.sequence input {
+		text-align: center;
+		width: 20px;
+	}
+	.cdata input {
+		width: 185px;
+	}
+	.url input {
+		width: 300px;
+	}
+	.image input {
+		width: 200px;
+	}
+	.description input {
+		width: 300px;
+	}
+</style>
+<script type="text/javascript" src="/assets/javascripts/sequence.js"></script>
+<script type="text/javascript">
+<![CDATA[
+	jQuery(function() {
+		sequenceTrust("td[class='sequence'] input","value");
+	});
+]]>
+
+</script>
+	<t:form>
+		<t:errors />
+		<div class="page_headers">
+			<div class="title">${hpBlock.displayName}</div>
+		</div>
+		<table style="BORDER-COLLAPSE: collapse;" borderColor="#ced5b1" cellSpacing="0" cellPadding="0" border="1"
+             t:id="myGrid" t:type="Grid" source="dataSource" row="hpBlockContent" model="beanModel" pagerPosition="literal:bottom" 
+             rowsPerPage="${noOfRowsPerPage}">
+             <t:parameter name="sequenceCell">
+				<input t:type="textfield" t:value="hpBlockContent.sequence" />
+			</t:parameter>
+			<t:parameter name="cdataCell">
+				<input t:type="textfield" t:value="hpBlockContent.cdata" />
+			</t:parameter>
+			<t:parameter name="urlCell">
+				<input t:type="textfield" t:value="hpBlockContent.url" />
+			</t:parameter>
+			<t:parameter name="imageCell">
+				<input t:type="textfield" t:value="hpBlockContent.image" />
+			</t:parameter>
+			<t:parameter name="descriptionCell">
+				<input t:type="textfield" t:value="hpBlockContent.description" />
+			</t:parameter>
+   		</table>
+	   	<t:submit t:value="保存" />
+	   	<t:if test="manageAble">
+	   		<input type="button" value="管理" onclick="window.open('${manageLink}')" />
+	   	</t:if>
+   	</t:form>
+</t:admin.Layout>

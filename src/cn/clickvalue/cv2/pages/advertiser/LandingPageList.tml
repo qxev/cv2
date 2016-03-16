@@ -1,0 +1,64 @@
+<t:advertiser.Layout pageTitle="${message:landingPage_list}" pageGroup="campaign" t:navigation="${message:campaign_manage} > ${message:landingPage_group}" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers">
+		<div class="title">
+			${message:campaign}: <a href="/advertiser/campaignviewpage/${campaign.id}">${campaign.name}</a> > ${message:landingPage_list}
+		</div>
+	    <t:form class="form">
+			<t:sliderdoor text="${message:new_landingPage}" href="/advertiser/landingpageedit/${campaignId}" clear="true"/>
+		    <table t:id="myGrid" t:type="Grid" source="dataSource" row="landingPage" model="beanModel" pagerPosition="literal:bottom" rowsPerPage="${noOfRowsPerPage}" style="width:100%;">
+	            <t:parameter name="nameCell">
+					<t:pagelink t:page="advertiser/landingpageview" t:context="list:campaignId,landingPage.id">${landingPage.name}</t:pagelink>
+				</t:parameter>
+				
+	            <t:parameter name="bannersCountCell">
+					${bannerSize}
+				</t:parameter>
+				
+				<t:parameter name="campaignNameCell">
+					<t:pagelink t:page="advertiser/CampaignViewPage" t:context="landingPage.campaign.id">${landingPage.campaign.name}</t:pagelink>
+				</t:parameter>
+				
+				<t:parameter name="verifiedCell">
+					${verified}
+				</t:parameter>
+				
+				<t:parameter name="operateCell">
+					<select onchange="redirect(this)">
+					    <option value="">${message:select}</option>
+					    <option value="/advertiser/NewImageAdPage/${campaignId}/${landingPage.id}">${message:new_image_ad}</option>
+					    <option value="/advertiser/NewTextAdPage/${campaignId}/${landingPage.id}">${message:new_text_ad}</option>
+					    <option value="/advertiser/NewFlashAdPage/${campaignId}/${landingPage.id}">${message:new_flash_ad}</option>
+					    <option value="/advertiser/NewHtmlAdPage/${campaignId}/${landingPage.id}">${message:new_html_ad}</option>
+					    <option value="/advertiser/NewImageAdPage/${campaignId}/${landingPage.id}/-1">${message:new_iframe_ad}</option>
+					 
+		                <!-- ${message:has_not_applied_for} -->
+						<span t:type="t5components/Equals" left="prop:landingPage.verified.toString()" right="literal:0">
+ 						    <option value="/advertiser/landingpageedit/${campaignId}/${landingPage.id}">${message:edit}</option>
+						    <option value="/advertiser/landingpagelist/delete/${landingPage.id}" msg="${message:delete}?">${message:delete}</option>
+						    <option value="/advertiser/landingpagelist/submitApp/${landingPage.id}" msg="${message:apply}?">${message:apply}</option>
+						</span>
+						
+						<!-- ${message:wait_for_examining_and_verifying} -->
+						<span t:type="t5components/Equals" left="prop:landingPage.verified.toString()" right="literal:1">
+						    <option value="/advertiser/landingpageedit/${campaignId}/${landingPage.id}">${message:edit}</option>
+						    <option value="/advertiser/landingpagelist/delete/${landingPage.id}" msg="${message:delete}?">${message:delete}</option>
+						    <option value="/advertiser/landingpagelist/cancelApp/${landingPage.id}" msg="${message:cancel_apply}?">${message:cancel_apply}</option>
+						</span>
+						
+						<!-- ${message:has_approved}-->
+						<span t:type="t5components/Equals" left="prop:landingPage.verified.toString()" right="literal:2">
+					        <!-- <option value="/advertiser/landingpagelist/offlineApp/${landingPage.id}" msg="${message:apply_offline}?">${message:apply_offline}</option> -->
+						</span>
+						
+						<!-- ${message:has_rejected}-->
+						<span t:type="t5components/Equals" left="prop:landingPage.verified.toString()" right="literal:3">
+						    <option value="/advertiser/landingpageedit/${campaignId}/${landingPage.id}">${message:edit}</option>
+						    <option value="/advertiser/landingpagelist/delete/${landingPage.id}" msg="${message:delete}?">${message:delete}</option>
+						</span>
+					</select>
+				</t:parameter>
+		    </table>
+		</t:form>
+    </div>
+    
+</t:advertiser.Layout>

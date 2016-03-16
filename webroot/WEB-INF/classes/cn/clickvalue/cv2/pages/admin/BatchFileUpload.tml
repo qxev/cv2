@@ -1,0 +1,11 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title>SWFUpload</title>
+	</head>
+	<body>
+		<div id="content">
+			<t:batchupload t:folder="prop:folder" />
+		</div>
+	</body>
+</html>

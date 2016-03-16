@@ -1,0 +1,16 @@
+<t:affiliate.Layout pageTitle="${message:system_settings}" pageGroup="account" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers" style="width: 500px;">
+		<div class="title">${message:user_management} > ${message:language_setting}</div>
+		<form t:type="form" t:id="editSysInfoForm" class="form">
+			<t:errors />
+			<table class="form_edit">
+				<tr class="rowoadd">
+					<td>${message:system_language}</td>
+					<td class="field_value">
+						<t:localswitch />
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</t:affiliate.Layout>

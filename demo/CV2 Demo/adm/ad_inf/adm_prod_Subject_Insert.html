@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+		<title>Darwin Marketing</title>
+		<LINK  href="../../stylesheets/base.css" rel=stylesheet>
+		<LINK  href="../../stylesheets/css_cn.css" rel=stylesheet>
+		<script language="javascript" src="../js/userLinksFuns.js" type="text/javascript"></script>
+		<script language="javascript" src="../js/userBankAccounts.js"></script>
+		<script language="JavaScript" type="text/javascript" src="../js/adveBannerListFuns.js"></script>
+		<script language="JavaScript" type="text/javascript">
+			var FILE_EXT = '.html';
+		</script>
+	</head>
+<body>
+	<div class="content">
+		<div class="pageTitle">广告活动管理&nbsp;-&nbsp;新增</div>
+  <table border="0" cellspacing="1" cellpadding="0" class="list" width="55%">
+    <form name="postForm" method="get" action="prodSubjectAct.php">
+      <input name="act" type="hidden" value="insert" />
+	  <input name="uid" type="hidden" value="25" />
+      <input name="turntopage" type="hidden" value="javascript:history.go(-2)" />
+      <tr class="title">
+        <td colspan="3">新增广告活动</td>
+      </tr>
+      <tr class="row1">
+        <td class="row_required" width="14%">广告活动名称</td>
+        <td><input id="subject_name" name="subject_name" type="text" size="40" >
+          <input type="button" name="check" value="唯一性检查" /></td>
+        <td width="30%">&nbsp;</td>
+      </tr>
+      <tr class="row1">
+        <td class="row_required">广告活动介绍</td>
+        <td><textarea name="subject_desc" cols="60" rows="5" id="subject_desc" onfocus="show_ex(this, '描述广告活动的综合目的,让网站主可以清楚了解您广告活动的目的, 这样有兴趣的网站主会调整自己的网站来配合这个广告活动')" onblur="restore(this, '描述广告活动的综合目的,让网站主可以清楚了解您广告活动的目的, 这样有兴趣的网站主会调整自己的网站来配合这个广告活动')"></textarea></td>
+        <td><div id="subject_desc_ex">描述广告活动的综合目的,让网站主可以清楚了解您广告活动的目的, 这样有兴趣的网站主会调整自己的网站来配合这个广告活动</div></td>
+      </tr>
+      <tr class="row1">
+        <td>广告投放区域</td>
+        <td><input type="checkbox" name="subject_area[]" value="北京市"  />
+          北京市
+          <input type="checkbox" name="subject_area[]" value="上海市"  />
+          上海市
+          <input type="checkbox" name="subject_area[]" value="天津市"  />
+          天津市
+          <input type="checkbox" name="subject_area[]" value="重庆市"  />
+          重庆市
+          <input type="checkbox" name="subject_area[]" value="广东省"  />
+          广东省 <br/>
+          <input type="checkbox" name="subject_area[]" value="福建省"  />
+          福建省
+          <input type="checkbox" name="subject_area[]" value="浙江省"  />
+          浙江省
+          <input type="checkbox" name="subject_area[]" value="江苏省"  />
+          江苏省
+          <input type="checkbox" name="subject_area[]" value="山东省"  />
+          山东省
+          <input type="checkbox" name="subject_area[]" value="辽宁省"  />
+          辽宁省 <br/>
+          <input type="checkbox" name="subject_area[]" value="江西省"  />
+          江西省
+          <input type="checkbox" name="subject_area[]" value="四川省"  />
+          四川省
+          <input type="checkbox" name="subject_area[]" value="陕西省"  />
+          陕西省
+          <input type="checkbox" name="subject_area[]" value="湖北省"  />
+          湖北省
+          <input type="checkbox" name="subject_area[]" value="河南省"  />
+          河南省 <br/>
+          <input type="checkbox" name="subject_area[]" value="河北省"  />
+          河北省
+          <input type="checkbox" name="subject_area[]" value="山西省"  />
+          山西省
+          <input type="checkbox" name="subject_area[]" value="内蒙古"  />
+          内蒙古
+          <input type="checkbox" name="subject_area[]" value="吉林省"  />
+          吉林省
+          <input type="checkbox" name="subject_area[]" value="黑龙江"  />
+          黑龙江 <br/>
+          <input type="checkbox" name="subject_area[]" value="安徽省"  />
+          安徽省
+          <input type="checkbox" name="subject_area[]" value="湖南省"  />
+          湖南省
+          <input type="checkbox" name="subject_area[]" value="广西区"  />
+          广西区
+          <input type="checkbox" name="subject_area[]" value="海南省"  />
+          海南省
+          <input type="checkbox" name="subject_area[]" value="云南省"  />
+          云南省 <br/>
+          <input type="checkbox" name="subject_area[]" value="贵州省"  />
+          贵州省
+          <input type="checkbox" name="subject_area[]" value="西藏区"  />
+          西藏区
+          <input type="checkbox" name="subject_area[]" value="甘肃省"  />
+          甘肃省
+          <input type="checkbox" name="subject_area[]" value="宁夏区"  />
+          宁夏区
+          <input type="checkbox" name="subject_area[]" value="青海省"  />
+          青海省 <br/>
+          <input type="checkbox" name="subject_area[]" value="新疆区"  />
+          新疆区
+          <input type="checkbox" name="subject_area[]" value="香港区"  />
+          香港区
+          <input type="checkbox" name="subject_area[]" value="澳门区"  />
+          澳门区
+          <input type="checkbox" name="subject_area[]" value="台湾省"  />
+          台湾省 <br/>
+          <br/>
+          <input type="checkbox" name="subject_area_all" id="chkAll" value="all" onclick="CheckAll(this.form)"  />
+          全选        </td>
+		<td>&nbsp;</td>
+      </tr>
+	  <tr class="row1">
+        <td class="row_required">自定义代码链接</td>
+        <td ><input type="radio" />支持<input type="radio" checked="checked"/>不支持</td>
+        <td></td>
+      </tr>
+      <tr class="row1">
+        <td class="row_required">COOKIE期限</td>
+        <td ><input name="subject_cookie" type="text" size="3" id="subject_cookie" onfocus="show_ex(this, '用户在点击广告后,需要在多少时间内完成佣金指定的任务（0代表没有设置到期期限）')" onblur="restore(this, '用户在点击广告后,需要在多少时间内完成佣金指定的任务（0代表没有设置到期期限）')" value="" />
+          天</td>
+        <td><div id="subject_cookie_ex">用户在点击广告后,需要在多少时间内完成佣金指定的任务（0代表没有设置到期期限）</div></td>
+      </tr>
+      <tr class="row1">
+        <td class="row_required">起始日期</td>
+        <td><input type="text" name="subject_bd" id="subject_bd" size="20"  value="2008-04-08"><input type="reset" value="选择日期" onclick="return showCalendar('subject_bd', '%Y-%m-%d',false,true);"> </td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr class="row1">
+        <td class="row_required">结束日期</td>
+        <td><input type="text" name="subject_ld" id="subject_ld" size="20"  value="2008-04-08"><input type="reset" value="选择日期" onclick="return showCalendar('subject_ld', '%Y-%m-%d',false,true);"> </td>
+        <td>&nbsp;</td>
+      </tr>
+	  <tr class="row1">
+        <td class="row_required">网站投放分类1</td>
+        <td>
+			<select name="category_id1" id="url_category" onfocus="show_ex(this, '请选择最匹配你的网站定位的分类类型,以便于相关广告主很快找到您')" onblur="restore(this, '请选择最匹配你的网站定位的分类类型,以便于相关广告主很快找到您')"><option value="0">--请选择--</option><option value="1|,0,">┝汽车/运动/户外</option>
+				<option value="2|,0,">┝图书/文学/艺术</option>
+				<option value="3|,0,">┝教育/学习/法律</option>
+				<option value="4|,0,">┝财经/商业/管理</option>
+				<option value="5|,0,">┝电脑/网络/软件</option>
+				<option value="6|,0,">┝数码/电子/摄影</option>
+				<option value="8|,0,">┝音乐/影视/娱乐</option>
+				<option value="9|,0,">┝游戏/竞技/模型</option>
+				<option value="10|,0,">┝家居/礼品/鲜花</option>
+				<option value="11|,0,">┝时尚/健身/美容</option>
+				<option value="12|,0,">┝综合类</option>
+				<option value="13|,0,">┝下载类/资源类</option>
+				<option value="14|,0,">┝医疗/医药/健康</option>
+				<option value="15|,0,">┝旅游/摄影/图片</option>
+				<option value="16|,0,">┝情感/人生</option>
+				<option value="17|,0,">┝个人博客/日志</option>
+				<option value="19|,0,">┕其它</option>
+			</select>
+		</td>
+        <td></td>
+	  </tr>
+	  <tr class="row1">
+        <td class="row_required">网站投放分类2</td>
+        <td>
+			<select name="category_id1" id="url_category" onfocus="show_ex(this, '请选择最匹配你的网站定位的分类类型,以便于相关广告主很快找到您')" onblur="restore(this, '请选择最匹配你的网站定位的分类类型,以便于相关广告主很快找到您')"><option value="0">--请选择--</option><option value="1|,0,">┝汽车/运动/户外</option>
+				<option value="2|,0,">┝图书/文学/艺术</option>
+				<option value="3|,0,">┝教育/学习/法律</option>
+				<option value="4|,0,">┝财经/商业/管理</option>
+				<option value="5|,0,">┝电脑/网络/软件</option>
+				<option value="6|,0,">┝数码/电子/摄影</option>
+				<option value="8|,0,">┝音乐/影视/娱乐</option>
+				<option value="9|,0,">┝游戏/竞技/模型</option>
+				<option value="10|,0,">┝家居/礼品/鲜花</option>
+				<option value="11|,0,">┝时尚/健身/美容</option>
+				<option value="12|,0,">┝综合类</option>
+				<option value="13|,0,">┝下载类/资源类</option>
+				<option value="14|,0,">┝医疗/医药/健康</option>
+				<option value="15|,0,">┝旅游/摄影/图片</option>
+				<option value="16|,0,">┝情感/人生</option>
+				<option value="17|,0,">┝个人博客/日志</option>
+				<option value="19|,0,">┕其它</option>
+			</select>
+		</td>
+        <td></td>
+      </tr>
+	  <tr class="row1">
+        <td class="row_required">网站投放分类3</td>
+        <td >
+			<select name="category_id1" id="url_category" onfocus="show_ex(this, '请选择最匹配你的网站定位的分类类型,以便于相关广告主很快找到您')" onblur="restore(this, '请选择最匹配你的网站定位的分类类型,以便于相关广告主很快找到您')"><option value="0">--请选择--</option><option value="1|,0,">┝汽车/运动/户外</option>
+				<option value="2|,0,">┝图书/文学/艺术</option>
+				<option value="3|,0,">┝教育/学习/法律</option>
+				<option value="4|,0,">┝财经/商业/管理</option>
+				<option value="5|,0,">┝电脑/网络/软件</option>
+				<option value="6|,0,">┝数码/电子/摄影</option>
+				<option value="8|,0,">┝音乐/影视/娱乐</option>
+				<option value="9|,0,">┝游戏/竞技/模型</option>
+				<option value="10|,0,">┝家居/礼品/鲜花</option>
+				<option value="11|,0,">┝时尚/健身/美容</option>
+				<option value="12|,0,">┝综合类</option>
+				<option value="13|,0,">┝下载类/资源类</option>
+				<option value="14|,0,">┝医疗/医药/健康</option>
+				<option value="15|,0,">┝旅游/摄影/图片</option>
+				<option value="16|,0,">┝情感/人生</option>
+				<option value="17|,0,">┝个人博客/日志</option>
+				<option value="19|,0,">┕其它</option>
+			</select>
+		</td>
+        <td></td>
+      </tr>
+      <tr class="row1">
+        <td colspan="3" align="center"><input type="button" name="Submit" value="保存并返回列表" onclick="javascript: document.location.href ='adm_prod_Subject.html';" />
+          &nbsp;&nbsp;&nbsp;
+          <input type="button" name="Submit" value="保存并继续添加佣金规则组" onclick="javascript: document.location.href ='adm_prod_Type_Insert.html';" />
+          &nbsp;&nbsp;&nbsp;
+		  <input type="button" name="Submit" value="保存并继续添加目标网址" onclick="javascript: document.location.href ='adm_prod_Adv_Insert.html';" />
+        </td>
+      </tr>
+    </form>
+  </table>
+</div>
+<div class="footer">
+  <div class="copyright"><a href="/darwin_2.html">关于我们</a>&nbsp;|&nbsp;<a href="/darwin_3.html">联系我们</a>&nbsp;|&nbsp;<a href="systemPassSession.php">论坛</a>&nbsp;<br />
+    沪ICP备06035438号<br />
+    Copyright &copy; 2006 - 2007 Darwin Marketing.<br />
+    <!--L_G_FOOT_CNZZ-->
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script><script type="text/javascript">_uacct = "UA-259227-4";urchinTracker();</script>  </div>
+</div>
+</div>
+</body>
+</html>

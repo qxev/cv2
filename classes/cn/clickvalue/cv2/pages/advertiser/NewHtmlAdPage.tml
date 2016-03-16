@@ -1,0 +1,35 @@
+<t:advertiser.Layout pageTitle="${message:newly_built}HTML${message:advertisement}" pageGroup="campaign" t:navigation="${message:campaign_manage} > ${message:campaigns}" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers" style="width:600px;">
+		<div class="title">
+			${message:campaign}: <a href="/advertiser/campaignviewpage/${campaign.id}">${campaign.name}</a> > 
+			<a href="/advertiser/bannerlistpage/${campaign.id}">${message:banners}</a> >			
+			${message:new_html_ad}
+		</div>
+		<t:form class="form" id="form">
+			<t:errors/>
+			<table style="width:100%;">
+				<tr class="rowodd center">
+					<td class="field_name">
+						${message:width}:<input t:type="textfield" t:value="banner.width" size="5"/>
+						${message:height}:<input t:type="textfield" t:value="banner.height" size="5"/>
+						${message:html_description}
+					</td>
+				</tr>
+
+				<tr class="rowodd">
+					<td class="field_name">
+						${message:html_ad}:<t:textarea t:value="banner.content" cols="60" rows="20"/>
+					</td>
+				</tr>
+
+				<tr  class="rowodd">
+					<td class="center">
+						<input t:type="submit" t:id="add" value="${message:save_and_back_list}" class="button_margin"/>
+						<input t:type="submit" t:id="saveAndAddLandingPage" value="${message:save_the_page_and_add_advertising_objectives}" class="button_margin"/>
+						<button t:type="commons/button">${message:back}</button>
+					</td>
+				</tr>
+			</table>
+		</t:form>
+ 	</div>
+</t:advertiser.Layout>

@@ -1,0 +1,15 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<t:if test="readonly">
+		<t:datefield t:datePattern="prop:datePattern" size="10" t:value="dateBegin" readonly="readonly" />
+		<span style="left:-8px; position:relative;">-</span>
+		<t:datefield t:datePattern="prop:datePattern" size="10" t:value="dateEnd" readonly="readonly" />
+		<t:parameter name="else">
+			<t:datefield t:datePattern="prop:datePattern" size="10" t:value="dateBegin" />
+			<span style="left:-8px; position:relative;">-</span>
+			<t:datefield t:datePattern="prop:datePattern" size="10" t:value="dateEnd" />
+		</t:parameter>
+	</t:if>
+	<t:if test="showShortcut">
+		<t:daterangeshortcut t:datePattern="prop:datePattern" t:beginId="dateBegin" t:endId="dateEnd" />
+	</t:if>
+</html>

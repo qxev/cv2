@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<head>
+	<title>达闻广告联盟_网站主注册</title>
+	<meta name="keywords" content="营销，网络营销，联盟营销，广告营销，广告，网络广告，联盟广告，营销广告，营销联盟，广告主，网站主，网站联盟，广告联盟，按效果付费" />
+	<meta name="description" content="达闻网络营销致力于打造全国最大的网络营销平台，为网站主提供广告主的商品销售、会员注册、有效点击等效果广告, 营销效果优化分析, 及相应的全程服务；同时通过其成千上万的网站主网站，为广告主提供强大网络销售渠道的网络营销服务" />
+	<link href="/public/style/base.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">
+		form .request{
+			float:left;
+			width:200px;
+		}
+		
+		.request input{
+			width: 180px;
+		}
+		
+		form .right{
+			float:right;
+			padding-top: 16px;
+		}
+	</style>
+	<script type="text/javascript">AC_FL_RunContent = 0;</script>
+	<script src="/public/js/AC_RunActiveContent.js" type="text/javascript"></script>
+	<!-- 百度访问统计代码:头代码 2009－09－08 -->
+	<script type="text/javascript">
+		<![CDATA[
+		var _bdhm_top = 0;
+		var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+		var _bdhm_tim = new Image(1,1);
+		_bdhm_tim.id = "bdhmPerimg";
+		_bdhm_tim.src = _bdhmProtocol + "hm.baidu.com/_tt.gif?si=a42594bf91eab9148bf03bbc36ef572d&amp;rnd=" + Math.round(Math.random()*2147483647);
+		_bdhm_tim.onload=function(){_bdhm_top = 1;}
+		]]>
+	</script>
+</head>
+<body>
+<div class="wrap">
+<!--头部begin-->
+	<script type="text/javascript" src="/public/pageHead.html"></script>
+<!--头部end-->
+<div class="content">
+<!--菜单begin-->
+	<div class="nav">
+		<ul>
+		<li ><a href="/" >首页</a></li>
+		<li ><a href="/public/about_us.html" >关于我们</a></li>
+		<li ><a href="/public/advert_1.html">广告主</a></li>
+		<li ><a href="/public/affiance_1.html" class="now">网站主</a></li>
+		<li ><a href="/public/faq_1.html">帮助中心</a></li>
+		<li ><a href="/public/contact.html">联系我们</a></li>
+		<li ><a href="http://bbs.clickvalue.cn" target="_blank">联盟论坛</a></li>
+		<li ><a href="http://edu.clickvalue.cn" target="_blank">站长学院</a></li>
+		</ul>
+	</div>
+<!--菜单end-->
+	<div class="content-left">
+		<div class="here"><a href="/">首页</a> > 网站主注册</div>
+		  <div class="in-content">
+			<div class="formbg1"><h1 align="center">网站主注册</h1>
+				<t:form t:id="registrationForm">
+					<div><t:errors /></div>
+					<div class="request">
+						<strong>用户名:</strong>
+						<div class="input">
+							<t:textfield value="name" t:id="name" maxlength="250" />
+						</div>
+						<strong>密码:</strong>
+						<div class="input">
+							<t:passwordfield t:value="userPassword" t:id="userPassword"  maxlength="16" size="20" />
+						</div>
+						<strong>重复密码:</strong>
+						<div class="input">
+							<t:passwordfield t:value="userRepassword" t:id="userRepassword"  maxlength="16" size="20" />
+						</div>
+						<strong>用户邮箱: </strong>
+						<div class="input">
+							<t:textfield t:value="email" t:id="email" maxlength="250" size="20" />
+						</div>
+					</div>
+					<div class="right">
+						<img src="/public/images/right-banner1.jpg" style="border: 0px;" />
+					</div>
+					<textarea cols="85" name="textarea" readonly="readonly" rows="5">
+		"达闻广告联盟"网站（即http://www.clickvalue.cn）所提供的各项服务的所有权和运作权、使用权等由上海达闻文化传播有限公司拥有。达闻联盟营销（以下简称"联盟"）向联盟网站主提供本服务条款项下的服务。联盟提供的服务将完全按照其发布的本服务条款、联盟使用流程严格执行。加盟成员必须完全同意所有本服务条款以及相关使用流程，在完成注册程序、并经联盟确认后，才能成为"达闻联盟营销"的加盟成员。
+		一．申请资格
+		本服务条款中所指的加盟成员是指下述符合要求的网站所有人：
+		（1）个人网站：网站的所有人应为拥有中华人民共和国公民资格，具有完全的民事行为能力，并能够独立承担法律责任的自然人。
+		（2）商业网站：商业网站是指除个人网站之外的，从事商务行为的企业法人、实体、组织机构等所拥有的网站。商业网站的所有人应为在中华人民共和国领域内合法登记注册的企业法人或实体、组织机构。
+		（3）对网站的要求：加盟成员应保证其向达闻联盟营销提交的网站已经获得了政府有关部门的所有许可和批准，有权进行网站的运行和经营。网站的经营严格遵守相关法律法规，网站所进行的市场开拓、广告宣传及相关经营活动合法。网站不得包含下列内容：（以下简称"违法内容"）
+		a.反对宪法所确定的基本原则的；
+		b.危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的；
+		c.损害国家荣誉和利益的；
+		d.煽动民族仇恨、民族歧视，破坏民族团结的；
+		e.破坏国家宗教政策，宣扬邪教和封建迷信的；
+		f.散布谣言，扰乱社会秩序，破坏社会稳定的；
+		g.散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的；
+		h.侮辱或者诽谤他人，侵害他人合法权益的；
+		i. 侵犯他人知识产权的，包括但不限于专利权、商标权、著作权；
+		j. 侵犯他人商业秘密的；
+		k.含有法律、行政法规禁止的其他内容的。
+		无论个人网站还是商业网站，网站的所有人对自己的主页应具有完全的所有权、使用权、决策权等相应权利，并确保其网站的网页能够在800X600的解析度下正常显示。
+		（4）网站的所有人必须拥有一个固定的常住地址或办公地址，并具有经常上网收发电子邮件的能力。
+		（5）对于被达闻联盟营销暂时停止或者永久终止帐户的成员，联盟将不再为其提供系列服务。
+		二．加盟成员注册、广告投放程序
+		（1） 在按照达闻联盟营销网页提示申请并注册后，联盟将在三天内审查资格，并发出确认或者拒绝加入达闻联盟营销的邮件 。
+		（2） 通过确认信件中的链接地址激活帐号，并以自己的帐号和密码登录会员区，所有的会员操作包括各种说明都能够在会员区中获取。
+		（3） 将会员区中的广告代码放置在加盟成员的网站页面中，通过加盟成员的网站上的广告代码引导的有效行为单位都将被记录下来作为联盟与加盟成员进行结算的依据。
+		三．加盟成员的权利
+		（1）加盟成员在注册登记、得到联盟的确认，并激活联盟确认邮件中提供的链接以后，正式成为"达闻联盟营销"的加盟成员。享有联盟提供的服务。
+		（2）广告费用结算：联盟和加盟成员将按照"有效行为单位数量"进行结算：
+		加盟成员每产生一个有效行为单位将按该项目的有效行为单价进行结算。
+		（3）付费方式：
+		a.按照在加盟成员网站上广告的实际播放数量及获得实际有效行为单位数量，联盟将生成广告播放情况报表，供加盟成员在登录界面中查看。
+		b.按照上述报表反映的实际数据与单位价格，来确定网站的广告发布收入。通常联盟在每个月进行费用的统计和核对。如果没有出现会员违规情况，将在审核工作结束后，按照实际结果向会员支付费用。
+		c.支付费用的最低数额为人民币伍拾（50）元整，如果当月结算的总额小于人民币伍拾（50）元，费用将会被累计到下个月一并结算。
+		四．加盟成员的义务
+		（1）加盟成员必须保证其网站的所有网页不包含任何本条款第一条第（3）款定义的违法内容、并且保证不连接到含有违法内容的网页：
+		（2）如果会员提供给联盟的资料、信息等发生变化，包括网页地址、Email、联系电话等，应立刻通过会员区中的个人资料修改及时更改。
+		（3）l有权随时单方面决定更改本服务条款。如服务条款有任何变更，联盟将在联盟上发布公告，通知加盟成员。经修订的须知一经公布后，立即自动生效。
+		（4）本服务条款变更后，如加盟成员继续使用联盟提供的服务，则表示加盟成员接受经修订的服务条款。如加盟成员不同意服务条款的相关变更，应书面通知联盟。自联盟接到会员的书面通知起，视为该加盟成员自动退出本联盟。
+		（5）加盟成员不可擅自修改来自联盟，或来自向联盟提供服务的第三方网站、公司，或来自与联盟有合作关系的第三方的广告源代码；未经联盟同意，也不得将此源代码提供给其它任何第三方使用、参考等。否则，由此产生任何第三方向联盟的追偿、索赔，联盟有权向加盟成员追偿。
+		（6）加盟成员对所有来自联盟，或来自向联盟提供服务的第三方网站、公司，或来自与联盟有合作关系的第三方的广告内容、文本、图像等，未经联盟或有关第三方同意，不得对其进行任何形式的修改、补充、变更。
+		（7）加盟成员有义务根据联盟，或向联盟提供服务的第三方网站、公司，或与联盟有合作关系的第三方对广告的内容、文本、图像等的修改、补充、删减、更新等，在其网站上对相应的广告做出变更，以保证广告内容的准确性、完整性。
+		五．违约责任
+		（1）联盟严禁通过设备、程序以及其他不合法的手段提高个人收入。一经发现，联盟有权立即取消其加盟成员资格，撤回正在投放的广告，并追回已经支付的全部广告发布费，联盟保留进一步追索责任的权利；同时，该会员必须承担因此给联盟带来的所有损失。
+		（2）加盟成员承诺其向联盟提交的任何资料，包括但不限于其注册信息、网页地址，联系方式等的真实性。联盟不承担对上述资料的真实性的审查责任。但是，一旦联盟发现加盟成员提供虚假信息或采取其它欺骗手段，有权暂停或终止加盟成员的帐户，并保留追究加盟成员责任的权利。
+		（3）加盟成员承诺，其在联盟中的任何行为均不会使联盟、联盟的其它加盟成员、联盟的任何其它用户、向联盟提供服务的第三方网站、公司，或与联盟有合作关系的第三方承担任任何法律责任和处罚。否则，联盟应作出相应的赔偿。
+		（4）在不限制任何其他补救措施的前提下，联盟倘若发现会员从事涉及联盟网站的诈骗等非法活动、或其它有可能损害联盟的加盟成员、联盟的任何其它用户、向联盟提供服务的第三方网站、公司，或与联盟有合作关系的第三方的利益时，联盟可暂停或终止加盟成员的帐户，并有权停止支付相关费用。
+		（5）加盟成员同意，因加盟成员违反本服务条款或在本服务条款中提及的应遵守的其他文件，或因加盟成员违反了法律或侵害了第三方的权利，而使第三方对联盟及其子公司、分公司、董事、职员、代理人提出索赔要求（包括但不限于司法费用和其他专业人士的费用），加盟成员必须全额赔偿给联盟。
+		六．不可抗力
+		对于因联盟合理控制范围以外的原因，包括但不限于自然灾害、罢工、骚乱、物质短缺或定量配给、暴动、战争行为、政府行为、通讯或其他设施故障或严重伤亡事故等，致使联盟延迟或未能履约的，联盟不对加盟成员承担任何责任。
+		七．仲裁
+		因本服务条款或达闻联盟营销服务所引起加盟成员与联盟之间的任何争议，应提交上海仲裁委员会并根据其适用的仲裁规则进行仲裁裁决。任何该等争议应单独地仲裁，不得与任何其他方的争议在任何仲裁中合并处理。仲裁应在中国上海市进行，而仲裁裁决可提交对其有管辖权的任何法院予以强制执行。在仲裁进行期间，可向中国上海市地区内具有管辖权的法院寻求为保护加盟成员或达闻的权利或财产所需的任何临时或初步补救措施，包括但不限于财产保全或证据保全措施。
+					</textarea>
+					<input name="image" type="image" class="input-img" value="registe" src="/public/images/registe.jpg" />
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<input name="image" type="image" onclick="this.form.reset();return false;" class="input-img" value="cacel" src="/public/images/cancel.jpg" />
+				</t:form>
+			</div>
+	      </div>
+		</div>
+		<div class="content-right">
+		<div class="submenu">
+		<h3>栏目导航</h3>
+		<ul>
+		<li><a href="/public/advert_1.html" >网站主简介</a></li> 
+		<li><a href="/public/affiance_2.html" >网站主加盟利益</a></li>  
+		<li><a href="/public/affiance_3.html" >网站主操作流程</a></li>  
+		<li><a href="/AffiliateRegister" class="now">点击注册成为网站主</a></li> 
+		</ul>
+		</div>
+	
+		<div class="case"><h3><a href="/public/anli/" >成功案例</a></h3>
+		<p>
+		<a href="/public/anli/mysurveyasia.html"><img src="/public/images/TNS_logo_b.gif" width="80" height="40" border="0"/></a>
+		<strong><a href="/public/anli/mysurveyasia.html">mySurveyASIA</a></strong>  
+		<br />按照每成功注册一个mySurveyASIA会员（邮件激活，信息真实...</p>
+	
+		<p><a href="/public/anli/pampers.html"><img src="/public/images/bbshi_logo_b.gif" width="80" height="40" border="0"/></a>
+		<strong><a href="/public/anli/pampers.html">帮宝适</a></strong> 
+		<br />达闻采用绩效结算的方式，按照每成功注册一个Pampers...</p>
+	
+		<p><a href="/public/anli/yuansu.html"><img src="/public/images/s8_logo_b.gif" width="80" height="40" border="0"/></a>
+		<strong><a href="/public/anli/yuansu.html">中国元素</a></strong>
+		<br /> 按照有效访问中国元素网站和成功报名参赛中国元素会员的注册数据，都作为有效数据结算
+		</p>
+		</div>
+	<div class="faq">
+	  	<h3><a href="/public/faq_1.html">常见问题</a></h3>
+		<ul>
+		<li><a href="/public/faq_2_2_16.html">网站注册后多久审核？</a></li>  
+		<li><a href="/public/faq_2_5_5.html">CPS是什么？</a></li> 
+		<li><a href="/public/faq_2_5_6.html">CPC是什么？</a></li>  
+		<li><a href="/public/faq_1_22.html">什么是联盟营销？</a></li> 
+		<li><a href="/public/faq_1_19.html">什么是“按营销效果付费”？</a></li>  
+		<li><a href="/public/faq_1_10.html">如何支付佣金？</a></li> 
+		<li><a href="/public/faq_1_7.html">为什么要支付预付款？</a></li> 
+		</ul>
+	</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="bg-bottom"></div>
+<!--底部begin-->
+	<script type="text/javascript" src="/public/pageBottom.html"></script>
+<!--底部end-->
+</div>
+<script type="text/javascript">
+	<![CDATA[
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	]]>
+</script>
+<script type="text/javascript">
+	<![CDATA[
+	var pageTracker = _gat._getTracker("UA-4228178-1");
+	pageTracker._initData();
+	pageTracker._trackPageview();
+	]]>
+</script>
+<script type="text/javascript">
+	<![CDATA[
+	if(typeof(_gat)!='object'){
+		document.write('<sc'+'ript src="http'+(document.location.protocol=='https:'?'s://ssl':'://www')+'.google-analytics.com/ga.js"></sc'+'ript>');
+	}
+	]]>
+</script>
+<script type="text/javascript">
+	<![CDATA[
+	try {
+	var pageTracker=_gat._getTracker("UA-2920780-4");
+	pageTracker._trackPageview("/0471400125/test");
+	}catch(err){}
+	]]>
+</script>
+<!--Darwin Track System Ver2.0 Begin-->
+<script>
+	<![CDATA[
+    var _rsClientId="1";
+    var _rsStepId=0;
+    var _rsStepTp=0;
+    var _rsChls3 = ["611763_111250164","611764_111250165","611765_111250166"];
+    var _rsDWLP=document.location.protocol=='https:'?"https:":"http:";
+    var _rsDWDN="//sv.dmclick.cn/";
+    var _rsDWURL = _rsDWLP+_rsDWDN+"trk.js";
+    document.write(unescape("%3Cscript src='" + _rsDWURL + "' type='text/javascript'%3E%3C/script%3E"));
+    ]]>
+</script>
+<!--Darwin Track System Ver2.0 End-->
+<!-- Google Code for CPC Conversion Page -->
+<script language="JavaScript" type="text/javascript">
+	<![CDATA[
+	var google_conversion_id = 1043551133;
+	
+	var google_conversion_language = "zh_CN";
+	
+	var google_conversion_format = "1";
+	
+	var google_conversion_color = "ffffff";
+	
+	var google_conversion_label = "Q7H9CO--RhCdp83xAw";
+	]]>
+</script>
+<script type="text/javascript" src="http://www.googleadservices.com/pagead/conversion.js"></script>
+<noscript>
+	<img height="1" width="1" border="0" src="http://www.googleadservices.com/pagead/conversion/1043551133/?label=Q7H9CO--RhCdp83xAw&amp;script=0" />
+</noscript>
+<!-- 百度访问统计代码 2009－09－08 -->
+<script type="text/javascript">
+	<![CDATA[
+	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa42594bf91eab9148bf03bbc36ef572d' type='text/javascript'%3E%3C/script%3E"));
+	]]>
+</script>
+<script type="text/javascript" src="/assets/javascripts/o_code.js"></script>
+</body>
+</html>

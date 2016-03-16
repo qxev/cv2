@@ -1,0 +1,62 @@
+<t:affiliate.Layout t:pageTitle="${message:commission_assignment}" t:pageGroup="paymentReport" access="access" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers" style="width: 500px;">
+  		<div class="title">
+			${message:Payment_report} > ${message:commission_assignment} (${message:total_account}:${confirmMoney}${message:yuan})
+		</div>
+		<form t:type="form" class="form" t:id="editCommission"><t:errors />
+			<t:if test="applyDay">
+				<t:if test="canPay">
+					<table class="form_edit">
+						<tr class="roweven">
+							<td class="field_name">账户名称</td>
+							<td>
+								${account.bankName}${account.subBank}
+							</td>
+						</tr>
+						
+						<tr class="rowodd">
+							<td class="field_name">帐号</td>
+							<td>
+								${account.cardNumber}
+							</td>
+						</tr>
+						
+						<tr class="roweven">
+							<td class="field_name">${message:Owner_of_account}</td>
+							<td>
+								${account.ownerName}
+							</td>
+						</tr>
+						
+						<tr class="rowodd">
+							<td class="field_name">${message:Remittance_amount}</td>
+							<td>
+								<t:textfield value="money"/>
+							</td>
+						</tr>
+						
+						<tr class="roweven">
+							<td colspan="2" style="text-align: center;">
+								<button type="submit" class="positive">${message:submit}</button>
+								<button type="button" onclick="window.location.href='/affiliate/allocatecommissionpage'" class="positive">${message:return_to}</button>
+							</td>
+						</tr>		
+					</table>
+				</t:if>
+				<t:unless test="canPay">
+					<div style="color:red;">
+						${message:Each_account_household_must_divide}50${message:yuan}，${message:Your_surplus_commission}（${message:Has_not_paid_commission}-${message:the_commision_that_wati_to_pay}）${message:Insufficient}50${message:yuan}
+					</div>
+				</t:unless>
+			</t:if>
+			<t:unless test="applyDay">
+				<div style="margin: 10px auto; border: #BEE1A2 2px solid; width: 400px; min-height: 10px;">
+					<div style="display: table-cell; vertical-align: middle; min-height: 10px; padding: 10px;">
+						${message:The_commission_applies_to_pay}${message:time}为每月18号到23号
+					<br />
+					</div>
+				</div>
+			</t:unless>
+		</form>
+	</div>
+</t:affiliate.Layout>

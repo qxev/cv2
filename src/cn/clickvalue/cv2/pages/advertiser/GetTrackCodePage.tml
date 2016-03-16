@@ -1,0 +1,44 @@
+<t:advertiser.Layout pageTitle="${message:get_track_code}" pageGroup="campaign" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers">
+		<div class="title">${message:Campaign} > ${message:get_track_code}</div>
+		<t:form class="form">
+			<!-- cpc code -->
+			<table style="width:100%">
+				<tr>
+					<td style="color:#360;font-weight:bold;">Landing Page:</td>
+				</tr>
+				<tr>
+					<td>
+						<input t:type="textarea" t:value="cpcCode" rows="18" cols="110" onMouseOver="this.select()" />
+					</td>
+				</tr>             
+			</table>
+			
+			<!-- cpl code -->
+			<table style="width:100%;">
+				<tr>
+					<td style="color:#360;font-weight:bold;">${message:CPL}:</td>
+				</tr>
+				<tr>
+					<td>
+						<input t:type="textarea" t:value="cplCode" rows="18" cols="110" onMouseOver="this.select()" />
+					</td>
+				</tr>
+			</table>
+			
+			<!-- cps code -->
+			<table style="width:100%;">
+				<tr>
+					<td style="color:#360;font-weight:bold;">${message:CPS}:</td>
+				</tr>
+				<tr>
+					<td>
+						<input t:type="textarea" t:value="cpsCode" rows="18" cols="110" onMouseOver="this.select()" />
+					</td>
+				</tr>
+			</table>
+			
+			<t:SliderDoor text="${message:back}" href="javascript:back();" clear="true"/>
+		</t:form>
+	</div>
+</t:advertiser.Layout>

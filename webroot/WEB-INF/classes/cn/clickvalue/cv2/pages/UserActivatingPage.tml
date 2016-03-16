@@ -1,0 +1,91 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>      
+		<title>Action Result Messages</title>
+		<link rel="stylesheet" href="${asset:context:/assets/base.css}" type="text/css" />
+		<!-- 百度访问统计代码:头代码 2009－09－08 -->
+		<script type="text/javascript">
+			<![CDATA[
+			var _bdhm_top = 0;
+			var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+			var _bdhm_tim = new Image(1,1);
+			_bdhm_tim.id = "bdhmPerimg";
+			_bdhm_tim.src = _bdhmProtocol + "hm.baidu.com/_tt.gif?si=a42594bf91eab9148bf03bbc36ef572d&amp;rnd=" + Math.round(Math.random()*2147483647);
+			_bdhm_tim.onload=function(){_bdhm_top = 1;}
+			]]>
+		</script>
+	</head>  
+	<body>
+		<div id="msg">
+			<p>${message:operation_message}</p>
+			<hr/>
+			<p>${message}</p>
+			<p><a href="/userlogin" >立即登陆</a></p>
+		</div>
+		<t:if test="user">
+			<script type="text/javascript">
+				var _rsOrderId="${user.id}";//订单号，当要跟踪订单信息时设置
+			</script>
+			<script type="text/javascript" src="/assets/javascripts/track.js"></script>
+		</t:if>
+		<script type="text/javascript">
+			<![CDATA[
+			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+			]]>
+		</script>
+		<script type="text/javascript">
+			<![CDATA[
+			var pageTracker = _gat._getTracker("UA-4228178-1");
+			pageTracker._initData();
+			pageTracker._trackPageview();
+			]]>
+		</script>
+		<script type="text/javascript">
+			<![CDATA[
+			if(typeof(_gat)!='object'){
+				document.write('<sc'+'ript src="http'+(document.location.protocol=='https:'?'s://ssl':'://www')+'.google-analytics.com/ga.js"></sc'+'ript>');
+			}
+			]]>
+		</script>
+		<script type="text/javascript">
+			<![CDATA[
+			try {
+			var pageTracker=_gat._getTracker("UA-2920780-4");
+			pageTracker._trackPageview("/0471400125/test");
+			}catch(err){}
+			]]>
+		</script>
+		<!-- Google Code for CPC Conversion Page -->
+		<script type="text/javascript">
+			<![CDATA[
+			var google_conversion_id = 1043551133;
+			
+			var google_conversion_language = "zh_CN";
+			
+			var google_conversion_format = "1";
+			
+			var google_conversion_color = "ffffff";
+			
+			var google_conversion_label = "Q7H9CO--RhCdp83xAw";
+			]]>
+		</script>
+		<script type="text/javascript" src="http://www.googleadservices.com/pagead/conversion.js"></script>
+		<noscript>
+			<img height="1" width="1" border="0" src="http://www.googleadservices.com/pagead/conversion/1043551133/?label=Q7H9CO--RhCdp83xAw&amp;script=0" />
+		</noscript>
+		<!-- 百度访问统计代码 2009－09－08 -->
+		<script type="text/javascript">
+			<![CDATA[
+			var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+			document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa42594bf91eab9148bf03bbc36ef572d' type='text/javascript'%3E%3C/script%3E"));
+			]]>
+		</script>
+		<t:if test="user">
+			<script type="text/javascript">
+			  var _ozprm = "T_ID=" + "${user.id}";
+			</script>
+			<script type="text/javascript" src="/assets/javascripts/o_code.js"></script>
+		</t:if>
+	</body>
+</html>

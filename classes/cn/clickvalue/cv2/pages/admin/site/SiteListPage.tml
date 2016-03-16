@@ -1,0 +1,43 @@
+<t:admin.Layout t:pageTitle="CampaignList" t:navigation="网站管理" pageGroup="system" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <body>
+    	<t:form t:id="searchForm">
+	    	<div class="form">
+		    		网站名称:
+		    		<input t:type="textfield" t:id="siteName" value="formSiteName" />
+		    		网址:
+		    		<input t:type="textfield" t:id="siteUrl" value="formSiteUrl" />
+		    		所属用户:
+	    			<input t:type="textfield" t:id="userName" value="formUserName" />
+		    		加入状态:
+		    		<select t:type="select" model="literal:1=待审核,2=已批准,3=已拒绝" blankLabel="所有状态" value="formVerified" />
+		    		<input t:type="submit" value="查询" />
+			</div>
+    	</t:form>
+	    <table style="BORDER-COLLAPSE: collapse;" borderColor="#ced5b1" cellSpacing="0" cellPadding="0" width="100%" border="1"
+             t:id="myGrid" t:type="Grid" source="dataSource" row="site" model="beanModel" pagerPosition="literal:bottom" rowsPerPage="${noOfRowsPerPage}">
+             <t:parameter name="verifiedCell">
+             	${ognl:@cn.clickvalue.cv2.common.constants.Constants@formatVerified(messages,site.verified)}
+             </t:parameter>
+             <t:parameter name="deletedCell">
+				${ognl:@cn.clickvalue.cv2.common.constants.Constants@formatDeleteStatus(messages,site.deleted)}
+			</t:parameter>
+            <t:parameter name="logoCell">
+				<img src="${site.logo}" width="23" height="23" alt="无" />
+			</t:parameter>
+			<t:parameter name="urlCell">
+				<a href="${site.url}">${site.url}</a>
+			</t:parameter>
+	    	<t:parameter name="operateCell">
+				<select onchange="redirect(this)">
+					<option value="">--选择操作--</option>
+					<option value="/admin/site/viewpage/${site.id}">查看</option>
+					<option value="/admin/site/editpage/${site.id}">编辑</option>
+					<span t:type="t5components/Equals" left="prop:site.verified.toString()" right="literal:1">
+						<option msg="批准网站[${site.name}]？" value="/admin/site/listpage/pass/${site.id}" >批准</option>
+						<option msg="拒绝网站[${site.name}]？请输入拒绝理由:" type="prompt" parm = "refuseReson" value="/admin/site/listpage/refuse/${site.id}" >拒绝</option>
+           			</span>
+				</select>
+			</t:parameter>
+	    </table>
+    </body>
+</t:admin.Layout>

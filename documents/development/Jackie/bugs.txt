@@ -1,0 +1,14 @@
+#using \t as format
+
+#FUI: Function Unique Indentifier, for example: RD-CV2-01-01
+#DATE: the date that the current bug has been found.
+#
+
+FUI	:
+DATE	:
+
+FUI	:
+DATE	:
+
+FUI	:
+DATE	:

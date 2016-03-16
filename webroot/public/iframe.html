@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+</head>
+<script language="javascript">
+	function getUrlParam(name){
+		var reg=new RegExp("(^|&)"+name+"=(.*?)(&|$)");
+		var r = window.location.search.substr(1).match(reg);
+		if (r!=null){
+            var result = r[2];
+			return result;
+        }
+		return null;
+	}
+	function init(){
+		var mainHeight = getUrlParam("height");
+		document.getElementById("main").rows = mainHeight+",*";
+		document.getElementById("head").src = getUrlParam("head");
+		document.getElementById("content").src = getUrlParam("content");
+	}
+</script>
+<frameset id=main onload=init()>
+	<frame id=head>
+	<frame id=content>
+</frameset>
+</html>

@@ -1,0 +1,59 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<body>
+
+
+
+<t:form t:id="form">
+	<t:errors />
+	<div t:id="fa" t:type="ajaxformloop" source="sups" encoder="listEncode" value="sup">
+	
+		<t:zone t:id="tablezone">
+			<t:delegate to="table"/>
+		</t:zone><br/>
+		
+		<t:block t:id="table">
+		<table class="t-data-grid" cellspacing="0" cellpadding="0" bordercolor="#ced5b1" border="1" style="border-collapse: collapse;">
+			<thead>
+				<tr>
+					<th colspan="2">
+						促销活动
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr valign="top">
+					<td colspan="2">
+						目录标题:<br />
+						<textarea rows="4" cols="50"></textarea>
+					</td>
+				</tr>
+				<tr valign="top">
+					<td colspan="2">
+						图片:<br />
+						<img src="" alt="nothing" />
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<div t:id="fs" t:type="ajaxformloop" source="sup" encoder="sEncode" value="s">
+							<t:zone t:id="pzone">
+								<t:delegate to="p"/>
+							</t:zone><br/>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		</t:block>
+	</div>
+	<t:block t:id="p">
+		p: ${s}
+	</t:block>
+		
+	<p><input type="submit" value="Update" /></p>
+
+	
+</t:form>
+
+</body>
+</html>

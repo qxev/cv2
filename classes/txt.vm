@@ -1,0 +1,4 @@
+sitename	subsiteid	tracktime		trackip		siteCommisionOld	siteCommisionNew	darwCommisionOld	darwCommisionNew	orderamount	matched		ruleType	orderid
+#foreach($reportInfo in $reportInfos)
+$reportInfo.siteName		$reportInfo.subsiteId		$reportInfo.tracktime	$reportInfo.trackip	$reportInfo.siteCommisionOld			$reportInfo.siteCommisionNew			$reportInfo.darwCommisionOld			$reportInfo.darwCommisionNew			$reportInfo.orderamount		$reportInfo.matched		$reportInfo.ruleType		$reportInfo.orderId
+#end 

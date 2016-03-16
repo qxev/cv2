@@ -1,0 +1,3 @@
+<t:affiliate.Layout t:pageTitle="${message:user_login}" t:pageGroup="campaign" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	${message:The_application_is_successful}
+</t:affiliate.Layout>

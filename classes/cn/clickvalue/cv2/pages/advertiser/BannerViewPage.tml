@@ -1,0 +1,41 @@
+<t:advertiser.Layout pageTitle="${message:advertisement_detailed_information}" pageGroup="campaign" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers" style="width:600px;">
+		<div class="title">
+			${message:campaign}: <a href="/advertiser/campaignviewpage/${banner.campaign.id}">${banner.campaign.name}</a> > 
+			${message:advertisement_detailed_information}
+		</div>
+		<div class="form">
+	    	<table style="width:100%;">
+				<tr class="rowodd">
+					<td class="field_name">${message:respective_ad_campaign}</td>
+					<td class="field_value">
+					   ${banner.campaign.name}
+					</td>
+				</tr>
+				<tr class="roweven">
+					<td class="field_name">${message:ad_type}</td>
+					<td class="field_value">
+					    ${bannerType} 
+					</td>
+				</tr>
+				<tr class="roweven">
+					<td class="field_name">${message:ad_size}</td>
+					<td class="field_value">
+					    ${banner.width}*${banner.height} 
+					</td>
+				</tr>
+				<tr class="rowodd">
+					<td class="field_name">${message:ad_content}</td>
+					<td class="field_value">
+					    <t:bannerContent banner="banner" />
+					</td>
+				</tr>
+				<tr class="roweven">
+					<td class="center" colspan="2">
+						<button t:type="t5components/Button">${message:back}</button>
+					</td>
+				</tr>
+			</table>
+		</div>
+</div>
+</t:advertiser.Layout>

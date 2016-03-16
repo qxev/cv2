@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+		<title>Darwin Marketing</title>
+		<LINK  href="../../stylesheets/base.css" rel=stylesheet>
+		<LINK  href="../../stylesheets/css_cn.css" rel=stylesheet>
+		<script language="javascript" src="../js/userLinksFuns.js" type="text/javascript"></script>
+		<script language="javascript" src="../js/userBankAccounts.js"></script>
+		<script language="JavaScript" type="text/javascript" src="../js/adveBannerListFuns.js"></script>
+		<script language="JavaScript" type="text/javascript">
+			var FILE_EXT = '.html';
+		</script>
+	</head>
+<body>
+	<div class="content">
+		<div class="pageTitle">广告活动管理&nbsp;-&nbsp;佣金规则组&nbsp;-&nbsp;新增</div>
+        <table border="0" cellspacing="1" cellpadding="0" class="list">
+    <form name="postForm" method="get" action="prodTypeAct.php">
+      <input name="act" type="hidden" value="insert" />
+      <input name="turntopage" type="hidden" value="javascript:history.go(-2)" />
+      <tr class="title">
+        <td colspan="3">新增佣金规则组</td>
+      </tr>
+      <tr class="row1">
+        <td class="row_required">佣金规则组名称</td>
+        <td><input name="campaign_name" type="text" size="40" id="campaign_name" onfocus="show_ex(this, '标识您广告活动的佣金规则')" onblur="restore(this, '标识您广告活动的佣金规则')"  /></td>
+        <td><div id="campaign_name_ex">标识您广告活动的佣金规则</div></td>
+      </tr>
+      <tr class="row1">
+        <td class="row_required">所属广告活动</td>
+        <td><select name="subject_id" id="subject_id" onfocus="show_ex(this, '选择适用的广告活动')" onblur="restore(this, '选择适用的广告活动')">
+            <option value="">--请选择--</option>
+            <option value="152">qwe</option>          </select>
+        </td>
+        <td><div id="subject_id_ex">选择适用的广告活动</div></td>
+      </tr>
+      <tr class="row1">
+        <td>佣金规则组说明</td>
+        <td><textarea name="campaign_desc" cols="60" rows="5" id="campaign_desc" onfocus="show_ex(this, '说明佣金的适用范围和注意事项,避免网站主可能的误解')" onblur="restore(this, '说明佣金的适用范围和注意事项,避免网站主可能的误解')"></textarea></td>
+        <td><div id="campaign_desc_ex">说明佣金的适用范围和注意事项,避免网站主可能的误解</div></td>
+      </tr>
+      <tr class="row1">
+        <td class="row_required">佣金跟踪码1</td>
+        <td><input name="campaign_val" type="text" size="40" id="campaign_val" onfocus="show_ex(this, '请随机设定一个验证码,以帮助我们更精确地记录相关数据')" onblur="restore(this, '请随机设定一个验证码,以帮助我们更精确地记录相关数据')" /></td>
+        <td><div id="campaign_val_ex">请随机设定一个验证码,以帮助我们更精确地记录相关数据</div></td>
+      </tr>
+      <tr class="row1">
+        <td class="row_required">佣金规则类型</td>
+        <td><select name="campaign_type" onChange="commissionChange2(this.value);">
+            <option value="">--请选择--</option>
+            <option value="1" >点击(CPC)</option>
+            <option value="2" >销售(CPS)</option>
+            <option value="3" >引导(CPL)</option>
+          </select>
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr class="row1"><td id="testid1" class="row_required"></td><td id="testid2" colspan="2"></td></tr>      <tr class="row1">
+        <td class="row_required">佣金确认方式</td>
+        <td><select name="campaign_approval_cp">
+            <option value="1" >广告主确认</option>
+            <option value="2" selected="selected">管理员确认</option>
+          </select>
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+	  <tr class="row1"><td colspan="3">&nbsp;</td></tr>
+	  <tr class="row1">
+        <td class="row_required">佣金跟踪码2</td>
+        <td><input name="campaign_val" type="text" size="40" id="campaign_val" onfocus="show_ex(this, '请随机设定一个验证码,以帮助我们更精确地记录相关数据')" onblur="restore(this, '请随机设定一个验证码,以帮助我们更精确地记录相关数据')" /></td>
+        <td><div id="campaign_val_ex">请随机设定一个验证码,以帮助我们更精确地记录相关数据</div></td>
+      </tr>
+      <tr class="row1">
+        <td class="row_required">佣金规则类型</td>
+        <td><select name="campaign_type" onChange="commissionChange2(this.value);">
+            <option value="">--请选择--</option>
+            <option value="1" >点击(CPC)</option>
+            <option value="2" >销售(CPS)</option>
+            <option value="3" >引导(CPL)</option>
+          </select>
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr class="row1"><td id="testid1" class="row_required"></td><td id="testid2" colspan="2"></td></tr>      <tr class="row1">
+        <td class="row_required">佣金确认方式</td>
+        <td><select name="campaign_approval_cp">
+            <option value="1" >广告主确认</option>
+            <option value="2" selected="selected">管理员确认</option>
+          </select>
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+	  <tr class="row1"><td colspan="3">&nbsp;</td></tr>
+	  <tr class="row1">
+        <td class="row_required">佣金跟踪码</td>
+        <td><input name="campaign_val" type="text" size="40" id="campaign_val" onfocus="show_ex(this, '请随机设定一个验证码,以帮助我们更精确地记录相关数据')" onblur="restore(this, '请随机设定一个验证码,以帮助我们更精确地记录相关数据')" /></td>
+        <td><div id="campaign_val_ex">请随机设定一个验证码,以帮助我们更精确地记录相关数据</div></td>
+      </tr>
+      <tr class="row1">
+        <td class="row_required">佣金规则类型</td>
+        <td><select name="campaign_type" onChange="commissionChange2(this.value);">
+            <option value="">--请选择--</option>
+            <option value="1" >点击(CPC)</option>
+            <option value="2" >销售(CPS)</option>
+            <option value="3" >引导(CPL)</option>
+          </select>
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr class="row1"><td id="testid1" class="row_required"></td><td id="testid2" colspan="2"></td></tr>      <tr class="row1">
+        <td class="row_required">佣金确认方式</td>
+        <td><select name="campaign_approval_cp">
+            <option value="1" >广告主确认</option>
+            <option value="2" selected="selected">管理员确认</option>
+          </select>
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr class="row1">
+        <td colspan="3" align="center"><input type="button" name="Submit" value="保存并返回列表" onclick="javascript: document.location.href ='adm_prod_Type.html';" />
+          &nbsp;&nbsp;&nbsp;
+          <input type="button" name="Submit" value="保存并继续添加目标网址" onclick="javascript: document.location.href ='adm_prod_Adv_Insert.html';" />
+        </td>
+      </tr>
+    </form>
+  </table>
+</div>
+<div class="footer">
+  <div class="copyright"><a href="/darwin_2.html">关于我们</a>&nbsp;|&nbsp;<a href="/darwin_3.html">联系我们</a>&nbsp;|&nbsp;<a href="systemPassSession.php">论坛</a>&nbsp;<br />
+    沪ICP备06035438号<br />
+    Copyright &copy; 2006 - 2007 Darwin Marketing.<br />
+    <!--L_G_FOOT_CNZZ-->
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script><script type="text/javascript">_uacct = "UA-259227-4";urchinTracker();</script>  </div>
+</div>
+</div>
+</body>
+</html>

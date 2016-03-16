@@ -1,0 +1,86 @@
+<t:advertiser.Layout pageTitle="${message:examines_advertisement_goal_page}" pageGroup="campaign" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers">
+		<t:if test="landingPage">
+			<div class="title"> 
+				${message:campaign}: <a href="/advertiser/campaignviewpage/${campaign.id}">${campaign.name}</a> > 
+				${message:landingPage_group} 
+			</div>
+			
+			<div class="form">
+				<table class="form_edit">
+					<tr class="rowodd">
+						<td class="field_name">${message:landingPage_name}</td>
+						<td class="field_value"> ${LandingPage.name} </td>
+					</tr>
+					
+					<tr class="roweven">
+						<td class="field_name">${message:campaign_name}</td>
+						<td class="field_value"> <a href="/advertiser/campaignviewpage/${campaign.id}">${campaign.name}</a> </td>
+					</tr>
+					
+					<tr class="rowodd">
+					<td class="field_name">${message:destination_url}</td>
+						<td class="field_value"> <a href="${LandingPage.url}">${LandingPage.url}</a> </td>
+					</tr>
+				
+					<tr class="roweven">
+						<td class="field_name">${message:banners}</td>
+						<td class="field_value">
+							
+							<!-- Banner Table -->
+							  <table style="BORDER-COLLAPSE: collapse;" borderColor="#ced5b1" cellSpacing="0" cellPadding="0" width="100%" border="1"
+							             t:id="myGrid" t:type="Grid" source="dataSource" row="banner" model="beanModel" pagerPosition="literal:bottom">
+							             
+							      <t:parameter name="nameCell">
+									  <t:pagelink t:page="advertiser/bannerviewpage" t:context="banner.id">${message:examines_the_ad}</t:pagelink>
+								  </t:parameter>
+								           
+						          <t:parameter name="bannerTypeCell">
+										    ${bannerType}
+								  </t:parameter>
+								  
+							      <t:parameter name="sizeCell">
+											${banner.width}*${banner.height}
+								  </t:parameter>
+								  
+								  <t:parameter name="contentCell">
+										 <t:bannerContent banner="prop:banner" isExact="false" />
+								   </t:parameter>
+							  </table>
+							  
+						</td>
+					</tr>
+					
+					<tr class="rowodd">
+						<td class="field_name">${message:landingPage_category}</td>
+						<td class="field_value">
+							${landingPage.affiliateCategory.name}
+						</td>
+					</tr>
+				
+					<tr class="roweven">
+						<td class="field_name">${message:landingPage_desc}</td>
+						<td class="field_value">
+							${LandingPage.description}
+						</td>
+					</tr>
+				
+					<tr class="rowodd">
+						<td class="center" colspan="2">
+							<button t:type="t5components/Button"> ${message:back} </button>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</t:if>
+		
+		<t:unless test="landingPage">
+			<div class="title"> 
+				${message:campaign}:  > 
+				${message:landingPage_group} 
+			</div>
+			${message:you_do_not_have_any_right_to_view_the_information}
+		</t:unless>
+	</div>
+
+</t:advertiser.Layout>

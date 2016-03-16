@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:admin.Layout t:pageTitle="affiliateCampaignListPage" pageGroup="system" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<style type="text/css">
+	table.t-data-grid tbody tr td.checkbox {
+		text-align:center;
+	}
+</style>
+	<div class="page_headers">
+		<div class="title">广告 - 网站主 关系管理</div>
+		<t:form t:id="searchForm" class="form">
+			<t:errors />
+			网站主名称<t:textfield value="formAffiliateName" style="margin:0 5px 0 3px;" />
+			网站名称<t:textfield value="formSiteName" style="margin:0 5px 0 3px;" />
+		 	网站地址<t:textfield value="formSiteUrl" style="margin:0 5px 0 3px;" />
+			广告主名称<t:textfield value="formAdvertiseName" style="margin:0 5px 0 3px;" />
+			广告活动<t:textfield value="formCampaignName" style="margin:0 5px 0 3px;" />
+		 	<t:submit id="search" value="查询" style="margin:0 0 0 5px;" />
+		</t:form>
+	</div>
+		<t:form t:id="listForm">
+			<t:errors />
+			<div t:type="grid" source="dataSource" row="campaignSite" model="beanModel" pagerPosition="literal:bottom" rowsPerPage="noOfRowsPerPage" width="100%">
+				<t:parameter name="checkboxheader">
+					<input t:type="checkbox" t:id="chkall" onclick="checkAll(this.form)"/>
+				</t:parameter>
+				<t:parameter name="checkboxCell">
+					<t:checkbox t:id="checkbox" value="checked" />
+				</t:parameter>
+			</div>
+			<div style="padding:0 0 0 55px;">
+				<t:submit t:id="createBonus" value="奖惩" />
+			</div>
+		</t:form>
+	<br class="clear" />
+	<ul>
+		<li>奖惩是基于网站主和广告活动关系的，一个网站主对应一个广告活动，系统只会对其进行一次奖惩操作，不会因为有多个网站而奖惩多次</li>
+	</ul>
+</t:admin.Layout>

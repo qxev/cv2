@@ -1,0 +1,21 @@
+<t:admin.Layout pageTitle="job管理" pageGroup="system" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<t:form t:id="excelOutput">
+<table border="1" cellspacing="0" cellpadding="1" width="80%">
+	<tr>
+		<td class="td_title">选择日期</td>
+		<td>
+			<input t:id="startDate" />
+       		至<input t:id="endDate" /> 
+       	</td>
+       	<td class="td_title">广告活动</td>
+       	<td>
+       		<select t:type="select" value="excelOutputId" model="campaignOutputModel" blankLabel="--请选择--" />
+       	</td>
+       	<td>
+       		<input type="submit" value="导出报表"/>
+   		</td>
+   	</tr>
+</table>
+</t:form>
+
+</t:admin.Layout>

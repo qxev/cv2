@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<head>
+<style type="text/css">
+	.wrap{ margin:10px auto;width:760px; border:#dddcdc 1px solid; font-size:12px; line-height:1.5em; background:#E8F8E5; }
+</style>
+</head>
+<body>
+	<div style="margin: auto; width: 760px;"><h4>邮件主题:${subject}</h4></div>
+	
+	<div style="margin:10px auto;width:760px; border:#dddcdc 1px solid; font-size:12px; line-height:1.5em; background:#E8F8E5;">
+		<form t:type="form">
+			<select t:type="select" value="templateName" model="templateNamesSelectionModel" encoder="templateNamesValueEncoder" t:blankoption="Never" onChange="this.form.submit();" />
+		</form>
+	</div>
+	
+	<t:outputRaw value="msgBean.msg"></t:outputRaw>
+	
+	<div style="margin:10px auto;width:760px; border:#dddcdc 1px solid; font-size:12px; line-height:1.5em; background:#E8F8E5;">
+		<a t:type="eventLink" t:id="send">发送</a> | 
+		<a href="#" onclick="test();">测试发送</a> | 
+		<a t:type="pageLink" page="admin/mail/PromotionMailPage">返回</a>
+	</div>
+	
+	<script>
+		function test(){
+			var receivers = prompt("请输入收件人邮箱(多个邮箱用“,”分割)","");
+			if(receivers != null){
+				window.location.href = "/admin/mail/previewpage:test/".concat(receivers);
+			}
+		}
+	</script>
+</body>
+</html>

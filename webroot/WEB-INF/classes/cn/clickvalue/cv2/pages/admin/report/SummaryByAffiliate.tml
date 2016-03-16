@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:admin.Layout t:pageTitle="效果报表" t:pageGroup="effect_report" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers">
+		<div class="title">效果报表 > 网站主</div>
+		  <br/><br/>
+		<t:form t:id="reportForm">
+			<t:errors />
+			<div class="">
+				
+					<table border="0" cellspacing="0" cellpadding="1" width="60%" align="center">
+						<tbody>
+						<tr>
+							<td>
+								<table border="1" cellspacing="0" cellpadding="1" width="100%">
+						<tbody>
+								<tr>
+								<td class="td_title">选择日期</td>
+								<td>
+									<div align="left">
+					       				<t:daterange t:dateBegin="dateBegin" t:dateEnd="dateEnd"/>
+				       				</div>
+				       			</td>
+				       		</tr>
+								<tr>
+								<td class="td_title">选择统计类型</td>
+								<td>
+									<div align="left">
+										<t:radiogroup t:value="summaryType">
+											<t:radio value="0" />按日统计
+											<t:radio value="1" />按摘要汇总
+								  		</t:radiogroup>
+							  		</div>
+					  			</td>
+					    	</tr>
+					    	<tr>
+								<td class="td_title">选择网站主</td>
+								<td>
+									<div align="left">
+					       				<t:textfield t:id="userName" t:mixins="autocompleteExt" />&nbsp;&nbsp;
+					       				<input type="submit" t:type="submit" t:id="query" value="显示广告活动和站点" />
+				       				</div>
+				       				
+				       			</td>
+				       		</tr>
+					    		<tr>
+				       			<td class="td_title">选择广告活动</td>	
+				       			<td>
+				       				<div align="left">
+				       					<select t:type="select" value="campaignId" model="campaignModel" blankLabel="--请选择--" />
+				       				</div>
+				      			</td>
+				      		</tr>
+				      		<tr>
+				      			<td class="td_title">选择站点</td>
+				      			<td>
+				      				<div align="left">
+				      					<select t:type="select" value="siteId" model="siteModel" blankLabel="--请选择--"  />
+				      				</div>	
+						    	</td>
+							</tr>
+					    
+					
+				       		<tr>
+					    		<td class="td_title">选择汇总条件</td>
+					    		<td>
+					    			<div align="left">
+										<t:checkbox t:id="filterByCampaign" /> 按广告活动
+										<t:checkbox t:id="filterBySite" /> 按站点
+									</div>
+								</td>	
+							</tr>
+						
+					    </tbody>	
+				 	</table>
+							</td>	
+							<td width="120" valign="middle" align="center">
+								<div align="center">
+									<input type="submit" value="查询" />
+									<input t:type="submit" value="报表导出" t:id="export"/>
+								</div>	
+							</td>	
+						</tr>
+						</tbody>
+					</table>
+		 	</div>
+		</t:form>
+		
+		<div style="height:40px;">
+		</div>
+			
+		<div class="form">
+			<div class="table_clear">
+				<table cellspacing="5" cellpadding="0" border="0">
+					<tbody>
+						<tr>
+					    	<td><b>金额合计:&nbsp;&nbsp;<font color="green">${totalMoney}元</font><t:if test="${ognl:isNotZero(confirmedTotalMoney)}"><span class="blue">(${confirmedTotalMoney})元</span></t:if></b></td>
+				        </tr>
+			        	<tr>
+			        		<td>CPM数:&nbsp;&nbsp;${cpmSum}<t:if test="${ognl:isNotZero(confirmedCpmSum)}"><span class="blue">(${confirmedCpmSum})</span></t:if></td>
+					    	<td>CPC数:&nbsp;&nbsp;${cpcSum}<t:if test="${ognl:isNotZero(confirmedCpcSum)}"><span class="blue">(${confirmedCpcSum})</span></t:if></td>	
+					    	<td>CPL数:&nbsp;&nbsp;${cplSum}<t:if test="${ognl:isNotZero(confirmedCplSum)}"><span class="blue">(${confirmedCplSum})</span></t:if></td>	
+					    	<td>CPS数:&nbsp;&nbsp;${cpsSum}<t:if test="${ognl:isNotZero(confirmedCpsSum)}"><span class="blue">(${confirmedCpsSum})</span></t:if></td>	
+					    </tr>	
+				        <tr>
+					        <td>CPM网站佣金:&nbsp;&nbsp;${cpmMoney}元<t:if test="${ognl:isNotZero(confirmedCpmMoney)}"><span class="blue">(${confirmedCpmMoney})元</span></t:if></td>
+					    	<td>CPC网站佣金:&nbsp;&nbsp;${cpcMoney}元<t:if test="${ognl:isNotZero(confirmedCpcMoney)}"><span class="blue">(${confirmedCpcMoney})元</span></t:if></td>	
+					    	<td>CPL网站佣金:&nbsp;&nbsp;${cplMoney}元<t:if test="${ognl:isNotZero(confirmedCplMoney)}"><span class="blue">(${confirmedCplMoney})元</span></t:if></td>	
+					    	<td>CPS网站佣金:&nbsp;&nbsp;${cpsMoney}元<t:if test="${ognl:isNotZero(confirmedCpsMoney)}"><span class="blue">(${confirmedCpsMoney})元</span></t:if></td>	
+					    	<td>网站佣金合计:&nbsp;&nbsp;${siteMoney}元<t:if test="${ognl:isNotZero(confirmedSiteMoney)}"><span class="blue">(${confirmedSiteMoney})元</span></t:if></td>	
+				    		<td>达闻佣金合计:&nbsp;&nbsp;${darwinMoney}元<t:if test="${ognl:isNotZero(confirmedDarwinMoney)}"><span class="blue">(${confirmedDarwinMoney})元</span></t:if></td>	
+					    </tr>	
+				    </tbody>
+				</table>
+			</div>
+		</div>
+		
+		<div t:id="grid" style="width:100%;">
+		
+			<t:parameter name="siteUrlCell">
+				<a href="${report.siteUrl}" target="_blank">${report.siteUrl}</a>
+			</t:parameter>
+			
+			<t:parameter name="sumCpmCountOldCell">
+				${report.sumCpmCountOld} <t:if test="${ognl:isNotZero(report.sumCpmCountNew)}"> <font color="blue">(${report.sumCpmCountNew})</font></t:if>
+			</t:parameter>
+					
+			<t:parameter name="sumCpmSitecommisionOldCell">
+				${report.sumCpmSitecommisionOld} <t:if test="${ognl:isNotZero(report.sumCpmSitecommisionNew)}"><font color="blue">(${report.sumCpmSitecommisionNew})</font></t:if>
+			</t:parameter>
+			
+			<t:parameter name="sumCpcCountOldCell">
+				${report.sumCpcCountOld} <t:if test="${ognl:isNotZero(report.sumCpcCountNew)}"> <font color="blue">(${report.sumCpcCountNew})</font></t:if>
+			</t:parameter>
+					
+			<t:parameter name="sumCpcSitecommisionOldCell">
+				${report.sumCpcSitecommisionOld} <t:if test="${ognl:isNotZero(report.sumCpcSitecommisionNew)}"><font color="blue">(${report.sumCpcSitecommisionNew})</font></t:if>
+			</t:parameter>
+					
+			<t:parameter name="sumCplCountOldCell">
+				${report.sumCplCountOld} <t:if test="${ognl:isNotZero(report.sumCplCountNew)}"><font color="blue">(${report.sumCplCountNew})</font></t:if>
+			</t:parameter>
+					
+			<t:parameter name="sumCplSitecommisionOldCell">
+				${report.sumCplSitecommisionOld} <t:if test="${ognl:isNotZero(report.sumCplSitecommisionNew)}"><font color="blue">(${report.sumCplSitecommisionNew})</font></t:if>
+			</t:parameter>
+					
+			<t:parameter name="sumCpsCountOldCell">
+				${report.sumCpsCountOld} <t:if test="${ognl:isNotZero(report.sumCpsCountNew)}"><font color="blue">(${report.sumCpsCountNew})</font></t:if>
+			</t:parameter>
+					
+			<t:parameter name="sumCpsSitecommisionOldCell">
+				${report.sumCpsSitecommisionOld} <t:if test="${ognl:isNotZero(report.sumCpsSitecommisionNew)}"><font color="blue">(${report.sumCpsSitecommisionNew})</font></t:if>
+			</t:parameter>
+			
+			<t:parameter name="sumSitecommisionTotalOldCell">
+				${report.sumSitecommisionTotalOld} <t:if test="${ognl:isNotZero(report.sumSitecommisionTotalNew)}"><font color="blue">(${report.sumSitecommisionTotalNew})</font></t:if>
+			</t:parameter>
+					
+			<t:parameter name="sumDarwcommisionTotalOldCell">
+				${report.sumDarwcommisionTotalOld} <t:if test="${ognl:isNotZero(report.sumDarwcommisionTotalNew)}"><font color="blue">(${report.sumDarwcommisionTotalNew})</font></t:if>
+			</t:parameter>
+					
+			<t:parameter name="totalCommisionOldCell">
+				${report.totalCommisionOld} <t:if test="${ognl:isNotZero(report.totalCommisionNew)}"><font color="blue">(${report.totalCommisionNew})</font></t:if>
+			</t:parameter>
+		</div>
+	</div>
+</t:admin.Layout>

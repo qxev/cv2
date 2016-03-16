@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+		<title>Darwin Marketing</title>
+		<LINK  href="../../stylesheets/base.css" rel=stylesheet>
+		<LINK  href="../../stylesheets/css_cn.css" rel=stylesheet>
+		<script language="javascript" src="../js/userLinksFuns.js" type="text/javascript"></script>
+		<script language="javascript" src="../js/userBankAccounts.js"></script>
+		<script language="JavaScript" type="text/javascript">
+			var FILE_EXT = '.html';
+		</script>
+	</head>
+<body>
+	<div class="content">
+	  <div class="pageTitle">佣金信息</div>
+		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr valign="top">
+			  <td width="40%"><div class="quickSearch">
+				<div class="title">已支付佣金:200元&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">已确认未支付佣金:100元</font></div>
+	  </div>
+		<div class="quickSearch"><div class="title">待确认佣金</div>
+		<div class="form">
+		<div class="pageStyle"></div>
+		<table width="100%" border="0" cellpadding="0" cellspacing="1" class="list">
+		<tr class="title">
+		<td width="45%">广告活动名称</td><td width="45%">所属广告主</td><td width="10%">待确认佣金</td></tr>
+		<tr class="row1">
+			<td align="center">SAD</td>
+			<td align="center">XXXXXX</td>
+			<td>100.00</td>
+		</tr>
+		<tr class="row2">
+			<td align="center">AAD</td>
+			<td align="center">YYYYYYYY</td>
+			<td>500.00</td>		
+		</tr>
+	</table>
+		</div></div>
+			<div class="pageStyle">
+		<form action="../../Act.html">
+			<input type="submit" value="导出报表"/>
+		</form>
+	</div>
+
+		
+		</td><td width="3"></td><td>
+		<div class="quickSearch"><div class="title">已确认未支付佣金</div><div class="form"><div class="pageStyle"></div>
+			<form name="data" method="get" action="">
+			从<input type="text" name="sel1" id="sel1" size="20"  value="2006-01-01"><input type="reset" value="选择起始日期" onclick="return showCalendar('sel1', '%Y-%m-%d',false,true);">
+
+			 到<input type="text" name="sel3" id="sel3" size="20"  value="2008-04-07"><input type="reset" value="选择结束日期" onclick="return showCalendar('sel3', '%Y-%m-%d',false,true);">
+			&nbsp;&nbsp;选择网站<select>
+				<option value="">所有</option>
+				<option value="1">XXX</option>
+				<option value="2">YYY</option>
+				<option value="3">ZZZ</option>
+			</select>
+			<input name="submit" type="submit" value="查询" />			
+		  </form>
+		<table width="100%" border="0" cellpadding="0" cellspacing="1" class="list">
+		<tr class="title">
+			<td width="35%">
+				广告活动名称&nbsp;<img src="../../images/sort_down.gif" border="0">
+			</td>
+			<td width="10%">
+				确认前佣&nbsp;<img src="../../images/sort_down.gif" border="0">
+			</td>
+			<td width="10%">
+				确认后佣金&nbsp;<img src="../../images/sort_down.gif" border="0">
+			</td>
+			<td width="10%">
+				奖惩状态
+			</td>
+			<td width="10%">
+				奖惩金额
+			</td>
+			<td width="10%">
+				确认佣金时间&nbsp;<img src="../../images/sort_down.gif" border="0">
+			</td>
+			<td width="15%">
+				
+			</td>
+		</tr>
+		<tr class="row2">
+			<td align="center">DSAS</td>
+			<td align="center">100.00</td>
+			<td align="center">100.00</td>
+			<td align="center">无</td>
+			<td align="center">0.00</td>
+			<td align="center">YYYY-MM-DD</td>
+			<td align="center">
+				<select>
+					<option>请选择</option>
+					<option>查看佣金信息</option>
+				</select>
+			</td>
+		</tr>
+		<tr class="row2">
+			<td align="center">ASD</td>
+			<td align="center">60.00</td>
+			<td align="center">60.00</td>
+			<td align="center">奖励</td>
+			<td align="center">10.00</td>
+			<td align="center">YYYY-MM-DD</td>
+			<td align="center">
+				<select>
+					<option>请选择</option>
+					<option>查看奖惩信息</option>
+				</select>
+			</td>
+		</tr>
+		<tr class="row2">
+			<td align="center">WQD</td>
+			<td align="center">990.00</td>
+			<td align="center">990.00</td>
+			<td align="center">惩罚</td>
+			<td align="center">90.00</td>
+			<td align="center">YYYY-MM-DD</td>
+			<td align="center">
+				<select>
+					<option>请选择</option>
+					<option>查看奖惩信息</option>
+				</select>
+			</td>
+		</tr>		
+		</table>
+		<div class="pageStyle">
+			<form action="../../Act_1p.html">
+				<input type="submit" value="导出报表"/>
+			</form>
+		</div>
+		</div>
+
+</div><div style="text-align:center;">
+<form name="apply_commission" action="webs_per_bank.html" method="get">
+<input type="submit" value="佣金未到支付标准"/><!--button        disabled="disabled" -->
+<font style="color:#FF0000; font-weight:bolder;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注意:<a href="../user_inf/webs_user_Bank_Accounts.html">补全银行帐号</a>才能支付。</font></form>
+</div>
+      </td>
+    </tr>
+  </table>
+</div>
+<div class="footer">
+  <div class="copyright"><a href="/darwin_2.html">关于我们</a>&nbsp;|&nbsp;<a href="/darwin_3.html">联系我们</a>&nbsp;|&nbsp;<a href="systemPassSession.php">论坛</a>&nbsp;<br />
+    沪ICP备06035438号<br />
+    Copyright &copy; 2006 - 2007 Darwin Marketing.<br />
+    <!--L_G_FOOT_CNZZ-->
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script><script type="text/javascript">_uacct = "UA-259227-4";urchinTracker();</script>  </div>
+</div>
+</body>
+</html>

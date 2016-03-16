@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:admin.Layout t:pageTitle="CampaignList" t:navigation="prop:navigation" pageGroup="email_manage" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <body>
+    	<t:form t:id="form">
+    		<div><t:errors /></div>
+	    	<table style="BORDER-COLLAPSE: collapse;width:80%" borderColor="#ced5b1" 
+	            cellSpacing="0" cellPadding="0" width="100%" border="1">
+				<tr>
+					<td class="green_bg" colspan="3">
+						<strong>
+							<t:if test="edit">
+								新增Email模板
+								<t:parameter name="else">
+									修改Email模板
+								</t:parameter>
+							</t:if>
+						</strong>
+					</td>
+				</tr>
+				<tr>
+					<td class="greenwithe_bg">模板类型</td>
+					<td class="greenwithe">
+					    <select t:type="select" value="template.mailType" model="typesSelectionModel" encoder="typesValueEncoder" blankLabel="--选择模板--"/>
+					</td>
+				</tr>
+				<tr>
+					<td class="greenwithe_bg">语言</td>
+					<td class="greenwithe">
+					    <select t:type="select" value="template.language" model="literal:CN,EN" blankOption="NEVER"/>
+					</td>
+				</tr>
+				<tr>
+					<td class="greenwithe_bg">模板主题</td>
+					<td class="greenwithe">
+					    <input t:type="textfield" value="template.subject" />
+					</td>
+				</tr>
+				<tr>
+					<td class="greenwithe_bg">模板内容</td>
+					<td class="greenwithe">
+					    <input t:type="textarea" value="template.body" rows="15" cols="90"/>
+					</td>
+				</tr>
+				<tr>
+					<td class="green_bg" colspan="2">
+					    <input t:type="submit" value="提交" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					    <input type="reset" value="重置"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="button" onclick="window.location.href='/admin/mail/mailTemplateListPage'" value="back" />
+					</td>
+				</tr>
+			</table>
+			
+		</t:form>
+    </body>
+</t:admin.Layout>

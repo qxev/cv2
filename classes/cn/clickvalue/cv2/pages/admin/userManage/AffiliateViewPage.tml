@@ -1,0 +1,101 @@
+<t:admin.Layout t:pageTitle="CampaignList" t:navigation="管理员管理 > 详细信息" pageGroup="system" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <body>
+    	<table style="BORDER-COLLAPSE: collapse;width:100%" borderColor="#ced5b1" 
+            cellSpacing="0" cellPadding="0" width="100%" border="1">
+			<tr>
+				<td class="green_bg" colspan="3"><strong>网站主详细信息</strong></td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">用户名</td>
+				<td class="greenwithe">
+				    ${user.name} 
+				</td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">用户昵称</td>
+				<td class="greenwithe">
+				    ${user.nickName} 
+				</td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">用户组</td>
+				<td class="greenwithe">
+				    ${user.userGroup.name} 
+				</td>
+			</tr>
+			<tr>
+				<td class="green_bg" colspan="2">个人基本信息</td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">联系人名称</td>
+				<td class="greenwithe">
+				    ${user.userInfo.contact} 
+				</td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">电子邮件</td>
+				<td class="greenwithe">
+				    ${user.email}
+				</td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">国家</td>
+				<td class="greenwithe">
+				    ${user.userInfo.country}
+				</td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">地区</td>
+				<td class="greenwithe">
+				    ${user.userInfo.state}
+				</td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">县/市/区</td>
+				<td class="greenwithe">
+				    ${user.userInfo.city}
+				</td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">联系地址</td>
+				<td class="greenwithe">
+				    ${user.userInfo.city}
+				</td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">邮政编码</td>
+				<td class="greenwithe">
+				    ${user.userInfo.city}
+				</td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">电话号码</td>
+				<td class="greenwithe">
+				    ${user.userInfo.city}
+				</td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">手机号码</td>
+				<td class="greenwithe">
+				    ${user.userInfo.city}
+				</td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">QQ号码</td>
+				<td class="greenwithe">
+				    ${user.userInfo.city}
+				</td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">MSN帐号</td>
+				<td class="greenwithe">
+				    ${user.userInfo.city}
+				</td>
+			</tr>
+		</table>
+
+		<div class="center">
+			<input type="button" onclick="window.location.href='/admin/usermanage/AffiliateListPage'" value="back" />
+		</div>
+    </body>
+</t:admin.Layout>

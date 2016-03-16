@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<cv_report>
+<package_name>advertiser</package_name>
+<class_name>EffectReport</class_name>
+
+<report name="r1">
+<table_name>crp_data</table_name>
+<report_type>effect_report</report_type>
+<max_data_column>11</max_data_column>
+<start_page>1</start_page>
+<per_page>15</per_page>
+</report>
+
+<dimensions>
+
+<dimension name="d1">
+<id_field>campaignId</id_field>
+<name_field>campaignName</name_field>
+<memo_field>null</memo_field>
+<conditions>null</conditions>
+</dimension>
+
+<dimension name="d2">
+<id_field>siteId</id_field>
+<name_field>siteName</name_field>
+<memo_field>null</memo_field>
+<conditions>null</conditions>
+</dimension>
+
+</dimensions>
+
+<columns>
+
+<selected_column name="c1">
+<field_name>cpc_count</field_name>
+<field_type>Report.FIELD_OF_LONG</field_type>
+<conditions>null</conditions>
+</selected_column>
+
+<selected_column name="c2">
+<field_name>cpc_commision</field_name>
+<field_type>Report.FIELD_OF_LONG</field_type>
+<conditions>null</conditions>
+</selected_column>
+
+<selected_column name="c3">
+<field_name>cpl_count</field_name>
+<field_type>Report.FIELD_OF_LONG</field_type>
+<conditions>null</conditions>
+</selected_column>
+
+<selected_column name="c4">
+<field_name>cpl_commision</field_name>
+<field_type>Report.FIELD_OF_LONG</field_type>
+<conditions>null</conditions>
+</selected_column>
+
+<selected_column name="c5">
+<field_name>cps_count</field_name>
+<field_type>Report.FIELD_OF_LONG</field_type>
+<conditions>null</conditions>
+</selected_column>
+
+<selected_column name="c6">
+<field_name>cps_commision</field_name>
+<field_type>Report.FIELD_OF_LONG</field_type>
+<conditions>null</conditions>
+</selected_column>
+
+<selected_column name="c7">
+<field_name>cpm_count</field_name>
+<field_type>Report.FIELD_OF_LONG</field_type>
+<conditions>null</conditions>
+</selected_column>
+
+<selected_column name="c8">
+<field_name>cpm_commision</field_name>
+<field_type>Report.FIELD_OF_LONG</field_type>
+<conditions>null</conditions>
+</selected_column>
+
+<selected_column name="c9">
+<field_name>darwin_commision</field_name>
+<field_type>Report.FIELD_OF_LONG</field_type>
+<conditions>null</conditions>
+</selected_column>
+
+<selected_column name="c10">
+<field_name>commsion_total</field_name>
+<field_type>Report.FIELD_OF_LONG</field_type>
+<conditions>null</conditions>
+</selected_column>
+
+<selected_column name="c11">
+<field_name>confirm_state</field_name>
+<field_type>Report.FIELD_OF_LONG</field_type>
+<conditions>null</conditions>
+</selected_column>
+
+</columns>
+
+<order name="o1">
+<order_name>updated_date</order_name>
+<order_type>Report.ORDER_DESC</order_type>
+</order>
+
+</cv_report>
+
+

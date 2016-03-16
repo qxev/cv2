@@ -1,0 +1,49 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<head>
+		<title>${message:login_title}</title>
+		<link rel="stylesheet" href="${asset:context:/assets/login.css}" type="text/css" />
+		<style type="text/css">
+			#loginTable {
+				top:80px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="main">
+			<div style="margin: 10px auto; border: #BEE1A2 2px solid; width: 400px; min-height: 10px;">
+				<div style="display: table-cell; vertical-align: middle; min-height: 10px; padding: 10px; font-size: 12px;">
+					系统中已经存在了相同的银行账户，如果你知道是哪个用户注册了这样的银行账户，请输入用户名密码。
+					<br />
+				</div>
+			</div>
+			<div id="centerDiv">
+				<t:form t:id="userLoginForm">
+					<t:errors/>
+					<table id="loginTable">
+						<tr>
+							<td style="width: 70px; white-space: no-wrap;">用户名：</td>
+							<td><t:textfield value="userName"/></td>
+						</tr>
+						<tr>
+							<td>密码：</td>
+							<td><t:passwordfield value="userPassword"/></td>
+						</tr>
+					 	<tr>
+							<td>校验码：</td>
+							<td>
+								<t:textfield t:id="validateCode" value="validateCode" size="4"/><img src="/jcaptcha" id="checkCodeImg" onclick="this.src='/jcaptcha?now=' + new Date() * 1" alt="click" />
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" style="text-align: center;">
+								<input type="submit" t:id="loginButton" t:type="submit" value="${message:login_submit}"/>
+								<button t:type="t5components/Button" type="button" event="cancel" t:id="resetButton" style="margin-left: 20px;">取消</button>
+							</td>
+						</tr>
+					</table>
+				</t:form>
+			</div>
+		</div>
+	</body>
+</html>

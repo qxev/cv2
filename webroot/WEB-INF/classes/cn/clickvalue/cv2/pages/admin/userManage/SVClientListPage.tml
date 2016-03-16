@@ -1,0 +1,45 @@
+<t:admin.Layout pageTitle="CampaignList" navigation="客户审核" pageGroup="system" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<t:form>
+	<div><t:errors /></div>
+		<t:radiogroup t:id="SVClient" value="selectClientId">
+		<div>请为广告主<span style="color:red;">${advertiser.name}</span>选择他在SV系统中对应的客户帐户:</div>
+			<table width="60%" class="t-data-grid">
+				<thead>
+					<tr>
+						<th>
+							<t:radio value="literal:0"/>
+						</th>
+						<th>
+							名称
+						</th>
+						<th>
+							网站
+						</th>
+						
+					</tr>
+				</thead>
+				<t:loop source="prop:clients" value="client">
+					<tr>
+						<td style="text-align:center;">
+							<t:radio value="client.id"/>
+						</td>
+						<td>
+							${client.name}
+						</td>
+						<td>
+							${client.site}
+						</td>
+					</tr>
+				</t:loop>
+				<tr>
+					<td colspan="3" style="text-align:center;">
+						<input t:type="submit" t:id="submit" value="提交" style="margin-right:30px;" />
+						<input t:type="submit" t:id="findNone" value="没有对应SV客户" style="margin-right:30px;" />
+						<input t:type="submit" t:id="cancel" value="返回" />
+						
+					</td>
+				</tr>
+			</table>
+		</t:radiogroup>
+	</t:form>
+</t:admin.Layout>

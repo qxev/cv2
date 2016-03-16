@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:affiliate.Layout t:pageTitle="${message:choose_advertisement_goal_page}" t:pageGroup="campaign" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<script language="javascript" src="/assets/javascripts/commisionrule.js"></script>
+	<div class="page_headers">
+		<t:if test="hasCampaignAndBanner()">
+			<div class="title">${message:campaign}: ${campaign.name} > ${message:choose_advertisement_goal_page}</div>
+			<t:form t:id="form" class="form">
+				<t:errors/>
+				<t:radiogroup t:id="radioGroup">
+					<div t:id="grid" style="width: 90%;">
+						<t:parameter name="landingPageselectCell">
+							<t:radio t:id="radio" checked="checked"/>
+						</t:parameter>
+						<t:parameter name="landingPageurlCell">
+							<a href="${advertise.landingPage.url}" target="_blank">${advertise.landingPage.url}</a>
+						</t:parameter>
+					</div>
+				</t:radiogroup>
+				
+				<table id="checkboxes" class="t-data-grid" style="width: 90%;">
+					<thead>
+						<tr>
+							<th class="landingPagename t-first">${message:choose_site}</th>
+							<th class="landingPagename t-first">${message:website}</th>
+							<th class="landingPageurl">URL</th>
+						</tr>
+					</thead>
+					<t:checkboxselect t:id="selectedRoles" model="roleModel" encoder="encoder" selected="selectedRoles"/>
+				</table>
+				<t:unless test="isIframeType()"> 
+					<t:if test="rolemodel.size()">
+						<div style="margin: 0 0 5px 6px;">
+							<t:if test="campaign.htmlCode">
+								<t:checkbox t:id="checkbox"/> ${message:whether_gain_definition_code}
+							</t:if>
+						</div>
+						
+						<t:SliderDoorSubmit form="form" value="${message:gain_ad'scode}"/>
+					</t:if>
+				</t:unless>
+				<t:if test="isIframeType()"> 
+					<table style="width: 60%;">
+						<tr>
+							<td style="width:150px">
+							Iframe${message:link_type}:
+							</td>
+							<td>
+								<t:radiogroup t:id="iframeRadio" >
+									<t:radio value="0" onClick="hiddenText()"/>${message:picture}
+									<t:radio value="1" onClick="showText()"/>${message:text}
+								</t:radiogroup>
+							</td>
+							<td id="iframeTextTd" style="display:none">
+							<input t:type="textfield" t:value="iframeText" size="30"/>
+							</td>
+							<td>
+								<t:SliderDoorSubmit form="form" value="${message:next_step}"/>
+							</td>
+						</tr>
+					</table>
+					
+				</t:if>
+				
+				<t:unless test="campaign.affiliateVerified">
+					<t:SliderDoor text="${message:Chooses_other_site_to_apply_for_this_advertisement}" href="${getToUrl()}" style="margin-left:6px;"/>
+	       		</t:unless>
+				
+				<div class="clear"> </div>
+			</t:form>
+		</t:if>
+		<t:unless test="hasCampaignAndBanner()">
+			<div class="title">${message:ad_campaign}: 无 > > ${message:choose_advertisement_goal_page}</div>
+			<div>${message:Advertising_campaigns_have_been_deleted_or_offline}</div>
+			<div><a href="/affiliate/CampaignListPage">${message:Click_on_the_link_to_return_to_the_list_of_advertising_campaigns}</a></div>
+		</t:unless>
+	</div>
+</t:affiliate.Layout>

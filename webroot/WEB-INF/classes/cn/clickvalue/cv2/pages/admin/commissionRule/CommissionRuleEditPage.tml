@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:admin.Layout t:pageTitle="CommissionRuleEdit" t:navigation="广告活动 > 佣金规则 > 修改" pageGroup="campaign" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<script language="javascript" src="/assets/javascripts/commisionrule.js"></script>
+	<div class="page_headers" style="width:600px;">
+		<t:form class="form" t:id="commisionRuleForm">
+			<t:errors />
+			<table class="form_edit">
+				<tr class="rowodd">
+					<td class="field_name">${message:campaign_name}</td>
+					<td class="field_value">
+						${campaign.name}
+					</td>
+				</tr>
+				
+				<tr class="roweven">
+					<td class="field_name">${message:commision_type}<span class="red_star">*</span></td>
+					<td class="field_value">
+						<t:select value="commissionRule.ruleType"  model="literal:100=CPC,101=CPL,102=CPS,105=CPM" blankLabel="--请选择--" disabled="true" onchange="changeDiv()" />
+						<div id="style1" style="display:none">
+							<t:select value="CommissionRule.commissionType" t:id="valueType" model="literal:1=固定值,2=百分比" blankOption="never" />
+							<input t:type="textfield" t:value="CommissionRule.commissionValue" size="30" />
+						</div>
+					</td>
+				</tr>
+				
+				<tr class="rowodd">
+					<td class="field_name">${message:darwin_commision}<span class="red_star">*</span></td>
+					<td class="field_value">
+						<input size="35" t:type="textfield" t:value="CommissionRule.darwinCommissionValue"/>
+					</td>
+				</tr>
+				
+				<tr class="roweven">
+					<td class="field_name">${message:pimCoefficient}<span class="red_star">*</span></td>
+					<td class="field_value">
+						<input size="35" t:type="textfield" t:value="coefficient"/>(${message:recommendRange}: ${RecommendCoefficient})
+					</td>
+				</tr>
+				
+				<tr class="rowodd">
+					<td class="field_name">${message:commision_desc}<span class="red_star">*</span></td>
+					<td class="field_value">
+						<t:textarea t:value="CommissionRule.description" cols="40" rows="8"/>
+					</td>
+				</tr>
+				
+				<tr class="roweven">
+					<td colspan="2" style="text-align:center;">
+						<input type="submit" t:type="submit" t:id="saveRule" value="保存" class="button_margin"/>
+						<t:if test="haveCampaignId">
+							<input type="button" value="返回" onclick="window.location.href='/admin/commissionRule/listpage/${campaignId}'" />
+							<t:parameter name="else">
+								<input type="button" value="返回" onclick="window.location.href='/admin/commissionRule/listpage'" />
+							</t:parameter>
+						</t:if>
+					</td>
+				</tr>
+			</table>
+		</t:form>
+	</div>
+</t:admin.Layout>

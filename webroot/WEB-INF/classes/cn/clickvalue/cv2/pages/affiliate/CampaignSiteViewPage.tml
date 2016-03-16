@@ -1,0 +1,26 @@
+<t:affiliate.Layout t:pageTitle="${message:List_of_personal_campaign}" t:pageGroup="campaign" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<t:form t:id="SearchForm" class="form">
+		<div class="page_headers">
+			<div class="title">${message:campaign} > ${message:has_applied_campaign}</div>
+			<div class="form">
+				${message:campaign} <input t:type="textfield" t:value="campaignName" />
+				${message:website} <input t:type="textfield" t:value="siteName" />
+				${message:joins_condition} <select t:type="select" value="verifyState" model="1=${message:wait_for_verify}, 2=${message:has_been_verified}, 3=${message:has_rejected}" blankLabel="${message:all}" />
+				<t:submit t:id="search" class="search" value="${message:search}"/>
+			  	<div style="width: 100%;" t:id="myGrid">
+			  		<t:parameter name="campaignnameCell">
+			  			<t:pagelink page="affiliate/AffiliateCampaignViewPage" context="campaignSite.campaign.id">${campaignSite.campaign.name}</t:pagelink>
+		            </t:parameter>
+			  		
+			  		<t:parameter name="sitenameCell">
+			  			<a href="${campaignSite.site.url}">${campaignSite.site.name}</a>
+		            </t:parameter>
+		            	
+			  		<t:parameter name="verifiedCell">
+			            ${ognl:@cn.clickvalue.cv2.common.constants.Constants@getVerifiedState(messages,campaignSite.verified)}
+		            </t:parameter>
+				  </div>
+			</div>
+		</div>
+	</t:form>
+</t:affiliate.Layout>

@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:admin.Layout t:pageTitle="CheatingEdit" pageGroup="payment_report" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers">
+		<div class="title">作弊记录 > 修改作弊记录</div>
+	</div>
+	<t:form t:id="editForm">
+	<t:errors />
+		<table width="50%">
+			<tr class="roweven">
+				<td>网站主</td>
+				<td>${cheating.affiliate.name}</td>
+			</tr>
+			<tr class="rowodd">
+				<td>网站</td>
+				<td>${cheating.siteUrl}</td>
+			</tr>
+			<tr class="roweven">
+				<td>广告主</td>
+				<td>${advertiser.name}</td>
+			</tr>
+			<tr class="rowodd">
+				<td>广告活动</td>
+				<td>${cheating.campaignName}</td>
+			</tr>
+			<tr class="roweven">
+				<td>作弊时间</td>
+				<td>
+					<t:daterange t:dateBegin="cheating.cheatBeginAt" t:dateEnd="cheating.cheatEndAt"/>
+				</td>
+			</tr>
+			<tr class="rowodd">
+				<td>描述</td>
+				<td>
+					<t:textarea value="cheating.description" cols="40" rows="8"/>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align:right;">
+					<t:submit value="修改" style="margin:0 20px 0 0;" />
+					<input type="button" value="返回" onclick="window.location.href='/admin/cheating/listpage'" style="margin:0 100px 0 0;" />
+				</td>
+			</tr>
+		</table>
+	</t:form>
+</t:admin.Layout>

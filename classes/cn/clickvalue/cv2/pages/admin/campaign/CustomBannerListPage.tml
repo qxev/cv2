@@ -1,0 +1,16 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:admin.Layout t:pageTitle="用户获取自定义代码记录" pageGroup="system" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<!-- 导航 -->
+	<div class="page_headers">
+		<div class="title">${campaign.name} > 用户获取自定义代码记录</div>
+	</div>
+	<!-- 查询结果显示 -->
+	<div style="width:100%;" t:id="myGrid" t:type="Grid" source="dataSource" row="customBannerLog" model="beanModel" rowsPerPage="${noOfRowsPerPage}" pagerPosition="literal:bottom">
+		<t:parameter name="typeCell">
+			${TypeDisplay}
+		</t:parameter>
+	</div>
+	<div class="center">
+		<input type="button" value="返回" onclick="window.location.href='/admin/campaign/listpage'" />
+	</div>
+</t:admin.Layout>

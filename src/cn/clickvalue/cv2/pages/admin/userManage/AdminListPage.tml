@@ -1,0 +1,33 @@
+<t:admin.Layout t:pageTitle="CampaignList" t:navigation="管理员管理" pageGroup="system" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <body>
+    	<t:form t:id="searchForm">
+	    	<div class="form">
+		    		用户名:
+		    		<input t:type="textfield" t:id="userName" value="formUser.name" />
+		    		删除状态:
+		    		<select t:type="select" model="literal:0=未删除,1=已删除" blankLabel="所有状态" value="formUser.deleted" />
+		    		<input t:type="submit" value="查询" />
+			</div>
+    		<t:pagelink page="admin/userManage/AdminEditPage">[新增管理员]</t:pagelink>
+		    <table style="BORDER-COLLAPSE: collapse;" borderColor="#ced5b1" cellSpacing="0" cellPadding="0" width="100%" border="1"
+	             t:id="myGrid" t:type="Grid" source="dataSource" row="user" model="beanModel" pagerPosition="literal:bottom" rowsPerPage="${noOfRowsPerPage}">
+		    	
+				<t:parameter name="operateCell">
+					<select>
+						<option value="" >--选择操作--</option>
+						<option value="" onclick="window.location.href='/admin/usermanage/ViewPage/${user.id}'">查看</option>	
+						<option value="" onclick="window.location.href='/admin/usermanage/EditPage/${user.id}'">编辑</option>
+					</select>
+				</t:parameter>
+		    </table>
+		    
+		</t:form>
+<script>
+	function redirect(select){
+		var url = select.value;
+		select.selectedIndex = 0;
+		window.location = url;
+	}
+</script>
+    </body>
+</t:admin.Layout>

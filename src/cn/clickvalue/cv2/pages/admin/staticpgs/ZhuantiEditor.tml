@@ -1,0 +1,51 @@
+<t:admin.Layout pageTitle="${title}" t:navigation="专题页管理  > ${title}" pageGroup="static" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<div class="page_headers" style="width:800px;">
+	<t:form class="form" t:id="form">
+		<t:errors />
+		<table class="form_edit">
+			<tr class="roweven">
+				<td class="field_name">页面标题</td>
+				<td class="field_value">
+					<input t:type="textfield" t:value="campaignZhuanti.pageTitle" style="width: 300px;" />
+				</td>
+			</tr>
+		
+			<tr class="rowodd">
+				<td class="field_name">内页标题</td>
+				<td class="field_value">
+					<input t:type="textfield" t:value="campaignZhuanti.subject" />
+				</td>
+			</tr>
+			
+			<tr class="roweven">
+				<td class="field_name">广告活动</td>
+				<td class="field_value">
+					<input t:type="autoCompleter" value="campaignName" t:source="campaignNames"/>
+				</td>
+			</tr>
+			
+			<tr class="rowodd">
+				<td class="field_name">图片</td>
+				<td class="field_value">
+					<input t:type="textfield" t:value="campaignZhuanti.banner" style="width: 400px;"/>
+					<input type="button" value="管理" onclick="window.open('${manageLink}')" />
+				</td>
+			</tr>
+			
+			<tr class="roweven">
+				<td class="field_name">描述</td>
+				<td class="field_value">
+					<textarea t:id="editor" width="100%" ></textarea>
+				</td>
+			</tr>
+			
+			<tr class="rowodd">
+				<td colspan="2" style="text-align:center;">
+					<input type="submit" t:type="submit" t:id="saveRule" value="保存" class="button_margin"/>
+					<input type="button" value="返回" onclick="window.location.href='/admin/staticpgs/zhuantimanager'" />
+				</td>
+			</tr>
+		</table>
+	</t:form>
+</div>
+</t:admin.Layout>

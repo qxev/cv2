@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">	
+
+<div id="affiliateCategoryCheckboxes">
+	<t:if test="checkAllAble">
+		<div style="width: 330px;">
+			<div style="float: left; width: 70px;">
+				 &nbsp;
+			</div>
+			<div style="float: left; width: 260px;">
+				<input type="checkbox" id="chkall" onclick="checkAll(this.form)"/>全选
+			</div>
+			<div style="clear: both;"></div>
+		</div>
+	</t:if>
+	<t:loop t:source="primaryAffiliateCategories" t:value="primaryAffiliateCategory">
+	<div style="width: 330px;">
+		<div style="float: left; width: 70px;">
+			${primaryAffiliateCategory.name}
+		</div>
+		<div style="float: left; width: 260px;">
+			<t:loop t:source="primaryAffiliateCategory.affiliateCategories" t:encoder="primaryKeyEncoder" t:value="affiliateCategory">
+				<t:checkbox value="checked" onclick="checkedNumber(${MaxCategoryNumber});"/>
+				${affiliateCategory.name}
+			</t:loop>
+		</div>
+		<div style="clear: both;"></div>
+	</div>
+	</t:loop>
+</div>
+</html>
+

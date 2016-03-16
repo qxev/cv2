@@ -1,0 +1,42 @@
+<t:admin.Layout pageTitle="CampaignList" navigation="佣金匹配" pageGroup="commission_match" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <body>
+    	<script>
+    		var sessionId = "${uid}";
+    	</script>
+    	<div class="page_headers">
+	    	<t:form t:id="searchForm" class="form">
+	    		广告主:
+	    		<input t:type="autoCompleter" value="formAdvertiserName" source="advertiserNames" style="margin:0 5px 0 3px;"/>
+	    		广告活动名称:
+	    		<input t:type="autoCompleter" value="formCampaignName" source="campaignNames" style="margin:0 5px 0 3px;"/>
+	    		<input t:type="submit" value="查询" t:id="searchButton" style="margin:0 0 0 5px;"/>
+	    	</t:form>
+		</div>
+	    <table style="BORDER-COLLAPSE: collapse;" borderColor="#ced5b1" cellSpacing="0" cellPadding="0" width="100%" border="1"
+             t:id="myGrid" t:type="Grid" source="dataSource" row="campaign" model="beanModel" pagerPosition="literal:bottom" rowsPerPage="${noOfRowsPerPage}">
+			<t:parameter name="nameCell">
+				${campaign.name}
+			</t:parameter>
+			<t:parameter name="cpaCell">
+				<t:outputraw value="campaign.cpa"/>
+			</t:parameter>
+	    	<t:parameter name="bannersCountCell">
+	    		${campaign.banners.size()}
+			</t:parameter>
+			<t:parameter name="affiliateVerifiedCell">
+				${affiliateVerified:campaign.affiliateVerified}
+			</t:parameter>
+			<t:parameter name="VerifiedCell">
+				${verified}
+			</t:parameter>
+			<t:parameter name="onlineStatusCell">
+				${onlineStatus}
+			</t:parameter>
+			<t:parameter name="operateCell">
+				<a href="http://localhost:8081/effecter/fileupload.jsp?par=${campaign.id}~${campaign.name}~${campaign.user.id}~${userId}~${uid}" >导入匹配数据</a> | 
+				<a href="/commision/usermanage/tasklistpage/${campaign.id}" >查看任务</a>
+			</t:parameter>
+	    </table>
+	    <script language="javascript" src="/assets/javascripts/msglib.js"></script>	
+    </body>
+</t:admin.Layout>

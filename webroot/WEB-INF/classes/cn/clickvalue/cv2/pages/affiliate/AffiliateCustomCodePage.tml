@@ -1,0 +1,7 @@
+﻿<t:affiliate.Layout t:pageTitle="${message:gain_code}" t:pageGroup="campaign" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers">
+		<div class="title">${message:gain_ad'scode}</div>
+	</div>
+	<t:messagebanner t:id="message" type="type"/>
+	<t:outputraw value="context" />
+</t:affiliate.Layout>

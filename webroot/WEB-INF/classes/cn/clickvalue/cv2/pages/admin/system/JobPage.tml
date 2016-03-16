@@ -1,0 +1,8 @@
+<t:admin.Layout pageTitle="job管理" pageGroup="static" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<div class="action">
+</div>
+<div class="table_clear">
+<t:eventlink t:id="UpdateHomepageJob">更新首页</t:eventlink>
+</div>	
+
+</t:admin.Layout>

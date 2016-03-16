@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>test</title>
+	</head>
+	<body>
+		<table>
+		<thead>
+			<tr>
+				<th>siteName</th>
+				<th>subsiteId</th>
+				<th>tracktime</th>
+				<th>trackip</th>
+				<th>siteCommisionOld</th>
+				<th>siteCommisionNew</th>
+				<th>darwCommisionOld</th>
+				<th>darwCommisionNew</th>
+				<th>orderamount</th>
+				<th>matched</th>
+				<th>ruleType</th>
+				<th>orderId</th>
+			</tr>
+		</thead>
+		#foreach($reportInfo in $reportInfos)
+			<tr>
+				<td>$reportInfo.siteName</td>
+				<td>$reportInfo.subsiteId</td>
+				<td>$reportInfo.tracktime</td>
+				<td>$reportInfo.trackip</td>
+				<td>$reportInfo.siteCommisionOld</td>
+				<td>$reportInfo.siteCommisionNew</td>
+				<td>$reportInfo.darwCommisionOld</td>
+				<td>$reportInfo.darwCommisionNew</td>
+				<td>$reportInfo.orderamount</td>
+				<td>$reportInfo.matched</td>
+				<td>$reportInfo.ruleType</td>
+				<td>$reportInfo.orderId</td>
+			</tr>
+    	#end
+		</table>
+	</body>
+</html>

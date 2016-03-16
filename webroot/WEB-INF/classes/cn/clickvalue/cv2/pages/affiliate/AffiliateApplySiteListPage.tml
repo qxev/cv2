@@ -1,0 +1,58 @@
+<t:affiliate.Layout t:pageTitle="${message:apply_for_site}" t:pageGroup="campaign" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers">
+		<div class="title">${message:ad_campaign}: ${campaign.name} > ${message:This_advertising_campaign_has_not_yet_to_apply_for_the_site_list}</div>
+		<t:form t:id="form" class="form">
+			<t:errors/>
+			<table class="t-data-grid" style="width: 100%;">
+				<thead>
+					<tr>
+						<th width="15%">${message:choose}</th>
+						<th width="15%">${message:site_name}</th>
+						<th width="70%">${message:site}url</th>
+					</tr>
+				</thead>
+					<tr t:id="unCampaignSiteLoop">
+						<td><t:multiplebox value="site.id" t:id="multBoxs"/></td>
+						<td><a href="/affiliate/siteviewpage/${site.id}">${site.name}</a></td>
+						<td><a href="${site.url}" target="_blank">${site.url}</a></td>
+					</tr>
+			</table>
+			<t:if test="count">
+				<div class="css_button">
+					<input id="img_submit" type="image" style="width: 48px; height: 16px;" src="/assets/images/space.gif"/>
+				</div>	            
+				<div style="margin: 6px 0pt 0pt -67px; float: left;">
+					<a style="text-decoration: none; outline-style: none;" onclick="javascript:document.getElementById('form').submit();" href="#">${message:submit_the_application}</a>
+				</div>			
+			</t:if>
+			<!--div class="css_button">
+				<a href="#" onclick="javascript:back();">${message:Return_to_the_previous_page}</a>
+			</div-->
+	    	<div style="clear:both;"> </div>
+        	
+		</t:form>
+	</div>
+
+	<div class="page_headers">
+		<div class="title">${message:ad_campaign}: ${campaign.name} > ${message:This_advertising_campaign_has_yet_to_apply_for_the_site_list}</div>
+		<div class="form">
+			<table class="t-data-grid" style="width: 100%;">
+				<thead>
+					<tr>
+						<th width="15%">${message:site_name}</th>
+						<th width="15%">${message:application_condition}</th>
+						<th width="70%">${message:site}url</th>
+					</tr>
+				</thead>
+				<t:if test="${campaignSites.size()}">
+					<tr t:id="campaignSiteLoop">
+						<td><a href="/affiliate/siteviewpage/${campaignSite.site.id}">${campaignSite.site.name}</a></td>
+						<td>${ognl:@cn.clickvalue.cv2.common.constants.Constants@getVerifiedState(messages,campaignSite.verified)}</td>
+						<td><a href="/affiliate/siteviewpage/${campaignSite.site.id}">${campaignSite.site.url}</a></td>
+					</tr>
+				</t:if>
+			</table>
+		</div>
+	</div>
+	
+</t:affiliate.Layout>

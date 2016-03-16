@@ -1,0 +1,38 @@
+﻿<t:affiliate.Layout t:pageTitle="${message:show}" t:pageGroup="campaign" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<t:form t:id="SearchForm" >
+		<div class="table_clear">
+			<table style="BORDER-COLLAPSE: collapse;" borderColor="#ced5b1" cellSpacing="0" cellPadding="0" width="100%" border="1"
+	             			t:id="myGrid" t:type="Grid" source="dataSource" row="advertise" model="beanModel" pagerPosition="literal:bottom" rowsPerPage="${noOfRowsPerPage}">
+		    	<t:parameter name="bannerbannerTypeCell">
+		    		${ognl:@cn.clickvalue.cv2.common.constants.Constants@getBannerType(advertise.banner.bannerType)}
+				</t:parameter>
+		    	<t:parameter name="nameAndUrlCell">
+		    		<a href="${advertise.landingPage.url}">${advertise.landingPage.name}</a>
+				</t:parameter>
+		    	<t:parameter name="widthHeightCell">
+		    		${advertise.banner.width} * ${advertise.banner.height}
+				</t:parameter>
+				<t:parameter name="bannercontentCell">
+					<span t:type="t5components/Equals" left="prop:advertise.banner.bannerType" right="literal:0">
+						<img t:type="Image" src="${advertise.banner.content}" />
+           			</span>
+           			<span t:type="t5components/Equals" left="prop:advertise.banner.bannerType" right="literal:1">
+           				${advertise.banner.content}
+           			</span>
+           			<span t:type="t5components/Equals" left="prop:advertise.banner.bannerType" right="literal:2">
+		    			<img t:type="Image" src="${advertise.banner.content}" />
+           			</span>
+           			<span t:type="t5components/Equals" left="prop:advertise.banner.bannerType" right="literal:3">
+		    			<iframe  frameborder="0" scrolling="no" src="${advertise.banner.content}"></iframe> 
+           			</span>
+				</t:parameter>
+				
+				<t:parameter name="operateCell">
+					<t:pagelink page="affiliate/AffiliateAdvertiseCodePage" context="user.id">${message:gain_ad'scode}</t:pagelink><br/>
+					<a href="#">${message:Gain_definition_code}</a><br/>
+					<a href="#">${message:Advertisement_preview}</a>
+				</t:parameter>
+		    </table>
+	    </div>
+	</t:form>
+</t:affiliate.Layout>

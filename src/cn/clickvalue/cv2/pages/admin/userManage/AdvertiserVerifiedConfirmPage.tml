@@ -1,0 +1,15 @@
+<t:admin.Layout pageTitle="CampaignList" navigation="客户审核" pageGroup="system" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<t:form>
+		<div style="margin: 0px auto; border: #BEE1A2 2px solid; width: 400px; min-height: 10px;">
+			<div style="display: table-cell; vertical-align: middle; min-height: 10px; padding: 10px;">
+				<t:if test="client.id">
+					您选择批准广告主<span style="color:red">${advertiser.name}</span>,并且跟SV系统中的客户<span style="color:red">${client.name}</span>进行关联。
+					<t:parameter name="else">
+						您没有选择广告主<span style="color:red">${advertiser.name}</span>在SV系统中对应的客户，确定后系统会自动在SV系统中新建一个客户与该广告主对应。
+					</t:parameter>
+				</t:if>
+			<p style="text-align: center; margin-top: 10px;"><input t:type="submit" t:id="submit" value="确认" style="margin-right: 40px;"/><input t:type="submit" t:id="cancel" value="返回" /></p>
+			</div>
+		</div>
+	</t:form>
+</t:admin.Layout>

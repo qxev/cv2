@@ -1,0 +1,52 @@
+<t:admin.Layout pageTitle="CampaignList" navigation="${message:campaign_manage} > ${message:banners}" pageGroup="campaign" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <body>
+    	<div class="form">
+	    	<t:form t:id="searchForm">
+	    		所属广告活动:
+	    		<input t:type="textfield" value="formCampaignName" />
+	    		广告类型:
+	    		<select t:type="select" value="formbannerType" model="bannerTypeListSelectionModel" encoder="bannerTypeListValueEncoder" blankLabel="所有"/>
+	    		<input t:type="submit" value="查询" t:id="searchButton" />
+	    	</t:form>
+		</div>
+	    <t:form>
+		    <table style="BORDER-COLLAPSE: collapse;" borderColor="#ced5b1" cellSpacing="0" cellPadding="0" width="100%" border="1"
+	             t:id="myGrid" t:type="Grid" source="dataSource" row="banner" model="beanModel" pagerPosition="literal:bottom" rowsPerPage="${noOfRowsPerPage}">
+	             <t:parameter name="bannerTypeCell">
+	             	${bannerTypeFormat:banner.bannerType}
+	             </t:parameter>
+	             <t:parameter name="campaignNameCell">
+		    		<t:pagelink page="admin/campaign/viewpage" context="prop:viewParameters" >${banner.campaign.name}</t:pagelink>
+				 </t:parameter>
+				 <t:parameter name="verifiedCell">
+					 <t:if test="pendingApproval">
+					 	广告活动审核中
+					 	<t:parameter name="else">
+					 		${ognl:@cn.clickvalue.cv2.common.constants.Constants@formatVerified(messages,banner.verified)}
+					 	</t:parameter>
+					 </t:if>
+				 </t:parameter>
+	             <t:parameter name="sizeCell">
+					${banner.width}*${banner.height}
+				 </t:parameter>
+				 <t:parameter name="contentCell">
+					 <t:bannerContent banner="prop:banner" isExact="false" />
+				 </t:parameter>
+				 <t:parameter name="operateCell">
+					<select onchange="redirect(this);">
+						<option value="">--选择操作--</option>
+						<option value="/admin/banner/viewpage/${banner.id}">查看</option>
+						<span t:type="t5components/Equals" left="prop:banner.verified.toString()" right="literal:1">
+							<option msg="批准广告上线？" value="/admin/banner/listpage/passOnline/${banner.id}">批准</option>
+							<option msg="拒绝广告上线？" value="/admin/banner/listpage/refuseOnline/${banner.id}">拒绝</option>
+						</span>
+						<t:if test="pendingApproval">
+	           				<option msg="拒绝广告上线？" value="/admin/banner/listpage/refuseOnline/${banner.id}">拒绝上线</option>
+	           			</t:if>
+						<option value="/admin/banner/listpage/test/${banner.id}">广告测试</option>
+					</select>
+				 </t:parameter>
+		    </table>
+		</t:form>
+    </body>
+</t:admin.Layout>

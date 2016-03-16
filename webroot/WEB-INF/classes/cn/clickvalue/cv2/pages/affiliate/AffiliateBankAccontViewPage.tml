@@ -1,0 +1,133 @@
+<t:affiliate.Layout t:pageTitle="${message:Bank_account_management}" t:pageGroup="account" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	
+	<form t:type="form" t:id="delBankAccountForm" style="width: 500px;">
+		<div class="page_headers">
+			<div class="title">${message:Bank_account_management} > ${message:examine}</div>
+				<div class="form">
+					<div><t:messagebanner t:id="message" type="type"/></div>
+					<t:if test="account">
+						<table class="form_edit">
+							<tr class="rowodd">
+								<td class="field_name">${message:bank_name}</td>
+								<td class="field_value">
+									${account.bankName}
+								</td>
+							</tr>
+						
+							<tr class="roweven">
+								<td class="field_name">${message:Sub-branch}</td>
+								<td class="field_value">
+									${account.subBank}
+								</td>
+							</tr>
+						
+							<tr class="rowodd">
+								<td class="field_name">省</td>
+								<td class="field_value">
+									${account.province}
+								</td>
+							</tr>
+						
+							<tr class="roweven">
+								<td class="field_name">${message:city}</td>
+								<td class="field_value">
+									${account.city}
+								</td>
+							</tr>
+						
+							<tr class="rowodd">
+								<td class="field_name">${message:Bank_account}</td>
+								<td class="field_value">
+									${account.cardNumber}
+								</td>
+							</tr>
+			
+							<tr class="roweven">
+								<td class="field_name">${message:Owner_of_account}</td>
+								<td class="field_value">
+									${account.ownerName}
+								</td>
+							</tr>
+			
+							<tr class="rowodd">
+								<td class="field_name">${message:ID_card}</td>
+								<td class="field_value">
+									${account.idCardNumber}
+								</td>
+							</tr>
+			
+							<tr class="roweven">
+								<td class="field_name">${message:telephone}</td>
+								<td class="field_value">
+									${account.ownerTelephone}
+								</td>
+							</tr>
+						
+							<tr class="rowodd">
+								<td class="field_name">${message:address}</td>
+								<td class="field_value">
+									${account.ownerAddress}
+								</td>
+							</tr>
+						
+							<tr class="roweven">
+								<td class="field_name">${message:Verification_condition}</td>
+								<td class="field_value">
+									${ognl:getVerifiedState(account.verified)}
+								</td>
+							</tr>
+						
+							<tr class="rowodd">
+								<td class="field_name">${message:post_code}</td>
+								<td class="field_value">
+									${account.postcode}
+								</td>
+							</tr>
+						
+							<tr class="roweven">
+								<td class="field_name">${message:Whether_to_tacitly_approve}</td>
+								<td class="field_value">
+									${ognl:getDefaultState(account.defaultAccount)}
+								</td>
+							</tr>
+						
+							<tr class="rowodd">
+								<td class="field_name">${message:Rejection_reason}</td>
+								<td class="field_value">
+									${account.refuseReason}
+								</td>
+							</tr>
+			
+							<tr class="roweven">
+								<td colspan="2" style="text-align: center;">
+									
+									<t:if test="isAudio()">
+										<button t:type="t5components/Button" type="button" event="audio" style="margin-right: 30px;">
+											${message:submit_the_verification}
+										</button>
+									</t:if>
+									<t:if test="isDelete()">
+										<input type="button" value="${message:delete}" onclick="del('${message:confirm_to_delete}?')" style="margin-right: 30px;" />
+										<t:parameter name="else">
+											<input type="button" value="${message:delete}" onclick="del('${message:This_bank_account_number_is_verified_number}，${message:do_you_make_sure_to_delete_it?}?')" style="margin-right: 30px;" />
+										</t:parameter>
+									</t:if>
+																	
+									<button t:type="t5components/Button" type="button" event="clicked">
+										${message:return_to}
+									</button>
+								</td>
+							</tr>		
+						</table>
+					</t:if>
+				</div>		
+			</div>		
+		</form>
+		<script type="text/javascript">
+		function del(mes){
+			if(confirm(mes)){
+				window.location.href="/affiliate/AffiliateBankAccontViewPage:delete";
+			}
+		}
+		</script>
+</t:affiliate.Layout>

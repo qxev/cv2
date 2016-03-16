@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:advertiser.Layout t:pageTitle="${message:user_login}" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+<p class="welcome">${message:cheats_processing_report_form}</p>
+
+<div class="page_headers">
+<div class="title">${message:quick_query}</div>
+
+<div class="form">
+<t:form>	
+<input t:type="datefield" size="10" readonly="readonly" /> 到 <input size="10" t:type="datefield" readonly="readonly" />  <input t:type="submit" t:id="search" />
+	
+</t:form>
+</div>
+
+</div>
+
+<div class="page_headers">
+
+table	
+
+</div>	
+	
+</t:advertiser.Layout>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	Copyright 2007 The Apache Software Foundation
+	
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+	
+	http://www.apache.org/licenses/LICENSE-2.0
+	
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+-->
+
+<!DOCTYPE web-app
+        PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+	<display-name>clickvalue Tapestry 5 Application</display-name>
+
+	<context-param>
+		<param-name>webAppRootKey</param-name>
+		<param-value>cv.root</param-value>
+	</context-param>
+
+	<context-param>
+		<!-- The only significant configuration for Tapestry 5, this informs Tapestry
+			of where to look for pages, components and mixins. -->
+		<param-name>tapestry.app-package</param-name>
+		<param-value>cn.clickvalue.cv2</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:spring-main.xml</param-value>
+	</context-param>
+
+	<!-- 基于 单体的配置 -->
+	<!--  <filter>
+		<filter-name>app</filter-name>
+		<filter-class>org.apache.tapestry5.TapestryFilter</filter-class>
+		</filter>-->
+
+	<filter>
+		<filter-name>opensessioninview</filter-name>
+		<filter-class>
+			org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
+		</filter-class>
+		<init-param>
+			<param-name>singleSession</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+
+	<!-- 基于spring的配置 -->
+	<filter>
+		<filter-name>app</filter-name>
+		<filter-class>
+			org.apache.tapestry5.spring.TapestrySpringFilter
+		</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>opensessioninview</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>app</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<listener>
+		<listener-class>
+			org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
+	
+	<listener>
+		<listener-class>
+			cn.clickvalue.cv2.web.listener.ContextBindListener
+		</listener-class>
+	</listener>
+	
+	<servlet>
+		<servlet-name>default</servlet-name>
+		<servlet-class>org.mortbay.jetty.servlet.DefaultServlet</servlet-class>
+		<init-param>
+			<param-name>dirAllowed</param-name>
+			<param-value>false</param-value>
+		</init-param>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>configs</servlet-name>
+		<servlet-class>
+			com.darwinmarketing.configs.ConfigServlet
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+
+	</servlet>
+
+	<!-- 验证码 -->
+	<servlet>
+		<servlet-name>jcaptcha</servlet-name>
+		<servlet-class>
+			cn.clickvalue.cv2.web.servlet.ImageCaptchaServlet
+		</servlet-class>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	
+	<!-- 验证码 -->
+	<servlet>
+		<servlet-name>downLoadApi</servlet-name>
+		<servlet-class>
+			cn.clickvalue.cv2.web.servlet.DownLoadApiServlet
+		</servlet-class>
+	</servlet>
+	
+	<!-- SQL接收 -->
+	<servlet>
+		<servlet-name>sqlhandler</servlet-name>
+		<servlet-class>
+			cn.clickvalue.cv2.web.servlet.SqlHandlerServlet
+		</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>iPCount</servlet-name>
+        <servlet-class>cn.clickvalue.cv2.web.servlet.IPCountServlet</servlet-class>
+	</servlet>
+	
+	<!-- 根据广告活动ID得到任务 -->
+	<servlet>
+		<servlet-name>getTaskByCompaignId</servlet-name>
+		<servlet-class>
+			cn.clickvalue.cv2.web.servlet.GetTaskByCompaignIdServlet
+		</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>jcaptcha</servlet-name>
+		<url-pattern>/jcaptcha</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>downLoadApi</servlet-name>
+		<url-pattern>/downLoadApi</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>iPCount</servlet-name>
+		<url-pattern>/iPCount</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	<servlet-mapping>
+		<servlet-name>sqlhandler</servlet-name>
+		<url-pattern>/sqlhandler</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>getTaskByCompaignId</servlet-name>
+		<url-pattern>/getTaskByCompaignId</url-pattern>
+	</servlet-mapping>
+	 
+	<error-page>
+		<error-code>404</error-code>
+		<location>/errors/404.html</location>
+	</error-page>
+</web-app>

@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+		<title>Darwin Marketing</title>
+		<LINK  href="../../stylesheets/base.css" rel=stylesheet>
+		<LINK  href="../../stylesheets/css_cn.css" rel=stylesheet>
+		<script language="javascript" src="../js/userLinksFuns.js" type="text/javascript"></script>
+		<script language="javascript" src="../js/userBankAccounts.js"></script>
+		<script language="JavaScript" type="text/javascript" src="../js/adveBannerListFuns.js"></script>
+		<script language="JavaScript" type="text/javascript">
+			var FILE_EXT = '.html';
+		</script>
+	</head>
+<body>
+	<div class="content">
+		<div class="pageTitle">用户管理</div>
+        <div class="quickSearch">
+    <div class="title">快速查询</div>
+    <div class="form">
+      <form name="form" method="get" action="">
+        用户名        <input name="user_name" type="text" size="25" maxlength="20" value="">
+        用户邮箱        <input name="user_mail" type="text" size="35" maxlength="40" value="">
+		用户类型:<input type="radio" value="1" checked="checked" />所有
+		<input type="radio" value="1"/>网站主
+		<input type="radio" value="1"/>广告主
+		<input type="radio" value="1"/>BBS
+		<br />
+        网站名称        <input name="link_name" type="text" size="51" maxlength="40" value="" />
+        网址        <input name="link_url" type="text" size="44" maxlength="80" value="" />
+		<br />
+        加入状态        <select name="user_status">
+          <option value="" selected="selected">所有状态</option>
+          <option value="0" ><span style="color:#666" >待审核</span></option>
+          <option value="1" ><span style="color:#393" >已批准</span></option>
+          <option value="2" ><span style="color:#f00" >已拒绝</span></option>
+        </select>
+        激活状态        <select name="user_actived">
+          <option value="" selected="selected">所有状态</option>
+          <option value="0" >未激活</option>
+          <option value="1" >已激活</option>
+        </select>
+        删除状态        <select name="user_deleted">
+          <option value="" selected="selected">所有状态</option>
+          <option value="0" >有效</option>
+          <option value="1" >无效</option>
+        </select>
+        <br />
+        从<input type="text" name="sel1" id="sel1" size="20"  value="2006-01-01"><input type="reset" value="选择起始日期" onclick="return showCalendar('sel1', '%Y-%m-%d',false,true);"> 到<input type="text" name="sel3" id="sel3" size="20"  value="2008-04-08"><input type="reset" value="选择结束日期" onclick="return showCalendar('sel3', '%Y-%m-%d',false,true);">         <input type="submit" value="查询">
+      </form>
+    </div>
+  </div>
+  <br />
+  <div class="action">
+  	<a href="admin_adm_add.html">[新增广告主]</a>
+	&nbsp;&nbsp;
+	<a href="admin_webm_add.html">[新增网站主]</a>
+	&nbsp;&nbsp;
+	<a href="admin_userBankAccounts.html">[银行帐户管理]</a>	
+  </div>
+  <div class="totalStyle">Now displaying records 1 to 15 of 727</div><div class="pageStyle"><font class="page_cur">1</font>
+<a href="/ad/toolUser.php?page=2">2</a>
+<a href="/ad/toolUser.php?page=3">3</a>
+&nbsp;&nbsp;<a href="/ad/toolUser.php?page=2">下一页</a></div><table width="100%" border="0" cellpadding="0" cellspacing="1" class="list">
+<tr class="title">
+<td width="10%"><a href="?get_sortcol=t2.uinfo_logo&get_sortorder=desc" class="sort">用户LOGO&nbsp;<img src="../../images/sort_down.gif" border="0"></a></td><td width="10%"><a href="?get_sortcol=t1.user_name&get_sortorder=desc" class="sort">用户名&nbsp;<img src="../../images/sort_down.gif" border="0"></a></td><td width="10%"><a href="?get_sortcol=t1.user_mail&get_sortorder=desc" class="sort">用户所属&nbsp;<img src="../../images/sort_down.gif" border="0"></a></td><td width="10%"><a href="?get_sortcol=t3.link_name&get_sortorder=desc" class="sort">网站名称&nbsp;<img src="../../images/sort_down.gif" border="0"></a></td><td width="10%"><a href="?get_sortcol=t3.link_url&get_sortorder=desc" class="sort">网址&nbsp;<img src="../../images/sort_down.gif" border="0"></a></td><td width="1%"><a href="?get_sortcol=t1.user_status&get_sortorder=desc" class="sort">审核状态&nbsp;<img src="../../images/sort_down.gif" border="0"></a></td><td width="1%"><a href="?get_sortcol=t1.user_actived&get_sortorder=desc" class="sort">激活状态&nbsp;<img src="../../images/sort_down.gif" border="0"></a></td><td width="1%"><a href="?get_sortcol=t1.user_deleted&get_sortorder=desc" class="sort">删除状态&nbsp;<img src="../../images/sort_down.gif" border="0"></a></td><td width="10%"><a href="?get_sortcol=t5.category_name&get_sortorder=desc" class="sort">网站分类&nbsp;<img src="../../images/sort_down.gif" border="0"></a></td><td width="10%"><a href="?get_sortcol=t1.user_status_dt&get_sortorder=desc" class="sort">审核时间&nbsp;<img src="../../images/sort_down.gif" border="0"></a></td><td width="10%"><a href="?get_sortcol=t1.user_dc&get_sortorder=desc" class="sort">创建日期&nbsp;<img src="../../images/sort_down.gif" border="0"></a></td><td width="1%">&nbsp;</td></tr>
+<tr class="row2">
+<td><div class="logo"><img src="../images/00021194-120730927222160300.gif" height="31" width="88" border="0" /></div></td>
+<td><a href="toolUserTousers.php?cid=21194"><div style="display:block" onmouseover="return overlib('qq644316346');" onmouseout="nd();">qq64431634...</div></a></td>
+<td><div style="display:block" onmouseover="return overlib('644316346@qq.com');" onmouseout="nd();">广告主</div></td>
+<td><div style="display:block" onmouseover="return overlib('520交友论坛');" onmouseout="nd();">520交友论坛...</div></td>
+<td><a href="http://aiq520.eyk.cn" style="display:block" onmouseover="return overlib('aiq520.eyk.cn');" onmouseout="nd();" target="_blank">aiq520.eyk...</a></td>
+<td><span style="color:#666" >待审核</span></td>
+<td>已激活</td>
+<td>有效</td>
+<td>交友/社区/</td>
+<td>0000-00-00 00:00:00</td>
+<td>2008-04-04 19:41:12</td>
+<td>
+	<select id="a1" onchange="control('id');">
+	<option>--选择操作--</option>
+	<option>查看</option>
+	<option>充值记录</option>
+	<option>编辑</option>
+	<option value="bb"onclick="javascript: document.location.href ='admin_user_soft.html';">批准</option>
+	<option>拒绝</option>
+	<option>删除</option>
+	<option>新增我的网站</option>
+	<option>查看我的网站</option>
+	<option>查看用户帐户信息</option>
+	<option>重发激活码</option>
+	</select>
+</td>
+</tr>
+<tr class="row1">
+<td><div class="no_logo"><img src="../images/none_logo.gif" border="0" height="60" width="120" /></div></td>
+<td><a href="toolUserTousers.php?cid=21134"><div style="display:block" onmouseover="return overlib('okddy');" onmouseout="nd();">okddy</div></a></td>
+<td><div style="display:block" onmouseover="return overlib('liumingplayboy@163.com');" onmouseout="nd();">网站主</div></td>
+<td><div style="display:block" onmouseover="return overlib('DDY-衬衣专家 专为精英人士打造 演绎华丽成功的你');" onmouseout="nd();">DDY-衬衣专...</div></td>
+<td><a href="http://www.okddy.com" style="display:block" onmouseover="return overlib('www.okddy.com');" onmouseout="nd();" target="_blank">www.okddy....</a></td>
+<td><span style="color:#666" >待审核</span></td>
+<td>已激活</td>
+<td>有效</td>
+<td>购物/导购/交易</td>
+<td>0000-00-00 00:00:00</td>
+<td>2008-04-03 13:07:19</td>
+<td><select>
+	<option value="-">--选择操作--</option>
+	<option>查看</option>
+	<option>支付记录</option>
+	<option>编辑</option>
+	<option>批准</option>
+	<option>拒绝</option>
+	<option>删除</option>
+	<option>新增我的网站</option>
+	<option>查看我的网站</option>
+	<option>查看用户帐户信息</option>
+	<option>重发激活码</option>
+	</select>
+</td>
+</tr>
+</table>
+<div class="pageStyle"><font class="page_cur">1</font>
+<a href="/ad/toolUser.php?page=2">2</a>
+<a href="/ad/toolUser.php?page=3">3</a>
+&nbsp;&nbsp;<a href="/ad/toolUser.php?page=2">下一页</a></div><div style="text-align: right;"><form name="dataexport" method="get" action=""><input name="de" type="hidden" value="1"><input name="submit" type="submit" value="导出数据"></form></div></div>
+<div class="footer">
+  <div class="copyright"><a href="/darwin_2.html">关于我们</a>&nbsp;|&nbsp;<a href="/darwin_3.html">联系我们</a>&nbsp;|&nbsp;<a href="systemPassSession.php">论坛</a>&nbsp;<br />
+    沪ICP备06035438号<br />
+    Copyright &copy; 2006 - 2007 Darwin Marketing.<br />
+    <!--L_G_FOOT_CNZZ-->
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script><script type="text/javascript">_uacct = "UA-259227-4";urchinTracker();</script>  </div>
+</div>
+</div>
+</body>
+</html>
+<script>
+
+</script>

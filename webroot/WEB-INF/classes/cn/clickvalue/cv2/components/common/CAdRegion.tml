@@ -1,0 +1,22 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">	
+
+	<t:loop t:source="regions" t:value="region" t:index="index">
+		<t:checkbox value="selected" t:id="cadregion_checkbox"/>
+		${region}
+		<t:if test="breakline">
+			<br />
+		</t:if>
+	</t:loop>
+<script type="text/javascript">
+<![CDATA[
+var $j = jQuery.noConflict(true);
+$j('#cadregion_checkbox_33').click(function() {
+	var checked = this.checked;
+	$j(this).parent().find(':checkbox[id!="cadregion_checkbox_33"]').each(function(){
+		this.checked=checked;
+	})
+});
+]]>
+</script>
+</html>
+

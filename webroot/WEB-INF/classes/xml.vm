@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+    <campaign id="$campaignId" name="${campaignName}"></campaign> 
+    <pageId>$page</pageId> 
+    <total>$total</total> 
+    <hasMore>$hasMore</hasMore>
+    #foreach($reportInfo in $reportInfos)
+	<row>
+		<siteName>$reportInfo.siteName</siteName> 
+		<subsiteId>$reportInfo.subsiteId</subsiteId>
+		<tracktime>$reportInfo.tracktime</tracktime>
+		<trackip>$reportInfo.trackip</trackip>
+		<siteCommisionOld>$reportInfo.siteCommisionOld</siteCommisionOld>
+		<siteCommisionNew>$reportInfo.siteCommisionNew</siteCommisionNew>
+		<darwCommisionOld>$reportInfo.darwCommisionOld</darwCommisionOld>
+		<darwCommisionNew>$reportInfo.darwCommisionNew</darwCommisionNew>
+		<orderamount>$reportInfo.orderamount</orderamount>
+		<matched>$reportInfo.matched</matched>
+		<ruleType>$reportInfo.ruleType</ruleType>
+		<orderId>$reportInfo.orderId</orderId>
+    </row> 
+    #end
+</data>

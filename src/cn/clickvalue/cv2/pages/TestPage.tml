@@ -1,0 +1,6 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" xml:space="preserve">
+	<a target="_blank" href="http://tapestry.apache.org/tapestry5/apidocs/org/apache/tapestry5/annotations/PageLoaded.html">http://tapestry.apache.org/tapestry5/apidocs/org/apache/tapestry5/annotations/PageLoaded.html</a>
+	Method annotation used for methods that should be invoked once the page is fully loaded. This is useful for one-time component initializations that can't be done at instantance initialzation time, such as refrerences to embedded components or blocks.
+	<br />
+	PageLoaded methods should take no parameters and return void. They must either have this annotation, or be named "pageLoaded". 
+</html>

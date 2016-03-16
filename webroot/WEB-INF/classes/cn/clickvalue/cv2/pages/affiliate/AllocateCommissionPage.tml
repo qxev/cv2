@@ -1,0 +1,57 @@
+<t:affiliate.Layout t:pageTitle="${message:Assign_commission}" t:pageGroup="paymentReport" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers" >
+		<div class="title">
+			${message:A_list_of_bank_account}<span style="margin-left: 5px;color: blue;">(${message:Has_not_paid_commission}:${unpaidCommission}${message:yuan})</span>
+		</div>
+	</div>
+	<t:messagebanner t:id="message" type="type"/>
+	<div style="margin: 10px auto; border: #BEE1A2 2px solid; width: 400px; min-height: 10px;">
+		<div style="display: table-cell; vertical-align: middle; min-height: 10px; padding: 10px;">
+			${message:commission_des}
+		<br />
+		</div>
+	</div>
+	<div t:id="grid" style="width:100%">
+		<t:parameter name="configurationCell">  
+			<t:if test="applyDay">
+				<div>
+					<a href="moneypage/${account.id}">
+						${message:assign}
+					</a>
+				</div>
+				<t:parameter name="else">
+					<a href="moneypage/${account.id}" onclick="alert('${message:Not_to_commission_application_payment_time}！');return false;">
+						${message:assign}
+					</a>
+				</t:parameter>
+			</t:if>
+		</t:parameter>
+		<t:parameter name="nameCell">
+			${accountName}
+		</t:parameter>
+		<t:parameter name="empty">
+			<span style="font-weight:bold;color: red;">您没有支付宝帐号，请到<a href="/affiliate/alipayaccountlistpage">支付宝账号管理</a>中添加。</span>
+			<br />
+		</t:parameter>
+	</div>
+	<br />
+	<div class="page_headers" >
+		<div class="title">
+			${message:The_commission_application_tabulates}<span style="margin-left: 5px;color: blue;">(${message:the_commision_that_wati_to_pay}:${appliedCommission}${message:yuan})</span>
+		</div>
+	</div>
+	<div t:id="grid1" style="width:100%">
+		<t:parameter name="personTaxCell">
+			<t:if test="HavePersonTax">
+				<t:pagelink page="affiliate/commissiontaxviewpage" context="commissionExpense.id">${commissionExpense.personTax}</t:pagelink>
+				<t:parameter name="else">
+					${commissionExpense.personTax}
+				</t:parameter>
+			</t:if>
+		</t:parameter>
+		<t:parameter name="nameCell">
+			${accountName1}
+		</t:parameter>
+	</div>
+	<div class="clear"></div>
+</t:affiliate.Layout>

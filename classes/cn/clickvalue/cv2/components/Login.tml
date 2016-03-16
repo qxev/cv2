@@ -1,0 +1,1 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">${message:web_site}<form t:id="loginForm">	username: <input type="text" t:type="textfield" t:id="userName" t:mixins="autocomplete"/>	password: <input type="password" t:type="passwordfield" t:id="password"/>	<input type="submit" value="submit"/></form></html>

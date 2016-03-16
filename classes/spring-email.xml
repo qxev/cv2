@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="true">
+	
+    <!--Spring Mail Sender-->
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="${email.smtp.host}"/>
+        <property name="username" value="${email.smtp.username}"/>
+        <property name="password" value="${email.smtp.password}"/>
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.smtp.auth">true</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!--系统邮件投递组件-->
+    <bean id="systemMailSender" class="cn.clickvalue.cv2.email.SystemMailSender"
+          autowire="byName">
+        <property name="systemMail">
+            <value>${email.systemmail}</value>
+        </property>
+        <property name="encode">
+            <value>${email.encode}</value>
+        </property>
+    </bean>
+
+</beans>

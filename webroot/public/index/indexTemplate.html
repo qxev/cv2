@@ -1,0 +1,337 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="verify-v1" content="l1aJ6XU1zI3uoykkEaaHs2O3MqyJj/WHj1b49vrRWfg=" />
+<title>Darwin Marketing广告联盟</title>
+<link href="/public/style/base.css" rel="stylesheet" type="text/css" />
+<script language="javascript">AC_FL_RunContent = 0;</script>
+<script src="/public/js/AC_RunActiveContent.js" language="javascript"></script>
+<script type="text/javascript" src="/public/js/jquery.js"></script>
+<script>
+	$(function() {
+		$(".step-bt > h2").mouseover(function(){
+				$(".step-bt > h2").removeClass("step-bt-now");
+				$(".step > [id^=step-]").hide();
+				$(this).addClass("step-bt-now");
+				$(".step > #step-"+$(this).children("a").attr("id")).show();
+			}
+		);
+		$(".campain > .campainbt > h2 > a").click(function(){
+				$(".campain > [id^=campaign-]").hide();
+				$(".campain > #campaign-"+$(this).attr("id")).show();
+			}
+		);
+		$(".news > .newsbt > h3 > a").click(function(){
+			$(".news > [id^=news-]").hide();
+			$(".news > #news-"+$(this).attr("id")).show();
+		}
+	);
+	});
+</script>
+<!-- 百度访问统计代码:头代码 2009－09－08 -->
+<script language="JavaScript" type="text/javascript">
+	var _bdhm_top = 0;
+	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	var _bdhm_tim = new Image(1,1);
+	_bdhm_tim.id = "bdhmPerimg";
+	_bdhm_tim.src = _bdhmProtocol + "hm.baidu.com/_tt.gif?si=a42594bf91eab9148bf03bbc36ef572d&rnd=" + Math.round(Math.random()*2147483647);
+	_bdhm_tim.onload=function(){_bdhm_top = 1;}
+</script>
+
+</head>
+<body>
+<div class="wrap">
+
+<!--头部begin-->
+	<script language="JavaScript" type="text/javascript" src="/public/pageHead.html"></script>
+<!--头部end-->
+
+	<div class="content">
+		<!--菜单begin-->
+		<div class="nav">
+			<ul>
+				<li ><a href="/" class="now">首页</a></li>
+				<li ><a href="/public/about_us.html">关于我们</a></li>
+				<li ><a href="/public/advert_1.html">广告主</a></li>
+				<li ><a href="/public/affiance_1.html">网站主</a></li>
+				<li ><a href="/public/faq_1.html">帮助中心</a></li>
+				<li ><a href="/public/contact.html">联系我们</a></li>
+			</ul>
+		</div>
+		<!--菜单end-->
+		<div class="content-left">
+			<div class="banner">
+				<script language="javascript">
+					if (AC_FL_RunContent == 0) {
+						alert("此页需要 AC_RunActiveContent.js。在 Flash 中，运行“命令”菜单中的“应用活动内容更新”，以将 AC_RunActiveContent.js 复制到 HTML 输出文件夹。");
+					} else {
+						AC_FL_RunContent(
+							'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0',
+							'width', '690',
+							'height', '180',
+							'src', 'viewer',
+							'quality', 'high',
+							'pluginspage', 'http://www.macromedia.com/go/getflashplayer',
+							'align', 'middle',
+							'play', 'true',
+							'loop', 'false',
+							'scale', 'showall',
+							'wmode', 'window',
+							'devicefont', 'false',
+							'id', 'viewer',
+							'bgcolor', '#ffffff',
+							'name', 'viewer',
+							'menu', 'false',
+							'allowScriptAccess','sameDomain',
+							'movie', 'viewer',
+							'salign', '',
+							'FlashVars', 'xmlPath=/public/carousel/other/viewerData.xml'
+							);
+					}
+				</script>
+				<noscript>
+					<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="690" height="180">
+					  <param name="movie" value="viewer.swf">
+					  <param name="quality" value="high">
+					  <embed src="viewer.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="690" height="180"></embed>
+					</object>
+				</noscript>
+			</div>
+	
+			<!--广告活动推荐begin-->
+			<div class="campain">
+				<div class="campainbt">
+					<h2><a class="handle" id="recommend">广告活动推荐</a> | <a class="handle" id="latest">最新广告活动</a></h2>
+					<div class="more"></div>
+				</div>
+				<span id="campaign-recommend">
+					#foreach($campaign in $campaigns)
+					<ul class="cam">
+						<img src="$campaign.logo" alt="$campaign.no_logo"/>
+						<li><a href="$campaign.zhuanti" target="_blank"><span title="$campaign.name"><strong>$campaign.simpleName</strong></span></a></li>
+						<li>佣金规则：$campaign.cpa<br/>周期：$campaign.startDate至$campaign.endDate</li>
+					</ul>
+					#end
+				</span>
+				<span id="campaign-latest" style="display: none;">
+					#foreach($newestCampaign in $newestCampaigns)
+					<ul class="cam">
+						<img src="$newestCampaign.logo" alt="$newestCampaign.no_logo"/>
+						<li><a href="$newestCampaign.zhuanti" target="_blank"><span title="$newestCampaign.name"><strong>$newestCampaign.simpleName</strong></span></a></li>
+						<li>佣金规则：$newestCampaign.cpa<br/>周期：$newestCampaign.startDate至$newestCampaign.endDate</li>
+					</ul>
+					#end
+				</span>
+			</div>
+
+			<div class="clear"></div>
+
+			<div class="c1">
+				<h3><a href="/public/seo/">SEO搜索引擎优化</a></h3>
+				<ul>
+					#foreach($seo in $seos)
+					<li><a href="$seo.url"><font title="$seo.subject">$seo.simpleSubject</font></a></li>
+					#end
+				</ul>
+			
+			</div>
+				
+			<div class="c2">
+				<h3><a href="/public/design/">网站设计优化</a></h3>
+				<ul>
+					#foreach($design in $designs)
+					<li><a href="$design.url"><font title="$design.subject">$design.simpleSubject</font></a></li>
+					#end
+				</ul>
+			</div>
+				
+			<div class="c3">
+				<h3><a href="/public/money/">站长赚钱交流</a></h3>
+				<ul>
+					#foreach($exchange in $exchanges)
+					<li><a href="$exchange.url"><font title="$exchange.subject">$exchange.simpleSubject</font></a></li>
+					#end
+				</ul>
+			</div>
+
+			<div class="process">
+				<div class="step-bt">
+					<h2 class="step-bt-now"><a href="/public/affiance_3.html" id="affprocess">网站主流程</a></h2>
+					<h2><a href="/public/advert_3.html" id="adprocess">广告主流程</a></h2>
+				</div>
+				<div class="step">
+					<UL id="step-affprocess">
+						<LI class="step1"><a href="/public/affiance_3_1.html">注册会员</a></LI>
+						<LI class="step2"><a href="/public/affiance_3_2.html">验证网站</a></LI>
+						<LI class="step3"><a href="/public/affiance_3_3.html">申请活动</a></LI>
+						<LI class="step4"><a href="/public/affiance_3_4.html">投放广告</a></LI>
+						<LI class="step5"><a href="/public/affiance_3_5.html">获取佣金</a></LI>
+					</UL>
+					<UL id="step-adprocess" style="display: none;">
+						<LI class="step1"><a href="/public/advert_3_1.html">联系合作</a></LI>
+						<LI class="step2"><a href="/public/advert_3_2.html">签订合同</a></LI>
+						<LI class="step3"><a href="/public/advert_3_3.html">确认方案</a></LI>
+						<LI class="step4"><a href="/public/advert_3_4.html">发布广告</a></LI>
+						<LI class="step5"><a href="/public/advert_3_5.html">费用支付</a></LI>
+					</UL>
+				</div>
+			</div>
+		</div>
+		
+		<div class="content-right">
+		<!--
+			<div class="news">
+				<div class="newsbt">
+					<h3><a class="handle" id="camp">活动公告</a> | <a class="handle" id="sys">系统公告</a></h3>
+					<div class="more"></div>
+				</div>
+				<ul id="news-camp">
+				#foreach($campnew in $campnews)
+                    <li>
+						<strong style="color:$campnew.color">[${campnew.tag}]</strong>
+						<a href="/bulletinviewpage/$campnew.id" target="_blank">
+							<font title="$campnew.subject">$campnew.simpleSubject</font>
+						</a>
+					</li>
+				 #end
+				</ul>
+				<ul id="news-sys" style="display: none;">
+				#foreach($sysnew in $sysnews)
+                    <li>
+						<strong style="color:#6EAA24">[${sysnew.date_m}-${sysnew.date_d}]</strong>
+						<a href="/bulletinviewpage/$sysnew.id" target="_blank">
+							<font title="$sysnew.subject">$sysnew.simpleSubject</font>
+						</a>
+					</li>
+				 #end
+				</ul>
+			</div>
+			-->
+			<div class="right-banner">
+				<a href="/AffiliateRegister" target="_blank"><img src="/public/images/right-banner.gif" border="0" /></a>
+				<p>达闻广告联盟拥有优质的广告资源与多种广告模式，因诚信的数据确认以及佣金支付及时而获得了良好的业务口碑，并且提供贴心的客户服务。我们的宗旨是为站长创造更多价值。<strong>高质量广告资源+良好的业界口碑+贴心的服务=站长赚钱首先！</strong></p>
+			</div>
+			<!--
+			<div class="bbs">
+				<h3>BBS热帖</h3>
+				<ul>
+					#foreach($placard in $placards)
+					<li><a href="$placard.url"><font title="$placard.subject">$placard.simpleSubject</font></a></li>
+					#end
+				</ul>
+			</div>
+			-->
+		</div>
+		<div class="clear"></div>
+		<div class="service">
+			<h3><a href="/public/zhuanti/">我们服务过的客户</a></h3>
+			<a href="/public/zhuanti/85.html"><img src="/public/images/dangdang-1.gif" border="0"/></a>
+			<a href="/public/zhuanti/86.html"><img src="/public/images/zhuoyue-2.gif" border="0"/></a>
+			<img src="/public/images/paipai-3.gif" border="0"/>
+			<a href="/public/zhuanti/117.html"><img src="/public/images/xiangguo-4.gif" border="0"/></a>
+			<img src="/public/images/yibei-5.gif" border="0"/>
+			<img src="/public/images/yiqu-6.gif" border="0"/>
+			<a href="/public/zhuanti/24.html"><img src="/public/images/dhc-7.gif" border="0"/></a>
+			<img src="/public/images/asia-8.gif" border="0"/>
+		</div>
+	</div>
+	<div class="bg-bottom"></div>
+	<div class="bottom">
+		<div class="links"><strong>友情链接:</strong> 
+			#foreach($link in $links)
+			#if($velocityCount>1)
+				&nbsp;|&nbsp;
+			#end
+			<a href="$link.url" target="_blank">$link.cdata</a>
+			#end
+		</div>
+		<div class="bottom">
+<p>
+<a href="/public/about_us.html">关于我们</a> | 
+<a href="#">服务条款</a> | 
+<a href="#">广告服务</a> | 
+<a href="#">招聘信息</a> | 
+<a href="#">免责声明</a> | 
+<a href="/public/contact.html">联系我们</a> | 
+<a href="/public/link/">友情链接</a> | 
+<a href="http://www.itlaw.com.cn/site/clickvalue.cn " target="_blank">法律顾问</a>
+</p>
+<p>Copyright &copy; 2006-2010 clickvalue 达闻广告联盟</p>
+<p>
+	<a href="http://www.darwinmarketing.com/" target="_blank">
+		<img src="/public/images/dwproduction1.gif" title="达闻营销" style="border-color: silver; border-width: 1px;" />
+	</a>
+	<a href="http://www.itrust.org.cn/yz/wx.asp?wm=1786720586" target="_blank">
+		<img src="/public/images/cvwx.gif" title="网信认证" border="0" />
+	</a>
+	<a href="http://net.china.com.cn/" target="_blank">
+		<img src="/public/images/home_ws.gif" title="不良信息举报中心" border="0" />
+	</a>
+	<SCRIPT LANGUAGE="JavaScript" >
+		document.writeln("<a href='http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=20120222133829157'><img src='/public/images/gsicon.gif' border=0></a>")
+	</SCRIPT>
+	<a href="http://www.zx110.org">&nbsp;&nbsp;<img src="/public/images/wlzx.gif" border="0" alt="征信网"/></a>
+	<a href="http://sh.cyberpolice.cn/">&nbsp;&nbsp;<img src="/public/images/shwjwl110.gif" border="0" alt="上海网警网络110"/></a>
+</p>
+</div>
+	</div>
+</div>
+<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+	var pageTracker = _gat._getTracker("UA-4228178-1");
+	pageTracker._initData();
+	pageTracker._trackPageview();
+</script>
+<script type="text/javascript">
+	if(typeof(_gat)!='object')document.write('<sc'+'ript src="http'+
+	(document.location.protocol=='https:'?'s://ssl':'://www')+
+	'.google-analytics.com/ga.js"></sc'+'ript>')</script>
+	<script type="text/javascript">
+	try {
+	var pageTracker=_gat._getTracker("UA-2920780-4");
+	pageTracker._trackPageview("/0471400125/test");
+	}catch(err){}
+</script>
+<!--Darwin Track System Ver2.0 Begin-->
+<script>
+    var _rsClientId="1";
+    var _rsStepId=0;
+    var _rsStepTp=0;
+    var _rsChls3 = ["611763_111250164","611764_111250165","611765_111250166"];
+    var _rsDWLP=location.protocol.indexOf("https")>-1?"https:":"http:";
+    var _rsDWDN="//sv.dmclick.cn/";
+    var _rsDWURL = _rsDWLP+_rsDWDN+"trk.js";
+    document.write(unescape("%3Cscript src='" + _rsDWURL + "' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<!--Darwin Track System Ver2.0 End-->
+<!-- Google Code for CPC Conversion Page -->
+<script language="JavaScript" type="text/javascript">
+	<!--
+	
+	var google_conversion_id = 1043551133;
+	
+	var google_conversion_language = "zh_CN";
+	
+	var google_conversion_format = "1";
+	
+	var google_conversion_color = "ffffff";
+	
+	var google_conversion_label = "Q7H9CO--RhCdp83xAw";
+	
+	//-->
+</script>
+<script language="JavaScript" src="http://www.googleadservices.com/pagead/conversion.js"></script>
+<noscript>
+	<img height="1" width="1" border="0" src="http://www.googleadservices.com/pagead/conversion/1043551133/?label=Q7H9CO--RhCdp83xAw&amp;script=0">
+</noscript>
+<!-- 百度访问统计代码 2009－09－08 -->
+<script language="JavaScript" type="text/javascript">
+	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa42594bf91eab9148bf03bbc36ef572d' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" src="/assets/javascripts/o_code.js"></script></body>
+</html>

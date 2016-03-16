@@ -1,0 +1,74 @@
+<t:advertiser.Layout t:pageTitle="${addOrEdit}" t:pageGroup="account" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers" style="width:500px;">
+		<div class="title">${message:site_management} > ${addOrEdit}</div>
+		<form t:type="form" t:id="editSiteForm" class="form">
+			<t:errors />
+			<table class="form_edit">
+				<tr class="rowodd">
+					<td class="center" colspan="2">
+						${message:pay_attention_to}：${message:can_only_upload_is_not_bigger_than}
+					</td>
+				</tr>
+				
+				<tr class="rowodd">
+					<td class="field_name">${message:advertisers}</td>
+					<td class="field_value">
+						${clientSession.userName}
+					</td>
+				</tr>
+				
+				<tr>
+					<td class="field_name">${message:website}<span class="red_star">*</span></td>
+					<td class="field_value">
+						<input t:id="siteName" t:type="textfield" t:value="site.name"/>
+					</td>
+				</tr>
+				
+				<tr class="rowodd">
+					<td class="field_name">URL<span class="red_star">*</span></td>
+					<td class="field_value">
+						<input t:id="siteUrl" t:value="site.url" t:type="textfield"/>
+					</td>
+				</tr>
+				
+				<tr>
+					<td class="field_name">${message:description}<span class="red_star">*</span></td>
+					<td class="field_value">
+						<input t:type="textarea" t:value="site.description" rows="10" cols="40"/>
+					</td>
+				</tr>
+				
+				<tr class="rowodd">
+					<td class="field_name">Logo<span class="red_star"> </span></td>
+					<td class="field_value" style="vertical-align:middle;">
+						<span style="color: #336600;">${message:suggested_that_the_width_to_height_ration_is}</span>
+						<table cellpadding="0" cellspacing="0" border="0">
+							<tr>
+								<td><input t:type="upload" t:id="file" /></td>
+								<td>
+									<t:if test="site.logo">
+										<img src="${site.logo}" width="60" style="margin-left: 20px;"/>
+									</t:if>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				
+				<tr>
+					<td class="field_name">${message:self-assessment_daily_flow}<span class="red_star">*</span></td>
+					<td class="field_value">
+						<t:select t:id="pvPerDay" value="site.pvPerDay"  model="literal:0=0-100,1=101-500,2=501-2000,3=2001-5000,4=5001-10000,5=10001-100000,6=1000000-"  blankOption="never"/>
+					</td>
+				</tr>
+				
+				<tr class="rowodd">
+					<td colspan="2" style="text-align: center;">
+						<button type="submit" class="button_margin">${message:save}</button>
+						<button t:type="t5components/Button"> ${message:back} </button>
+					</td>
+				</tr>		
+			</table>
+		</form>
+	</div>
+</t:advertiser.Layout>

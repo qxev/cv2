@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+		<title>Darwin Marketing</title>
+		<LINK  href="../../stylesheets/base.css" rel=stylesheet>
+		<LINK  href="../../stylesheets/css_cn.css" rel=stylesheet>
+		<script language="javascript" src="../js/userLinksFuns.js" type="text/javascript"></script>
+		<script language="javascript" src="../js/userBankAccounts.js"></script>
+		<script language="JavaScript" type="text/javascript" src="../js/adveBannerListFuns.js"></script>
+		<script language="JavaScript" type="text/javascript">
+			var FILE_EXT = '.html';
+		</script>
+	</head>
+<body>
+	<div class="content">
+		<div class="pageTitle">广告活动管理&nbsp;-&nbsp;广告管理</div>
+    <div class="action" style="height:30px;">
+  <div style="float:left; padding-left:20px; padding-top:6px; background:url(../images/add_all.gif); text-align:center; width:105px; height:19px;"><a href="admin_prod_Ad_InsertImage.html" style="color:#000000; font-weight:bold;">新增图片广告</a></div>
+  <div style="float:left; padding-left:19px; padding-top:6px; background:url(../images/add_all.gif); text-align:center; width:105px; height:20px;"><a href="admin_prod_Ad_InsertText.html" style="color:#000000; font-weight:bold;">新增文字广告</a></div>
+  <div style="float:left; padding-left:20px; padding-top:6px; float:left; background:url(../images/add_all.gif); text-align:center; width:105px; height:19px;"><a href="admin_prod_Ad_InsertFlash.html" style="color:#000000; font-weight:bold;">新增FLASH广告</a></div>
+  <div style="float:left; padding-left:20px; padding-top:6px; float:left; background:url(../images/add_all.gif); text-align:center; width:105px; height:19px;"><a href="admin_prod_Ad_InsertHtml.html" style="color:#000000; font-weight:bold;">新增HTML广告</a></div>
+  </div>
+    <div class="quickSearch">
+    <div class="title">快速查询</div>
+    <div class="form">
+      <form id="form1" name="form1" method="get" action="">
+        所属广告活动        <select name="sid">
+          <option value="">所有</option>
+		<option value="152">qwe</option><option value="129">达闻2008联盟网站主招募</option><option value="6">达闻联盟网站主招募</option>        </select>
+        所属目标网址        <select name="aid">
+          <option value="">所有</option>
+		<option value="4">网站主加盟利益</option><option value="555" selected="selected">达闻网站主加盟利益</option>        </select>
+        广告类型        <select name="banner_type">
+          <option value="">所有</option>
+          <option value="1" >图片广告</option>
+          <option value="2" >文字广告</option>
+          <option value="3" >FLASH广告</option>
+          <option value="4" >HTML广告</option>
+        </select>
+        <input type="submit" value="查询" />
+      </form>
+    </div>
+  </div>
+  <br />
+  
+<table width="100%">
+	<td align="right">
+		广告批处理
+		<select>
+			<option>请选择</option>
+			<option>全部复制</option>
+			<option>全部删除</option>
+			<option>全部查看</option>
+		</select>
+	</td>
+</table>
+<div class="pageStyle"><font class="page_cur">1</font>
+</div>
+<table width="100%" border="0" cellpadding="0" cellspacing="1" class="list">
+<tr class="title">
+<td width="5%"><a href="?get_sortcol=banner_type&get_sortorder=desc&aid=555" class="sort">广告类型&nbsp;<img src="../../images/sort_down.gif" border="0"></a></td><td width="20%"><a href="?get_sortcol=banner_name&get_sortorder=desc&aid=555" class="sort">广告名称&nbsp;<img src="../../images/sort_down.gif" border="0"></a></td><td width="20%"><a href="?get_sortcol=subject_name&get_sortorder=desc&aid=555" class="sort">所属广告活动&nbsp;<img src="../../images/sort_down.gif" border="0"></a></td>
+<td width="20%"><a href="?get_sortcol=advertise_name&get_sortorder=desc&aid=555" class="sort">所属目标网址&nbsp;<img src="../../images/sort_down.gif" border="0"></a></td>
+<td width="5%"><a href="?get_sortcol=banner_size&get_sortorder=desc&aid=555" class="sort">广告尺寸（宽×高）&nbsp;<img src="../../images/sort_down.gif" border="0"></a></td><td width="20%"><a href="?get_sortcol=banner_desc&get_sortorder=desc&aid=555" class="sort">广告内容&nbsp;<img src="../../images/sort_down.gif" border="0"></a></td><td width="1%">&nbsp;</td></tr>
+<tr class="row2">
+<td>图片广告</td>
+<td><div style="display:block" onmouseover="return overlib('fannie');" onmouseout="nd();">fannie</div></td>
+<td><a href="admin_prod_Subject_View.html"><div style="display:block" onmouseover="return overlib('达闻2008联盟网站主招募');" onmouseout="nd();">达闻2008联盟网站主招募</div></a></td>
+<td><a href="admin_prod_Adv.html"><div style="display:block" onmouseover="return overlib('达闻网站主加盟利益');" onmouseout="nd();">达闻网站主加盟利益</div></a></td>
+<td>100*400</td>
+<td><table style="width:300px;height:150px;"><tr><td align="center"><a href="upload/200802/00000025-120341283805411400.gif" target="_blank"><img src="../images/00000025-120341283805411400.gif" width="38" height="150" /></a></td></tr></table></td>
+<td><select OnChange="performAction(this);"><option value="-">--选择操作--</option><option value="javascript:viewBanner('3683');">查看</option><option value="javascript:copyBanner('3683','1');">复制</option></select></td>
+</tr>
+<tr class="row1">
+<td>图片广告</td>
+<td><div style="display:block" onmouseover="return overlib('fannie');" onmouseout="nd();">fannie</div></td>
+<td><a href="admin_prod_Subject_View.html"><div style="display:block" onmouseover="return overlib('达闻2008联盟网站主招募');" onmouseout="nd();">达闻2008联盟网站主招募</div></a></td>
+<td><a href="admin_prod_Adv.html"><div style="display:block" onmouseover="return overlib('达闻网站主加盟利益');" onmouseout="nd();">达闻网站主加盟利益</div></a></td>
+<td>100*400</td>
+<td><table style="width:300px;height:150px;"><tr><td align="center"><a href="upload/200802/00000025-120341283804712200.jpg" target="_blank"><img src="../images/00000025-120341283804712200.jpg" width="38" height="150" /></a></td></tr></table></td>
+<td><select OnChange="performAction(this);"><option value="-">--选择操作--</option><option value="javascript:viewBanner('3682');">查看</option><option value="javascript:copyBanner('3682','1');">复制</option></select></td>
+</tr>
+</table>
+<div class="pageStyle"><font class="page_cur">1</font>
+</div></div>
+<div class="footer">
+  <div class="copyright"><a href="/darwin_2.html">关于我们</a>&nbsp;|&nbsp;<a href="/darwin_3.html">联系我们</a>&nbsp;|&nbsp;<a href="systemPassSession.php">论坛</a>&nbsp;<br />
+    沪ICP备06035438号<br />
+    Copyright &copy; 2006 - 2007 Darwin Marketing.<br />
+    <!--L_G_FOOT_CNZZ-->
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script><script type="text/javascript">_uacct = "UA-259227-4";urchinTracker();</script>  </div>
+</div>
+</div>
+</body>
+</html>

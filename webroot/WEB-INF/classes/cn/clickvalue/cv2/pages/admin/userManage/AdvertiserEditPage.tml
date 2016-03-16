@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:admin.Layout pageTitle="AdvertiserEdit" navigation="用户管理 > 广告主修改 " pageGroup="system" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers" style="width: 500px;">
+		<t:form t:id="userForm" class="form">
+			<t:errors />
+			<table class="form_edit">
+				<tr class="roweven">
+					<td class="field_name">用户名</td>
+					<td class="field_value">${advertiser.name}</td>
+				</tr>
+				
+				<tr class="rowodd">
+					<td class="field_name">用户邮箱</td>
+					<td class="field_value"><input t:type="textfield" value="advertiser.email" /></td>
+				</tr>
+				
+				<tr class="roweven">
+					<td class="field_name">用户昵称</td>
+					<td class="field_value"><input t:type="textfield" value="advertiser.nickName" /></td>
+				</tr>
+				
+				<tr class="rowodd">
+					<td class="field_name">联系人名称</td>
+					<td class="field_value">
+						<input t:type="textfield" value="advertiser.userInfo.contact" />
+					</td>
+				</tr>
+				
+				<tr class="roweven">
+					<td class="field_name">所在地区</td>
+					<td class="field_value">
+						<select t:type="man/ParentSelect" t:id="country" model="fatherSelectModel" value="advertiser.userInfo.country" style="margin-right: 10px;"/>   
+						<select t:type="man/ChildSelect" t:id="province" parent="country" models="childSelectModels" value="advertiser.userInfo.city"/>   
+					</td>
+				</tr>
+				
+				<tr class="rowodd">
+					<td class="field_name">联系地址</td>
+					<td class="field_value">
+						<input t:type="textfield" value="advertiser.userInfo.street" />
+					</td>
+				</tr>
+				
+				<tr class="roweven">
+					<td class="field_name">邮政编码</td>
+					<td class="field_value">
+						<input t:type="textfield" value="advertiser.userInfo.postcode" />
+					</td>
+				</tr>
+				
+				<tr class="rowodd">
+					<td class="field_name">电话号码</td>
+					<td class="field_value">
+						<input t:type="textfield" value="advertiser.userInfo.phone" />
+					</td>
+				</tr>
+				
+				<tr class="roweven">
+					<td class="field_name">手机号码</td>
+					<td class="field_value">
+						<input t:type="textfield" value="advertiser.userInfo.mobile" />
+					</td>
+				</tr>
+				
+				<tr class="rowodd">
+					<td class="field_name">QQ号码</td>
+					<td class="field_value">
+						<input t:type="textfield" value="advertiser.userInfo.qq" />
+					</td>
+				</tr>
+				
+				<tr class="roweven">
+					<td class="field_name">MSN号码</td>
+					<td class="field_value">
+						<input t:type="textfield" value="advertiser.userInfo.msn" />
+					</td>
+				</tr>
+				
+				<tr class="rowodd">
+					<td class="field_name">激活状态</td>
+					<td class="field_value">
+						<t:radiogroup t:id="actived" value="advertiser.actived">
+			                <t:radio value="0"/>未激活
+			                <t:radio value="1"/>已激活
+	            		</t:radiogroup>
+					</td>
+				</tr>
+				
+				<tr class="roweven">
+					<td class="field_name">删除状态</td>
+					<td class="field_value">
+						<t:radiogroup t:id="deleted" value="advertiser.deleted">
+			                <t:radio value="0"/>未删除
+			                <t:radio value="1"/>已删除
+	            		</t:radiogroup>
+					</td>
+				</tr>
+				<tr class="roweven">
+					<td class="field_name">审核状态</td>
+					<td class="field_value">
+						<t:select value="advertiser.verified"  model="literal:0=未审核,2=已审核" blankoption="never" />
+					</td>
+				</tr>
+				
+				<tr class="rowodd">
+					<td colspan="3" style="text-align: center;">
+						<input type="submit" t:type="submit" t:id="saveUser" value="${message:save}" style="margin-right: 30px;"/>
+						<input type="button" onclick="window.location.href='/admin/usermanage/clientlistpage'" value="${message:back}" />
+					</td>
+				</tr>
+				
+				
+				
+			</table>
+		</t:form>
+	</div>
+
+</t:admin.Layout>

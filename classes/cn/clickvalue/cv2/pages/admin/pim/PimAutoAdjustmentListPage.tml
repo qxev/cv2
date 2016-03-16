@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:admin.Layout t:pageTitle="pim adjustment list" t:navigation="积分机制 > 自动奖惩记录" pageGroup="pim" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers">
+		<!-- 快速查询表单 -->
+		<t:form t:id="searchForm" class="form">
+			<label for="formAffiliateName">网站主</label>
+			<t:textfield t:id="formAffiliateName" style="margin:0 5px 0 3px;" />
+			
+			<label for="dateBegin">时间</label>
+			<t:daterange t:dateBegin="formStartDate" t:dateEnd="formEndDate" t:showShortcut="false" t:readonly="false"/>
+		 	<t:submit id="search" value="查询" style="margin:0 0 0 5px;" />
+		</t:form>
+	</div>
+	<!-- grid -->
+	<div t:id="grid" style="width: 100%">
+		<t:parameter name="bonusValueCell">
+			${formatBonusValue}
+		</t:parameter>
+		<t:parameter name="operateCell">
+			<t:pagelink page="admin/pim/adjustmenteditpage" context="pimAdjustment.id">编辑</t:pagelink>
+		</t:parameter>
+	</div>
+</t:admin.Layout>

@@ -1,0 +1,28 @@
+<t:affiliate.Layout t:pageTitle="${message:user_login}" t:pageGroup="campaign" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<t:form t:id="SearchForm" >
+		<p class="welcome"> ${message:all_ads} > ${message:Advertisement_goal_page_list} </p>
+		<div class="table_clear">
+			<table style="BORDER-COLLAPSE: collapse;" borderColor="#ced5b1" cellSpacing="0" cellPadding="0" width="100%" border="1"
+             			t:id="myGrid" t:type="Grid" source="dataSource" row="landingPage" model="beanModel" pagerPosition="literal:bottom" rowsPerPage="${noOfRowsPerPage}">
+	    		
+	    		<t:parameter name="nameCell">
+	    			<a href="${landingPage.url}">${landingPage.name}</a>
+				</t:parameter>
+				
+				<t:parameter name="campaignnameCell">
+					<t:pagelink page="affiliate/AffiliateCampaignViewPage" context="affiliateCampaignId">${landingPage.campaign.name}</t:pagelink>
+				</t:parameter>
+	    		
+	    		
+	    		<t:parameter name="advertiseSizeCell">
+	    			${landingPage.advertises.size()}
+				</t:parameter>
+				
+				<t:parameter name="operateCell">
+					<t:select t:id="operate" model="operateModel" blankLabel="--${message:choose_operation}--" onChange="redirect(this);"/>
+				</t:parameter>
+				
+	    	</table>
+		</div>
+	</t:form>
+</t:affiliate.Layout>

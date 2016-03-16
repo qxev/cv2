@@ -1,0 +1,110 @@
+<t:advertiser.Layout pageTitle="${message:advertisement_goal_page}" pageGroup="account" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+	<form t:type="form" t:id="editSiteForm"><t:errors />	
+		<t:if test="site.id">
+			<p class="page_title">${message:website_management} - ${message:edits_website_information}</p>
+			<t:parameter name="else"> 
+				<p class="page_title">${message:website_management} - ${message:increases_website_information}</p>
+			</t:parameter> 
+		</t:if>
+		<table style="BORDER-COLLAPSE: collapse;width:55%" borderColor="#ced5b1" 
+            cellSpacing="0" cellPadding="0" width="100%" border="1">
+
+			<tr>
+				<td class="green_bg" colspan="3">
+					<t:if test="site.id">
+						<strong>${message:edits_my_website}</strong>
+						<t:parameter name="else">
+							<strong>${message:increases_my_website}</strong>
+						</t:parameter>
+					</t:if>
+				</td>
+			</tr>
+		
+			<tr>
+				<td class="greenwithe_bg">${message:user_name}</td>
+				<td class="greenwithe">
+					${user.name}
+				</td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>
+			
+			<!--<tr>
+				<td class="greenwithe_bg">${message:link_verification_way}</td>
+				<td class="greenwithe">
+					<input t:type="textfield" t:value="site.user.name" />
+				</td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>-->
+
+			<tr>
+				<td class="greenwithe_bg">${message:website_name}</td>
+				<td class="greenwithe">
+					<input t:id="siteName" t:type="textfield" t:value="site.name"/>
+				</td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>
+			
+			<tr>
+				<td class="greenwithe_bg">${message:website_address}</td>
+				<td class="greenwithe">
+					<input t:id="siteUrl" t:type="textfield" t:value="site.url"/>
+				</td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>
+			
+			<tr>
+				<td class="greenwithe_bg">${message:about_us}</td>
+				<td class="greenwithe">
+					<input t:type="textarea" t:value="site.description" />
+				</td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>
+			
+			<!--<tr>
+				<td class="greenwithe_bg">${message:whether_they_wish_to_join_the_exchange_of_links}</td>
+				<td class="greenwithe">
+					<input t:type="textarea" t:value="site.description" />
+				</td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>-->
+			
+			<!--<tr>
+				<td class="greenwithe_bg">${message:self-assessment_daily_flow}</td>
+				<td class="greenwithe">
+					<input t:type="textarea" t:value="site.description" />
+				</td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>-->
+			
+			<tr>
+				<td class="greenwithe_bg">${message:website}logo</td>
+				<td class="greenwithe">
+					<input t:type="upload" t:id="file" />
+				</td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>
+
+			<tr>
+				<td class="greenwithe_bg">${message:self-assessment_daily_flow}</td>
+				<td class="greenwithe">
+					<t:select t:id="pvPerDay" value="site.pvPerDay"  model="literal:0= 0 - 100,1=101 - 500,2=501 - 2000,3=2001 - 5000,4=5001 - 10000,5=10001-100000,6=1000000-"  blankOption="never" /> pv/day
+				</td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>
+			<tr>
+				<td colspan="3" style="text-align: center;">
+					<t:if test="site.id">
+							<button type="submit" class="positive">${message:update}</button>
+						<t:parameter name="else"> 
+							<button type="submit" class="positive">${message:increase}</button>
+						</t:parameter> 
+					</t:if>
+					<button t:type="t5components/Button" type="button" event="clicked">
+						${message:return}
+					</button>
+				</td>
+			</tr>
+		</table>		
+	</form>
+</t:advertiser.Layout>

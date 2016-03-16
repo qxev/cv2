@@ -1,0 +1,24 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+<t:form t:id="SearchForm" >
+<p class="welcome"> ${message:campaign_manage} > ${message:campaigns} </p><br />
+<ul class="add_left">
+<li class="add_left_menua">	
+<a href="/advertiser/newcampaignpage">${message:new_campaign}</a>
+</li>
+</ul><br />
+<ul class="add_right">
+<li class="arrow"><strong>${message:search}:</strong>
+${message:campaign_name}
+  <input type="text" t:type="textfield" t:value="campaignName" t:id="campaignName" />
+<t:advertiser.CApplyingMode t:pageTitle="${message:user_login}" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+</t:advertiser.CApplyingMode>
+  <label>
+  <input name="Submit" type="submit" t:type="submit" class="search" value="${message:search}" />
+  </label>
+
+</li>  
+  </ul>
+</t:form>
+
+</html>

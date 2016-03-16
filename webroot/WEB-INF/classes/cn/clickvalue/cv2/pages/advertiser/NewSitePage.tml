@@ -1,0 +1,71 @@
+<t:advertiser.Layout t:pageTitle="${message:site}" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<t:form>
+		<table style="BORDER-COLLAPSE: collapse" borderColor="#ced5b1" 
+		            cellSpacing="0" cellPadding="0" width="100%" border="1">
+			<tr>
+				<td class="green_bg" colspan="3"><strong>${message:new_site}</strong></td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">
+					${message:user_name}
+				</td>
+				<td class="greenwithe">
+					<t:textoutput t:value="userName" />
+				</td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">${message:link_verified}</td>
+				<td class="greenwithe">
+					<t:radiogroup t:value="verified">	
+						<input t:type="radio" checked="checked" t:value="literal:0"/>${message:auto}
+						<input t:type="radio" t:value="literal:1"/>${message:checkout}
+					</t:radiogroup>
+				</td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">${message:link_name}</td>
+				<td class="greenwithe">
+					<input t:type="textfield" t:id="urlName" size="30"/>
+				</td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">${message:link_url}</td>
+				<td class="greenwithe"><input t:type="textfield" t:id="url" size="30"/>
+				</td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">${message:link_desc}</td>
+				<td class="greenwithe">	
+					<textarea t:type="textarea" t:id="description"/>
+				</td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>
+			
+			<tr>
+				<td class="greenwithe_bg">${message:pv_perday}</td>
+				<td class="greenwithe">	
+					<select t:type="select" t:id="aa" t:model="pvRange">
+					</select>
+				</td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>
+			
+			<tr>
+				<td class="greenwithe_bg">${message:site_category}</td>
+				<td class="greenwithe"><t:advertiser.CAdCategory>
+					</t:advertiser.CAdCategory>
+				</td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg" colspan="3">
+					<input type="submit" t:type="submit" t:id="saveSite" value="saveSite"/>	
+				</td>
+			</tr>
+		</table>
+	</t:form>
+</t:advertiser.Layout>

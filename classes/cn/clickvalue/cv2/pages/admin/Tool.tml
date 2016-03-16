@@ -1,0 +1,43 @@
+<t:admin.Layout navigation="工具" pageTitle="工具" pageGroup="system" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<p>补全mailtype和user的关联：<t:eventlink t:id="checkmailtype">button</t:eventlink></p>
+	<hr />
+	导入站点类型：
+	<t:form t:id="importACForSite">
+		<t:errors />
+		<t:upload t:id="file" />
+		<t:submit t:value="提交"/>
+	</t:form>
+	<hr />
+	删除report_trackmatch
+	<t:form t:id="deleteTrackMatch">
+		<t:errors />
+		<t:textarea t:id="reportTrackMatchIds" rows="10" />
+		<t:submit t:value="提交"/>
+	</t:form>
+	<hr />
+	用户与bbs同步：
+	<t:form t:id="syncBBS">
+		<t:errors />
+		<t:daterange t:dateBegin="dateBegin" t:dateEnd="dateEnd"/>
+		<t:submit t:value="提交"/>
+	</t:form>
+	<hr />
+	同步user到bbs
+	<t:form t:id="synUserToBbs">
+		<t:errors />
+		<t:textarea t:id="synUserIds" rows="10" />
+		<t:submit t:value="提交"/>
+	</t:form>
+	同步campaign到bbs
+	<t:form t:id="synCampToBbs">
+		<t:errors />
+		<t:textarea t:id="synCampIds" rows="10" />
+		<t:submit t:value="提交"/>
+	</t:form>
+	同步bulletin到bbs
+	<t:form t:id="synBulletinToBbs">
+		<t:errors />
+		<t:textarea t:id="synBulletinIds" rows="10" />
+		<t:submit t:value="提交"/>
+	</t:form>
+</t:admin.Layout>

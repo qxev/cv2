@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+		<title>Darwin Marketing</title>
+		<LINK  href="../../stylesheets/base.css" rel=stylesheet>
+		<LINK  href="../../stylesheets/css_cn.css" rel=stylesheet>
+		<script language="javascript" src="../js/userLinksFuns.js" type="text/javascript"></script>
+		<script language="javascript" src="../js/userBankAccounts.js"></script>
+		<script language="JavaScript" type="text/javascript" src="../js/adveBannerListFuns.js"></script>
+		<script language="JavaScript" type="text/javascript">
+			var FILE_EXT = '.html';
+		</script>
+	<style type="text/css">
+<!--
+.STYLE1 {color: #666}
+-->
+</style></head>
+<body>
+	<div class="content">
+		<div class="pageTitle">佣金支付</div>
+        <div class="quickSearch">
+    <div class="title">快速查询</div>
+    <div class="form">
+      <form name="form" method="get" action="">
+        用户名<input name="user_name" type="text" size="25" maxlength="20" value="">
+		&nbsp;&nbsp;支付标准
+		<select>
+			<option>所有状态</option>
+			<option>佣金未到支付标准</option>
+			<option>佣金已到支付标准</option>
+		</select>
+		&nbsp;&nbsp;申请状态
+		<select>
+			<option>所有状态</option>
+			<option>未申请</option>
+			<option>已申请</option>
+		</select>
+		<br />
+		从<input type="text" name="sel1" id="sel1" size="20"  value="2006-01-01"><input type="reset" value="选择起始日期" onclick="return showCalendar('sel1', '%Y-%m-%d',false,true);"> 到<input type="text" name="sel3" id="sel3" size="20"  value="2008-04-08"><input type="reset" value="选择结束日期" onclick="return showCalendar('sel3', '%Y-%m-%d',false,true);">
+        <input type="submit" value="查询">
+      </form>
+    </div>
+  </div>
+  <div class="action"></div>
+    <table width="100%">
+  	<td align="right">
+	支付批处理
+	<select>
+		<option>请选择</option>
+		<option>全部支付</option>
+	</select>
+	</td>
+  </table>
+  <div class="pageStyle"><font class="page_cur">1</font>
+<a href="/ad/toolUser.php?page=2">2</a>
+<a href="/ad/toolUser.php?page=3">3</a>
+&nbsp;&nbsp;<a href="/ad/toolUser.php?page=2">下一页</a></div>
+  <table width="100%" border="0" cellpadding="0" cellspacing="1" class="list">
+<tr class="title">
+<td width="10%"><a href="?get_sortcol=t1.user_name&get_sortorder=desc" class="sort">用户名&nbsp;<img src="../../images/sort_down.gif" border="0"></a></td>
+<td width="10%"><a href="?get_sortcol=t1.user_mail&get_sortorder=desc" class="sort">支付金额（元）&nbsp;<img src="../../images/sort_down.gif" border="0"></a></td>
+<td width="5%"><a href="?get_sortcol=t1.user_deleted&get_sortorder=desc" class="sort">支付状态&nbsp;<img src="../../images/sort_down.gif" border="0"></a></td>
+<td width="5%"><a href="?get_sortcol=t1.user_deleted&get_sortorder=desc" class="sort">申请状态&nbsp;<img src="../../images/sort_down.gif" border="0"></a></td>
+<td width="10%"><a href="?get_sortcol=t1.user_dc&get_sortorder=desc" class="sort">申请日期&nbsp;<img src="../../images/sort_down.gif" border="0"></a></td>
+<td width="1%">&nbsp;</td></tr>
+<tr class="row2" align="center">
+<td><a href="toolUserTousers.php?cid=21194"><div style="display:block" onmouseover="return overlib('qq644316346');" onmouseout="nd();">qq64431634...</div></a></td>
+<td><div>10</div></td>
+<td><div>佣金未到支付标准</div></td>
+<td><span style="color:#666" >未申请</span></td>
+<td>0000-00-00 00:00:00</td>
+<td>
+	<select id="a1" onchange="control('id');">
+	<option>--选择操作--</option>
+	<option>支付</option>
+	<option>查看报表</option>
+	</select>
+</td>
+</tr>
+<tr class="row1" align="center">
+<td><a href="toolUserTousers.php?cid=21134"><div style="display:block" onmouseover="return overlib('okddy');" onmouseout="nd();">okddy</div></a></td>
+<td><div>120</div></td>
+<td><div style="display:block" onmouseover="return overlib('DDY-衬衣专家 专为精英人士打造 演绎华丽成功的你');" onmouseout="nd();">佣金已到支付标准</div></td>
+<td><span class="STYLE1">已申请</span></td>
+<td>2008-04-03 13:07:19</td>
+<td><select>
+	<option>--选择操作--</option>
+	<option>奖励</option>
+	<option>惩罚</option>
+	<option>清零</option>
+	</select>
+</td>
+</tr>
+</table>
+<div class="pageStyle"><font class="page_cur">1</font>
+<a href="#">2</a>
+<a href="#">3</a>
+&nbsp;&nbsp;<a href="#">下一页</a></div><div style="text-align: right;"><form name="dataexport" method="get" action=""><input name="de" type="hidden" value="1"><input name="submit" type="submit" value="导出数据"></form></div></div>
+<div class="footer">
+  <div class="copyright"><a href="/darwin_2.html">关于我们</a>&nbsp;|&nbsp;<a href="/darwin_3.html">联系我们</a>&nbsp;|&nbsp;<a href="systemPassSession.php">论坛</a>&nbsp;<br />
+    沪ICP备06035438号<br />
+    Copyright &copy; 2006 - 2007 Darwin Marketing.<br />
+    <!--L_G_FOOT_CNZZ-->
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script><script type="text/javascript">_uacct = "UA-259227-4";urchinTracker();</script>  </div>
+</div>
+</div>
+</body>
+</html>
+<script>
+
+</script>

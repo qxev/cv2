@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:admin.Layout t:pageTitle="pim adjustment list" pageGroup="pim" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers">
+		<t:if test="edit">
+			<div class="title">积分机制 > 奖惩记录 > 修改</div>
+			<t:parameter name="else">
+				<div class="title">积分机制 > 奖惩记录 > 新增</div>
+			</t:parameter>
+		</t:if>
+	</div>
+	<t:form t:id="form">
+		<t:errors />
+		<table width="50%">
+			<tr class="rowodd">
+				<td>网站主</td>
+				<td><t:textfield t:id="affiliateName" /></td>
+			</tr>
+			<tr class="roweven">
+				<td>奖惩</td>
+				<td>
+					<t:radiogroup t:id="sign">
+						<t:radio value="1" />奖励
+						<t:radio value="-1" />惩罚
+					</t:radiogroup>
+					<t:textfield t:id="bonusValue" />(<span style="color:red;">只接受正数</span>)
+				</td>
+			</tr>
+			<tr class="rowodd">
+				<td>描述</td>
+				<td>
+					<t:textarea value="description" cols="40" rows="8"/>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align:right;">
+					<t:if test="edit">
+						<t:submit t:event="modify" value="修改" style="margin:0 20px 0 0;" />
+						<t:parameter name="else">
+							<t:submit t:event="modify" value="新增" style="margin:0 20px 0 0;" />
+						</t:parameter>
+					</t:if>
+					<input type="button" value="返回" onclick="window.location.href='/admin/pim/adjustmentlistpage'" style="margin:0 100px 0 0;" />
+				</td>
+			</tr>
+		</table>
+	</t:form>
+</t:admin.Layout>

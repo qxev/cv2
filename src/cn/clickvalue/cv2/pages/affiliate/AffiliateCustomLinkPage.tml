@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:affiliate.Layout t:pageTitle="${message:choose_advertisement_goal_page}" t:pageGroup="campaign" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<script language="javascript" src="/assets/javascripts/commisionrule.js"></script>
+	<div class="page_headers">
+		<t:if test="hasCampaign()">
+			<div class="title">${message:campaign}: ${campaign.name} > ${message:get_custom_banner}</div>
+			<t:form t:id="form" class="form">
+				<t:errors/>
+				<table class="form_edit">
+					<tr class="rowodd">
+						<td class="field_name">${message:campaign}:</td>
+						<td class="field_value">
+							${campaign.name}
+						</td>
+					</tr>
+					<tr class="rowodd">
+						<td class="field_name">${message:link_type}:</td>
+						<td class="field_value">
+							<t:select value="linkType" model="1=${message:picture},2=${message:text}" blankOption="never" onchange="changeInputStyle()"/>
+						</td>
+					</tr>
+					<tr class="rowodd" id="style1" display="none">
+						<td class="field_name">${message:picture_url}:</td>
+						<td class="field_value">
+							<input t:type="textfield" t:value="url" size="30" />
+						</td>
+					</tr>
+					<tr class="rowodd" id="style2" display="none">
+						<td class="field_name">${message:text}:</td>
+						<td class="field_value">
+							<input t:type="textfield" t:value="text" size="30" />
+						</td>
+					</tr>
+					<tr class="rowodd">
+						<td class="field_name">${message:target_link}:</td>
+						<td class="field_value">
+							<input t:type="textfield" t:value="link" size="30" /> ${message:custom_link_notice}
+						</td>
+					</tr>
+					<tr class="rowodd">
+						<td class="field_name">${message:target_window}:</td>
+						<td class="field_value">
+							<t:radiogroup t:id="window">
+								<t:radio value="0" />${message:new_window}
+								<t:radio value="1" />${message:old_window}
+							</t:radiogroup>
+						</td>
+					</tr>
+				</table>		
+				<table id="checkboxes" class="t-data-grid" style="width: 90%;">
+					<thead>
+						<tr>
+							<th class="landingPagename t-first">${message:choose_site}</th>
+							<th class="landingPagename t-first">${message:website}</th>
+							<th class="landingPageurl">URL</th>
+						</tr>
+					</thead>
+					<t:checkboxselect t:id="selectedRoles" model="roleModel" encoder="encoder" selected="selectedRoles"/>
+				</table>
+				
+				<t:SliderDoorSubmit form="form" value="${message:gain_ad'scode}"/>
+				
+				<div class="clear"> </div>
+			</t:form>
+		</t:if>
+		<t:unless test="hasCampaign()">
+			<div class="title">${message:campaign}: 无 > > ${message:choose_advertisement_goal_page}</div>
+		</t:unless>
+	</div>
+</t:affiliate.Layout>

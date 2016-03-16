@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:admin.Layout t:pageTitle="Commission bonus" pageGroup="pim" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+	<div class="page_headers">
+		<!-- 导航 -->
+		<div class="title">积分机制 &gt; 积分返佣记录</div>
+	
+		<!-- 快速查询表单 -->
+		<t:form t:id="form" class="form">
+			<label for="formAffiliateName">网站主</label>
+			<t:textfield t:id="formAffiliateName" style="margin:0 5px 0 3px;" />
+			
+			<label for="datefield_1">时间</label>
+			<t:daterange t:dateBegin="formStartDate" t:dateEnd="formEndDate" t:showShortcut="false" t:readonly="false"/>
+			<input type="submit" t:type="submit" value="查询" style="margin-left:5px;" />
+		</t:form>
+	</div>
+	
+	<!-- 查询结果显示 -->
+	<div style="width:100%;" t:id="myGrid"></div>
+</t:admin.Layout>

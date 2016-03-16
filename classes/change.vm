@@ -1,0 +1,24 @@
+<table style="border-collapse:collapse;width:100%;">
+	<thead>
+		<tr style="text-align:left;">
+			<th>
+				属性
+			</th>
+			<th>
+				原内容
+			</th>
+			<th>
+				新内容
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		#foreach($diffe in $diffes)
+		<tr>
+			<td>$diffe.attrName</td>
+			<td>$diffe.from</td>
+			<td>$diffe.to</td>
+		</tr>
+		#end 
+	</tbody>
+</table>

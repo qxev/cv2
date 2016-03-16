@@ -1,0 +1,3 @@
+<t:admin.Layout t:pageTitle="CampaignList" t:navigation="广告活动管理 > 广告测试" pageGroup="campaign" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<t:outputraw value="context" />
+</t:admin.Layout>

@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:admin.Layout t:pageTitle="Report" t:pageGroup="report_summary" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+<div class="page_headers">
+		<div class="title">汇总报表 > 快速查询</div>
+		
+		   <br/>
+			<div align="center">
+		
+			</div>
+			<br/>
+			
+		<t:form t:id="summaryForm">
+			<t:errors />
+			时间范围: <t:daterange t:dateBegin="dateBegin" t:dateEnd="dateEnd"/>
+			<t:radiogroup t:value="type">
+				<t:radio value="0" />日报
+				<t:radio value="1" />周报
+	  		</t:radiogroup>&nbsp;&nbsp;
+			<input type="submit" value="查询" />
+			<input t:type="submit" value="报表导出" t:id="export"/>
+		</t:form>
+		
+		<div t:id="grid" style="width:100%;">
+			<t:parameter name="dateCell">
+				${year}年&nbsp;&nbsp;第${week}周
+			</t:parameter>
+		</div>
+</div>
+	
+</t:admin.Layout>

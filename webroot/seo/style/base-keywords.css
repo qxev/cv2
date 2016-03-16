@@ -1,0 +1,31 @@
+/* CSS Document */
+
+.content-keywords-left
+{
+ width:330px; 
+ float:left;
+ height:280px;
+ }
+.content-keywords-right
+{
+ width:330px;
+ float:right; 
+ height:280px; 
+ background:url(../images/keywords-right.gif); 
+ font-family:Arial, Helvetica, sans-serif; 
+ font-weight:bold; 
+ font-size:20px;
+}
+
+
+.content-keywords-left2
+{
+ width:330px; 
+ float:left; 
+ height:280px; 
+ background:url(../images/keywords-right.gif); 
+ font-family:Arial, Helvetica, sans-serif; 
+ font-weight:bold; 
+ font-size:20px;
+}
+.content-keywords-right2{ width:330px; float:right; height:280px;}

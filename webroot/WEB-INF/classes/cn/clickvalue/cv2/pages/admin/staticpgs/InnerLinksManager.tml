@@ -1,0 +1,76 @@
+<t:admin.Layout pageTitle="${hpBlock.displayName}" pageGroup="static" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<style type="text/css">
+
+	table.t-data-grid tbody tr td.sequence {
+		text-align:center;
+	}
+	.sequence input {
+		text-align: center;
+		width: 20px;
+	}
+	.cdata input {
+		width: 185px;
+	}
+	.url input {
+		width: 300px;
+	}
+	.image input {
+		width: 200px;
+	}
+	.description input {
+		width: 300px;
+	}
+</style>
+<script type="text/javascript" src="/assets/javascripts/sequence.js"></script>
+<script type="text/javascript">
+<![CDATA[
+    var sequenceSeletor = "td[class='sequence'] input[type='text']";
+    var sequenceCacheKey = "value";
+    jQuery(function() {
+		sequenceTrust(sequenceSeletor,sequenceCacheKey);
+	});
+]]>
+
+</script>
+	<div class="page_headers">
+		<div class="title">${hpBlock.displayName}</div>
+	</div>
+	<t:form>
+		<t:errors />
+		<div class="t-data-grid">
+			<table class="t-data-grid" style="BORDER-COLLAPSE: collapse;" borderColor="#ced5b1" cellSpacing="0" cellPadding="0" border="1">
+				<thead>
+					<tr>
+						<th class="sequence">序号</th>
+						<th class="cdata">网站</th>
+						<th class="url">地址</th>
+						<th class="remove">操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr t:type="ajaxformloop" t:source="hpBlockContentEncoder.values" t:encoder="hpBlockContentEncoder" t:value="hpBlockContent">
+						<t:submitnotifier>
+							<td class="sequence"><t:textfield value="hpBlockContent.sequence" size="2" /></td>
+							<td class="cdata"><t:textfield value="hpBlockContent.cdata" size="40" /></td>
+							<td class="url"><t:textfield value="hpBlockContent.url" size="40" /></td>
+							<td class="remove"><t:removerowlink>删除</t:removerowlink></td>
+							<script type="text/javascript">
+							<![CDATA[
+								sequenceTrust(sequenceSeletor,sequenceCacheKey);
+								var newElement = jQuery(sequenceSeletor+":last");
+								rebuildSequence(newElement,sequenceSeletor,sequenceCacheKey);
+							]]>
+							</script>
+						</t:submitnotifier>
+						<t:parameter name="addrow">
+							<td colspan="4" style="text-align: right">
+								<t:addrowlink>新增</t:addrowlink>
+							</td>
+						</t:parameter>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<t:submit t:value="保存" />
+   	</t:form>
+</t:admin.Layout>

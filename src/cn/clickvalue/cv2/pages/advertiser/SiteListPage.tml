@@ -1,0 +1,41 @@
+<t:advertiser.Layout pageTitle="${message:site_management}" pageGroup="account"  xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers">
+		<div class="title">${message:user_management} > ${message:site_management}</div>
+		
+		<div class="form">	
+			<t:form t:id="SearchForm" >
+				${message:verify_the_status}: 
+				<t:select t:id="siteState" value="siteState" model="0=${message:not_submitted},1=${message:pending_approval},2=${message:approved},3=${message:refused}" blankLabel="${message:select}" />
+				<t:submit t:id="search" class="search" value="${message:search}"/>
+				<t:sliderdoor text="${message:add_site}" href="/advertiser/siteeditpage" clear="true"/>
+
+				<div class="table_clear">
+					<table t:id="myGrid" t:type="Grid" source="dataSource" row="site" model="beanModel" pagerPosition="literal:bottom" rowsPerPage="${noOfRowsPerPage}" style="width: 100%;">
+						<t:parameter name="nameCell">
+							<t:pagelink page="advertiser/SiteViewPage" context="site.id">
+								<img src="${site.logo}" width="120" title="${site.name}" alt="${site.name}"/>
+							</t:pagelink>
+						</t:parameter>
+						<t:parameter name="verifiedCell">
+							${ognl:getSiteState(site.verified)}
+						</t:parameter>
+				   		<t:parameter name="operateCell">
+							 <select onchange="redirect(this)">
+							 	<option value="">${message:select}</option>
+							 	<t:if test="notVerified">
+								 	<option value="/advertiser/siteeditpage/${site.id}">${message:edit}</option>
+								 	<option value="/advertiser/sitelistpage/delete/${site.id}" msg="${message:make_sure_to_delete_the_website}?">${message:delete}</option>
+							 	</t:if>
+							 	<!-- ${message:has_not_submitted} -->
+							 <span t:type="t5components/Equals" left="prop:site.verified.toString()" right="literal:0">
+							 	<option value="/advertiser/sitelistpage/submitApp/${site.id}" msg="${message:make_sure_to_submit_the_verification}?">${message:submit_verification}</option>
+							 </span>		
+							 </select>	
+						</t:parameter>
+			    	</table>
+				</div>
+				
+			</t:form>
+		</div>
+	</div>
+</t:advertiser.Layout>

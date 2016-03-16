@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+		<title>Darwin Marketing</title>
+		<LINK  href="../../stylesheets/base.css" rel=stylesheet>
+		<LINK  href="../../stylesheets/css_cn.css" rel=stylesheet>
+		<script language="javascript" src="../js/userLinksFuns.js" type="text/javascript"></script>
+		<script language="javascript" src="../js/userBankAccounts.js"></script>
+		<script language="JavaScript" type="text/javascript">
+			var FILE_EXT = '.html';
+		</script>
+	</head>
+<body>
+<div class="content">
+  <div class="pageTitle">邮件管理&nbsp;-&nbsp;新建邮件</div>
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr valign="top">
+      <td class="left150"><div class="box">
+          <div class="title"><a href="admin_conta_MyMessage.html">我的收件箱</a></div>
+                    <div class="title"><a href="admin_conta_Message.html">新建邮件</a></div>
+          <div class="title"><a href="admin_conta_EmailLog.html">我的发件箱</a></div>
+                  </div></td>
+      <td><table border="0" cellspacing="1" cellpadding="0" class="list">
+          <tr class="title">
+            <td colspan="2">新建邮件</td>
+          </tr>
+          <form name=form1 ation="get" action="">
+            <tr class="row1">
+              <td width="10%">用户名</td>
+              <td><input name="sname" type="text" size="25" maxlength="20"  />
+              </td>
+            </tr>
+            <tr class="row1">
+              <td width="10%">用户种类</td>
+              <td>BBS用户                <input name="sgroup[]" type="checkbox" value="0"  />
+                管理组                <input name="sgroup[]" type="checkbox" value="1"  />
+                广告组                <input name="sgroup[]" type="checkbox" value="2"  />
+                网站组                <input name="sgroup[]" type="checkbox" value="3"  />
+              </td>
+            </tr>
+            <tr class="row1">
+              <td>审核状态</td>
+              <td><span style="color:#666" >待审核</span>                <input name="sstatus[]" type="checkbox" value="0"  />
+                <span style="color:#393" >已批准</span>                <input name="sstatus[]" type="checkbox" value="1"  />
+                <span style="color:#f00" >已拒绝</span>                <input name="sstatus[]" type="checkbox" value="2"  />
+              </td>
+            </tr>
+            <tr class="row1">
+              <td>激活状态</td>
+              <td>已激活                <input name="sactived[]" type="checkbox" value="0"  />
+                未激活                <input name="sactived[]" type="checkbox" value="1"  />
+              </td>
+            </tr>
+            <tr class="row1">
+              <td>删除状态</td>
+              <td>有效                <input name="sdeleted[]" type="checkbox" value="0"  />
+                无效                <input name="sdeleted[]" type="checkbox" value="1"  />
+              </td>
+            </tr>
+            <tr class="row1">
+              <td>创建日期</td>
+              <td>从<input type="text" name="sel1" id="sel1" size="20"  value="2006-01-01"><input type="reset" value="选择起始日期" onclick="return showCalendar('sel1', '%Y-%m-%d',false,true);"> 到<input type="text" name="sel3" id="sel3" size="20"  value="2008-05-19"><input type="reset" value="选择结束日期" onclick="return showCalendar('sel3', '%Y-%m-%d',false,true);"> </td>
+            </tr>
+            <tr class="row1">
+              <td>SQL</td>
+              <td><textarea name="sql" cols="87" rows="10"></textarea></td>
+            </tr>
+            <tr class="row1">
+              <td colspan="2"><input name="submit" type="submit" value="提交" /></td>
+            </tr>
+          </form>
+          <form name="form" method="post" action="../../Act.html">
+            <input name="act" type="hidden" value="insert" />
+            <input name="cid" type="hidden" value="" />
+            <input name="selectedusers" type="hidden" />
+            <tr class="row1">
+              <td>发送选择</td>
+              <td><input name="message_type" type="radio" value="1" checked="checked" />
+                内部邮件                <input name="message_type" type="radio" value="2" />
+                外部邮件 </td>
+            </tr>
+            <tr class="row1">
+              <td colspan="2"><table>
+                  <tr>
+                    <td width="45%"><select name="allaff" id="allaff" size="6" multiple="multiple" style="width:250px">
+                                                <option value="::"></option>
+                                              </select>
+                    </td>
+                    <td width="10%" align="center">
+                      <script type="text/javascript">
+AC_FL_RunContent( 'codebase','http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0','width','50','height','37','src','images/allto','quality','high','pluginspage','http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash','movie','images/allto' ); //end AC code
+</script>
+                      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="50" height="37">
+                        <param name="movie" value="../../images/allto.swf" />
+                        <param name="quality" value="high" />
+                        <embed src="images/allto.swf" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="50" height="37" ></embed>
+                      </object>
+                      <br />
+                      <script type="text/javascript">
+AC_FL_RunContent( 'codebase','http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0','width','50','height','37','src','images/to','quality','high','pluginspage','http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash','movie','images/to' );
+</script>
+                      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="50" height="37">
+                        <param name="movie" value="../../images/to.swf" />
+                        <param name="quality" value="high" />
+                        <embed src="../../images/to.swf" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="50" height="37" ></embed>
+                      </object>
+                      <br />
+                      <script type="text/javascript">
+AC_FL_RunContent( 'codebase','http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0','width','50','height','37','src','images/from','quality','high','pluginspage','http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash','movie','images/from' ); //end AC code
+</script>
+                      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="50" height="37">
+                        <param name="movie" value="../../images/from.swf" />
+                        <param name="quality" value="high" />
+                        <embed src="../../images/from.swf" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="50" height="37" ></embed>
+                      </object>
+                      <br />
+                      <script type="text/javascript">
+AC_FL_RunContent( 'codebase','http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0','width','50','height','37','src','images/allfrom','quality','high','pluginspage','http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash','movie','images/allfrom' ); //end AC code
+</script>
+                      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="50" height="37">
+                        <param name="movie" value="../../images/allfrom.swf" />
+                        <param name="quality" value="high" />
+                        <embed src="../../images/allfrom.swf" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="50" height="37" ></embed>
+                      </object>
+                    </td>
+                    <td width="45%">
+                      <select name="chosenaff" id="chosenaff" size="6" multiple="MULTIPLE" style="width:250px">
+                      </select>
+                    </td>
+                  </tr>
+                </table></td>
+            </tr>
+            <tr class="row1">
+              <td class="row_required">邮件主题</td>
+              <td>
+                <input name="message_title" type="text" size="51" maxlength="40" />
+              </td>
+            </tr>
+            <tr class="row1">
+              <td class="row_required">邮件内容</td>
+              <td><textarea name="message_desc" cols="87" rows="10"></textarea></td>
+            </tr>
+            <tr class="row1">
+              <td colspan="2" align="center">
+                <input name="submit" type="submit" value="添加" />
+                &nbsp;&nbsp;&nbsp;
+                <input name="back" type="button" onclick="javascript:history.go(-1)" value="返回" />
+              </td>
+            </tr>
+          </form>
+        </table></td>
+    </tr>
+  </table>
+</div>
+<div class="footer">
+  <div class="copyright"><a href="/darwin_2.html">关于我们</a>&nbsp;|&nbsp;<a href="/darwin_3.html">联系我们</a>&nbsp;|&nbsp;<a href="systemPassSession.php">论坛</a>&nbsp;<br />
+    沪ICP备06035438号<br />
+    Copyright &copy; 2006 - 2007 Darwin Marketing.<br />
+    <!--L_G_FOOT_CNZZ-->
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script><script type="text/javascript">_uacct = "UA-259227-4";urchinTracker();</script>  </div>
+</div>
+</div>
+</body>
+</html>

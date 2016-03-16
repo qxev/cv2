@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+		<title>Darwin Marketing</title>
+		<LINK  href="../../stylesheets/base.css" rel=stylesheet>
+		<LINK  href="../../stylesheets/css_cn.css" rel=stylesheet>
+		<script language="javascript" src="../js/userLinksFuns.js" type="text/javascript"></script>
+		<script language="javascript" src="../js/userBankAccounts.js"></script>
+		<script language="JavaScript" type="text/javascript">
+			var FILE_EXT = '.html';
+		</script>
+	</head>
+<body>
+<div class="content">
+  <div class="pageTitle">用户管理&nbsp;-&nbsp;广告主管理&nbsp;-&nbsp;新增</div>
+  <table border="0" cellspacing="1" cellpadding="0" class="list">
+    <form name="form" method="get" enctype="multipart/form-data" action="../../Act.html">
+      <input name="act" type="hidden" value="insert">
+      <tr class="title">
+        <td colspan="2">新增广告主</td>
+      </tr>
+      <tr class="row1">
+        <td class="row_required">用户名</td>
+        <td><input name="user_name" type="text" size="25" maxlength="20"></td>
+      </tr>
+      <tr class="row1">
+        <td class="row_required">用户密码</td>
+        <td><input name="user_pass1" type="password" size="18" maxlength="15"></td>
+      </tr>
+      <tr class="row1">
+        <td class="row_required">重复密码</td>
+        <td><input name="user_pass2" type="password" size="18" maxlength="15"></td>
+      </tr>
+      <tr class="row1">
+        <td class="row_required">用户邮箱</td>
+        <td><input name="user_mail" type="text" size="35" maxlength="40"></td>
+      </tr>
+	  <tr class="row1">
+		<td>用户昵称</td>
+		<td><input name="user_nickname" type="text" size="25" maxlength="20"></td>
+	  </tr>
+      <tr class="row1">
+        <td>订阅广告邮件</td>
+        <td>
+          <input name="user_letter" type="radio" value="0" checked="checked">
+          未订阅          <input name="user_letter" type="radio" value="1">
+          已订阅        </td>
+      </tr>
+      <tr class="row1">
+        <td>邮件系统设置</td>
+        <td>
+          <input name="user_reminder1" type="checkbox" value="1">
+          内部邮件          <input name="user_reminder2" type="checkbox" value="1">
+          外部邮件        </td>
+      </tr>
+      <tr class="row1">
+        <td>审核网站主方式</td>
+        <td>
+          <input name="user_validate" type="radio" value="0" checked="checked">
+          自动          <input name="user_validate" type="radio" value="1">
+          人工        </td>
+      </tr>
+      <tr class="row1">
+        <td>审核状态</td>
+        <td>
+		  <input name="user_status" type="radio" value="0" checked="checked">
+          <span style="color:#666" >待审核</span>          <input name="user_status" type="radio" value="1">
+          <span style="color:#393" >已批准</span>          <input name="user_status" type="radio" value="2">
+          <span style="color:#f00" >已拒绝</span>        </td>
+      </tr>
+      <tr class="row1">
+        <td>激活状态</td>
+        <td>
+          <input name="user_actived" type="radio" value="0" checked="checked">
+          未激活          <input name="user_actived" type="radio" value="1">
+          已激活        </td>
+      </tr>
+      <tr class="row1">
+        <td>删除状态</td>
+        <td>
+          <input name="user_deleted" type="radio" value="0" checked="checked">
+          有效          <input name="user_deleted" type="radio" value="1">
+          无效        </td>
+      </tr>
+      <tr class="row1">
+        <td class="row_required">公司名称</td>
+        <td><input name="uinfo_comp_name" type="text" size="51" maxlength="40"></td>
+      </tr>
+      <tr class="row1">
+        <td>公司介绍</td>
+        <td><textarea name="uinfo_note" cols="48" rows="6"></textarea></td>
+      </tr>
+      <tr class="row1">
+        <td class="row_required">联系人名称</td>
+        <td><input name="uinfo_cont_name" type="text" size="25" maxlength="20"></td>
+      </tr>
+      <tr class="row1">
+        <td class="row_required">所在地区</td>
+        <td>
+          <SELECT name="uinfo_state" onclick="javascript:sdistrict(document.form.uinfo_city,this.value)">
+            <OPTION value="" selected="selected">--请选择--</OPTION>
+            <OPTION value="北京市">北京市</OPTION>
+            <OPTION value="上海市">上海市</OPTION>
+            <OPTION value="天津市">天津市</OPTION>
+            <OPTION value="重庆市">重庆市</OPTION>
+            <OPTION value="广东省">广东省</OPTION>
+            <OPTION value="福建省">福建省</OPTION>
+            <OPTION value="浙江省">浙江省</OPTION>
+            <OPTION value="江苏省">江苏省</OPTION>
+            <OPTION value="山东省">山东省</OPTION>
+            <OPTION value="辽宁省">辽宁省</OPTION>
+            <OPTION value="江西省">江西省</OPTION>
+            <OPTION value="四川省">四川省</OPTION>
+            <OPTION value="陕西省">陕西省</OPTION>
+            <OPTION value="湖北省">湖北省</OPTION>
+            <OPTION value="河南省">河南省</OPTION>
+            <OPTION value="河北省">河北省</OPTION>
+            <OPTION value="山西省">山西省</OPTION>
+            <OPTION value="内蒙古">内蒙古</OPTION>
+            <OPTION value="吉林省">吉林省</OPTION>
+            <OPTION value="黑龙江">黑龙江</OPTION>
+            <OPTION value="安徽省">安徽省</OPTION>
+            <OPTION value="湖南省">湖南省</OPTION>
+            <OPTION value="广西区">广西区</OPTION>
+            <OPTION value="海南省">海南省</OPTION>
+            <OPTION value="云南省">云南省</OPTION>
+            <OPTION value="贵州省">贵州省</OPTION>
+            <OPTION value="西藏区">西藏区</OPTION>
+            <OPTION value="甘肃省">甘肃省</OPTION>
+            <OPTION value="宁夏区">宁夏区</OPTION>
+            <OPTION value="青海省">青海省</OPTION>
+            <OPTION value="新疆区">新疆区</OPTION>
+            <OPTION value="香港区">香港区</OPTION>
+            <OPTION value="澳门区">澳门区</OPTION>
+            <OPTION value="台湾省">台湾省</OPTION>
+            <OPTION value="全国">全国</OPTION>
+          </SELECT>
+        </td>
+      </tr>
+      <tr class="row1">
+        <td>县/市/区</td>
+        <td>
+          <SELECT name="uinfo_city">
+            <OPTION value="" selected="selected">--请选择--</OPTION>
+          </SELECT>
+        </td>
+      </tr>
+      <tr class="row1">
+        <td>联系地址</td>
+        <td><input name="uinfo_street" type="text" size="51" maxlength="100"></td>
+      </tr>
+      <tr class="row1">
+        <td>邮政编码</td>
+        <td><input name="uinfo_zipcode" type="text" size="11" maxlength="10"></td>
+      </tr>
+      <tr class="row1">
+        <td>电话号码</td>
+        <td>
+          <input name="uinfo_phone1" type="text" size="4" maxlength="4">-
+          <input name="uinfo_phone2" type="text" size="11" maxlength="10">-
+          <input name="uinfo_phone3" type="text" size="4" maxlength="4">
+        </td>
+      </tr>
+      <tr class="row1">
+        <td>手机号码</td>
+        <td><input name="uinfo_mobile" type="text" size="13" maxlength="11"></td>
+      </tr>
+      <tr class="row1">
+        <td>传真号码</td>
+        <td>
+          <input name="uinfo_fax1" type="text" size="4" maxlength="4">-
+          <input name="uinfo_fax2" type="text" size="11" maxlength="10">-
+          <input name="uinfo_fax3" type="text" size="4" maxlength="4">
+		</td>
+      </tr>
+      <tr class="row1">
+        <td class="row_required">网站名称</td>
+        <td><input name="link_name" type="text" size="51" maxlength="40"></td>
+      </tr>
+      <tr class="row1">
+        <td class="row_required">网址</td>
+        <td>http://<input name="link_url" type="text" size="44" maxlength="80"></td>
+      </tr>
+      <tr class="row1">
+        <td>广告主LOGO</td>
+        <td><input name="image" type="file"></td>
+      </tr>
+      <tr class="row1">
+        <td class="row_required">网站简介</td>
+        <td><input name="link_note" type="text" size="51" maxlength="40"></td>
+      </tr>
+      <tr class="row1">
+        <td>网站介绍</td>
+        <td><textarea name="link_desc" cols="48" rows="6"></textarea></td>
+      </tr>
+      <tr class="row1">
+        <td class="row_required">网站分类</td>
+        <td><select name="category_id1" id="url_category" onfocus="show_ex(this, '请选择最匹配你的网站定位的分类类型,以便于相关广告主很快找到您')" onblur="restore(this, '请选择最匹配你的网站定位的分类类型,以便于相关广告主很快找到您')"><option value="0">--请选择--</option><option value="2|,0,">┝购物/导购/交易</option>
+<option value="8|,0,">┝礼品/鲜花</option>
+<option value="9|,0,">┝游戏/小游戏</option>
+<option value="10|,0,">┝健康/医药/医疗</option>
+<option value="11|,0,">┝图书/音像</option>
+<option value="12|,0,">┝汽车/运动/体育</option>
+<option value="13|,0,">┝旅游/摄影/图片</option>
+<option value="14|,0,">┝交友/社区/</option>
+<option value="15|,0,">┝通讯/电话/手机/数码</option>
+<option value="16|,0,">┝图铃、音乐</option>
+<option value="17|,0,">┝综合/门户/分类广告</option>
+<option value="18|,0,">┝化妆品/美容</option>
+<option value="19|,0,">┝IT硬件/软件/服务</option>
+<option value="20|,0,">┝娱乐/资讯/电影/杂志</option>
+<option value="21|,0,">┝招商/连锁/商机/供求</option>
+<option value="22|,0,">┝房产/租赁</option>
+<option value="23|,0,">┝金融/理财/支付</option>
+<option value="24|,0,">┝招聘/培训/教育</option>
+<option value="25|,0,">┕其它</option>
+</select></td>
+      </tr>
+      <tr class="row1">
+        <td>从哪里知道我们</td>
+        <td>
+          <SELECT name="uinfo_from">
+            <OPTION value="" selected="selected">--请选择--</OPTION>
+			<OPTION value="搜索引擎">搜索引擎</OPTION>
+			<OPTION value="友情链接">友情链接</OPTION>
+			<OPTION value="报纸杂志">报纸杂志</OPTION>
+			<OPTION value="户外广告">户外广告</OPTION>
+			<OPTION value="广告邮件">广告邮件</OPTION>
+			<OPTION value="朋友介绍">朋友介绍</OPTION>
+			<OPTION value="其它">其它</OPTION>
+          </SELECT>
+        </td>
+      </tr>
+      <tr class="row1">
+        <td>用户组类型</td>
+        <td>
+          <select name="group_id">
+			<option value='2'>广告组</option>          </select>
+        </td>
+      </tr>
+      <tr class="row1">
+        <td colspan="2" align="center">
+          <input name="submit" type="submit" value="添加">
+          &nbsp;&nbsp;&nbsp;
+          <input name="back" type="button" onclick="javascript:history.go(-1)" value="返回">
+        </td>
+      </tr>
+    </form>
+  </table>
+</div>
+<div class="footer">
+  <div class="copyright"><a href="/darwin_2.html">关于我们</a>&nbsp;|&nbsp;<a href="/darwin_3.html">联系我们</a>&nbsp;|&nbsp;<a href="systemPassSession.php">论坛</a>&nbsp;<br />
+    沪ICP备06035438号<br />
+    Copyright &copy; 2006 - 2007 Darwin Marketing.<br />
+    <!--L_G_FOOT_CNZZ-->
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script><script type="text/javascript">_uacct = "UA-259227-4";urchinTracker();</script>  </div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:admin.Layout pageTitle="广告活动修改邮件" t:navigation="${message:campaign_manage} > ${message:campaigns} > ${message:edit} > 发邮件" pageGroup="campaign"  xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<div><t:messagebanner t:id="message" type="type"/></div>
+<br />
+<div>
+	广告内容发生了如下变化，是否通知投放该广告的广告主:
+</div>
+<div class="table_clear" style="width: 100%;">
+	<div class="t-data-grid">
+		<t:form t:id="myForm">
+			<t:errors />
+			<table id="table" class="t-data-grid" style="width: 100%;">
+				<thead>
+					<tr>
+						<th width="5%">
+							<input t:type="checkbox" t:id="chkall" onclick="checkAll(this.form)"/>
+						</th>
+						<th width="15%">
+							属性
+						</th>
+						<th width="40%">
+							原内容
+						</th>
+						<th width="40%">
+							新内容
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr t:type="loop" source="diffes" value="diffe" class="${rowClass}">
+						<td style="text-align:center;"><t:checkbox t:id="checkbox" value="checked" /></td>
+						<td>${diffe.attrName}</td>
+						<td><t:outputRaw value="diffe.from" /></td>
+						<td><t:outputRaw value="diffe.to" /></td>
+					</tr>
+				</tbody>
+			</table>
+			<br />
+			<div>
+				如果要发送邮件，请输入修改原因：<br />
+				<t:textarea value="reason" rows="6" cols="60"/>
+			</div>
+			<div style="margin-top: 5px;">
+				<t:submit id="sendMail" value="发送邮件" />
+				<input type="button" value="取消发送" onclick="window.location.href='/admin/campaign/listpage'" style="margin-left: 5px;"/>
+			</div>
+		</t:form>
+	</div>
+</div>
+</t:admin.Layout>

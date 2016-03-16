@@ -1,0 +1,36 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<table style="BORDER-COLLAPSE: collapse;" borderColor="#ced5b1" 
+            cellSpacing="0" cellPadding="0" width="100%" border="1">
+    <tr class="bold">
+      <td width="10%" bgcolor="#faf8e3">广告活动名称<img src="/assets/images/sort_down.gif" alt="" width="11" height="10" /></td>
+      <td width="10%" bgcolor="#faf8e3">COOKIE期限<img src="/assets/images/sort_down.gif" alt="" width="11" height="10" /></td>
+      <td width="8%" bgcolor="#faf8e3">佣金<img src="/assets/images/sort_down.gif" alt="" width="11" height="10" /></td>
+      <td width="11%" bgcolor="#faf8e3">网站名称<img src="/assets/images/sort_down.gif" alt="" width="11" height="10" /></td>
+      <td width="6%" bgcolor="#faf8e3">广告数<img src="/assets/images/sort_down.gif" alt="" width="11" height="10" /></td>
+
+      <td width="10%" bgcolor="#faf8e3">广告投放区域<img src="/assets/images/sort_down.gif" alt="" width="11" height="10" /></td>
+      <td width="7%" bgcolor="#faf8e3">申请状态<img src="/assets/images/sort_down.gif" alt="" width="11" height="10" /></td>
+      <td width="8%" bgcolor="#faf8e3">线上状态<img src="/assets/images/sort_down.gif" alt="" width="11" height="10" /></td>
+      <td width="9%" bgcolor="#faf8e3">起始日期<img src="/assets/images/sort_down.gif" alt="" width="11" height="10" /></td>
+      <td width="9%" bgcolor="#faf8e3">结束日期<img src="/assets/images/sort_down.gif" alt="" width="11" height="10" /></td>
+      <td width="12%" bgcolor="#faf8e3">操作<img src="/assets/images/sort_down.gif" alt="" width="11" height="10" /></td>
+    </tr>
+   <tr t:type="loop" t:source="cpsdata" t:value="campaign" class="gray">
+      <td><a onclick="#" href="#">${campaign.name}</a></td>
+      <td>${campaign.cookieMaxage}</td>
+      <td><a href=""></a></td>
+      <td><a href="#">${campaign.site.url}</a></td>
+      <td><a href="#"></a></td>
+      <td>${campaign.region}</td>
+      <td>${campaign.actived}</td>
+      <td></td>
+      <td>${campaign.startDate}</td>
+      <td>${campaign.endDate}</td>
+
+      <td><select name="jumpMenu" id="jumpMenu" onchange="MM_jumpMenu('parent',this,0)">
+        <option>请选择操作</option>
+        <option>查看佣金</option>
+        </select></td>
+    </tr>
+</table>    
+</html>

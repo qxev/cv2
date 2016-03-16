@@ -1,0 +1,8 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <head>
+        <title>ClientAuditingPage page</title>
+    </head>
+    <body>
+        <h4>Find me under "/cv2/webroot/admin/userManage".</h4>
+    </body>
+</html>

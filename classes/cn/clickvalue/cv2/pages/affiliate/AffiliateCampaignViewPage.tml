@@ -1,0 +1,120 @@
+<t:affiliate.Layout t:page_title="${message:The_activities_of_advertisers_and_advertising_details}" t:pageGroup="campaign" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<form t:id="form">
+		<t:errors/>
+		<div class="content">
+			<div class="page_headers">
+				<t:if test="campaign">
+					<div class="title">${message:campaign}: ${campaign.name} > ${message:site_information}</div>
+					<table width="100%" class="form" id="camp">
+						<tr>
+							<td style="width: 10%; border: #fff 2px solid;">
+								<div class="logo">
+									<t:if test="${campaign.site.logo}">
+										<img src="${campaign.site.logo}" height="60" width="90" border="1"/>
+									</t:if>
+								</div>
+							</td>
+							
+							<td style="width: 20%; border: #fff 2px solid;">
+								${message:website}：${campaign.site.name} <br/>
+			            		URL：<a href="${campaign.site.url}">${campaign.site.url}</a>
+							</td>
+							
+							<td style="width: 50%; border: #fff 2px solid;">
+			            		${message:description}:<br/>
+			            		<t:outputraw value="campaign.site.description"/>
+							</td>
+							<td  style="border: #fff 2px solid;">
+								<div style="font-weight:bold;">${message:Attention_condition}:
+									<br />
+									<img t:type="Image" src="${ognl:@cn.clickvalue.cv2.common.constants.Constants@getImageConcern(isConcerned)}" />
+									<t:if test="isConcerned">
+										<t:parameter name="else">
+											<div class="css_button">
+												<t:actionlink t:id="concerneState">${message:Attention_application}</t:actionlink>
+											</div>
+										</t:parameter>
+									</t:if>
+								</div>
+			        		</td>
+						</tr>
+					</table>
+					
+					<div class="page_headers">
+						<div class="title">
+							${message:campaign}: ${campaign.name} > ${message:detail_information}
+						</div>
+						<table class="form" width="100%">
+							<tr class="rowodd">
+						      <td style="white-space: pre; width: 100px;">${message:campaign}:</td>
+						      <td>${campaign.name}</td>
+				    		</tr>
+				    		<tr>
+						      <td>${message:cookies_limit1}:</td>
+						      <td>${dateformat:campaign.startDate}    ~      ${dateformat:campaign.endDate}</td>
+				    		</tr>
+				    		<tr class="rowodd">
+				    			<td>${message:ad_number}:</td>
+						        <td>${campaign.banners.size()}个</td>
+				    		</tr>
+				    		<tr>
+						      <td>${message:cookie_last}:</td>
+						      <td>${campaign.cookieMaxage}${message:day}</td>
+				    		</tr>
+				    		<tr class="rowodd">
+				    			<td>${message:region}:</td>
+						        <td>${campaign.region}</td>
+				    		</tr>
+				    		<tr>
+				    			<td>${message:industry_category}:</td>
+						        <td>${industry}</td>
+							</tr>
+				    		<tr class="rowodd">
+				    			<td>${message:verification_way}:</td>
+				    			<td>
+				    				<t:if test="campaign.affiliateVerified" >
+										${message:Automatic}
+										<t:parameter name="else"> 
+											${message:Artificial}
+										</t:parameter> 
+									</t:if>
+				    			</td>
+				    		</tr>
+							<tr>
+						      	<td>${message:description}:</td>
+						      	<td><t:outputraw value="campaign.description"/></td>
+				    		</tr>
+						</table>
+					</div>
+					
+					<div class="page_headers">
+						<div class="title">
+							${message:campaign}: ${campaign.name} > ${message:commission_rule}
+						</div>
+						<table class="form" width="100%">
+							<t:loop source="commissionRuleList" value="commissionRule">
+								<tr class="${rowClass}">
+							      <td style="white-space: pre; width: 100px;">${dateformat:commissionRule.startDate=yy.MM.dd} ～ ${dateformat:commissionRule.endDate=yy.MM.dd}</td>
+							      <td>${commissionruleformat:commissionRule=%t:%v}</td>
+							      <td>${message:pimCoefficient}: ${commissionRule.coefficient}</td>
+							      <td><t:OutputRaw value="commissionRule.description"></t:OutputRaw></td>
+					    		</tr>
+				    		</t:loop>
+						</table>
+					</div>
+					
+					<!-- 在开始和${message:ending_date}之间 -->
+					<t:if test="isShowViewBanner()">
+						<t:SliderDoor id="applyDiv" text="${message:Chooses_the_stand_to_apply_for_this_advertisement}" href="${url}" style="display:${displayCss};"/>			
+						<t:if test="campaign.customVerified" >
+							<t:SliderDoor text="${message:get_custom_banner}" href="/affiliate/AffiliateCustomLinkPage/${campaign.id}"/>	
+						</t:if>
+						<t:SliderDoor text="${message:Examines_and_chooses_advertisement}" href="/affiliate/AffiliateSelectBanner/${campaign.id}" clear="true"/>
+						
+					</t:if>
+					
+				</t:if>
+			</div>
+		</div>
+	</form>
+</t:affiliate.Layout>

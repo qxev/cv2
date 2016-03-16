@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:admin.Layout pageTitle="sql管理" pageGroup="system"  xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+<table style="BORDER-COLLAPSE: collapse;width:55%" borderColor="#ced5b1" 
+            cellSpacing="0" cellPadding="0" width="100%" border="1">
+	<tr>
+		<td class="green_bg" colspan="2"><strong>编辑sql</strong></td>
+	</tr>
+
+	<t:form t:id="campaignForm"><t:errors />
+
+	<tr>
+		<td class="greenwithe_bg">
+			广告活动ID
+		</td>
+		<td class="greenwithe">
+			<input t:type="textfield" t:value="excelOutput.campaignId" size="30" />
+		</td>
+	</tr>
+	
+	<tr>
+		<td class="greenwithe_bg">
+			excel显示字段
+		</td>
+		<td class="greenwithe">
+			<input t:type="textarea" t:value="excelOutput.excelFields" cols="80" rows="4" />
+		</td>
+	</tr>
+	
+		<tr>
+		<td class="greenwithe_bg">
+			excel输出字段
+		</td>
+		<td class="greenwithe">
+			<input t:type="textarea" t:value="excelOutput.sqlFields" cols="80" rows="4" />
+		</td>
+	</tr>
+	
+		<tr>
+		<td class="greenwithe_bg">
+			执行周期
+		</td>
+		<td class="greenwithe">
+			<input t:type="textfield" t:value="excelOutput.jobType" size="30" />
+		</td>
+	</tr>
+	<tr>
+		<td class="greenwithe_bg">
+			佣金规则
+		</td>
+		<td class="greenwithe">
+			<input t:type="textfield" t:value="excelOutput.ruleType" size="30" />
+		</td>
+	</tr>
+	
+	<tr>
+		<td class="greenwithe_bg">
+			SQL语句
+		</td>
+		<td class="greenwithe">
+			<input t:type="textarea" t:value="excelOutput.sqlContent" cols="80" rows="20" />
+		</td>
+	</tr>
+	
+	<tr>
+		<td class="green_bg" colspan="2">
+		<input type="submit" t:type="submit" value="${message:save}"/>&nbsp;&nbsp;
+		<button t:type="t5components/Button" type="button" event="clicked">${message:back}
+		</button>
+		</td>
+	</tr>
+	
+</t:form>     
+     
+</table>
+
+</t:admin.Layout>

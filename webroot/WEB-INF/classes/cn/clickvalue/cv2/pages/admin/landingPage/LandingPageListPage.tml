@@ -1,0 +1,49 @@
+<t:admin.Layout t:pageTitle="CampaignList" t:navigation="${message:campaign_manage} > ${message:landing_page}" pageGroup="campaign" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <body>
+    	<div class="form">
+	    	<t:form t:id="searchForm">
+	    		所属广告活动:
+	    		<select t:type="select" value="formCampaign" model="campaignsSelectionModel" encoder="campaignsValueEncoder" blankLabel="所有"/>
+	    		目标网址:
+	    		<input t:type="textfield" value="formUrl" />
+	    		<input t:type="submit" value="查询" t:id="searchButton" />
+	    	</t:form>
+		</div>
+	    <t:form>
+		    <table style="BORDER-COLLAPSE: collapse;" borderColor="#ced5b1" cellSpacing="0" cellPadding="0" width="100%" border="1" t:id="myGrid" t:type="Grid" source="dataSource" row="landingPage" model="beanModel" pagerPosition="literal:bottom" rowsPerPage="${noOfRowsPerPage}">
+	             <t:parameter name="nameCell">
+	             	<a href="${landingPage.url}">${landingPage.name}</a>
+				 </t:parameter>
+				 <t:parameter name="campaignNameCell">
+		    		<t:pagelink page="admin/campaign/viewpage" context="prop:viewParameters" >${landingPage.campaign.name}</t:pagelink>
+				 </t:parameter>
+				 <t:parameter name="verifiedCell">
+					 <t:if test="pendingApproval">
+					 	广告活动审核中
+					 	<t:parameter name="else">
+					 		${ognl:@cn.clickvalue.cv2.common.constants.Constants@formatVerified(messages,landingPage.verified)}
+					 	</t:parameter>
+					 </t:if>
+				 </t:parameter>
+	             <t:parameter name="bannersCountCell">
+	             	<t:pagelink page="admin/banner/listPage" context="landingPage.campaign.id">${adCount}</t:pagelink>
+				 </t:parameter>
+				 <t:parameter name="operateCell">
+					<select onchange="redirect(this);">
+						<option value="" >--选择操作--</option>
+						<!--<option onclick="redirect(event)" value="/admin/landingPage/viewPage/${landingPage.id}">查看</option>-->
+						<span t:type="t5components/Equals" left="prop:landingPage.verified.toString()" right="literal:1">
+							<option msg="批准广告目标页面[${landingPage.name}]上线？" value="/admin/landingPage/listpage/pass/${landingPage.id}" >批准</option>
+							<option msg="拒绝广告目标页面[${landingPage.name}]上线？" value="/admin/landingPage/listpage/refuse/${landingPage.id}" >拒绝</option>
+	           			</span>
+	           			<t:if test="pendingApproval">
+	           				<option msg="拒绝广告目标页面[${landingPage.name}]上线？" value="/admin/landingPage/listpage/refuse/${landingPage.id}" >拒绝上线</option>
+	           			</t:if>
+	           			<option value="/admin/landingPage/listpage/test/${landingPage.id}">广告测试</option>
+	           			<option value="/admin/landingPage/edit/${landingPage.id}">编辑</option>
+					</select>
+				 </t:parameter>
+		    </table>
+		</t:form>
+    </body>
+</t:admin.Layout>

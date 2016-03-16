@@ -1,0 +1,196 @@
+<t:admin.Layout t:pageTitle="customMail" t:navigation="customMail" pageGroup="email_manage" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<body>
+		<div><t:messagebanner t:id="message" type="type"/></div>
+		<t:form t:id="form">
+			<t:errors />
+			<table>
+				<tr>
+					<td>邮件标题:</td><td><t:textfield value="subject" size="30" /></td>
+				</tr>
+				<tr>
+					<td>包含内容:</td>
+					<td>
+						<input type="checkbox" t:id="includeCampaignCheckbox" t:type="t5components/AjaxCheckbox" value="includeCampaign" onclick="showOrHidenByCheckBox(this,'includeCampaign');"/>促销广告活动
+						<input type="checkbox" t:id="includeAffiliateCheckbox" t:type="t5components/AjaxCheckbox" value="includeAffiliate" onclick="showOrHidenByCheckBox(this,'includeAffiliate');"/>推荐网站主
+						<input type="checkbox" t:id="includePostCheckbox" t:type="t5components/AjaxCheckbox" value="includePost" onclick="showOrHidenByCheckBox(this,'includePost');"/>推荐论坛热帖
+					</td>
+				</tr>
+			</table>
+			
+			<div id="includeCampaign" class="ajaxFormLoopContainer-row">
+				<t:ajaxformloop t:id="customMailCampaigns" source="customMailCampaigns" encoder="customMailCampaignEncoder" value="customMailCampaign">
+					
+					<table class="t-data-grid" cellspacing="0" cellpadding="0" bordercolor="#ced5b1" border="1" style="border-collapse: collapse; width: 330px;">
+						<thead>
+							<tr>
+								<th colspan="2">
+									促销活动
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr valign="top">
+								<td colspan="2">
+									目录标题:<br />
+									<t:textfield value="customMailCampaign.title" size="40" /> 
+								</td>
+							</tr>
+							<tr valign="top">
+								<td colspan="2">
+									图片:
+									<t:textfield value="customMailCampaign.advertiseId" size="5" />
+									<span style="color: red;">(请输入目标地址和广告图片的关联ID)</span>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<t:ajaxformloop t:id="paragraphs" source="customMailCampaign.paragraphs" encoder="paragraphEncoder" value="paragraph" element="div" addRow="block:paragraphsAddRow">
+										<div style="float:left;width: 100px;">
+											小标题:<br />
+											<t:textfield value="paragraph.subject" size="12" /> 
+											<t:removerowlink>remove</t:removerowlink>
+										</div>
+										<div style="float:left;width:200px;">
+											内容:<br />
+											<t:textarea value="paragraph.content" rows="4" cols="20"></t:textarea>
+										</div>
+										<div style="clear:both;"></div>
+										<t:parameter name="addRow">
+								        	<t:addrowlink>更多说明</t:addrowlink>
+								        </t:parameter>
+									</t:ajaxformloop>
+								</td>
+								
+							</tr>
+							<tr>
+								<td align="right" colspan="2">
+									<t:removerowlink>remove</t:removerowlink>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div style="clear:both;"></div>
+			        <t:parameter name="addRow">
+			        	<t:addrowlink>更多活动</t:addrowlink>
+			        </t:parameter>
+				</t:ajaxformloop>
+			</div>
+			
+			<div style="clear:both;"></div>
+			
+			<div id="includeAffiliate" class="ajaxFormLoopContainer-row">
+			
+				<t:ajaxformloop t:id="customMailSites" source="customMailSites" encoder="customMailSiteEncoder" value="customMailSite">
+					
+					<table class="t-data-grid" cellspacing="0" cellpadding="0" bordercolor="#ced5b1" border="1" style="border-collapse: collapse; width: 330px;">
+						<thead>
+							<tr>
+								<th colspan="2">
+									优秀网站主推荐
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									网站名称:
+								</td>
+								<td>
+									<t:textfield value="customMailSite.siteName" size="30" /> 
+								</td>
+							</tr>
+							<tr>
+								<td>
+									网站网址:
+									
+								</td>
+								<td>
+									<t:textfield value="customMailSite.siteUrl" size="30" /> 
+								</td>
+							</tr>
+							<!-- 
+							<tr>
+								<td>
+									网站LOGO:
+								</td>
+								<td>
+									<t:upload value="logo" /> 
+								</td>
+							</tr>
+							 -->
+							<tr valign="top">
+								<td>网站主介绍:</td>
+								<td>
+									<t:textarea value="customMailSite.description" rows="4" cols="25"></t:textarea>
+								</td>
+							</tr>
+							<tr>
+								<td align="right" colspan="2">
+									<t:removerowlink>remove</t:removerowlink>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div style="clear:both;"></div>
+			        <t:parameter name="addRow">
+			        	<t:addrowlink>更多网站</t:addrowlink>
+			        </t:parameter>
+			        
+				</t:ajaxformloop>
+			</div>
+				
+			<div style="clear:both;"></div>
+			
+			<div id="includePost" class="ajaxFormLoopContainer-row">
+				<div>
+					<table class="t-data-grid" cellspacing="0" cellpadding="0" bordercolor="#ced5b1" border="1" style="border-collapse: collapse; width: 330px;">
+						<thead>
+							<tr>
+								<th>
+									论坛热帖推荐<span style="color: red;">(输入帖子ID即可，多个请用“，”分割)</span>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<t:textarea value="postIds" rows="4" cols="35"></t:textarea>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			
+			<div style="clear:both;"></div>
+			
+			<p><input type="submit" value="提交" /></p>
+		
+		</t:form>
+		<script type="text/javascript">
+		
+			initShowOrHidenByRadio('includeCampaign');
+			initShowOrHidenByRadio('includeAffiliate');
+			initShowOrHidenByRadio('includePost');
+			
+			function showOrHidenByCheckBox(element,targetId){
+				var text = document.getElementById(targetId);
+				if(element.checked){
+					text.style.display = "";
+				}else{
+					text.style.display = "none";
+				}
+			}
+	
+			function initShowOrHidenByRadio(targetId){
+				var text = document.getElementById(targetId);
+				var checkbox=document.getElementById(targetId+"Checkbox");
+				if(checkbox.checked){
+					text.style.display = "";
+				}else{
+					text.style.display = "none";
+				}
+			}
+		</script>
+	</body>
+</t:admin.Layout>

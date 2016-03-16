@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:admin.Layout t:pageTitle="CheatingList" pageGroup="payment_report" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+	<div class="page_headers">
+		<!-- 导航 -->
+		<div class="title">作弊记录</div>
+	
+		<!-- 快速查询表单 -->
+		<t:form t:id="form" class="form">
+			<t:errors />
+			<div style="margin-top:3px;">
+				网站主:<input type="text" t:type="textfield" value="formAffiliateName" />
+				网站:<input type="text" t:type="textfield" value="formSiteUrl" />
+				广告活动:<input type="text" t:type="textfield" value="formCampaignName" />
+				作弊时间:<t:daterange t:dateBegin="formCheatBeginAt" t:dateEnd="formCheatEndAt" />
+				<input type="submit" t:type="submit" value="查询" style="margin-left:5px;" />
+			</div>
+		</t:form>
+	</div>
+	
+	<!-- 新增按钮 -->
+	<div class="css_button">
+		<t:actionlink t:id="create" class="without_decoration">新增作弊记录</t:actionlink>
+	</div>
+	<div class="clear"/>
+	<!-- 查询结果显示 -->
+	<div style="width:100%;" t:id="myGrid" t:type="Grid" source="dataSource" row="cheating" model="beanModel" rowsPerPage="${noOfRowsPerPage}" pagerPosition="literal:bottom">
+		<t:parameter name="operateCell">
+		
+			<!-- 操作 -->
+			<select onchange="redirect(this)">
+				<option value="" >--选择操作--</option>
+				<option msg="确定删除吗？" value="/admin/cheating/listpage/${cheating.id}/delete" >删除</option>
+				<option value="/admin/cheating/editpage/${cheating.id}" >编辑</option>
+			</select>
+		</t:parameter>
+	</div>
+	
+</t:admin.Layout>

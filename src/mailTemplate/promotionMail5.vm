@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>广告活动推广邮件</title>
+	</head>
+
+	<body style="margin:0 auto;">
+		<table align="center" cellpadding="0" cellspacing="0" style="width:760px; border:0px;">
+			<tr>
+				<td background="http://www.clickvalue.cn/mail/promote-mail/head5.jpg" width="760" height="133">&nbsp;</td>
+			</tr>
+			<tr>
+			    <td style=" background-color:#E5E5E5;">
+					<table width="760" border="0">
+				      <tr  valign="top">
+				        <td width="526">
+				        	#foreach($customMailCampaign in $customMailCampaigns)
+					        <table style=" width:525px;">
+					          <tr height="60px">
+					            <td align="center" colspan="2">
+					            	<img src="http://cv2.clickvalue.cn$customMailCampaign.banner.content" alt="达闻营销广告联盟" border="0" width="480" />
+					            </td>
+					          </tr>
+					          <tr valign="bottom">
+					            <td style="font-size:16px" width="300"><b>&nbsp;&nbsp;$customMailCampaign.title</b></td>
+					            <td align="center" ><a target="_blank" href="http://cv2.clickvalue.cn/userlogin?nextPage=affiliate/AffiliateCampaignViewPage/$customMailCampaign.campaignId"><img src="http://www.clickvalue.cn/mail/promote-mail/button5.jpg" width="157" height="33" align="middle" border="0" /></a></td>
+					          </tr>
+					          <tr>
+					            <td colspan="2">
+						            <table style="font-size:14px;" width="100%" align="center">
+						            	#foreach($paragraph in $customMailCampaign.paragraphs)
+						                <tr >
+						                  	<td style="height:85px; padding:10px; background-color:#FFFFFF;" colspan="2"><img src="http://www.clickvalue.cn/mail/promote-mail/5J.gif"/><b>$paragraph.subject:</b>
+											<br /><br />
+						                    $paragraph.htmlContent
+					                      </td>
+						                </tr>
+						                <tr height="6px"></tr>
+						                #end
+						            </table>
+						        </td>
+					          </tr>
+					        </table>
+				        	#end
+				    	</td>
+				        <td width="224" valign="top">
+					        <table width="28" border="0" align="center" cellpadding="0" cellspacing="0">
+					          	<tr>
+						            <td>
+						            	<table bgcolor="#FFFFFF" cellspacing="0" cellpadding="2">
+						            		<tr>
+						            			<td>
+							            			<table style="width:208px;" cellspacing="0" cellpadding="0" border="0">
+										              	<tr>
+										                	<td background="http://www.clickvalue.cn/mail/promote-mail/title5.jpg" width="208" height="34" style="font-size:14px; font-weight:bold;padding:0px 10px;"> 论坛热帖推荐 </td>
+										                </tr>
+										                <tr>
+										                  <td>
+										                  	<ul style="margin: 0px; padding: 10px; list-style-type: none;line-height: 18px;font-size:12px;">
+										                  		#foreach($customMailTopic in $customMailTopics)
+																<li>
+																	<a style="text-decoration: none; color: rgb(28, 62, 4); font-weight: bolder;" target="_blank" href="$customMailTopic.boardUrl">[$customMailTopic.boardName]</a>
+																	<br/>
+																	<a style="text-decoration: none; color: rgb(70, 70, 70);" target="_blank" title="$customMailTopic.name" href="$customMailTopic.url">$customMailTopic.simpleTitle</a>
+																</li>
+																#end
+															</ul>
+										                  </td>
+										                </tr>
+										                <tr align="right">
+										                	<td>
+										                		<a href="http://bbs.clickvalue.cn" target="_blank">
+																	<img alt="查看更多" style="border: medium none ;" src="http://www.clickvalue.cn/mail/promote-mail/more.gif"/>
+																</a>
+										                	</td>
+										                </tr>
+										            </table>
+						            			</td>
+						            		</tr>
+						            	</table>
+						        	</td>
+					          	</tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+					          	<tr>
+					            	<td>
+					            		<table bgcolor="#FFFFFF" cellspacing="0" cellpadding="2">
+						            		<tr>
+						            			<td>
+							            			<table style="width:208px;" cellspacing="0" cellpadding="0" border="0">
+										              	<tr>
+										                	<td background="http://www.clickvalue.cn/mail/promote-mail/title5.jpg" width="208" height="34" style="font-size:14px; font-weight:bold;padding:0px 10px;"> 优秀网站主推荐 </td>
+								             			</tr>
+								              			<tr>
+								                			<td>
+								                				<ul style="margin: 0px; padding: 10px; list-style-type: none;line-height: 18px; font-size:12px;">
+									                    			#foreach($customMailSite in $customMailSites)
+																	<li>
+																		<a style="text-decoration: none; color: rgb(28, 62, 4); font-weight: bolder;" target="_blank" href="$customMailSite.siteUrl">[$customMailSite.siteName]</a>
+																		<br />
+																		$customMailSite.description
+																	</li>
+																	#end
+								                				</ul>
+								            				</td>
+								              			</tr>
+								            		</table>
+						            			</td>
+						            		</tr>
+						            	</table>
+					        		</td>
+					          	</tr>
+					        </table>
+				    	</td>
+				      </tr>
+			    	</table>
+				</td>
+		  	</tr>
+		  	<tr>
+			    <td valign="bottom" background="http://www.clickvalue.cn/mail/promote-mail/bottom5.jpg" width="760" height="138" style="color:#FFFFFF;font-size:14px;nt-weight:bold;position: relative;text-align:center;">
+					<table style="width:740px; margin-top:70px; margin-left:10px;text-align:left;" align="left">
+				      <tr>
+				        <td>联盟QQ群:339002 38072331 39850659</td>
+				        <td>MSN:clickvalue_affiliate@live.cn</td>
+				      </tr>
+				      <tr>
+				        <td>客服 QQ:1015562734 1048076541 907543002</td>
+				        <td>Email地址:clickvalue@darwinmarketing.com</td>
+				      </tr>
+				      <tr>
+				        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;57224651 37349844</td>
+				        <td>电话：021-63868281-8502     邮编:200025</td>
+				      </tr>
+				    </table>
+			    </td>
+		  	</tr>
+		</table>
+	</body>
+</html>

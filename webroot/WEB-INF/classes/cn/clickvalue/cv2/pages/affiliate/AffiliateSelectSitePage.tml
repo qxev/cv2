@@ -1,0 +1,7 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:affiliate.Layout t:pageTitle="${message:Select_list_of_advertising_campaigns}" t:pageGroup="campaign" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<t:form>
+		<t:checkboxselect t:id="selectedRoles" model="roleModel" encoder="encoder" selected="selectedRoles"/>
+		<input type="submit" class="button"/>
+	</t:form>
+</t:affiliate.Layout>

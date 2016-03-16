@@ -1,0 +1,23 @@
+<t:admin.Layout pageTitle="专题页管理" t:navigation="专题页管理" pageGroup="static" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<div class="form">
+   	<t:form t:id="searchForm">
+   		广告活动名称:
+   		<input t:type="autoCompleter" value="formCampaignName" t:source="campaignNames"/>
+   		标题:
+   		<input t:type="autoCompleter" value="formSubject" t:source="subjects"/>
+   		<input t:type="submit" value="查询" t:id="searchButton" />
+	</t:form>
+</div>
+<t:sliderdoor text="新增专题" href="/admin/staticpgs/zhuantieditor" clear="true"/>
+<table style="BORDER-COLLAPSE: collapse;" borderColor="#ced5b1" cellSpacing="0" cellPadding="0" border="1"
+           t:id="myGrid" t:type="Grid" t:source="dataSource" t:row="campaignZhuanti" t:model="beanModel" t:pagerPosition="literal:bottom" 
+           t:rowsPerPage="${noOfRowsPerPage}">
+           	<t:parameter name="operateCell">
+				<a t:type="pagelink" t:page="admin/staticpgs/zhuantieditor" t:context="campaignZhuanti.id" href="#">编辑</a> | 
+				<a t:type="eventlink" t:event="delete" t:context="campaignZhuanti.id" href="#" onclick="return confirm('确定删除?')">删除</a>
+			</t:parameter>
+			<t:parameter name="urlCell">
+				<a href="${campaignZhuanti.url}" target="_blank">${campaignZhuanti.url}</a>
+			</t:parameter>
+</table>
+</t:admin.Layout>

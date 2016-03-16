@@ -1,0 +1,25 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<body>
+		<br />
+		<br />
+	
+		<t:zone t:id="statusZone"/> 
+		<t:form t:zone="statusZone"> 
+			<t:textfield t:id="name" t:value="name"/> 
+			<t:submit/> 
+		</t:form> 
+		
+		<t:form>
+		<div style="margin-left: 50px">
+			<a t:type="actionlink" t:id="refreshPage" href="#">Refresh whole page - this ActionLink is not AJAX-enabled</a><br/>
+			<a t:type="actionlink" t:id="refreshZone" href="#" t:zone="time2zone">Refresh time2 only - this ActionLink is AJAX-enabled</a><br/><br/>
+	
+			time1:  ${time1}
+			<t:zone t:id="time2zone">
+				time2:  ${time2}
+			</t:zone><br/>
+		</div>
+		</t:form>
+	</body>	
+</html>
+	

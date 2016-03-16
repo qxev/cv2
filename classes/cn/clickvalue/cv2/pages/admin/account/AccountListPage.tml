@@ -1,0 +1,43 @@
+<t:admin.Layout t:pageTitle="CampaignList" t:navigation="银行帐户管理" pageGroup="system" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <body>
+    	<t:form t:id="searchForm">
+	    	<div class="form">
+		    		用户名:
+		    		<input t:type="textfield" t:id="userName" value="formAccount.user.name" />
+		    		删除状态:
+		    		<select t:type="select" model="literal:1=待审核,2=已批准,3=已拒绝" blankLabel="所有状态" value="formAccount.verified" />
+		    		<input t:type="submit" value="查询" />
+		    		<input t:type="submit" value="报表导出" t:id="export"/>
+			</div>
+    	</t:form>
+	    <table style="BORDER-COLLAPSE: collapse;" borderColor="#ced5b1" cellSpacing="0" cellPadding="0" width="100%" border="1"
+             t:id="myGrid" t:type="Grid" source="dataSource" row="account" model="beanModel" pagerPosition="literal:bottom" rowsPerPage="${noOfRowsPerPage}">
+			<t:parameter name="cardNumberCell">
+				<t:pagelink page="admin/account/viewpage" context="account.id">${account.cardNumber}</t:pagelink>
+			</t:parameter>
+            <!--格式化审核方式-->
+			<t:parameter name="verifiedCell">
+				${verified}
+			</t:parameter>
+			<!--是否默认帐户-->
+			<t:parameter name="defaultAccountCell">
+				${defaultAccount}
+			</t:parameter>
+			<!--帐户开户地址-->
+			<t:parameter name="addressCell">
+				${address}
+			</t:parameter>
+			
+			<t:parameter name="operateCell">
+				<select onchange="redirect(this)">
+					<option value="" >--选择操作--</option>
+					<option value="/admin/account/viewpage/${account.id}" >查看</option>
+					<span t:type="t5components/Equals" left="prop:account.verified.toString()" right="literal:1">
+						<option msg="确定批准？" value="/admin/account/listpage/pass/${account.id}" >批准</option>
+						<option type="prompt" parm="tapestryStyle" msg="请输入拒绝的理由" value="/admin/account/listpage/refuse/${account.id}" >拒绝</option>
+					</span>
+				</select>
+			</t:parameter>
+	    </table>
+    </body>
+</t:admin.Layout>

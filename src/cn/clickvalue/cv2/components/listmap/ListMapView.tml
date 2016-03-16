@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+<table class="t-data-grid" style="BORDER-COLLAPSE: collapse;" width="100%">
+	<thead>
+    <tr>
+      <t:loop source="fds" value="fd">
+      <th class="name t-first">
+        <t:if test="fd.canOrder">
+      		<a href="#" t:type="ActionLink" t:id="orderGuide" t:context="fd.name">${fd.chinese}<img src="/assets/tapestry/5.0.13/corelib/components/${fd.order}"/></a>
+	      	<t:parameter name="else">
+	      		${fd.chinese}
+	      	</t:parameter>
+      	</t:if>
+      </th>
+      </t:loop>
+    </tr>
+    </thead>
+   <tr t:type="loop" t:source="clist" t:value="cmap">
+   	  <t:loop source="fds" value="fd">
+      <td>
+      	${ognl:cmap.get(fd.name)}
+      	<t:if test="fd.hasCompared">
+      		<span class="blue">(${ognl:cmap.get(fd.compared)})</span>
+      	</t:if>
+      </td>
+      </t:loop>
+    </tr>
+</table>
+<div class="t-data-grid-pager">
+<t:loop source="pageIds" value="pageId">
+<t:if test="${ognl:isCurrent(pageId)}">
+	<span class="current">${pageId}</span>
+	<t:parameter name="else">
+		<a href="#" t:type="ActionLink" t:id="pagedGuide" t:context="pageId">${pageId}</a>&nbsp;&nbsp;
+	</t:parameter>
+</t:if>
+</t:loop>
+</div>
+</html>

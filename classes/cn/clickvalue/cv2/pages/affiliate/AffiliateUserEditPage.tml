@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:affiliate.Layout t:pageTitle="${message:Personal_information}" t:pageGroup="account" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers" style="width: 500px;">
+		<div class="title">${message:information_management} > ${message:Modify_personal_information}</div>
+		<t:form t:id="userForm" class="form">
+			<t:errors />
+			<table class="form_edit">
+				<tr class="rowodd">
+					<td class="field_name">${message:User_Name}</td>
+					<td class="field_value">${user.name}</td>
+				</tr>
+				
+				<tr class="roweven">
+					<td class="field_name">${message:User_mailbox}</td>
+					<td class="field_value">${user.email}</td>
+				</tr>
+				
+				<tr class="rowodd">
+					<td class="field_name">${message:User_nickname}<span class="red_star">*</span></td>
+					<td class="field_value"><input t:type="textfield" value="user.nickName" /></td>
+				</tr>
+				
+				<tr class="roweven">
+					<td class="" colspan="2">
+						<div style="height:15px"></div>	
+					</td>
+				</tr>
+				
+				<tr class="rowodd">
+					<td class="field_name">${message:Contact_Name}<span class="red_star">*</span></td>
+					<td class="field_value">
+						<input t:type="textfield" value="user.userInfo.contact" />
+					</td>
+				</tr>
+				
+				<tr class="roweven">
+					<td class="field_name">${message:Area}<span class="red_star">*</span></td>
+					<td class="field_value">
+						<select t:type="man/ParentSelect" t:id="country" model="fatherSelectModel" value="user.userInfo.country" style="margin-right: 10px;"/>   
+						<select t:type="man/ChildSelect" t:id="province" parent="country" models="childSelectModels" value="user.userInfo.city"/>   
+					</td>
+				</tr>
+				
+				
+				<tr class="rowodd">
+					<td class="field_name">${message:address}<span class="red_star">*</span></td>
+					<td class="field_value">
+						<input t:type="textfield" value="user.userInfo.street" />
+					</td>
+				</tr>
+				
+				<tr class="roweven">
+					<td class="field_name">${message:post_code}<span class="red_star">*</span></td>
+					<td class="field_value">
+						<input t:type="textfield" value="user.userInfo.postcode" />
+					</td>
+				</tr>
+				
+				<tr class="rowodd">
+					<td class="field_name">${message:telephone}</td>
+					<td class="field_value">
+						<input t:type="textfield" value="user.userInfo.phone" />
+						(${message:In_the_following_four_contact_method_must_elect_to_fill_in_one})
+					</td>
+				</tr>
+				
+				<tr class="roweven">
+					<td class="field_name">${message:cellphone_number}</td>
+					<td class="field_value">
+						<input t:type="textfield" value="user.userInfo.mobile" />
+					</td>
+				</tr>
+				
+				<tr class="rowodd">
+					<td class="field_name">QQ${message:number}</td>
+					<td class="field_value">
+						<input t:type="textfield" value="user.userInfo.qq" />
+					</td>
+				</tr>
+				
+				<tr class="roweven">
+					<td class="field_name">MSN${message:number}</td>
+					<td class="field_value">
+						<input t:type="textfield" value="user.userInfo.msn" />
+					</td>
+				</tr>
+				
+				<tr class="rowodd">
+					<td colspan="3" style="text-align: center;">
+						<input type="submit" t:type="submit" t:id="saveUser" value="${message:save}" style="margin-right: 30px;"/>
+						<button t:type="t5components/Button" type="button" event="clicked">${message:back}</button>
+					</td>
+				</tr>
+			</table>
+		</t:form>
+	</div>
+
+</t:affiliate.Layout>

@@ -1,0 +1,19 @@
+<t:admin.Layout pageTitle="job管理" pageGroup="system" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<div class="action">
+</div>
+<div class="table_clear">
+	<form t:type="form" t:id="importForm">
+		<div><t:messagebanner t:id="message" type="type"/></div>
+		<table>
+			<tr>
+				<td>
+					<select t:type="select" value="formCampaign" model="campaignsSelectionModel" encoder="campaignsValueEncoder" blankOption="NEVER"/>
+					导入：<t:upload t:id="file" />
+				   	<t:submit value="导入"/>
+				</td>
+		    </tr>
+		</table>
+	</form>
+</div>	
+
+</t:admin.Layout>

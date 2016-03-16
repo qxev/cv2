@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:admin.Layout pageTitle="${title}" t:navigation="系统管理 > 系统公告 > ${title}" pageGroup="system"  xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<t:form t:id="form">
+		<t:errors />
+		<table style="BORDER-COLLAPSE: collapse;width:55%" borderColor="#ced5b1" 
+		            cellSpacing="0" cellPadding="0" width="100%" border="1">
+			<tr>
+				<td class="green_bg" colspan="3"><strong>${title}</strong></td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">标题</td>
+				<td class="greenwithe">
+					<input t:type="textfield" value="bulletin.subject" />
+				</td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">接收群体</td>
+				<td class="greenwithe">
+					<select t:type="select" value="bulletin.type" model="literal:0=网站主,1=广告主" blankOption="NEVER"/>
+				</td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">标签</td>
+				<td class="greenwithe">
+					<select t:type="select" value="bulletin.tag" model="literal:0=公告,1=上线,2=下线,3=促销,4=调整" blankOption="NEVER"/>
+				</td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">内容</td>
+				<td class="greenwithe">
+					<textarea t:id="editor" width="100%" />
+				</td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>
+			<tr>
+				<td class="green_bg" colspan="3">
+					<input t:type="submit" t:id="submit" value="${message:save}" style="margin-right: 20px;"/>
+					<input type="reset" value="重置" style="margin-right: 20px;"/>
+					<input type="button" onclick="window.location.href='/admin/bulletin/listpage'" value="返回"/>
+				</td>
+			</tr>
+		</table>            
+	</t:form>
+</t:admin.Layout>

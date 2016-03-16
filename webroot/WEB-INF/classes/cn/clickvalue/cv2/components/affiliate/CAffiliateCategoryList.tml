@@ -1,0 +1,4 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<select t:type="select" model="testSelectModel" encoder="testValueEncode" value="affiliateCategory" blankLabel="--请选择--" />
+	
+</html>

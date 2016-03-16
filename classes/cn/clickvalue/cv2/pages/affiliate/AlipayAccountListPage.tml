@@ -1,0 +1,30 @@
+<t:affiliate.Layout t:pageTitle="支付宝账户列表" t:pageGroup="account" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<t:form t:id="SearchForm" >
+		<div class="page_headers">
+			<div class="title">支付宝帐号管理</div>
+			<div class="form">
+				${message:Verification_condition}
+	    		<t:select t:id="verifyState" blankLabel="${message:all}"/>
+	    		<input t:type="submit" class="search" value="${message:search}" t:id="searchButton"/>
+			</div>
+		</div>	
+	</t:form>
+	<t:sliderdoor text="新增支付宝" href="/affiliate/alipayaccounteditpage:create" clear="true"/>
+	<div class="table_clear" style="width: 100%;">
+		<div t:id="grid" style="width: 100%;">
+			<t:parameter name="verifiedCell">
+				${generalstate:account.verified}
+			</t:parameter>
+			<t:parameter name="operateCell">
+				<select onchange="redirect(this);">
+					<option value="" >--选择操作--</option>
+					<option msg="确定删除${account.cardNumber}?" value="/affiliate/alipayaccountlistpage:delete/${account.id}" >删除</option>
+					<span t:type="t5components/Equals" left="prop:account.verified.toString()" right="literal:0">
+						<option msg="确定提交审核${account.cardNumber}?" value="/affiliate/alipayaccountlistpage:audio/${account.id}" >申请</option>
+						<option value="/affiliate/alipayaccounteditpage/${account.id}" >编辑</option>
+					</span>
+				</select>
+			</t:parameter>
+		</div>
+    </div>
+</t:affiliate.Layout>

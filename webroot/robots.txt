@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:index1.html
+Disallow:index2.html
+Disallow:http://cv2.clickvalue.cn

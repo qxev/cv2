@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Darwin Marketing CV2 System Management</title>
+<link href="style/base.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+<!--
+function MM_jumpMenu(targ,selObj,restore){ //v3.0
+  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+  if (restore) selObj.selectedIndex=0;
+}
+//-->
+</script>
+</head>
+
+<body>
+<div class="wrap">
+<!--head begin-->
+<div class="head"><a href="index.html"><img name="logo" src="images/logo.jpg" width="335" height="95" border="0" id="logo" alt="searchvalue_logo" /></a>
+<p>ljtint@gmail.com | <a href="#">帮助</a> | <a href="#">注销</a><br /> 
+<font class="green">日期: 2007-10-15 </font></p>
+</div>
+<!--navigation begin-->
+<div class="navigation">
+<ul class="nav">
+<li ><a href="cv-ads-manage.html">广告活动管理</a></li>
+<li ><a href="cv_report.html">效果报表</a></li>
+<li><a href="cv_match.html">佣金匹配</a></li>
+<li class="nav_now">支付报表</li>
+<li><a href="cv_email.html"> 邮件管理</a></li>
+<li><a href="cv_system.html">系统信息管理</a></li>
+</ul>
+<div class="submenu"><strong>佣金支付</strong>     <a href="admin_per_Prepay.html" target="ifrm_data">帐户充值</a>     <a href="admin_per_Account_select.html" target="ifrm_data">佣金支付历史</a>     <a href="admin_per_ComCheck.html" target="ifrm_data">奖惩处理报表</a>     <a href="#"></a></div>
+
+</div>
+<!--main begin-->
+<div class="main">
+<p class="zhifu">支付报表 > 佣金支付 </p>
+<div class="add">
+<form id="form1" name="form1" method="post" action="">
+<ul class="add_right">
+<li class="arrow"><strong>快速查询:</strong>用户名
+  <input maxlength="20" size="25" name="user_name" />
+  支付标准
+<select name="select">
+  <option selected="selected">所有状态</option>
+  <option>佣金未到支付标准</option>
+  <option>佣金已到支付标准</option>
+</select>
+  申请状态
+<select name="select">
+  <option selected="selected">所有状态</option>
+  <option>未申请</option>
+  <option>已申请</option>
+</select>
+</li>  
+  <li>　　　从
+    <input id="sel1" value="2006-01-01" name="sel1" />
+    <input onclick="return showCalendar('sel1', '%Y-%m-%d',false,true);" type="reset" value="选择起始日期" />
+    到
+  <input id="sel3" value="2008-04-08" name="sel3" />
+  <input onclick="return showCalendar('sel3', '%Y-%m-%d',false,true);" type="reset" value="选择结束日期" />
+  <input type="submit" value="查询" />
+  <label>
+    <input name="Submit" type="submit" class="search" value="搜索" />
+    </label>
+  </li>
+</ul>
+  <ul class="add_right">
+<li class="arrow"><strong>支付批处理:</strong>
+  <select name="select2">
+    <option>请选择</option>
+    <option>全部复制</option>
+    <option>全部查询</option>
+    <option>全部删除</option>
+  </select>
+  <label></label>
+</li>  
+  </ul>
+  </form>
+</div>
+<div class="clear">
+    <form id="form3" name="form3" method="post" action="">
+    <table style="BORDER-COLLAPSE: collapse" borderColor=#ced5b1 
+            cellSpacing=0 cellPadding=0 width="100%" border=1>
+    
+    <tr class="bold">
+      <td width="15%" bgcolor="#D9EB87">用户名<img src="images/sort_down.gif" width="11" height="10" /></td>
+      <td width="17%" bgcolor="#D9EB87">支付金额（元）<img src="images/sort_down.gif" width="11" height="10" /></td>
+      <td width="14%" bgcolor="#D9EB87">支付状态 <img src="images/sort_down.gif" width="11" height="10" /></td>
+      <td width="13%" bgcolor="#D9EB87">申请状态<img src="images/sort_down.gif" width="11" height="10" /></td>
+      <td width="18%" bgcolor="#D9EB87">申请日期<img src="images/sort_down.gif" width="11" height="10" /></td>
+      <td width="23%" bgcolor="#D9EB87">操作<img src="images/sort_down.gif" alt="" width="11" height="10" /></a></td>
+    </tr>
+    <tr>
+      <td>按时地方</td>
+      <td>210.000</td>
+      <td>佣金未到支付标准</td>
+      <td>未申请</td>
+      <td>2008-04-03 13:07:19</td>
+      <td><select name="jumpMenu" id="jumpMenu" onchange="MM_jumpMenu('parent',this,0)">
+          <option>请选择操作</option>
+          <option>查看佣金</option>
+      </select></td>
+    </tr>
+    <tr class="gray">
+      <td>按时地方</td>
+      <td>285.000</td>
+      <td>佣金未到支付标准</td>
+      <td>未申请</td>
+      <td>2008-04-03 13:07:19</td>
+      <td><select name="jumpMenu3" id="jumpMenu3" onchange="MM_jumpMenu('parent',this,0)">
+          <option>请选择操作</option>
+          <option>查看佣金</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td>按时地方</td>
+      <td>210.000</td>
+      <td>佣金未到支付标准</td>
+      <td>未申请</td>
+      <td>2008-04-03 13:07:19</td>
+      <td><select name="jumpMenu2" id="jumpMenu4" onchange="MM_jumpMenu('parent',this,0)">
+          <option>请选择操作</option>
+          <option>查看佣金</option>
+      </select></td>
+    </tr>
+    <tr class="gray">
+      <td>按时地方</td>
+      <td>285.000</td>
+      <td>佣金未到支付标准</td>
+      <td>未申请</td>
+      <td>2008-04-03 13:07:19</td>
+      <td><select name="jumpMenu2" id="jumpMenu2" onchange="MM_jumpMenu('parent',this,0)">
+          <option>请选择操作</option>
+          <option>查看佣金</option>
+      </select></td>
+    </tr>
+  </table>
+  </form>
+  <p class="center"><a href="#">上一页</a> 1 <a href="#">2</a>   <a href="#">下一页</a><br /><br />
+    <input name="Submit2" type="submit" class="export" value="导出数据" />
+  </p>
+
+</div>
+</div>
+<!--bottom begin-->
+<div  class="buttom">关于我们 | 联系我们 | 论坛<br />
+沪ICP备06035438号<br />
+Copyright © 2007 - 2010 Darwin Marketing.</div>
+</div>
+</body>
+</html>

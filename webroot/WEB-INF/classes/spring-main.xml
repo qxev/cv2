@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans default-autowire="byName" default-lazy-init="false">
+<!-- 
+	<import resource="classpath:spring-common.xml" />
+ -->
+    <bean id="propertyConfigurer"
+        class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:hibernate.properties</value>
+                <value>classpath:email.properties</value>
+                <value>classpath:system.properties</value>
+                <value>classpath:commision.properties</value>
+                <value>classpath:jms.properties</value>
+            </list>
+        </property>
+    </bean>
+	<import resource="classpath:spring-hibernate-dao.xml" />
+	<import resource="classpath:spring-manager.xml" />
+	<import resource="classpath:spring-jdbc-dao.xml" />
+	<import resource="classpath:spring-email.xml" />
+	<import resource="classpath:spring-jms.xml" />
+</beans>

@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:advertiser.Layout pageTitle="${message:announces_detailed_information}" pageGroup="home"  xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers">
+		<div class="title">${message:system_announcement}</div>
+		<t:form t:id="form" class="form">
+			<t:errors />
+			<table id="grid" width="100%">
+				<tr class="rowodd">
+					<td style="width: 15%; white-space: nowrap;">${message:title}</td>
+					<td>
+						${bulletin.subject}
+					</td>
+				</tr>
+				<tr class="roweven">
+					<td>${message:content}</td>
+					<td>
+						<t:OutputRaw value="bulletin.description"></t:OutputRaw>
+					</td>
+				</tr>
+			</table>
+		</t:form>
+	</div>
+</t:advertiser.Layout>

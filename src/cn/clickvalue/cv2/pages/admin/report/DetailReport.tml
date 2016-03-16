@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:admin.Layout t:pageTitle="Report" t:pageGroup="effect_report" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<script type="text/javascript">
+<![CDATA[
+var $j = jQuery.noConflict(true);
+$j(function() {
+	$j("#reportForm").submit(function(){
+			$j("#selectedFields").attr("value",function(){
+				var value = "";
+				$j("input[name='fields-checkbox']:checked").each(function(i){
+				   value += this.value;
+				   value += ",";
+				 }); 
+				 return value;
+			});
+		}
+	);
+	$j("input[name='fields-checkbox']").attr("checked",function(){
+		return $j("#selectedFields").attr("value").indexOf(this.value) != -1;
+	});
+});
+]]>
+</script>
+<div class="page_headers">
+		<div class="title">${reportName} > ${message:search}</div>
+		
+		    <br/>
+			<div align="center">
+				${message:detail_report_desc1}
+			</div>
+			<br/>
+			
+		<t:form t:id="reportForm">
+			<t:errors />
+				<table border="0" cellspacing="0" cellpadding="1" align="center">
+					<tr>
+						<td>
+							<table border="1" cellspacing="0" cellpadding="1" align="center">
+								<tbody>
+									<tr>
+										<td class="td_title">${message:date_range}</td>
+										<td>
+											<t:daterange t:dateBegin="condition.beginDate" t:dateEnd="condition.endDate" t:showShortcut="true"/>
+										</td>
+									</tr>
+									<tr>
+										<td class="td_title">${message:select_campaign}</td>
+										<td>
+											<t:textfield t:id="campaignName" t:value="condition.campaignName" t:mixins="autocompleteExt" />
+										</td>
+									</tr>
+									<tr>
+										<td class="td_title">${message:choose_site}</td>
+										<td>
+											<t:textfield t:id="siteName" t:value="condition.siteName" t:mixins="autocompleteExt" />
+										</td>
+									</tr>
+									<tr>
+										<td class="td_title">${message:Confirms_condition}</td>
+										<td>
+											<select t:type="select" t:model="literal:0=未确认,1=已确认" t:value="condition.matched" blankLabel="${message:all}" blankOption="always"/>
+										</td>
+									</tr>
+									<tr>
+										<td class="td_title">${message:show_columns}</td>
+										<td>
+											<t:loop t:source="fields" t:value="field">
+												<input type="checkbox" id="fields-checkbox-${field.field}" name="fields-checkbox" value="${field.field}" style="margin:0 5px 0 5px;"/>
+												<label for="fields-checkbox-${field.field}" style="margin-right: 10px;">${fieldLabel}</label>
+											</t:loop>
+											<t:commons.Hidden t:value="selectedFields" t:id="selectedFields"/>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+						<td>
+							<t:submit t:value="${message:search}"/>
+						</td>
+					</tr>
+				</table>
+		</t:form>
+		
+		<div style="height:40px;">
+		</div>
+		
+		<div class="form">
+			<div class="table_clear">
+				<table cellspacing="5" cellpadding="0" border="0">
+					<tbody>
+						<tr>
+					    	<td><b>${message:commission_summary}</b></td>
+				        </tr>
+						<tr>
+					    	<td>${message:confirming_commission}:&nbsp;&nbsp;${confirmingCommission}￥</td>
+					    	<td>${message:confirmed_commission}:&nbsp;&nbsp;${confirmedCommission}￥</td>
+				        </tr>
+				    </tbody>
+				</table>	
+			</div>
+		</div>		
+		<div t:id="grid" style="width:100%;">
+			<t:parameter name="matchedCell">
+				${matched}
+			</t:parameter>
+		</div>
+	</div>
+		
+</t:admin.Layout>

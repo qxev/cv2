@@ -1,0 +1,8 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<t:form t:id="form">
+		<input t:type="textfield" t:id="context"/>
+		<t:submit t:id="search" class="search" value="搜索"/>
+	</t:form>
+	<div t:id="grid" style="width: 100%;">
+	</div>
+</html>

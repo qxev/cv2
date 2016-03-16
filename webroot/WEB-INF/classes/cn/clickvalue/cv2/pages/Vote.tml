@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+		<title>链接调查问卷</title>
+		<meta name="keywords" content="SEO测试，搜索引擎优化，SEO试验" />
+		<meta name="description" content="这个网页是用来专门用来进行SEO试验的，主要通过测试手段来发掘搜索引擎收录网页的特点"/>
+		<link href="images/base.css" rel="stylesheet" type="text/css" />
+	</head>
+	<script language="javascript" src="/assets/javascripts/vote.js"></script>
+	<body>
+		<div id="header"><a href="index.html"><img src="images/link.jpg" alt="SEOtest" width="435" height="120" border="0" /></a>
+		<p><a href="#" onClick="window.external.AddFavorite(location.href,document.title);">收藏本页</a> 　<a href="index.html">返回活动首页</a></p>
+		</div>
+		<div id="message">关于友情链接的调查问卷</div>
+		<t:form t:id="userLoginForm">
+		<h3>1.	你是如何获知这个调查问卷的？</h3>
+		<p>
+			<t:radiogroup t:value="question1">
+				<t:radio value="1" />收到达闻的用户邮件
+				<t:radio value="2" />从达闻联盟网站看到调查问卷的广告或帖子
+				<t:radio value="3" />从其它网站和论坛看到调查问卷帖子
+				<t:radio value="4" />其它
+	  		</t:radiogroup>
+		</p>
+		<h3>2.	你的网站采用的是什么语言的程序？</h3>
+		<p>
+			<t:radiogroup t:value="question2">
+				<t:radio value="1" />ASP
+				<t:radio value="2" />PHP
+				<t:radio value="3" />Java
+				<t:radio value="4" />其他语言
+	  		</t:radiogroup>
+	  	</p>
+		<h3>3.	你会为自己的网站寻找友情链接吗？</h3>
+		<p>
+			<t:radiogroup t:value="question3">
+				<t:radio value="1" />会经常去做
+				<t:radio value="2" />固定某一时段去做
+				<t:radio value="3" />碰到了就做
+				<t:radio value="4" />懒得去找
+	  		</t:radiogroup>
+	  	</p>
+	  	<h3>4.	你寻找友情链接一般是出于什么目的？</h3>
+		<p>
+			<t:radiogroup t:value="question4">
+				<t:radio value="1" />提高网站知名度
+				<t:radio value="2" />增加网站流量
+				<t:radio value="3" />提高PR值以及改善网站的SEO效果
+				<t:radio value="4" />协调网页美观
+	  		</t:radiogroup>
+	  	</p>
+	  	<h3>5.	目前你网站上的友情链接如何管理？</h3>
+		<p>
+			<t:radiogroup t:value="question5">
+				<t:radio value="1" />自助链系统
+				<t:radio value="2" />网站程序自带的管理系统
+				<t:radio value="3" />自己开发的
+				<t:radio value="4" />就是个静态页面
+				<t:radio value="4" />其他管理方式
+	  		</t:radiogroup>
+	  	</p>
+	  	<h3>6.	是否愿意去使用免费的友情链接管理系统？</h3>
+		<p>
+			<t:radiogroup t:value="question6">
+				<t:radio value="1" />愿意
+				<t:radio value="2" />对程序不了解，怕弄不好
+				<t:radio value="3" />已经有了，不想换了
+				<t:radio value="4" />不愿意
+	  		</t:radiogroup>
+	  	</p>
+	  	<h3>7.	你一般如何让别的网站加你的网站的链接？</h3>
+		<p>
+			<t:radiogroup t:value="question7">
+				<t:radio value="1" />友情链接互换
+				<t:radio value="2" />朋友帮助 
+				<t:radio value="3" />花钱购买
+				<t:radio value="4" />其它
+	  		</t:radiogroup>
+	  	</p>
+	  	<h3>8.	你更喜欢哪种寻找友情链接的方式？</h3>
+		<p>
+			<t:radiogroup t:value="question8">
+				<t:radio value="1" />通过友情链接交换网站
+				<t:radio value="2" />通过友情链接交换论坛
+				<t:radio value="3" />通过友情链接交换QQ群
+				<t:radio value="4" />其它方式
+	  		</t:radiogroup>
+	  	</p>
+	  	<h3>9.	你在交换链接时，你会在意哪些因素？（多选）</h3>
+		<p>
+			<t:checkbox t:id="question9_1"/>链接网页是否有病毒
+			<t:checkbox t:id="question9_2"/>链接是使用javascript跳转
+			<t:checkbox t:id="question9_3"/>对方的友情链接页放了多少个链接
+		<br></br>
+			<t:checkbox t:id="question9_4"/>链接页的pagerank是多少
+			<t:checkbox t:id="question9_5"/>对方链接页的alexa排名
+			<t:checkbox t:id="question9_6"/>对方链接页是否美观
+		</p>
+	  	<h3>10.	你是否经常查询与你交换的链接是否被删除?</h3>
+		<p>
+			<t:radiogroup t:value="question10">
+				<t:radio value="1" />是的，经常查询
+				<t:radio value="2" />从不查询
+				<t:radio value="3" />偶尔查询
+	  		</t:radiogroup>
+	  	</p>
+	  	<h3>11.	你的网站的alexa排名是多少？</h3>
+		<p>
+			<t:radiogroup t:value="question11">
+				<t:radio value="1" />1万以内
+				<t:radio value="2" />10万以内
+				<t:radio value="3" />100万以内
+				<t:radio value="4" />500万以内
+				<t:radio value="5" />我也不知道是多少
+	  		</t:radiogroup>
+	  	</p>
+	  	<h3>12.	你对SEO有多深的了解？</h3>
+		<p>
+			<t:radiogroup t:value="question12">
+				<t:radio value="1" />精通
+				<t:radio value="2" />了解
+				<t:radio value="3" />不会
+				<t:radio value="4" />没听过	
+	  		</t:radiogroup>
+	  	</p>
+	  	<h3>13.	你使用了哪些查询链接是否被删除的软件？或者你知道哪些网站具备查询链接状态的功能吗？</h3>
+		<p>请输入网址或者工具名称：<input t:type="textfield" t:value="tool"/></p>
+		<t:if test="isNotUser()">
+		<h3>14.	谢谢你的耐心支持！</h3>
+		<p>你现在有机会参加抽奖活动了，请填写你在达闻联盟平台的用户名：<input t:type="textfield" t:value="userName"/></p>
+		<p>（<font color="red">如果你还不是达闻网站主，请直接填写您的Email地址”</font>）</p>
+		<br></br>
+		</t:if>
+		<p align="center"><input type="submit" t:id="voteButton" t:type="submit" onClick="return validCheck()" value="投票" /></p>
+			<div id="footer">谢谢大家耐心做完此问卷!</div>
+			<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+			</script>
+			<script type="text/javascript">
+			_uacct = "UA-3043739-1";
+			urchinTracker();
+			</script>
+		</t:form>	
+	</body>
+</html>
+	

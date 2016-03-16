@@ -1,0 +1,43 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<head>
+		<title>${message:login_title}</title>
+		<link rel="stylesheet" href="${asset:context:/assets/login.css}" type="text/css" />
+		<!-- 百度访问统计代码:头部代码 2009－09－08 -->
+		<script language="JavaScript" type="text/javascript" src="public/javascript/baiduHead.js"></script>
+	</head>
+
+	<body>
+		<div id="centerDiv">
+			<form t:type="form" t:id="userLoginForm">
+				<t:errors/>
+				<t:textfield t:id="nextpage" style="display:none;"/>
+				<table id="loginTable" style="border">
+					<tr>
+						<td style="width: 70px; white-space: no-wrap;">${message:login_name}：</td>
+						<td><input id="userName" type="text" name="userName" value="${userName}" /></td>
+					</tr>
+					<tr>
+						<td>${message:login_password}：</td>
+						<td><input id="password" type="password" name="password" value="${password}" /></td>
+					</tr>
+					<tr>
+						<td>${message:identifying_code}：</td>
+						<td>
+							<input id="validateCode" type="text" name="validateCode" value="" /><img src="/jcaptcha" id="checkCodeImg" onclick="this.src='/jcaptcha?now=' + new Date() * 1" alt="click" />
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" style="text-align: center;">
+							<input type="submit" t:id="loginButton" t:type="submit" value="${message:login_submit}"/>
+							<input type="reset" id="resetButton" value="${message:login_reset}" style="margin-left: 20px;"/>
+						</td>
+					</tr>
+				</table>
+				
+			</form>
+		</div>
+		<!-- 百度访问统计代码 2009－09－08 -->
+		<script language="JavaScript" type="text/javascript" src="public/javascript/baiduBottom.js"></script>
+		<script language="JavaScript" src="/assets/javascripts/o_code.js"></script>
+	</body>
+</html>

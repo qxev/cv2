@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-autowire="byName" default-lazy-init="false">
+	<!-- 请不要格式化 -->
+	<bean id="userService" class="cn.clickvalue.cv2.services.logic.UserService" />
+	<bean id="commissionRuleService" class="cn.clickvalue.cv2.services.logic.CommissionRuleService" />
+    <bean id="campaignService" class="cn.clickvalue.cv2.services.logic.CampaignService" >
+    	<property name="props">
+    		<list>
+    			<value>description</value>
+    			<value>region</value>
+    			<value>startDate</value>
+    			<value>endDate</value>
+    			<value>affiliateVerified</value>
+    			<value>htmlCode</value>
+    		</list>
+    	</property>
+    	<property name="propNames">
+    		<list>
+    			<value>描述</value>
+    			<value>区域</value>
+    			<value>开始时间</value>
+    			<value>结束时间</value>
+    			<value>审核方式</value>
+    			<value>自定义功能</value>
+    		</list>
+    	</property>
+    	<property name="propValues">
+    		<map>
+    			<entry key="affiliateVerified">
+    				<map>
+	    				<entry key="0" value="人工" />
+	    				<entry key="1" value="自动" />
+	    			</map>
+    			</entry>
+    			<entry key="htmlCode">
+    				<map>
+	    				<entry key="0" value="未开放" />
+	    				<entry key="1" value="开放" />
+	    			</map>
+    			</entry>
+    		</map>
+    	</property>
+    </bean> 
+    <bean id="campaignZhuantiService" class="cn.clickvalue.cv2.services.logic.CampaignZhuantiService" />
+    <bean id="userGroupService" class="cn.clickvalue.cv2.services.logic.UserGroupService" />
+    <bean id="siteService" class="cn.clickvalue.cv2.services.logic.SiteService" />
+    <bean id="advertiserCategoryService" class="cn.clickvalue.cv2.services.logic.AdvertiserCategoryService" />
+    <bean id="affiliateCategoryService" class="cn.clickvalue.cv2.services.logic.AffiliateCategoryService" />
+    <bean id="primaryAffiliateCategoryService" class="cn.clickvalue.cv2.services.logic.PrimaryAffiliateCategoryService" />
+    <bean id="affiliateCategoryCampaignService" class="cn.clickvalue.cv2.services.logic.AffiliateCategoryCampaignService" />
+    <bean id="creativeGroupService" class="cn.clickvalue.cv2.services.logic.CreativeGroupService" />
+    <bean id="bannerService" class="cn.clickvalue.cv2.services.logic.BannerService" />
+    <bean id="affiliateCampaignService" class="cn.clickvalue.cv2.services.logic.AffiliateCampaignService" />
+    <bean id="accountService" class="cn.clickvalue.cv2.services.logic.AccountService" />
+    <bean id="advertiseService" class="cn.clickvalue.cv2.services.logic.AdvertiseService" />
+	<bean id="affiliateTrackDataService" class="cn.clickvalue.cv2.services.logic.AffiliateTrackDataService" />
+	<bean id="landingPageService" class="cn.clickvalue.cv2.services.logic.LandingPageService" />
+	<bean id="mailTemplateService" class="cn.clickvalue.cv2.services.logic.MailTemplateService" />
+	<bean id="mailTypeService" class="cn.clickvalue.cv2.services.logic.MailTypeService" />
+	<bean id="mailTypeUserService" class="cn.clickvalue.cv2.services.logic.MailTypeUserService" />
+	<bean id="provinceService" class="cn.clickvalue.cv2.services.logic.ProvinceService" />
+	<bean id="cityService" class="cn.clickvalue.cv2.services.logic.CityService" />
+	<bean id="commissionExpenseService" class="cn.clickvalue.cv2.services.logic.CommissionExpenseService" />
+	<bean id="commissionTaxService" class="cn.clickvalue.cv2.services.logic.CommissionTaxService" />
+	<bean id="commissionIncomeService" class="cn.clickvalue.cv2.services.logic.CommissionIncomeService" />
+	<bean id="affiliateCategorySiteService" class="cn.clickvalue.cv2.services.logic.AffiliateCategorySiteService" />
+	<bean id="campaignHistoryService" class="cn.clickvalue.cv2.services.logic.CampaignHistoryService" />
+	<bean id="advertiseAffiliateService" class="cn.clickvalue.cv2.services.logic.AdvertiseAffiliateService" />
+	<bean id="campaignSiteService" class="cn.clickvalue.cv2.services.logic.CampaignSiteService" />
+	<bean id="advertiserDepositService" class="cn.clickvalue.cv2.services.logic.AdvertiserDepositService" />
+	<bean id="semClientService" class="cn.clickvalue.cv2.services.logic.SemClientService" />
+	<bean id="advertiserAccountService" class="cn.clickvalue.cv2.services.logic.AdvertiserAccountService" />
+	<bean id="bankService" class="cn.clickvalue.cv2.services.logic.BankService" />
+	<bean id="bonusService" class="cn.clickvalue.cv2.services.logic.BonusService" />
+	<bean id="messageService" class="cn.clickvalue.cv2.services.logic.MessageService" />
+	<bean id="advertiserexpenseService" class="cn.clickvalue.cv2.services.logic.AdvertiserexpenseService" />
+	<bean id="commissionAccountService" class="cn.clickvalue.cv2.services.logic.CommissionAccountService" />
+	<bean id="bulletinService" class="cn.clickvalue.cv2.services.logic.BulletinService" />
+	<bean id="summaryCommissionService" class="cn.clickvalue.cv2.services.logic.SummaryCommissionService" />
+	<bean id="reportSummaryService" class="cn.clickvalue.cv2.services.logic.ReportSummaryService" />
+	<bean id="advertiserSumInfoService" class="cn.clickvalue.cv2.services.logic.AdvertiserSumInfoService" />
+	<bean id="matchDataService" class="cn.clickvalue.cv2.services.logic.MatchDataService" />
+	<bean id="matchTaskService" class="cn.clickvalue.cv2.services.logic.MatchTaskService" />
+	<bean id="cheatingService" class="cn.clickvalue.cv2.services.logic.CheatingService" />
+	<bean id="commissionLadderService" class="cn.clickvalue.cv2.services.logic.CommissionLadderService" />
+	<bean id="affiliateSummaryService" class="cn.clickvalue.cv2.services.logic.AffiliateSummaryService" />
+	<bean id="excelOutputService" class="cn.clickvalue.cv2.services.logic.ExcelOutputService" />
+	<bean id="demoService" class="cn.clickvalue.cv2.services.logic.demo.DemoService" />
+	<bean id="customBannerLogService" class="cn.clickvalue.cv2.services.logic.CustomBannerLogService" />
+	<bean id="partnerIdService" class="cn.clickvalue.cv2.services.logic.PartnerIdService" />
+	<bean id="mtsService" class="cn.clickvalue.cv2.services.logic.MTSService" >
+		<property name="dbName" value="cv2" />
+	</bean>
+	<bean id="bbsSynService" class="cn.clickvalue.cv2.services.logic.BbsSynService" >
+		<property name="activate">
+			<value>${bbs.activate}</value>
+		</property>
+		<property name="username">
+			<value>${bbs.Authenticate.username}</value>
+		</property>
+		<property name="password">
+			<value>${bbs.Authenticate.password}</value>
+		</property>
+		<property name="userApi">
+			<value>${bbs.userApi}</value>
+		</property>
+		<property name="threadApi">
+			<value>${bbs.threadApi}</value>
+		</property>
+		<property name="bulletinFid">
+			<value>${bbs.bulletinFid}</value>
+		</property>
+		<property name="campaignFid">
+			<value>${bbs.campaignFid}</value>
+		</property>
+	</bean>
+	
+	<!-- excel写入 -->	
+	<bean id="excelWriterImpl" class="cn.clickvalue.cv2.excel.operation.ExcelWriterImpl" />
+	
+	<!-- 下载文件的API -->
+	<bean id="downLoadApiService" class="cn.clickvalue.cv2.services.logic.DownLoadApiService" />
+	<bean id="reportTrackMatchService" class="cn.clickvalue.cv2.services.logic.ReportTrackMatchService" />
+	<bean id="ipCountService" class="cn.clickvalue.cv2.services.logic.IpCountService" lazy-init="true"/>
+	
+	<bean id="velocityEngine"
+		class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+		<property name="resourceLoaderPath">
+			<value>classpath:velocity</value>
+		</property>
+		<property name="velocityProperties">
+			<props>
+				<prop key="resource.loader">class</prop>
+				<prop key="class.resource.loader.class">
+					org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+				</prop>
+				<prop key="velocimacro.library"></prop>
+				<prop key="input.encoding">UTF-8</prop>
+				<prop key="output.encoding">UTF-8</prop>
+				<prop key="default.contentType">
+					text/html; charset=UTF-8
+				</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="msgBean" class="cn.clickvalue.cv2.velocity.MsgBean">
+		<property name="templateLocation" value="txt.vm"></property>
+		<property name="encoding" value="UTF-8"></property>
+		<property name="velocityEngine" ref="velocityEngine"></property>
+	</bean>
+	
+	<!-- admin审核业务 -->
+	<bean id="auditingService" class="cn.clickvalue.cv2.services.logic.admin.AuditingServiceImpl" />
+	
+	<!-- 用户激活业务 -->
+	<bean id="userActivateService" class="cn.clickvalue.cv2.services.logic.UserActivateService" >
+		<property name="cv2Domain" value="${sys.domain}" />
+	</bean>
+	
+	<!-- 邮件业务 -->
+	<bean id="businessMailSender" class="cn.clickvalue.cv2.services.logic.BusinessMailSender" >
+		<property name="cv2Domain" value="${sys.domain}" />
+	</bean>
+	
+	<!-- 报表的业务 -->
+	<bean id="effectReportService" class="cn.clickvalue.cv2.services.logic.EffectReportService" />
+	
+	<!-- test业务，可以删除 -->
+	<bean id="crpData01Service" class="cn.clickvalue.cv2.services.logic.CrpData01Service" />
+	
+	
+	<!-- util配置 -->
+	<bean id="selectModelUtil" class="cn.clickvalue.cv2.common.util.SelectModelUtil" />
+	
+	<bean id="promotionMailService" class="cn.clickvalue.cv2.services.logic.PromotionMailService" >
+		<property name="templateRootPath" value="mailTemplate"></property>
+		<property name="templateNames">
+			<list>
+				<value>promotionMail1.vm</value>
+				<value>promotionMail2.vm</value>
+				<value>promotionMail3.vm</value>
+				<value>promotionMail4.vm</value>
+				<value>promotionMail5.vm</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="staticPageService" class="cn.clickvalue.cv2.services.logic.StaticPageService" ></bean>
+	<bean id="hpBlockService" class="cn.clickvalue.cv2.services.logic.HPBlockService" ></bean>
+	<bean id="hpBlockContentService" class="cn.clickvalue.cv2.services.logic.HPBlockContentService" ></bean>
+	<bean id="pimAdjustmentService" class="cn.clickvalue.cv2.services.logic.PimAdjustmentService" ></bean>
+	<bean id="pimReportSummaryService" class="cn.clickvalue.cv2.services.logic.PimReportSummaryService" ></bean>
+	<bean id="pimCoefficientService" class="cn.clickvalue.cv2.services.logic.PimCoefficientService" ></bean>
+	<bean id="pimReportDataService" class="cn.clickvalue.cv2.services.logic.PimReportDataService" ></bean>
+	<bean id="pimGradeService" class="cn.clickvalue.cv2.services.logic.PimGradeService" ></bean>
+	<bean id="pimAutoAdjustRuleService" class="cn.clickvalue.cv2.services.logic.PimAutoAdjustRuleService" ></bean>
+	<bean id="pimCommissionBonusService" class="cn.clickvalue.cv2.services.logic.PimCommissionBonusService" ></bean>
+	<bean id="affiliateStateService" class="cn.clickvalue.cv2.services.logic.AffiliateStateService" ></bean>
+	<bean id="jmsService" class="cn.clickvalue.cv2.services.logic.JmsService" >
+		<property name="buildPointsDestination" value="${jms.destination.pimBuildPoints}" />
+	</bean>
+	
+</beans>

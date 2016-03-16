@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:advertiser.Layout pageTitle="������վ����" pageGroup="account" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+<p class="welcome">${message:campaign_manage} > ${message:campaigns} > ${message:new}</p>
+<table style="BORDER-COLLAPSE: collapse;width:55%" borderColor="#ced5b1" 
+            cellSpacing="0" cellPadding="0" width="100%" border="1">
+<tr>
+<td class="green_bg" colspan="3"><strong>${message:new_campaign}</strong></td>
+</tr>
+
+<t:form t:id="campaignForm"><t:errors />
+
+<tr>
+<td class="greenwithe_bg">${message:campaign_name}</td>
+<td class="greenwithe"><input t:type="textfield" t:value="Campaign.name" size="30" />
+</td>
+<td class="greenwithe_bg"><span class="red_star">*</span></td>
+</tr>
+<tr>
+<td class="greenwithe_bg">${message:website}</td>
+<td class="greenwithe">
+<select t:type="select" value="site"
+              model="siteListSelectionModel" encoder="siteListValueEncoder" />
+</td>
+<td class="greenwithe_bg"><span class="red_star">*</span></td>
+</tr>
+<tr>
+<td class="greenwithe_bg">${message:campaign_desc}</td>
+<td class="greenwithe"><textarea t:type="textarea" t:value="Campaign.description" />
+</td>
+<td class="greenwithe_bg"><span class="red_star">*</span></td>
+</tr>
+<tr>
+<td class="greenwithe_bg">${message:campaign_region}</td>
+<td class="greenwithe">
+<t:common.CAdRegion xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+</t:common.CAdRegion>
+</td>
+<td class="greenwithe_bg"><span class="red_star">*</span></td>
+</tr>
+<tr>
+<td class="greenwithe_bg">${message:cookies_limit}</td>
+<td class="greenwithe"><input t:type="textfield" size="3" value="Campaign.cookieMaxage" />��
+</td>
+<td class="greenwithe_bg"><span class="red_star">*</span></td>
+</tr>
+<tr>
+<td class="greenwithe_bg">${message:begin_time}</td>
+<td class="greenwithe"><input size="10" t:type="datefield" t:value="Campaign.startDate" readonly="readonly" />
+</td>
+<td class="greenwithe_bg"><span class="red_star">*</span></td>
+</tr>
+<tr>
+<td class="greenwithe_bg">${message:end_time}</td>
+<td class="greenwithe"><input size="10" t:type="datefield" t:value="Campaign.endDate" readonly="readonly" />
+</td>
+<td class="greenwithe_bg"><span class="red_star">*</span></td>
+</tr>
+<tr>
+<td class="greenwithe_bg">${message:site_category}</td>
+<td class="greenwithe">
+<select t:type="select" value="affiliateCategory" 
+              model="affCategoryListSelectionModel" encoder="affCategoryListValueEncoder" /> 
+</td>
+<td class="greenwithe_bg"><span class="red_star">*</span></td>
+</tr>
+<tr>
+<td class="green_bg" colspan="3">
+<input type="submit" t:type="submit" t:id="saveCampaign" value="saveCampaign"/>&nbsp;&nbsp;
+<input type="submit" t:type="submit" t:id="saveAndAddCGroup" value="${message:save_and_add_commission_group}"/>&nbsp;&nbsp;	
+<input type="submit" t:type="submit" t:id="back" value="${message:back}"/>		
+</td>
+</tr>
+</t:form>     
+     
+</table>
+
+</t:advertiser.Layout>

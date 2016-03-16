@@ -1,0 +1,29 @@
+﻿<t:affiliate.Layout t:pageTitle="${message:system_mail_modify}" t:pageGroup="account" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers" style="display:none; width: 500px;">
+		<div class="title">${message:system_mail_modify}</div>
+		<div class="form"><t:localswitch /></div>
+	</div>
+	<div class="page_headers" style="display:block; width: 500px;">
+		<div class="title">${message:system_mail_modify}</div>
+		<form t:type="form" t:id="editSysInfoForm" class="form">
+			<t:errors />
+			<table class="form_edit">
+				<t:loop source="checkBoxItems" index="rowCount">
+					<tr class="${rowClass}">
+						<td>
+							${checkBoxItem.name}			
+						</td>
+						<td>
+							<t:checkbox value="select" />
+						</td>
+					</tr>
+				</t:loop>
+				<tr>
+					<td colspan="2" style="text-align: center;">
+						<button type="submit">${message:Revises}</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</t:affiliate.Layout>

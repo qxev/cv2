@@ -1,0 +1,51 @@
+<t:admin.Layout t:pageTitle="Commission RuleList page" t:navigation="${message:campaign_manage} > ${message:commision_rule}" pageGroup="campaign" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <body>
+    	<div class="form">
+	    	<t:form t:id="searchForm">
+	    		所属广告活动:
+	    		<select t:type="select" value="formCampaign" model="campaignsSelectionModel" encoder="campaignsValueEncoder" blankLabel="所有"/>
+	    		<input t:type="submit" value="查询" t:id="searchButton" />
+	    	</t:form>
+		</div>
+    	<t:form>
+		    <table style="BORDER-COLLAPSE: collapse;" borderColor="#ced5b1" cellSpacing="0" cellPadding="0" width="100%" border="1" t:id="myGrid" t:type="Grid" source="dataSource" row="commissionRule" model="beanModel" pagerPosition="literal:bottom" rowsPerPage="${noOfRowsPerPage}">  
+		    	<t:parameter name="campaignNameCell">
+		    		<t:pagelink page="admin/campaign/viewpage" context="prop:viewParameters" >${commissionRule.campaign.name}</t:pagelink>
+				</t:parameter>
+				<t:parameter name="verifiedCell">
+					<t:if test="pendingApproval">
+					 	广告活动审核中
+					 	<t:parameter name="else">
+					 		${status:commissionRule.verified}
+					 	</t:parameter>
+					 </t:if>
+				</t:parameter>
+		    	<t:parameter name="ruleTypeCell">
+						${commissionruleformat:commissionRule=%t}
+				</t:parameter>
+				<t:parameter name="commissionValueCell">
+						${commissionruleformat:commissionRule=%v}
+				</t:parameter>
+				<t:parameter name="operateCell">
+					<select onchange="redirect(this);">
+						<option value="" >--选择操作--</option>
+						<t:if test="formCampaign.id">
+							<option value="/admin/commissionRule/editpage/${commissionRule.id}/${formCampaign.id}" >编辑</option>
+							<t:parameter name="else">
+								<option value="/admin/commissionRule/editpage/${commissionRule.id}/0" >编辑</option>
+							</t:parameter>
+						</t:if>
+						<option msg="与广告活动时间同步?" value="/admin/commissionRule/listpage/${commissionRule.campaign.id}/${commissionRule.id}/sync" >与广告活动时间同步</option>
+						<span t:type="t5components/Equals" left="prop:commissionRule.verified.toString()" right="literal:1">
+							<option msg="批准佣金规则上线？" value="/admin/commissionRule/listpage/${commissionRule.campaign.id}/${commissionRule.id}/pass" >批准</option>
+							<option msg="拒绝佣金规则上线？" value="/admin/commissionRule/listpage/${commissionRule.campaign.id}/${commissionRule.id}/refuse" >拒绝</option>
+	           			</span>
+	           			<t:if test="pendingApproval">
+	           				<option msg="拒绝佣金规则上线？" value="/admin/commissionRule/listpage/${commissionRule.campaign.id}/${commissionRule.id}/refuse" >拒绝上线</option>
+	           			</t:if>
+					</select>
+				</t:parameter>
+		    </table>
+	    </t:form>
+    </body>
+</t:admin.Layout>

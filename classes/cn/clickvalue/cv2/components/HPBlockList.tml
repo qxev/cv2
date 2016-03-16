@@ -1,0 +1,13 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+	<div class="content-right">
+		<div class="submenu">
+			<h3>栏目导航</h3>
+			<ul>
+				<li t:type="loop" t:source="hpBlocks" t:value="hpBlock">
+					<a href="${href}">${hpBlock.disPlayName}</a>
+				</li> 
+			</ul>
+		</div>
+	</div>
+</html>

@@ -1,0 +1,24 @@
+<t:admin.Layout pageTitle="银行信息管理" pageGroup="system" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+<p class="welcome"> 银行名称管理 > ${message:campaigns} </p>
+
+<div class="action">
+<div class="new_menu">
+<t:eventlink t:id="addBank">新增银行名称</t:eventlink>
+</div>
+</div>
+
+<div class="table_clear">
+  <table style="BORDER-COLLAPSE: collapse;" borderColor="#ced5b1" cellSpacing="0" cellPadding="0" width="55%" border="1"
+             t:id="myGrid" t:type="Grid" source="dataSource" row="bank" model="beanModel" pagerPosition="literal:bottom" rowsPerPage="${noOfRowsPerPage}">
+			
+			<t:parameter name="operateCell">
+			    <select onchange="redirect(this)">
+					<option value="">--选择操作--</option>
+			        <option value="/admin/system/bankeditpage/${bank.id}">修改银行名称</option>
+			    </select>			
+		    </t:parameter>
+	    </table>
+</div>	
+
+</t:admin.Layout>

@@ -1,0 +1,31 @@
+<t:admin.Layout pageTitle="CampaignList" navigation="佣金匹配" pageGroup="commission_match" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <body>
+       	<script>
+    	var sessionId = "${uid}";
+    	</script>
+    	<div class="page_headers">
+	    	<t:form t:id="searchForm" class="form">
+	    		操作状态:<select t:type="select" value="formMatchedDone" model="literal:0=待扫描,1=匹配映射成功,2=匹配补入成功,3=数据补入成功" blankLabel="所有状态" style="margin:0 5px 0 3px;"/>
+	    		数据状态:<select t:type="select" value="formDisabled" model="literal:0=正常,1=无效" blankLabel="所有状态" style="margin:0 5px 0 3px;"/>
+	    		<input t:type="submit" value="查询" t:id="searchButton" style="margin:0 0 0 5px;"/>
+	    	</t:form>
+		</div>
+    	<table style="BORDER-COLLAPSE: collapse;" borderColor="#ced5b1" cellSpacing="0" cellPadding="0" width="100%" border="1"
+	             t:id="myGrid" t:type="Grid" source="dataSource" row="matchData" model="beanModel" pagerPosition="literal:bottom" rowsPerPage="${noOfRowsPerPage}">
+			<t:parameter name="effectTypeCell">
+				${effectType}
+			</t:parameter>
+			<t:parameter name="matchedDoneCell">
+				${matchedDone}
+			</t:parameter>
+			<t:parameter name="disabledCell">
+				${disabled}
+			</t:parameter>
+	    </table>
+	    <div style="text-align:right;">
+	    	<input type="button" onclick="window.location.href='/commision/usermanage/tasklistpage/${campaignId}'" value="返回" style="margin-right:5px;"/>
+	    	<input type="button" onclick="window.location.reload();" value="刷新" style="margin-right:20px;"/>
+	    </div>
+	    <script language="javascript" src="/assets/javascripts/msglib.js"></script>	
+    </body>
+</t:admin.Layout>

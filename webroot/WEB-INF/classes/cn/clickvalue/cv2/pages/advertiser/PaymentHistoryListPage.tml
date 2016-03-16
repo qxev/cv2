@@ -1,0 +1,12 @@
+<t:advertiser.Layout pageTitle="${message:account_recharge}" pageGroup="paymentReport"  xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<div class="page_headers" style="width:500px;">
+    <div class='title'>${message:pay_report} > ${message:account_add_money_history}</div>
+    <div class="form">
+    	<table t:id="myGrid" t:type="Grid" source="dataSource" row="advertiserDeposit" model="beanModel" width="100%" rowsPerPage="${noOfRowsPerPage}">
+			 <t:parameter name="depositDateCell">
+		        ${dateformat:advertiserDeposit.depositDate}
+		     </t:parameter>
+	    </table>
+	</div>
+</div>
+</t:advertiser.Layout>

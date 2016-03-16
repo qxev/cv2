@@ -1,0 +1,92 @@
+#centerDiv {
+	width: 484px;
+	border: #ddd 0px solid;
+	height: 315px;
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	margin-left: -242px;
+	background:url(/assets/images/center_bg.jpg) no-repeat;
+}
+
+body {
+	background: #FFF url(/assets/images/login_bg.jpg) repeat-x;
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+#loginTable {
+	border-collapse:separate;
+	border-spacing:3px;
+	left:50%;
+	margin-left:-80px;
+	position:absolute;
+	top:85px;
+	width:300px;
+}
+
+#loginButton, #resetButton {
+	width: 66px;
+	height: 20px;
+	margin-left: -40px;
+	color: #000;
+	font-weight: bold;	
+	padding: 0 3px;
+	border: 1px solid #999;
+}
+
+#loginTable td {
+	white-space: nowrap;
+}
+
+div.t-error {
+	width: 200px;
+	position: absolute;
+	border: 0px solid silver;
+	margin-top: 120px;
+	padding: 0;
+	top: 75px;
+	left: 50%;
+}
+
+div.t-error ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+html > body div.t-error li{
+	margin-left: 0px;
+	display: inline;
+}
+
+#userName, #password{
+	width: 149px;
+}
+
+#validateCode {
+	float: left;
+	width: 65px;
+}
+
+#checkCodeImg{
+	float: left;
+	margin-left: 14px;
+	height: 22px;
+}
+
+div.t-error div {
+	display: none;
+}
+
+div.t-error ul {
+	background-color: #FFF;
+	color:red;
+	margin:2px 0;
+}
+
+div.t-error li {
+	margin-left:20px;
+}
+

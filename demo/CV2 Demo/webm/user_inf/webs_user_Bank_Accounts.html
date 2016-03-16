@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+		<title>Darwin Marketing</title>
+		<LINK  href="../../stylesheets/base.css" rel=stylesheet>
+		<LINK  href="../../stylesheets/css_cn.css" rel=stylesheet>
+		<script language="javascript" src="../js/userLinksFuns.js" type="text/javascript"></script>
+		<script language="javascript" src="../js/userBankAccounts.js"></script>
+		<script language="JavaScript" type="text/javascript">
+			var FILE_EXT = '.html';
+		</script>
+	</head>
+<body>
+	<div class="content">
+	  <div class="pageTitle">银行帐户管理</div>
+	  <div class="action">
+			<table width="100%">
+				<td><a href="javascript:Add();">[新增银行帐户]</a></td>
+				<td align="right">
+				  <form name="form" method="get" action="">
+					  银行帐户状态
+				      <select name="plist_status">
+					  <option value="" selected="selected">所有状态</option>
+					  <option value="3">未申请</option>
+					  <option value="0" ><span style="color:#f00" >已拒绝</span></option>
+					  <option value="1" ><span style="color:#393" >已批准</span></option>
+					  <option value="2" ><span style="color:#666" >待审核</span></option>
+					</select>
+					<input type="submit" value="查询">
+				  </form>
+				</td>
+			</table>
+		</div>
+    <table width="100%" border="0" cellpadding="0" cellspacing="1" class="list">
+		<tr class="title">
+			<td width="5%">
+				<a href="?get_sortcol=plist_bank_name&get_sortorder=desc" class="sort">
+					银行名称&nbsp;
+					<img src="../../images/sort_down.gif" border="0">
+				</a>
+			</td>
+			<td width="10%">
+				<a href="?get_sortcol=plist_bank_subsidiary&get_sortorder=desc" class="sort">
+					分行名称&nbsp;
+					<img src="../../images/sort_down.gif" border="0">
+				</a>
+			</td>
+			<td width="10%">
+				<a href="?get_sortcol=plist_bank_num&get_sortorder=desc" class="sort">
+					银行帐号&nbsp;
+					<img src="../../images/sort_down.gif" border="0">
+				</a>
+			</td>
+			<td width="10%">
+				<a href="?get_sortcol=plist_bank_person&get_sortorder=desc" class="sort">
+					开户人&nbsp;
+					<img src="../../images/sort_down.gif" border="0">
+				</a>
+			</td>
+			<td width="10%">
+				<a href="?get_sortcol=plist_idcard&get_sortorder=desc" class="sort">
+					身份证&nbsp;
+					<img src="../../images/sort_down.gif" border="0">
+				</a>
+			</td>
+			<td width="10%">
+				<a href="?get_sortcol=plist_phone&get_sortorder=desc" class="sort">
+					联系方式&nbsp;
+					<img src="../../images/sort_down.gif" border="0">
+				</a>
+			</td>
+			<td width="5%">
+				<a href="?get_sortcol=plist_status&get_sortorder=desc" class="sort">
+					审核状态&nbsp;
+					<img src="../../images/sort_down.gif" border="0">
+				</a>
+			</td>
+			<td width="25%">
+				<a href="?get_sortcol=plist_message&get_sortorder=desc" class="sort">
+					拒绝理由&nbsp;
+					<img src="../../images/sort_down.gif" border="0">
+				</a>
+			</td>
+			<td>
+
+			</td>
+			<td width="1%">
+				&nbsp;
+			</td>
+		</tr>
+		<tr class="row1">
+			<td align="center">Jeremy央行</td>
+			<td align="center">Ice分行</td>
+			<td align="center">321321321</td>
+			<td align="center">Ljj</td>
+			<td align="center">123123123123</td>
+			<td align="center">77887</td>
+			<td align="center">未申请</td>
+			<td align="center">无</td>
+			<td align="center">
+				<select>
+					<option>---请选择---</option>
+					<option>查看银行信息</option>
+					<option>编辑银行信息</option>
+					<option>删除银行信息</option>
+					<option>提交审核</option>
+				</select>
+			</td>
+			<td></td>
+		</tr>
+	  </table>
+	  <font style="color:#FF0000; font-weight:bolder;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注意:个人资料中的银行帐号不作为支付使用。至少一个帐号为批准才能申请支付。</font>
+	</div></div>
+	<div class="footer">
+	  <div class="copyright"><a href="/darwin_2.html">关于我们</a>&nbsp;|&nbsp;<a href="/darwin_3.html">联系我们</a>&nbsp;|&nbsp;<a href="systemPassSession.php">论坛</a>&nbsp;<br />
+		沪ICP备06035438号<br />
+		Copyright &copy; 2006 - 2007 Darwin Marketing.<br />
+		<!--L_G_FOOT_CNZZ-->
+		<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script><script type="text/javascript">_uacct = "UA-259227-4";urchinTracker();</script>  </div>
+	</div>
+	</div>
+	</body>
+</html>

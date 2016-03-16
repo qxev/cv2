@@ -1,0 +1,76 @@
+<t:advertiser.Layout pageTitle="${message:commision_payment}" pageGroup="paymentReport" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers" style="width: 100%;">
+		<div class="title">${message:account_balance}: <font color="red">${advertiserAccount.confirmMoney}</font>${message:yuan}</div>
+	</div>
+	<div><t:messagebanner t:id="message" type="type"/></div>
+	
+	<div style="width: 100%;">
+		<div class="page_headers" width="100%">
+			<div class="title">${message:wait_for_pay_for_the_commission}</div>
+			<div class="form">
+				<div class="page_style"></div>
+				<table class="t-data-grid" width="100%">
+					<thead>
+						<tr>
+							<th>${message:campaign}</th>
+							<th>${message:commission_match_starting_time}</th>
+							<th>${message:commission_match_ending_time}</th>
+							<th>${message:website_main_commission}</th>
+							<th>${message:web_site_owners_to_confirm_the_commission}</th>
+							<th>${message:darwin_commision}</th>
+							<th>${message:total_commission}</th>
+							<th>${message:operate}</th>
+						</tr>
+					</thead>
+					<tr t:id="campaignHistoryLoop">
+						<td>${campaignHistory.campaign.name}</td>
+						<td>${dateformat:campaignHistory.startDate}</td>
+						<td>${dateformat:campaignHistory.endDate}</td>
+						<td>${campaignHistory.affiliateCommission}</td>
+						<td>${campaignHistory.confirmedAffiliateCommission}</td>
+						<td>${campaignHistory.darwinProfit}</td>
+						<td>${campaignHistory.countCommission}</td>
+						<td>
+							<t:if test="isShowPayButton()">
+								<button t:type="t5components/Button" type="button" context="campaignHistory.id" event="pay">
+									${message:confirm_payment}
+								</button>
+							</t:if>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		
+		<div class="page_headers" width="100%">
+			<div class="title">${message:confirmed_that_the_commission_has_been_paid}</div>
+			<div class="form">
+				<table class="t-data-grid" width="100%">
+					<thead>
+						<tr>
+							<th>${message:campaign}</th>
+							<th>${message:commission_match_starting_time}</th>
+							<th>${message:commission_match_ending_time}</th>
+							<th>${message:confirmation_time}</th>
+							<th>${message:website_main_commission}</th>
+							<th>${message:web_site_owners_to_confirm_the_commission}</th>
+							<th>${message:darwin_commision}</th>
+							<th>${message:total_commission}</th>
+						</tr>
+					</thead>
+					<tr t:id="confirmCampaignHistoryLoop">
+						<td>${confirmCampaignHistory.campaign.name}</td>
+						<td>${dateformat:confirmCampaignHistory.startDate}</td>
+						<td>${dateformat:confirmCampaignHistory.endDate}</td>
+						<td>${dateformat:confirmCampaignHistory.confirmDate}</td>
+						<td>${confirmCampaignHistory.affiliateCommission}</td>
+						<td>${confirmCampaignHistory.confirmedAffiliateCommission}</td>
+						<td>${confirmCampaignHistory.darwinProfit}</td>
+						<td>${confirmCampaignHistory.countCommission}</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+</t:advertiser.Layout>

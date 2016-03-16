@@ -1,0 +1,27 @@
+<t:affiliate.Layout t:pageTitle="Commission History page" t:navigation="${message:commission_report} > ${message:commission_history}" pageGroup="paymentReport" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers">
+		<div class="title">${message:commision_report} > ${message:commision_payment_history}</div>
+		<t:form t:id="form">
+			<div class="form">
+				${message:begin_time}: <t:daterange t:dateBegin="startDate" t:dateEnd="endDate" />
+				<t:submit t:id="search" class="search" value="${message:search}"/>
+			</div>
+		</t:form>
+		<div t:id="grid" style="width: 100%;">
+			<t:parameter name="personTaxCell">
+				<t:if test="HavePersonTax">
+					<t:pagelink page="affiliate/commissiontaxviewpage" context="commissionExpense.id">${commissionExpense.personTax}</t:pagelink>
+					<t:parameter name="else">
+						${commissionExpense.personTax}
+					</t:parameter>
+				</t:if>
+			</t:parameter>
+			<t:parameter name="nameCell">
+				${name}
+			</t:parameter>
+			<t:parameter name="paidCell">
+				${paid:commissionExpense.paid}
+			</t:parameter>
+    	</div>
+	</div>
+</t:affiliate.Layout>

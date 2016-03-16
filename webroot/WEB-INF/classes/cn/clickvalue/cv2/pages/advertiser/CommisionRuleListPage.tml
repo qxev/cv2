@@ -1,0 +1,53 @@
+<t:advertiser.Layout pageTitle="${message:examines_commission_rule}" pageGroup="campaign" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+	<div class="page_headers">
+		<div class="title">${message:campaign}: <a href="/advertiser/campaignviewpage/${campaign.id}">${campaign.name}</a> > ${message:list_of_commission_rules}</div>
+		<t:form class="form">
+		<t:sliderdoor text="${message:new_rule}" href="/advertiser/commisionruleeditpage/${campaignId}" clear="true"/>
+		<table style="width: 100%;" t:id="myGrid" t:type="Grid" source="dataSource" row="commissionRule" model="beanModel" pagerPosition="literal:bottom" rowsPerPage="${noOfRowsPerPage}">
+		
+			<t:parameter name="ruleTypeCell">
+			${commissionruleformat:commissionRule=%t}
+			</t:parameter>
+			
+			<t:parameter name="commissionValueCell">
+			${commissionruleformat:commissionRule=%v}
+			</t:parameter>
+			
+			<t:parameter name="darwinCommissionValueCell">
+			${commissionruleformat:commissionRule=%d}
+			</t:parameter>
+			
+			<t:parameter name="verifiedCell">
+			${verified}
+			</t:parameter>
+			
+			<t:parameter name="operateCell">
+			<!--<t:pagelink t:page="advertiser/commisionruleviewpage" t:context="commissionRule.id">${message:view}</t:pagelink>-->
+			<select onchange="redirect(this)">
+				<option value="">${message:select}</option>
+				<option value="/advertiser/commisionruleviewpage/${commissionRule.id}">${message:examines_commission_rule}</option>
+			
+				<!-- ${message:submitted_on-line} -->
+				<span t:type="t5components/Equals" left="prop:commissionRule.verified.toString()" right="literal:0">
+					<option value="/advertiser/commisionrulelistpage/submitApp/${commissionRule.id}" msg="${message:apply}?">${message:apply}</option>
+					<option value="/advertiser/commisionruleeditpage/${campaign.id}/${commissionRule.id}">${message:edit}</option>
+				</span>
+			
+				<!-- ${message:submitted_off-line} -->
+				<!--<span t:type="t5components/Equals" left="prop:commissionRule.verified.toString()" right="literal:2">
+					<option value="/advertiser/commisionrulelistpage/offlineApp/${commissionRule.id}">${message:apply}</option>
+				</span>	-->
+			
+				<!-- ${message:submitted_off-line} -->
+				<!--<span t:type="t5components/Equals" left="prop:commissionRule.verified.toString()" right="literal:3">
+					<option value="/advertiser/commisionrulelistpage/offlineApp/${commissionRule.id}">${message:apply}</option>
+				</span>	-->
+			</select>	    
+			</t:parameter>
+		
+		</table>             
+	</t:form>
+</div>	
+
+</t:advertiser.Layout>

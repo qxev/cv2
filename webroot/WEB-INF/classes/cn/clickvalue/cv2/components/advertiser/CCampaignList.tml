@@ -1,0 +1,19 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<t:form>
+    	<div style="padding:0px 20px;">
+	    <table style="BORDER-COLLAPSE: collapse;" borderColor="#ced5b1" cellSpacing="0" cellPadding="0" width="100%" border="1"
+             t:id="myGrid" t:type="Grid" source="dataSource" row="campaign" model="beanModel" pagerPosition="literal:bottom" rowsPerPage="${noOfRowsPerPage}">
+	    	<t:parameter name="bannersCountCell">
+				${campaign.banners.size()}
+			</t:parameter>
+			<t:parameter name="commissionRuleCell">
+				${commissionRule}
+			</t:parameter>
+			<t:parameter name="operateCell">
+				<t:select t:id="operate" model="operateModel" blankLabel="${message:select}"/>
+			</t:parameter>
+	    </table>
+	    </div>
+	    </t:form>
+
+</html>

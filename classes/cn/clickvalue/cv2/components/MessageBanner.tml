@@ -1,0 +1,44 @@
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<t:delegate to="activeBlock" />
+	<t:block id="error">
+		<div class="error" id="errorMessages">
+			<t:outputraw value="showMes"/>
+			<t:if test="hidden">
+				<span style="display:none;">
+					<t:outputraw value="hidMes"/>
+				</span>
+				<br />
+				<a href="javascript:showOrHidden('errorMessages');">show</a>
+			</t:if>
+		</div>
+	</t:block>
+	
+	<t:block id="success">
+		<div class="message" id="successMessages">
+			<t:outputraw value="showMes"/>
+			<t:if test="hidden">
+				<span style="display:none;">
+					<t:outputraw value="hidMes"/>
+				</span>
+				<br />
+				<a href="javascript:showOrHidden('successMessages');">show</a>
+			</t:if>
+		</div>
+	</t:block>
+<script type="text/javascript">
+<![CDATA[
+var showOrHidden=function(id){
+	var div = document.getElementById(id);
+	var span = div.getElementsByTagName("SPAN")[0];
+	var a = div.getElementsByTagName("A")[0];
+	if(span.style.display === "none"){
+		span.style.display = "";
+		a.innerHTML = "hidden";
+	}else{
+		span.style.display = "none";
+		a.innerHTML = "more";
+	}
+}
+]]>
+</script>
+</t:container>

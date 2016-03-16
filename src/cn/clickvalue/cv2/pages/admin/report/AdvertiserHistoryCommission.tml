@@ -1,0 +1,24 @@
+<t:affiliate.Layout t:pageTitle="Commission History page" t:navigation="${message:commission_report} > ${message:commission_history}" pageGroup="payment_report" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <body>
+    	
+    	<div class="form">
+	    	<t:form t:id="searchForm">
+	    		广告主:
+	    		<select t:type="select" value="selectedUser" model="usersSelectionModel" encoder="usersValueEncoder" blankLabel="所有"/>
+	    		<t:daterange t:dateBegin="startDate" t:dateEnd="endDate" />
+	    		<input t:type="submit" value="查询" t:id="searchButton" />
+	    	</t:form>
+		</div>
+
+		<table t:id="myGrid" t:type="Grid" source="dataSource" row="historyCommission" model="beanModel" pagerPosition="literal:bottom" rowsPerPage="${noOfRowsPerPage}">
+	    </table>
+		
+		<script>
+			function redirect(select){
+				var url = select.value;
+				select.selectedIndex = 0;
+				window.location = url;
+			}
+		</script>
+    </body>
+</t:affiliate.Layout>

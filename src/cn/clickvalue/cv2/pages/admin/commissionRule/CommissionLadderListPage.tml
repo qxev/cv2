@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:admin.Layout t:pageTitle="CheatingList" pageGroup="system" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+	<!-- 导航 -->
+	<div class="page_headers">
+		<div class="title">${campaign.name} > 梯度佣金</div>
+	</div>
+	<t:sliderdoor text="新增梯度佣金" href="/admin/commissionRule/commissionladdereditpage/${campaign.id}" clear="true"/>
+	<!-- 查询结果显示 -->
+	<div style="width:100%;" t:id="myGrid" t:type="Grid" source="dataSource" row="commissionLadder" model="beanModel" rowsPerPage="${noOfRowsPerPage}" pagerPosition="literal:bottom">
+		<!-- 范围佣金 -->
+		<t:parameter name="rangeCommissionValueCell">
+			${rangeCommissionValue}
+		</t:parameter>
+		
+		<t:parameter name="isRangeCell">
+			${isRange}
+		</t:parameter>
+	
+		<t:parameter name="operateCell">
+			<!-- 操作 -->
+			<select onchange="redirect(this)">
+				<option value="" >--选择操作--</option>	
+				<option value="/admin/commissionrule/commissionLaddereditpage/${campaign.id}/${commissionLadder.id}" >编辑</option>
+				<option msg="确定删除该条梯度佣金？" value="/admin/commissionrule/commissionLadderlistpage/${campaign.id}/${commissionLadder.id}/delete" >删除</option>
+			</select>
+		</t:parameter>
+	</div>
+	
+</t:admin.Layout>

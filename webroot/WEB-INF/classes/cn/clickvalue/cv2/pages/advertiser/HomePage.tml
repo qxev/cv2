@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:advertiser.Layout pageTitle="${message:home_page}" pageGroup="home" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<table style="width:100%;">
+	<tr valign="top">
+		<td style="width:250px;">
+			<div class="page_headers">
+				<div class="title">${message:the_alliance_announces}</div>
+				<div class="form">
+					<table id="bulletin" width="100%">
+						<tr t:id="bulletinLoop">
+							<td><a href="BulletinViewPage/${bulletin.id}" target="_blank">${bulletin.subject}</a></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+			<div class="page_headers">
+				<div class="title">${message:account_balance}</div>
+				<div class="form" style="padding: 10px 0px;">
+					${message:current_balance}: <font color="blue">${balances}</font> ${message:yuan}
+				</div>
+			</div>
+			<div style="min-height: 400px;"></div>
+		</td>
+
+		<td>
+			<div class="page_headers">
+				<div class="title">${message:summary_information}</div>
+				<div class="form">
+					<table class="t-data-grid" style="width: 100%;">
+						<thead>
+							<tr>
+								<th>${message:campaign_name}</th>
+								<th>${message:the_click_counts}</th>
+								<th>${message:the_guidance_counts}</th>
+								<th>${message:the_sale_counts}</th>
+								<th>${message:the_number_of_ads_site}</th>
+							</tr>
+						</thead>
+						<tr t:id="advertiserSumInfoLoop">
+							<td><a href="/advertiser/campaignviewpage/${advertiserSumInfo.campaignId}">${advertiserSumInfo.campaignName}</a></td>
+							<td style="text-align: center;">${advertiserSumInfo.cpc}</td>
+							<td style="text-align: center;">${advertiserSumInfo.cpl}</td>
+							<td style="text-align: center;">${advertiserSumInfo.cps}</td>
+							<td style="text-align: center;">${advertiserSumInfo.sites}</td>
+						</tr>
+			    	</table>
+				</div>
+			</div>
+			<div class="page_headers">
+				<div class="title">${message:the_latest_application_to_join_website}</div>
+				<div class="form">
+					<table class="t-data-grid" style="width: 100%;">
+						<thead>
+							<tr>
+								<th class="t-first">${message:campaign_name}</th>
+								<th class="t-first">${message:publisher}</th>
+								<th class="t-first">URL</th>
+								<th class="t-first">${message:the_date_of_application}</th>
+								<th class="t-first">${message:operate}</th>
+							</tr>	
+						</thead>		
+
+						<tbody>								
+							<tr t:type="loop" t:source="affiliatedWebMasters" t:value="campaignSite">
+								<td>${campaignSite.campaign.name}</td>
+								<td><a href="${campaignSite.site.url}" target="_blank">${campaignSite.site.name}</a></td>
+								<td>${campaignSite.site.url}</td>
+								<td>${dateformat:campaignSite.createdAt}</td>
+								<td>
+									<select onchange="redirect(this)">
+										<option value="">${message:select}</option>
+										<span t:type="t5components/Equals" left="prop:campaignSite.verified.toString()" right="literal:1">
+											<option value="/advertiser/homepage/apply/${campaignsite.id}" msg="${message:the_determination_authorizes}?">${message:approve}</option>
+											<option value="/advertiser/homepage/refuse/${campaignsite.id}" msg="${message:refused_to_identify}?">${message:refuse}</option>
+										</span>	
+									</select>
+								</td>
+							</tr>
+						</tbody>		
+					</table>			
+					<t:SliderDoor text="${message:more}" href="/advertiser/affiliatedsitelistpage" clear="true" style="float:right; margin-right:0;"/>
+				</div>
+			</div>
+		</td>
+	</tr>
+</table>
+</t:advertiser.Layout>

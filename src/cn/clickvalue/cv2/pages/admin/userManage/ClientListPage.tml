@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:admin.Layout pageTitle="广告主管理" navigation="广告主管理" pageGroup="system" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <body>
+    	<t:form t:id="searchForm">
+	    	<div class="form">
+		    		用户名:
+		    		<input t:type="textfield" t:id="userName" value="formSite.user.name" />&nbsp;&nbsp;
+		    		删除状态:
+		    		<select t:type="select" model="literal:0=未删除,1=已删除" blankLabel="所有状态" value="formSite.user.deleted" />&nbsp;&nbsp;
+		    		审核状态:
+		    		<select t:type="select" model="literal:0=未审核,2=已审核" blankLabel="所有状态" value="formVerified" />&nbsp;&nbsp;
+            		<br />
+            		激活状态:
+		    		<select t:type="select" model="literal:0=未激活,1=已激活" blankLabel="所有状态" value="formSite.user.actived" />&nbsp;&nbsp;
+            		激活时间:<t:daterange t:dateBegin="formStartDate" t:dateEnd="formEndDate" />
+		    		<input t:type="submit" value="查询" />
+			</div>
+    	
+		    <table width="100%"
+	             t:id="myGrid" t:type="Grid" source="dataSource" row="rowObj" model="beanModel" pagerPosition="literal:bottom" rowsPerPage="${noOfRowsPerPage}">
+	            <t:parameter name="nameCell">
+					<t:pagelink page="admin/userManage/AdvertiserViewPage" context="rowObj.id">${rowObj.name}</t:pagelink>
+				</t:parameter>
+				<t:parameter name="activedCell">
+					${ognl:@cn.clickvalue.cv2.common.constants.Constants@formatActivedStatus(messages,rowObj.actived)}
+				</t:parameter>
+				<t:parameter name="verifiedCell">
+					${verified}
+				</t:parameter>
+				<t:parameter name="deletedCell">
+					${ognl:@cn.clickvalue.cv2.common.constants.Constants@formatDeleteStatus(messages,rowObj.deleted)}
+				</t:parameter>
+		    	<t:parameter name="operateCell">
+					<select onchange="redirect(this);">
+						<option value="" >--选择操作--</option>
+		           		
+		           		<span t:type="t5components/Equals" left="prop:rowObj.userGroup.name" right="literal:advertiser">
+							<option value="/admin/userManage/AdvertiserViewPage/${rowObj.id}" >查看</option>
+							<option value="/admin/AdvertiserTrackCodePage/${rowObj.id}">获得跟踪代码</option>
+							<option value="/admin/userManage/AdvertiserEditPage/${rowObj.id}">编辑</option>
+							<option value="/admin/campaign/listpage/${rowObj.id}" >查看广告活动</option>
+		           		</span>
+		           		<option msg="确定删除？" value="/admin/userManage/clientlistpage/delete/${rowObj.id}" >删除</option>
+						<option value="" >充值记录</option>
+						<option value="/admin/site/listpage/${rowObj.id}" >查看网站</option>
+						<option value="/admin/userManage/clientListPage/reSendRegfid/${rowObj.id}" >重发激活码</option>
+						<option value="/admin/account/listpage/${rowObj.id}" >查看用户帐户信息</option>
+						<t:if test="applying">
+							<span t:type="t5components/Equals" left="prop:rowObj.userGroup.id.toString()" right="literal:1">
+								<option msg="确定审核通过？" value="/admin/userManage/clientListPage/passAdvertiser/${rowObj.id}">审核通过</option>
+							</span>
+						</t:if>
+						
+					</select>
+				</t:parameter>
+		    </table>
+		</t:form>
+    </body>
+</t:admin.Layout>

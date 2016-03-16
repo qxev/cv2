@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+		<title>Darwin Marketing</title>
+		<LINK  href="../../stylesheets/base.css" rel=stylesheet>
+		<LINK  href="../../stylesheets/css_cn.css" rel=stylesheet>
+		<script language="javascript" src="../js/userLinksFuns.js" type="text/javascript"></script>
+		<script language="javascript" src="../js/userBankAccounts.js"></script>
+		<script language="JavaScript" type="text/javascript" src="../js/adveBannerListFuns.js"></script>
+		<script language="JavaScript" type="text/javascript">
+			var FILE_EXT = '.html';
+		</script>
+	</head>
+	<body>
+<div class="content">
+  <div class="pageTitle">促销邮件&nbsp;&nbsp;&nbsp;&nbsp;<font style="font-weight:bold; color:#FF0000;">注意：</font>请用FireFox进行邮件发送<font style="font-weight:bold; color:#FF0000;">（上传图片请用JPG或GIF格式或JPEG）（小标题X和内容X不填，将不显示在邮件中，图片也可不上传）&nbsp;&nbsp;&nbsp;（每天只能发送一次促销邮件）</font></div>
+  <table border="0" cellspacing="10" cellpadding="0" class="list">
+    <tr class="title">
+      <form name="form1" method="get" action="">
+        <td> 活动数量
+          <input name="num1" type="text" size="1" maxlength="1" value="3" />
+          表格行数
+          <input name="num2" type="text" size="1" maxlength="1" value="2" />
+		  <!--
+          网站主推荐数
+          <input name="num3" type="text" size="1" maxlength="1"  />-->
+          <input name="submit" type="submit" value="提交" />
+        </td>
+      </form>
+    </tr>
+        <form name="form" method="get" action="../../Act.html" enctype="multipart/form-data">
+      <input name="act" type="hidden" value="show" />
+      <input name="num1" type="hidden" value="3" />
+      <input name="num2" type="hidden" value="2" />
+      <input name="num3" type="hidden" value="" />
+      <tr class="title">
+        <td>邮件标题
+          <input name="mail_title" type="text" size="30" />
+          促销标题
+          <input name="sales_title" type="text" size="20" />
+          促销编号
+          <input name="sales_num" type="text" size="3" maxlength="3" />
+		  模版号
+          <input name="x" type="text" size="1" maxlength="1"  />
+		  小标题背景号
+          <input name="y" type="text" size="1" maxlength="1"  /></td>
+      </tr>
+      <tr>
+        <td><table border="0" cellspacing="1" cellpadding="0" class="list">
+            <tr class="title">
+              <td>论坛热贴推荐<font style="color:#FF0000;">（请输入贴子ID即可）</font></td>
+            </tr>
+            <tr class="row1">
+              <td><textarea name="bbsid" cols="30" rows="5"></textarea></td>
+            </tr>
+          </table></td>
+      </tr>
+      <!--            </tr>
+          </table></td>
+      </tr>-->
+      <tr>
+        <td><table border="0" cellspacing="1" cellpadding="0" class="list">
+            <tr>
+                            <td><table border="0" cellspacing="1" cellpadding="0" class="list">
+                  <tr class="title">
+                    <td colspan="2">活动1</td>
+                  </tr>
+                  <tr class="row1">
+                    <td colspan="2"><table border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td>显示图片<br />                            <input name="image0" type="file" size="25" /></td>
+                          <td>链接ID<br />                            <input name="link_cid0" type="text" size="5" /></td>
+                        </tr>
+                      </table></td>
+                  </tr>
+                                    <tr class="row1">
+                    <td valign="top">小标题1<br />                      <input name="stitle0_0" type="text" size="10" value="广告活动名称：" disabled="disabled" /><br />背景色1<br /><input name="scolor0_0" type="text" size="10" disabled="disabled" /></td>
+                    <td>内容1<br />                      <textarea name="smessage0_0" cols="30" rows="5"></textarea></td>
+                  </tr>
+                                    <tr class="row1">
+                    <td valign="top">小标题2<br />                      <input name="stitle0_1" type="text" size="10"  /><br />背景色2<br /><input name="scolor0_1" type="text" size="10" /></td>
+                    <td>内容2<br />                      <textarea name="smessage0_1" cols="30" rows="5"></textarea></td>
+                  </tr>
+                                  </table></td>
+                            <td><table border="0" cellspacing="1" cellpadding="0" class="list">
+                  <tr class="title">
+                    <td colspan="2">活动2</td>
+                  </tr>
+                  <tr class="row1">
+                    <td colspan="2"><table border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td>显示图片<br />                            <input name="image1" type="file" size="25" /></td>
+                          <td>链接ID<br />                            <input name="link_cid1" type="text" size="5" /></td>
+                        </tr>
+                      </table></td>
+                  </tr>
+                                    <tr class="row1">
+                    <td valign="top">小标题1<br />                      <input name="stitle1_0" type="text" size="10" value="广告活动名称：" disabled="disabled" /><br />背景色1<br /><input name="scolor1_0" type="text" size="10" disabled="disabled" /></td>
+                    <td>内容1<br />                      <textarea name="smessage1_0" cols="30" rows="5"></textarea></td>
+                  </tr>
+                                    <tr class="row1">
+                    <td valign="top">小标题2<br />                      <input name="stitle1_1" type="text" size="10"  /><br />背景色2<br /><input name="scolor1_1" type="text" size="10" /></td>
+                    <td>内容2<br />                      <textarea name="smessage1_1" cols="30" rows="5"></textarea></td>
+                  </tr>
+                                  </table></td>
+                            <td><table border="0" cellspacing="1" cellpadding="0" class="list">
+                  <tr class="title">
+                    <td colspan="2">活动3</td>
+                  </tr>
+                  <tr class="row1">
+                    <td colspan="2"><table border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td>显示图片<br />                            <input name="image2" type="file" size="25" /></td>
+                          <td>链接ID<br />                            <input name="link_cid2" type="text" size="5" /></td>
+                        </tr>
+                      </table></td>
+                  </tr>
+                                    <tr class="row1">
+                    <td valign="top">小标题1<br />                      <input name="stitle2_0" type="text" size="10" value="广告活动名称：" disabled="disabled" /><br />背景色1<br /><input name="scolor2_0" type="text" size="10" disabled="disabled" /></td>
+                    <td>内容1<br />                      <textarea name="smessage2_0" cols="30" rows="5"></textarea></td>
+                  </tr>
+                                    <tr class="row1">
+                    <td valign="top">小标题2<br />                      <input name="stitle2_1" type="text" size="10"  /><br />背景色2<br /><input name="scolor2_1" type="text" size="10" /></td>
+                    <td>内容2<br />                      <textarea name="smessage2_1" cols="30" rows="5"></textarea></td>
+                  </tr>
+                                  </table></td>
+                          </tr>
+          </table></td>
+      </tr>
+      <tr class="row1">
+        <td align="center"><input name="submit" type="submit" value="提交" /></td>
+      </tr>
+    </form>
+      </table>
+</div>
+<div class="footer">
+  <div class="copyright"><a href="/darwin_2.html">关于我们</a>&nbsp;|&nbsp;<a href="/darwin_3.html">联系我们</a>&nbsp;|&nbsp;<a href="systemPassSession.php">论坛</a>&nbsp;<br />
+    沪ICP备06035438号<br />
+    Copyright &copy; 2006 - 2007 Darwin Marketing.<br />
+    <!--L_G_FOOT_CNZZ-->
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script><script type="text/javascript">_uacct = "UA-259227-4";urchinTracker();</script>  </div>
+</div>
+</div>
+</body>
+</html>

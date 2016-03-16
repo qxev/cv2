@@ -1,0 +1,23 @@
+<t:affiliate.Layout t:pageTitle="${editOrAdd}" t:pageGroup="account" t:access="access" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers" style="width: 600px;">
+		<div class="title">${message:Bank_account_management} > ${editOrAdd}</div>
+		<form t:type="form" t:id="form" class="form">
+			<t:errors />
+			<table class="form_edit">
+				<tr class="roweven">
+					<td class="field_name">${message:Bank_account}<span class="red_star">*</span></td>
+					<td class="field_value">
+						<input t:type="textfield" t:value="account.cardNumber"/>
+					</td>
+				</tr>
+				
+				<tr class="roweven">
+					<td colspan="2" style="text-align: right;">
+						<input type="submit" value="${message:next_step}" class="positive" />
+						<input type="button" value="${message:back}" onclick="window.location.href='/affiliate/bankaccontlistpage'" />
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</t:affiliate.Layout>

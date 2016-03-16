@@ -1,0 +1,41 @@
+<t:advertiser.Layout t:pageTitle="${message:the_website_host_verifies}" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers">
+		<div class="title"> ${message:ad_campaign}: ${campaignName} > ${message:the_website_host_verifies} </div>
+		<t:form class="form">
+		  ${message:website_name}
+		  <input t:type="textfield" t:id="siteName"/>
+		  ${message:website_address}
+		  <input t:type="textfield" t:id="url"/>
+		  ${message:joins_condition}
+		  <t:select t:id="verified" model="1=${message:pending_approval},2=${message:has_approved},3=${message:has_rejected}"  blankOption="never" />
+		  <input t:id="search" t:type="submit" class="search" value="${message:inquiry}" />
+		  
+		  <table style="width:100%;" t:id="myGrid" t:type="Grid" source="dataSource" row="campaignSite" model="beanModel" pagerPosition="literal:bottom" rowsPerPage="${noOfRowsPerPage}">
+		        <t:parameter name="verifiedCell">
+		        	${verifiedStatus}
+		        </t:parameter>
+		         
+		        <t:parameter name="updatedAtCell">
+		        	${dateformat:campaignSite.updatedAt}
+		        </t:parameter>
+		        
+		        <t:parameter name="operateCell">
+				    <select onchange="redirect(this)">
+						<option value="">--${message:selecting_operation}--</option>
+						<span t:type="t5components/Equals" left="prop:campaignsite.verified.toString()" right="literal:1">
+							<option value="/advertiser/affiliatelistpage/apply/${campaignsite.id}" msg="${message:the_determination_authorizes}?">${message:approve}</option>
+							<option value="/advertiser/affiliatelistpage/refuse/${campaignsite.id}" msg="${message:refused_to_identify}?">${message:refuse}</option>
+						</span>
+						<span t:type="t5components/Equals" left="prop:campaignsite.verified.toString()" right="literal:2">
+							<option value="/advertiser/affiliatelistpage/refuse/${campaignsite.id}" msg="${message:refused_to_identify}?">${message:refuse}</option>
+						</span>
+						<span t:type="t5components/Equals" left="prop:campaignsite.verified.toString()" right="literal:3">
+							<option value="/advertiser/affiliatelistpage/apply/${campaignsite.id}" msg="${message:the_determination_authorizes}?">${message:approve}</option>
+						</span>
+					</select>	
+				</t:parameter>
+		    </table>
+		</t:form>
+	</div>
+
+</t:advertiser.Layout>

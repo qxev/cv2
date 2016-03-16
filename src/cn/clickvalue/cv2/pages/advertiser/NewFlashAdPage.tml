@@ -1,0 +1,63 @@
+<t:advertiser.Layout pageTitle="${message:advertisement}" pageGroup="campaign" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers" style="width:600px;">
+		<div class="title">
+			${message:campaign}: <a href="/advertiser/campaignviewpage/${campaign.id}">${campaign.name}</a> > 
+			<a href="/advertiser/bannerlistpage/${campaign.id}">${message:banners}</a> > 		
+			${message:new_flash_ad}
+		</div>
+        <t:form class="form" id="form">
+        	<t:errors/>
+			<table style="width:100%;">
+				<tr class="roweven">
+					<td colspan="3">
+						${message:the_width_of_text_ads}
+					</td>
+				</tr>
+				<tr class="rowodd">
+					<td class="field_name">
+						${message:width}:<t:textfield t:value="banner1.width" size="4" />
+					</td>
+					<td class="field_name">
+						${message:height}:<t:textfield t:value="banner1.height" size="4" />
+					</td>
+					<td class="field_name">
+						${message:flash_ad} 1:<t:upload t:id="file1" />
+					</td>
+				</tr>
+			
+				<tr class="roweven">
+					<td class="field_name">
+						${message:width}:<t:textfield t:value="banner2.width" size="4" />
+					</td>
+					<td class="field_name">
+						${message:height}:<t:textfield t:value="banner2.height" size="4" />
+					</td>
+					<td class="field_name">
+						${message:flash_ad} 2:<t:upload t:id="file2" />
+					</td>
+				</tr>
+			
+				<tr class="rowodd">
+					<td class="field_name">
+						${message:width}:<t:textfield t:value="banner3.width" size="4" />
+					</td>
+					<td class="field_name">
+						${message:height}:<t:textfield t:value="banner3.height" size="4" />
+					</td>
+					<td class="field_name">
+						${message:flash_ad} 3:<t:upload t:id="file3" />
+					</td>
+				</tr>
+				
+				<tr class="rowodd">
+					<td class="center" colspan="3">
+						<input t:type="submit" t:id="add" value="${message:save_and_back_list}" class="button_margin"/>
+						<input t:type="submit" t:id="saveAndAddLandingPage" value="${message:save_the_page_and_add_advertising_objectives}" class="button_margin"/>
+						<button t:type="commons/button">${message:back}</button>
+					</td>
+				</tr>
+			</table>
+       </t:form>
+   </div>
+
+</t:advertiser.Layout>

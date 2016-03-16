@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+		<title>Darwin Marketing</title>
+		<LINK  href="../../stylesheets/base.css" rel=stylesheet>
+		<LINK  href="../../stylesheets/css_cn.css" rel=stylesheet>
+		<script language="javascript" src="../js/userLinksFuns.js" type="text/javascript"></script>
+		<script language="javascript" src="../js/userBankAccounts.js"></script>
+		<script language="JavaScript" type="text/javascript">
+			var FILE_EXT = '.html';
+		</script>
+	</head>
+<body>
+	<div class="content">
+	  <div class="pageTitle">修改个人资料</div>
+	   <table border="0" cellspacing="1" cellpadding="0" class="list">
+		<form name="form" method="get" action="../../Act.html">
+		  <input name="act" type="hidden" value="affiliate">
+		  <tr class="title">
+			<td colspan="2">修改网站主个人资料</td>
+		  </tr>
+		  <tr class="row1">
+			<td class="row_required">用户名</td>
+			<td><input name="user_name" type="text" size="25" maxlength="20" disabled="disabled" value="jeremyicetest"></td>
+		  </tr>
+		  <tr class="row1">
+			<td>用户密码</td>
+			<td>旧密码：<input type="text" /></td>
+		  </tr>
+		  <tr class="row1">
+		  	<td></td>
+			<td>新密码：<input type="text" /></td>
+		  </tr>
+		  <tr class="row1">
+		  	<td></td>
+			<td>确&nbsp;&nbsp;&nbsp;&nbsp;认：<input type="text" /></td>
+		  </tr>
+		  <tr class="row1">
+			<td class="row_required">用户邮箱</td>
+			<td><input name="user_mail" type="text" size="35" maxlength="40" value="jeremy.ice@darwinmarketing.com"></td>
+		  </tr>
+		  <tr class="row1">
+			<td>用户昵称</td>
+			<td><input name="user_nickname" type="text" size="25" maxlength="20" value="JeremyIce"></td>
+		  </tr>
+		  <tr class="row1">
+			<td colspan="3">&nbsp;</td>
+		  </tr>
+		  <tr class="row1">
+			<td colspan="3" bgcolor="#FCF7DC"><strong>个人基本信息</strong></td>
+		  </tr>
+		  <tr class="row1">
+			<td class="row_required">联系人名称</td>
+			<td><input name="uinfo_cont_name" type="text" size="25" maxlength="20" disabled="disabled" value="JeremyIce"></td>
+		  </tr>
+		  <tr class="row1">
+			<td>身份证号</td>
+			<td><input name="uinfo_idcard" type="text" size="23" maxlength="18" value=""></td>
+		  </tr>
+		  <tr class="row1">
+			<td class="row_required">所在地区</td>
+			<td>
+			  <select name="uinfo_state" onclick="javascript:sdistrict(document.form.uinfo_city,this.value)">
+			<OPTION value="上海市" selected="selected">上海市</OPTION>            <option value="北京市">北京市</option>
+				<option value="上海市">上海市</option>
+				<option value="天津市">天津市</option>
+				<option value="重庆市">重庆市</option>
+				<option value="广东省">广东省</option>
+				<option value="福建省">福建省</option>
+				<option value="浙江省">浙江省</option>
+				<option value="江苏省">江苏省</option>
+				<option value="山东省">山东省</option>
+				<option value="辽宁省">辽宁省</option>
+				<option value="江西省">江西省</option>
+				<option value="四川省">四川省</option>
+				<option value="陕西省">陕西省</option>
+				<option value="湖北省">湖北省</option>
+				<option value="河南省">河南省</option>
+				<option value="河北省">河北省</option>
+				<option value="山西省">山西省</option>
+				<option value="内蒙古">内蒙古</option>
+				<option value="吉林省">吉林省</option>
+				<option value="黑龙江">黑龙江</option>
+				<option value="安徽省">安徽省</option>
+				<option value="湖南省">湖南省</option>
+				<option value="广西区">广西区</option>
+				<option value="海南省">海南省</option>
+				<option value="云南省">云南省</option>
+				<option value="贵州省">贵州省</option>
+				<option value="西藏区">西藏区</option>
+				<option value="甘肃省">甘肃省</option>
+				<option value="宁夏区">宁夏区</option>
+				<option value="青海省">青海省</option>
+				<option value="新疆区">新疆区</option>
+				<option value="香港区">香港区</option>
+				<option value="澳门区">澳门区</option>
+				<option value="台湾省">台湾省</option>
+				<option value="全国">全国</option>
+			  </select>			</td>
+		  </tr>
+		  <tr class="row1">
+			<td>县/市/区</td>
+			<td>
+			  <select name="uinfo_city">
+			<OPTION value="杨浦区" selected="selected">杨浦区</OPTION>          </select>			</td>
+		  </tr>
+		  <tr class="row1">
+			<td>联系地址</td>
+			<td><input name="uinfo_street" type="text" size="51" maxlength="100" value="测试"></td>
+		  </tr>
+		  <tr class="row1">
+			<td>邮政编码</td>
+			<td><input name="uinfo_zipcode" type="text" size="11" maxlength="10" value=""></td>
+		  </tr>
+		  <tr class="row1">
+			<td>电话号码</td>
+			<td>
+			  <input name="uinfo_phone1" type="text" size="4" maxlength="4" value="">
+			  -
+			  <input name="uinfo_phone2" type="text" size="11" maxlength="10" value="">
+			  -
+			  <input name="uinfo_phone3" type="text" size="4" maxlength="4" value="">			</td>
+		  </tr>
+		  <tr class="row1">
+			<td>手机号码</td>
+			<td><input name="uinfo_mobile" type="text" size="13" maxlength="11" value=""></td>
+		  </tr>
+		  <tr class="row1">
+			<td>QQ号码</td>
+			<td><input name="uinfo_qq" type="text" size="25" maxlength="20" value=""></td>
+		  </tr>
+		  <tr class="row1">
+			<td>MSN帐号</td>
+			<td><input name="uinfo_msn" type="text" size="35" maxlength="40" value=""></td>
+		  </tr>
+		  <tr class="row1">
+			<td colspan="2" align="center">
+			  <input name="submit" type="submit" value="修改">
+			  &nbsp;&nbsp;&nbsp;
+			  <input name="back" type="button" onclick="javascript:history.go(-1)" value="返回">			</td>
+		  </tr>
+		</form>
+	  </table>
+	</div>
+	<div class="footer">
+	  <div class="copyright"><a href="/darwin_2.html">关于我们</a>&nbsp;|&nbsp;<a href="/darwin_3.html">联系我们</a>&nbsp;|&nbsp;<a href="systemPassSession.php">论坛</a>&nbsp;<br />
+		沪ICP备06035438号<br />
+		Copyright &copy; 2006 - 2007 Darwin Marketing.<br />
+		<!--L_G_FOOT_CNZZ-->
+		<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script><script type="text/javascript">_uacct = "UA-259227-4";urchinTracker();</script>  </div>
+	</div>
+	</div>
+</body>
+</html>

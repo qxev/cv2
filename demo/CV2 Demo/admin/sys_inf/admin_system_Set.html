@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+		<title>Darwin Marketing</title>
+		<LINK  href="../../stylesheets/base.css" rel=stylesheet>
+		<LINK  href="../../stylesheets/css_cn.css" rel=stylesheet>
+		<script language="javascript" src="../js/userLinksFuns.js" type="text/javascript"></script>
+		<script language="javascript" src="../js/userBankAccounts.js"></script>
+		<script language="JavaScript" type="text/javascript" src="../js/adveBannerListFuns.js"></script>
+		<script language="JavaScript" type="text/javascript">
+			var FILE_EXT = '.html';
+		</script>
+	</head>
+<body>
+	<div class="content">
+		<div class="pageTitle">系统全局设置</div>
+        <div class="quickSearch">
+    <div class="title">生成文件</div>
+    <div class="form">
+      <form name="form" action="toolSettingAct.php" method="post">
+        <input name="act" type="hidden" value="write" />
+        <input name="submit" type="submit" value="生成文件">
+      </form>
+    </div>
+  </div>
+  <a href="toolSettingInsert.php">[新增网站系统设置]</a>
+  <div class="totalStyle">Now displaying records 1 to 24 of 24</div><div class="pageStyle"><font class="page_cur">1</font>
+</div><table width="100%" border="0" cellpadding="0" cellspacing="1" class="list">
+<tr class="title">
+<td width="20%"><a href="?get_sortcol=setting_name&get_sortorder=desc" class="sort">设置名称&nbsp;<img src="../../images/sort_down.gif" border="0"></a></td><td width="20%"><a href="?get_sortcol=setting_code&get_sortorder=desc" class="sort">设置代码&nbsp;<img src="../../images/sort_down.gif" border="0"></a></td><td width="25%"><a href="?get_sortcol=setting_type&get_sortorder=desc" class="sort">设置内容&nbsp;<img src="../../images/sort_down.gif" border="0"></a></td><td width="5%"><a href="?get_sortcol=setting_value&get_sortorder=desc" class="sort">设置类型&nbsp;<img src="../../images/sort_down.gif" border="0"></a></td><td width="30%"><a href="?get_sortcol=setting_desc&get_sortorder=desc" class="sort">设置介绍&nbsp;<img src="../../images/sort_down.gif" border="0"></a></td><td>&nbsp;</td></tr>
+<tr class="row2">
+<td><div style="display:block" onmouseover="return overlib('表的前缀');" onmouseout="nd();">表的前缀</div></td>
+<td>TABLE_PRE</td>
+<td><div style="display:block" onmouseover="return overlib('ad_');" onmouseout="nd();">ad_</div></td>
+<td>char</td>
+<td><div style="display:block" onmouseover="return overlib('');" onmouseout="nd();"></div></td>
+<td><select OnChange="performAction(this);">
+	<option value="-">--选择操作--</option><option value="javascript:Edit('2');">编辑</option><option value="javascript:Delete('2');">删除</option></select></td>
+</tr>
+<tr class="row1">
+<td><div style="display:block" onmouseover="return overlib('刷新页面时间(秒)');" onmouseout="nd();">刷新页面时间(秒)</div></td>
+<td>REDIRECT_TIME</td>
+<td><div style="display:block" onmouseover="return overlib('3');" onmouseout="nd();">3</div></td>
+<td>var</td>
+<td><div style="display:block" onmouseover="return overlib('');" onmouseout="nd();"></div></td>
+<td><select OnChange="performAction(this);">
+	<option value="-">--选择操作--</option><option value="javascript:Edit('3');">编辑</option><option value="javascript:Delete('3');">删除</option></select></td>
+</tr>
+<tr class="row2">
+<td><div style="display:block" onmouseover="return overlib('每页显示的条数');" onmouseout="nd();">每页显示的条数</div></td>
+<td>PAGE_NUM</td>
+<td><div style="display:block" onmouseover="return overlib('15');" onmouseout="nd();">15</div></td>
+<td>var</td>
+<td><div style="display:block" onmouseover="return overlib('');" onmouseout="nd();"></div></td>
+<td><select OnChange="performAction(this);">
+	<option value="-">--选择操作--</option><option value="javascript:Edit('4');">编辑</option><option value="javascript:Delete('4');">删除</option></select></td>
+</tr>
+<tr class="row1">
+<td><div style="display:block" onmouseover="return overlib('上传目录');" onmouseout="nd();">上传目录</div></td>
+<td>UPLOAD_PATH</td>
+<td><div style="display:block" onmouseover="return overlib('upload');" onmouseout="nd();">upload</div></td>
+<td>char</td>
+<td><div style="display:block" onmouseover="return overlib('');" onmouseout="nd();"></div></td>
+<td><select OnChange="performAction(this);">
+	<option value="-">--选择操作--</option><option value="javascript:Edit('5');">编辑</option><option value="javascript:Delete('5');">删除</option></select></td>
+</tr>
+<tr class="row2">
+<td><div style="display:block" onmouseover="return overlib('上传类型');" onmouseout="nd();">上传类型</div></td>
+<td>ALLOWED_MINETYPES</td>
+<td><div style="display:block" onmouseover="return overlib('image/jpeg,image/pjpeg,image/gif,application/x-shockwave-flash');" onmouseout="nd();">image/jpeg,image/pjpeg,image/g...</div></td>
+<td>char</td>
+<td><div style="display:block" onmouseover="return overlib('现在的系统先是用不上');" onmouseout="nd();">现在的系统先是用不上</div></td>
+<td><select OnChange="performAction(this);">
+	<option value="-">--选择操作--</option><option value="javascript:Edit('6');">编辑</option><option value="javascript:Delete('6');">删除</option></select></td>
+</tr>
+<tr class="row1">
+<td><div style="display:block" onmouseover="return overlib('上传文件大小(Mb)');" onmouseout="nd();">上传文件大小(Mb)</div></td>
+<td>MAX_FILESIZE</td>
+<td><div style="display:block" onmouseover="return overlib('2097152');" onmouseout="nd();">2097152</div></td>
+<td>var</td>
+<td><div style="display:block" onmouseover="return overlib('');" onmouseout="nd();"></div></td>
+<td><select OnChange="performAction(this);">
+	<option value="-">--选择操作--</option><option value="javascript:Edit('7');">编辑</option><option value="javascript:Delete('7');">删除</option></select></td>
+</tr>
+<tr class="row2">
+<td><div style="display:block" onmouseover="return overlib('文件目录表符');" onmouseout="nd();">文件目录表符</div></td>
+<td>DS</td>
+<td><div style="display:block" onmouseover="return overlib('/');" onmouseout="nd();">/</div></td>
+<td>char</td>
+<td><div style="display:block" onmouseover="return overlib('');" onmouseout="nd();"></div></td>
+<td><select OnChange="performAction(this);">
+	<option value="-">--选择操作--</option><option value="javascript:Edit('8');">编辑</option><option value="javascript:Delete('8');">删除</option></select></td>
+</tr>
+<tr class="row1">
+<td><div style="display:block" onmouseover="return overlib('系统的https_url');" onmouseout="nd();">系统的https_url</div></td>
+<td>HTTP_URL</td>
+<td><div style="display:block" onmouseover="return overlib('http://www.clickvalue.cn/ad');" onmouseout="nd();">http://www.clickvalue.cn/ad</div></td>
+<td>char</td>
+<td><div style="display:block" onmouseover="return overlib('');" onmouseout="nd();"></div></td>
+<td><select OnChange="performAction(this);">
+	<option value="-">--选择操作--</option><option value="javascript:Edit('9');">编辑</option><option value="javascript:Delete('9');">删除</option></select></td>
+</tr>
+<tr class="row2">
+<td><div style="display:block" onmouseover="return overlib('防止诈骗保护 click');" onmouseout="nd();">防止诈骗保护 click</div></td>
+<td>REQUENT_CLICK</td>
+<td><div style="display:block" onmouseover="return overlib('1');" onmouseout="nd();">1</div></td>
+<td>var</td>
+<td><div style="display:block" onmouseover="return overlib('1开，0关');" onmouseout="nd();">1开，0关</div></td>
+<td><select OnChange="performAction(this);">
+	<option value="-">--选择操作--</option><option value="javascript:Edit('10');">编辑</option><option value="javascript:Delete('10');">删除</option></select></td>
+</tr>
+<tr class="row1">
+<td><div style="display:block" onmouseover="return overlib('防止诈骗保护 sale');" onmouseout="nd();">防止诈骗保护 sale</div></td>
+<td>REQUENT_SALE</td>
+<td><div style="display:block" onmouseover="return overlib('1');" onmouseout="nd();">1</div></td>
+<td>var</td>
+<td><div style="display:block" onmouseover="return overlib('1开，0关');" onmouseout="nd();">1开，0关</div></td>
+<td><select OnChange="performAction(this);">
+	<option value="-">--选择操作--</option><option value="javascript:Edit('11');">编辑</option><option value="javascript:Delete('11');">删除</option></select></td>
+</tr>
+<tr class="row2">
+<td><div style="display:block" onmouseover="return overlib('时间 click');" onmouseout="nd();">时间 click</div></td>
+<td>REQUENT_CLICK_TIME</td>
+<td><div style="display:block" onmouseover="return overlib('86400');" onmouseout="nd();">86400</div></td>
+<td>var</td>
+<td><div style="display:block" onmouseover="return overlib('自动拒绝同一个IP位置(同一台计算机) 传来的短时间内多次(重复)的网友来访讯息几秒 从第一次的来访算起');" onmouseout="nd();">自动拒绝同一个IP位置(同一台计算机) 传来的短时间内多...</div></td>
+<td><select OnChange="performAction(this);">
+	<option value="-">--选择操作--</option><option value="javascript:Edit('12');">编辑</option><option value="javascript:Delete('12');">删除</option></select></td>
+</tr>
+<tr class="row1">
+<td><div style="display:block" onmouseover="return overlib('时间 sale');" onmouseout="nd();">时间 sale</div></td>
+<td>REQUENT_SALE_TIME</td>
+<td><div style="display:block" onmouseover="return overlib('60');" onmouseout="nd();">60</div></td>
+<td>var</td>
+<td><div style="display:block" onmouseover="return overlib('自动拒绝同一个IP位置(同一台计算机) 传来的短时间内多次(重复)的买卖佣金讯息几秒 从第一次的来访算起');" onmouseout="nd();">自动拒绝同一个IP位置(同一台计算机) 传来的短时间内多...</div></td>
+<td><select OnChange="performAction(this);">
+	<option value="-">--选择操作--</option><option value="javascript:Edit('13');">编辑</option><option value="javascript:Delete('13');">删除</option></select></td>
+</tr>
+<tr class="row2">
+<td><div style="display:block" onmouseover="return overlib('发现重复点击的行为');" onmouseout="nd();">发现重复点击的行为</div></td>
+<td>REQUENT_CLICK_DECLINE</td>
+<td><div style="display:block" onmouseover="return overlib('2');" onmouseout="nd();">2</div></td>
+<td>var</td>
+<td><div style="display:block" onmouseover="return overlib('1不保存2无效');" onmouseout="nd();">1不保存2无效</div></td>
+<td><select OnChange="performAction(this);">
+	<option value="-">--选择操作--</option><option value="javascript:Edit('14');">编辑</option><option value="javascript:Delete('14');">删除</option></select></td>
+</tr>
+<tr class="row1">
+<td><div style="display:block" onmouseover="return overlib('发现重复买卖的行为');" onmouseout="nd();">发现重复买卖的行为</div></td>
+<td>REQUENT_SALE_DECLINE</td>
+<td><div style="display:block" onmouseover="return overlib('2');" onmouseout="nd();">2</div></td>
+<td>var</td>
+<td><div style="display:block" onmouseover="return overlib('1不保存2无效');" onmouseout="nd();">1不保存2无效</div></td>
+<td><select OnChange="performAction(this);">
+	<option value="-">--选择操作--</option><option value="javascript:Edit('15');">编辑</option><option value="javascript:Delete('15');">删除</option></select></td>
+</tr>
+<tr class="row2">
+<td><div style="display:block" onmouseover="return overlib('Cookie的名称');" onmouseout="nd();">Cookie的名称</div></td>
+<td>COOKIE_NAME</td>
+<td><div style="display:block" onmouseover="return overlib('dw_am_cookie');" onmouseout="nd();">dw_am_cookie</div></td>
+<td>char</td>
+<td><div style="display:block" onmouseover="return overlib('在客种的Cookie的名称');" onmouseout="nd();">在客种的Cookie的名称</div></td>
+<td><select OnChange="performAction(this);">
+	<option value="-">--选择操作--</option><option value="javascript:Edit('16');">编辑</option><option value="javascript:Delete('16');">删除</option></select></td>
+</tr>
+<tr class="row1">
+<td><div style="display:block" onmouseover="return overlib('接收意见反馈的管理员MAIL');" onmouseout="nd();">接收意见反馈的管理员MAIL</div></td>
+<td>BUG_SENDTO_MAIL</td>
+<td><div style="display:block" onmouseover="return overlib('clickvalue@darwinmarketing.com');" onmouseout="nd();">clickvalue@darwinmarketing.com</div></td>
+<td>char</td>
+<td><div style="display:block" onmouseover="return overlib('clickvalue@darwinmarketing.com');" onmouseout="nd();">clickvalue@darwinmarketing.com</div></td>
+<td><select OnChange="performAction(this);">
+	<option value="-">--选择操作--</option><option value="javascript:Edit('20');">编辑</option><option value="javascript:Delete('20');">删除</option></select></td>
+</tr>
+<tr class="row2">
+<td><div style="display:block" onmouseover="return overlib('发送注，修，忘，系统所用的邮箱');" onmouseout="nd();">发送注，修，忘，系统所用的邮箱</div></td>
+<td>ADMIN_MAIL</td>
+<td><div style="display:block" onmouseover="return overlib('noreply@clickvalue.cn');" onmouseout="nd();">noreply@clickvalue.cn</div></td>
+<td>char</td>
+<td><div style="display:block" onmouseover="return overlib('发送注册激活，修改邮箱，忘记用户名或密码，系统所用的邮箱使');" onmouseout="nd();">发送注册激活，修改邮箱，忘记用户名或密码，系统所用...</div></td>
+<td><select OnChange="performAction(this);">
+	<option value="-">--选择操作--</option><option value="javascript:Edit('21');">编辑</option><option value="javascript:Delete('21');">删除</option></select></td>
+</tr>
+<tr class="row1">
+<td><div style="display:block" onmouseover="return overlib('系统邮件使用者');" onmouseout="nd();">系统邮件使用者</div></td>
+<td>SYSTEM_MAIL_NAME</td>
+<td><div style="display:block" onmouseover="return overlib('达闻联盟营销');" onmouseout="nd();">达闻联盟营销</div></td>
+<td>char</td>
+<td><div style="display:block" onmouseover="return overlib('系统邮件使用者');" onmouseout="nd();">系统邮件使用者</div></td>
+<td><select OnChange="performAction(this);">
+	<option value="-">--选择操作--</option><option value="javascript:Edit('22');">编辑</option><option value="javascript:Delete('22');">删除</option></select></td>
+</tr>
+<tr class="row2">
+<td><div style="display:block" onmouseover="return overlib('发送系统提示所用的邮箱');" onmouseout="nd();">发送系统提示所用的邮箱</div></td>
+<td>SYSTEM_MAIL</td>
+<td><div style="display:block" onmouseover="return overlib('noreply@clickvalue.cn');" onmouseout="nd();">noreply@clickvalue.cn</div></td>
+<td>char</td>
+<td><div style="display:block" onmouseover="return overlib('发送系统提示所用的邮箱，如审核状态更改');" onmouseout="nd();">发送系统提示所用的邮箱，如审核状态更改</div></td>
+<td><select OnChange="performAction(this);">
+	<option value="-">--选择操作--</option><option value="javascript:Edit('23');">编辑</option><option value="javascript:Delete('23');">删除</option></select></td>
+</tr>
+<tr class="row1">
+<td><div style="display:block" onmouseover="return overlib('接收意见反馈的管理员NAME');" onmouseout="nd();">接收意见反馈的管理员NAME</div></td>
+<td>BUG_SENDTO_ADMIN_NAME</td>
+<td><div style="display:block" onmouseover="return overlib('达闻联盟营销');" onmouseout="nd();">达闻联盟营销</div></td>
+<td>char</td>
+<td><div style="display:block" onmouseover="return overlib('接收意见反馈的管理员NAME');" onmouseout="nd();">接收意见反馈的管理员NAME</div></td>
+<td><select OnChange="performAction(this);">
+	<option value="-">--选择操作--</option><option value="javascript:Edit('25');">编辑</option><option value="javascript:Delete('25');">删除</option></select></td>
+</tr>
+<tr class="row2">
+<td><div style="display:block" onmouseover="return overlib('发送注册激活码、修改邮箱重发激话码、忘记密码系统');" onmouseout="nd();">发送注册激活码、修改邮箱重发激...</div></td>
+<td>ADMIN_NAME</td>
+<td><div style="display:block" onmouseover="return overlib('达闻联盟营销');" onmouseout="nd();">达闻联盟营销</div></td>
+<td>char</td>
+<td><div style="display:block" onmouseover="return overlib('发送注册激活码、修改邮箱重发激话码、忘记密码系统所用的ADMIN NAME');" onmouseout="nd();">发送注册激活码、修改邮箱重发激话码、忘记密码系统所...</div></td>
+<td><select OnChange="performAction(this);">
+	<option value="-">--选择操作--</option><option value="javascript:Edit('26');">编辑</option><option value="javascript:Delete('26');">删除</option></select></td>
+</tr>
+<tr class="row1">
+<td><div style="display:block" onmouseover="return overlib('论坛的http_url');" onmouseout="nd();">论坛的http_url</div></td>
+<td>BBS_HTTP_URL</td>
+<td><div style="display:block" onmouseover="return overlib('http://www.clickvalue.cn/bbs');" onmouseout="nd();">http://www.clickvalue.cn/bbs</div></td>
+<td>char</td>
+<td><div style="display:block" onmouseover="return overlib('');" onmouseout="nd();"></div></td>
+<td><select OnChange="performAction(this);">
+	<option value="-">--选择操作--</option><option value="javascript:Edit('27');">编辑</option><option value="javascript:Delete('27');">删除</option></select></td>
+</tr>
+<tr class="row2">
+<td><div style="display:block" onmouseover="return overlib('文件后缀');" onmouseout="nd();">文件后缀</div></td>
+<td>FILE_EXT</td>
+<td><div style="display:block" onmouseover="return overlib('.php');" onmouseout="nd();">.php</div></td>
+<td>char</td>
+<td><div style="display:block" onmouseover="return overlib('文件后缀');" onmouseout="nd();">文件后缀</div></td>
+<td><select OnChange="performAction(this);">
+	<option value="-">--选择操作--</option><option value="javascript:Edit('28');">编辑</option><option value="javascript:Delete('28');">删除</option></select></td>
+</tr>
+<tr class="row1">
+<td><div style="display:block" onmouseover="return overlib('搜索目录');" onmouseout="nd();">搜索目录</div></td>
+<td>SEARCH_URL</td>
+<td><div style="display:block" onmouseover="return overlib('http://www.clickvalue.cn/darwin_search_project');" onmouseout="nd();">http://www.clickvalue.cn/darwi...</div></td>
+<td>char</td>
+<td><div style="display:block" onmouseover="return overlib('http://www.clickvalue.cn/darwin_search_project');" onmouseout="nd();">http://www.clickvalue.cn/darwin_search_project</div></td>
+<td><select OnChange="performAction(this);">
+	<option value="-">--选择操作--</option><option value="javascript:Edit('29');">编辑</option><option value="javascript:Delete('29');">删除</option></select></td>
+</tr>
+</table>
+<div class="pageStyle"><font class="page_cur">1</font>
+</div></div>
+<div class="footer">
+  <div class="copyright"><a href="/darwin_2.html">关于我们</a>&nbsp;|&nbsp;<a href="/darwin_3.html">联系我们</a>&nbsp;|&nbsp;<a href="systemPassSession.php">论坛</a>&nbsp;<br />
+    沪ICP备06035438号<br />
+    Copyright &copy; 2006 - 2007 Darwin Marketing.<br />
+    <!--L_G_FOOT_CNZZ-->
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script><script type="text/javascript">_uacct = "UA-259227-4";urchinTracker();</script>  </div>
+</div>
+</div>
+</body>
+</html>

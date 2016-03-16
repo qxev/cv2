@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<t:admin.Layout pageTitle="CampaignList" navigation="佣金匹配" pageGroup="commission_match" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<head>
+<script >
+	function setActionId(action, id) {
+		document.getElementById("operateId").value = id;
+		setAction(action);
+	}
+	function setAction(action) {
+		document.getElementById("userAction").value = action;
+	}
+</script>
+</head>
+   <body>
+        <t:form t:id="form" align="center">
+        	<input t:type="textfield" t:id="userAction" style="display:none;"/>
+        	<input t:type="textfield" t:id="operateId" style="display:none;"/>
+    		任务号: <input t:type="textfield" t:id="taskId"/>
+    		任务名: <input t:type="textfield" t:id="taskName"/>
+    		绩效类型: <select t:type="select" t:id="cpa"/>
+    		<input t:type="submit" t:value="查询"/>
+    		<div t:id="grid" style="width: 100%;">
+    		
+    		
+    			<t:parameter name="effectDateCell">
+		 			${dateformat:matchData.effectDate}
+		 		</t:parameter>
+		 		<t:parameter name="effectTypeDisplayCell">
+		 			${effectTypeDisplay}
+		 		</t:parameter>
+		 		<t:parameter name="matchActionCell">
+			 		<input t:type="submit" t:value="UPDATE" onclick="setActionId('update',${matchData.id})"/>
+			 		<input t:type="submit" t:value="DELETE" onclick="setActionId('delete',${matchData.id})"/>
+				</t:parameter>
+    		</div>
+   			需要佣金匹配的任务名：<select t:type="select" t:id="matchTaskSelect"/>&nbsp;
+   			<input t:type="submit" t:value="佣金匹配" onclick="setAction('match')"/>
+    		<div class="center">
+    		
+    			<input type="button" onclick="window.location.href='/commision/userManage/CampaignListPage'" value="返回" />
+    		</div>
+    	</t:form>
+    </body>
+</t:admin.Layout>
+</html>

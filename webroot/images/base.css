@@ -1,0 +1,26 @@
+/* CSS Document */
+html{background:#1c274a; text-align:center; color:#222222; font-family:Arial; font-size:12px; }
+body{ background:#FFFFFF; margin:0 auto; width:900px; padding:15px; line-height:150%; text-align:left;}
+p{ margin:0 0 0 25px; padding:0; margin-bottom:20px; font-size:0.9em; line-height:150%;}
+div{ margin:0; padding:0;}
+h1{ margin:0; padding:10px 0 5px 24px; font-size:150%; color:#24439f; background:url(../images/icon.jpg) no-repeat left center;}
+h2{ margin:0; padding:10px 0 5px 24px;font-size:140%; color:#24439f;background:url(../images/icon.jpg) no-repeat left center;}
+h3{ margin:0; padding:10px 0 5px 24px;font-size:14px; color:#24439f;background:url(../images/icon.jpg) no-repeat left center;}
+h4{ margin:0; padding:10px 0 5px 24px;font-size:120%; color:#24439f;background:url(../images/icon.jpg) no-repeat left center;}
+h5{ margin:0; padding:10px 0 5px 24px;font-size:110%; color:#24439f;background:url(../images/icon.jpg) no-repeat left center;}
+ul{ margin:0; padding:0;}
+input{margin:0; padding:0;}
+li{ list-style:none; margin:0; padding:0;}
+a{text-decoration:underline; color:#333;}
+a:hover{text-decoration:underline; color: #FF3300;}
+.clear{ clear:both; height:0;}
+#message{background:#24439f url(../images/nav_bg.jpg) repeat-x left top; color:#FFFFFF; padding:10px;}
+#message a{color:#FFFFFF;}
+#message a:hover{color: #FFFF99;}
+#footer{background:#ddeffe; padding:10px; color:#24439f; margin:20px 0 0 0; text-align:right; font-size:110%;}
+.seo{color:#009900;font-family:Arial; font-size:18px; }
+.test{color:#9900FF;font-family:Arial;font-size:17px;}
+#content{ height:500px;}
+#header{height:125px;}
+#header img{float:left;}
+#header p{float:right; font-size:14px;}

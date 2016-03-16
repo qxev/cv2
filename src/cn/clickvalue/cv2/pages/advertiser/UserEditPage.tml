@@ -1,0 +1,100 @@
+<t:advertiser.Layout pageTitle="${message:user_management}" pageGroup="account" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers" style="width: 500px;">
+		<div class="title">${message:user_management} > ${message:personal_information_modify}</div>
+		<t:form class="form" t:id="userForm"><t:errors />
+			<table class="form_edit">
+				<tr class="rowodd">
+					<td class="field_name">${message:advertisers}</td>
+					<td class="field_value">${user1.name}</td>
+				</tr>
+			
+				<tr class="rowoeven">
+					<td class="field_name">${message:user_mailbox}</td>
+					<td class="field_value">${user1.email}</td>
+				</tr>
+			
+				<tr class="rowodd">
+					<td class="field_name">${message:user_nickname}</td>
+					<td class="field_value"><input t:type="textfield" value="user1.nickName"/></td>
+				</tr>
+			
+				<tr class="rowoeven">
+					<td class="" colspan="3">
+						<div style="height:15px"></div>	
+					</td>
+				</tr>
+			
+				<tr class="rowodd">
+					<td colspan="2" style="font-weight:bold;text-align:center;">
+						${message:company_information}${message:please_fill_in_the_real_detailed_material_to_facilitate_us_to_relate}
+					</td>	
+				</tr>
+			
+				<tr class="rowoeven">
+					<td class="field_name">${message:company's_name}<span class="red_star">*</span></td>
+					<td class="field_value">
+						<input t:type="textfield" value="user1.userInfo.company" />
+					</td>
+				</tr>
+				
+				<tr class="rowodd">
+					<td class="field_name">${message:contact_name}<span class="red_star">*</span></td>
+					<td class="field_value">
+						<input t:type="textfield" value="user1.userInfo.contact" />
+					</td>
+				</tr>
+			
+				<tr class="rowoeven">
+					<td class="field_name">${message:region}<span class="red_star">*</span></td>
+					<td class="field_value" style="width:370px;">
+						<select t:type="man/ParentSelect" t:id="country" model="fatherSelectModel" value="user1.userInfo.country" style="margin-right:10px;" /><br/> 
+						<select t:type="man/ChildSelect" t:id="province" parent="country" models="childSelectModels" value="user1.userInfo.city" />
+					</td>
+				</tr>
+				
+				<tr class="rowodd">
+					<td class="field_name">${message:address}</td>
+					<td class="field_value">
+						<input t:type="textfield" value="user1.userInfo.street" />
+					</td>
+				</tr>
+			
+				<tr class="rowoeven">
+					<td class="field_name">${message:postal_code}</td>
+					<td class="field_value">
+						<input t:type="textfield" value="user1.userInfo.postcode" />
+					</td>
+				</tr>
+			
+				<tr class="rowodd">
+					<td class="field_name">${message:telephone_number}</td>
+					<td class="field_value">
+						<input t:type="textfield" value="user1.userInfo.phone" />
+					</td>
+				</tr>
+			
+				<tr class="rowoeven">
+					<td class="field_name">${message:cellphone_number}</td>
+					<td class="field_value">
+						<input t:type="textfield" value="user1.userInfo.mobile" />
+					</td>
+					<td class="field_name"><span class="red_star"></span></td>
+				</tr>
+				
+				<tr class="rowodd">
+					<td class="field_name">${message:fax_number}</td>
+					<td class="field_value">
+						<input t:type="textfield" value="user1.userInfo.fax" />
+					</td>
+				</tr>
+				
+				<tr class="rowoeven">
+					<td colspan="2" class="center">
+						<input type="submit" t:type="submit" t:id="saveUser" value="${message:save}" class="button_margin"/>
+						<button t:type="commons/button">${message:back}</button>
+					</td>
+				</tr>
+			</table>
+		</t:form>     
+	</div>
+</t:advertiser.Layout>

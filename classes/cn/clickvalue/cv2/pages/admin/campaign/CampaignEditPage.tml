@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:admin.Layout pageTitle="广告活动修改" t:navigation="${message:campaign_manage} > ${message:campaigns} > ${message:edit}" pageGroup="campaign"  xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div><t:messagebanner t:id="message" type="type"/></div>
+	<t:form t:id="campaignForm">
+		<t:errors />
+		<table style="BORDER-COLLAPSE: collapse;width:55%" borderColor="#ced5b1" 
+		            cellSpacing="0" cellPadding="0" width="100%" border="1">
+			<tr>
+				<td class="green_bg" colspan="3"><strong>${message:edit_campaign}</strong></td>
+			</tr>
+		
+			<tr>
+				<td class="greenwithe_bg">${message:campaign_name}</td>
+				<td class="greenwithe">
+					<input t:id="campaignName" />
+				</td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>
+		
+			<tr>
+				<td class="greenwithe_bg">${message:website}</td>
+				<td class="greenwithe">
+					<select t:id="siteSelect"/>
+				</td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>
+		
+			<tr>
+				<td class="greenwithe_bg">${message:campaign_desc}</td>
+				<td class="greenwithe">
+					<textarea t:id="editor" width="100%" />
+				</td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>
+		
+			<tr>
+				<td class="greenwithe_bg">${message:campaign_region}</td>
+				<td class="greenwithe">
+					<t:common.CAdRegion />
+				</td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>
+			
+			<tr>
+				<td class="greenwithe_bg">行业分类</td>
+				<td class="greenwithe">
+					<t:industryForCampaignSelect value="industry" displayModel="literal:both" />
+				</td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>
+		
+			<tr>
+				<td class="greenwithe_bg">${message:cookies_limit}</td>
+				<td class="greenwithe"><input t:type="textfield" size="3" value="campaign.cookieMaxage" />天</td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>
+			
+			<tr>
+				<td class="greenwithe_bg">审核方式</td>
+				<td class="greenwithe">
+					<t:radiogroup t:id="affiliateVerified">
+						<t:radio value="0" />人工
+						<t:radio value="1" />自动
+					</t:radiogroup>
+				</td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>
+			
+			<tr>
+				<td class="greenwithe_bg">获取超链接代码功能</td>
+				<td class="greenwithe">
+					<t:radiogroup t:id="htmlCode">
+						<t:radio value="0" />未开放
+						<t:radio value="1" />开放
+					</t:radiogroup>
+				</td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>
+			
+			<tr>
+				<td class="greenwithe_bg">自定义广告代码功能</td>
+				<td class="greenwithe">
+					<t:radiogroup t:id="customVerified">
+						<t:radio value="0" />未开放
+						<t:radio value="1" />开放
+					</t:radiogroup>
+				</td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>
+			
+			<tr>
+				<td class="greenwithe_bg">ACTIVED</td>
+				<td class="greenwithe">
+					<t:radiogroup t:id="actived">
+						<t:radio value="0" />否
+						<t:radio value="1" />是
+					</t:radiogroup>
+				</td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>
+			
+			<tr>
+				<td class="greenwithe_bg">审核状态</td>
+				<td class="greenwithe">
+					<select t:type="select" value="verified" model="verifiedsSelectionModel" encoder="verifiedsValueEncoder" blankOption="never"/>
+				</td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>
+			
+			<!-- 
+			<tr>
+				<td class="greenwithe_bg">${message:site_category}</td>
+				<td class="greenwithe">
+					<select t:id="affCategorySelect"/>
+				</td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>
+			 -->
+			 
+			<tr>
+				<td class="greenwithe_bg">${message:begin_time}</td>
+				<td class="greenwithe"><input t:id="startDate" size="10" /></td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>
+		
+			<tr>
+				<td class="greenwithe_bg">${message:end_time}</td>
+				<td class="greenwithe"><input t:id="endDate" size="10" /></td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>
+			
+			<tr>
+				<td class="greenwithe_bg">广告主自定义subId</td>
+				<td class="greenwithe">
+					<t:checkbox t:id="partnerType"/>
+				</td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>
+			
+			<tr>
+				<td class="greenwithe_bg">参数</td>
+				<td class="greenwithe">
+					<input t:type="textfield" value="campaign.parameters"/>
+				</td>
+				<td class="greenwithe_bg"><span class="red_star">*</span></td>
+			</tr>
+			
+			<tr>
+				<td class="green_bg" colspan="3">
+					<input t:type="submit" t:id="saveCampaign" value="${message:save}"/>&nbsp;&nbsp;
+					<input type="reset" value="重置"/>&nbsp;&nbsp;
+					<input type="button" onclick="window.location.href='/admin/campaign/listpage'" value="${message:back}"/>
+				</td>
+			</tr>
+		</table>
+	</t:form>
+</t:admin.Layout>

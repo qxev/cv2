@@ -1,0 +1,21 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div style="width: 600px; height: 400px; border: #ddd 1px solid; position: absolute; left: 50%; top: 10%; margin-left: -300px;">
+		<div style="background: transparent url(/assets/images/head-bg.gif) repeat-x scroll center top; width: 100%; height: 75px;"> </div>
+		<div style="width: 100%; height: 8px; background: #9f9"> </div>
+		<div style="background: transparent url(/assets/images/error_logo_68_69.gif) no-repeat; height: 75px; margin: 20px 150px; padding: 15px 0 0 100px; border: #ddd 0px solid;">
+			<strong>抱歉，系统发生了异常!</strong>
+		</div>
+		<div style="background: no-repeat; height: 75px; margin: 20px 150px; padding: 15px 0 0 100px; border: #ddd 0px solid;">
+			<strong><a href="/">返回首页</a></strong>
+		</div>
+		<div style="text-align:center; border: #ddd 0px solid; margin-top: 150px; font-size: 12px;">
+			<a href="/public/about_us.html">${message:about_us}</a> | 
+			<a href="/public/contact.html">${message:Contact_us}</a>
+			<br />
+			沪ICP备08015558号
+			<br />
+			Copyright © 2007 - 2010 Darwin Marketing.
+		</div>		
+		<div style="display:none;">${error}</div>
+	</div>
+</html>

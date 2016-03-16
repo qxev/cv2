@@ -1,0 +1,48 @@
+<t:admin.Layout t:pageTitle="landingPageEditPage" t:navigation="${message:campaign_manage} > ${message:landing_page} > 修改" pageGroup="campaign" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <body>
+    	
+    	
+    	<t:form class="form" t:id="form">
+				<t:errors />
+				<table width="60%">
+				
+					<tr class="rowodd">
+						<td class="field_name">${message:landingPage_name}<span class="red_star">*</span></td>
+						<td class="field_value"><input t:type="textfield" t:value="landingPage.name" size="30" /></td>
+					</tr>
+			
+					<tr class="roweven">
+						<td class="field_name">${message:destination_url}<span class="red_star">*</span></td>
+						<td class="field_value"><input type="text" t:type="textfield" t:value="landingPage.url" size="60" />
+						</td>
+					</tr>
+			
+					<tr class="rowodd">
+						<td class="field_name">${message:landingPage_category}<span class="red_star">*</span></td>
+						<td class="field_value">
+							<t:advertiser.CAffiliateCategory/>
+						</td>
+					</tr>
+				
+					<tr class="roweven">
+						<td class="field_name">${message:landingPage_desc}<span class="red_star">*</span></td>
+						<td class="field_value">
+							<textarea t:type="textarea" t:value="landingPage.description" rows="8" cols="40" />	
+						</td>
+					</tr>
+				
+					<tr class="rowodd">
+						<td align="right" colspan="2">
+							<input type="submit" t:type="submit" value="保存" t:id="save" style="margin-right: 10px;"/>
+							<input type="reset" value="重置" style="margin-right: 10px;"/> 
+							<input type="button" value="返回" style="margin-right: 10px;" onclick="window.location.href='/admin/landingpage/listpage/${landingPage.campaign.id}'"/>
+						</td>
+					</tr>
+				</table>
+			</t:form>    
+    	
+    	
+    	
+    	
+    </body>
+</t:admin.Layout>

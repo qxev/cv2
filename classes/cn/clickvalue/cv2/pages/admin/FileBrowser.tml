@@ -1,0 +1,103 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<style type="text/css">
+			ul {
+				list-style-image:none;
+				list-style-position:outside;
+				list-style-type:none;
+				margin:0;
+				padding:0;
+			}
+			
+			ul ul{
+				margin-left: 20px;
+			}
+			
+			.content{
+			}
+			.content-left{
+				float: left; 
+				padding:0 5px 0 10px; 
+				min-width: 150px; 
+				max-width: 200px; 
+				min-height: 600px;
+			}
+			
+			.content-right{
+				float: left; 
+				min-width: 800px; 
+				min-height: 600px;
+				border-right:1px solid #EBEBEB;
+				border-left:1px solid #EBEBEB;
+				padding-left: 20px;
+				padding-top: 40px;
+			}
+			
+			.button {
+				float: right;
+				margin-top:20px;
+				margin-right: 20px;
+			}
+		</style>
+		<script language="javascript" src="/assets/javascripts/menu.js"></script>
+	</head>
+	<body>
+		<div>
+			<div class="content-left">
+				<div style="min-height: 200px;">
+					<ul>
+						<li>
+							<h3><a t:type="pagelink" t:page="admin/filebrowser" t:context="base" href="#">${base.name}</a></h3>
+							<ul>
+								<li t:type="loop" t:source="dirList" t:value="dir">
+									<a t:type="pagelink" t:page="admin/filebrowser" t:context="dir" href="#">${dir.name}</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="content-right">
+				<t:form>
+					<table>
+						<tr>
+							<td>
+								<input type="checkbox" id="chkall" onclick="checkAll(this.form)"/>
+							</td>
+							<td>
+								<span>文件名</span>
+							</td>
+							<td>
+								<span>文件路径</span>
+							</td>
+							<td>
+								<span>修改时间</span>
+							</td>
+						</tr>
+						<tr t:type="loop" t:source="fileList" t:value="file">
+							<td>
+								<t:checkbox t:id="checkbox" t:value="checked" />
+							</td>
+							<td>
+								<span>${file.name}</span>
+							</td>
+							<td>
+								<span>${path}</span>
+							</td>
+							<td>
+								<span>${dateformat:lastModified=yyyy/MM/dd HH:mm:ss}</span>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="4">
+								<t:submit class="button" value="删除"/>
+								<input class="button" type="button" value="上传文件" onclick="window.open('/admin/filebrowser:manage');" />
+							</td>
+						</tr>
+					</table>
+				</t:form>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<t:affiliate.Layout t:pageTitle="${message:A_list_of_bank_accounts}" t:pageGroup="account" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<t:form t:id="SearchForm" >
+		<div class="page_headers">
+			<div class="title">${message:information_management} > ${message:Bank_account_management}</div>
+			<div class="form">
+				${message:Verification_condition}
+	    		<t:select t:id="verifyState" blankLabel="${message:all}"/>
+	    		<input t:type="submit" class="search" value="${message:search}" t:id="searchButton"/>
+				<t:sliderdoor text="${message:add_bank_account}" href="/affiliate/bankaccounteditpage:create" clear="true"/>
+				<div class="table_clear" style="width: 100%;">
+					<div t:id="grid" style="width: 100%;">
+						<t:parameter name="verifiedCell">
+							${generalstate:account.verified}
+						</t:parameter>
+						<t:parameter name="operateCell">
+							<t:select t:id="operate" onchange="redirect(this);"/>
+						</t:parameter>
+					</div>
+			    </div>
+			</div>
+		</div>	
+	</t:form>
+</t:affiliate.Layout>

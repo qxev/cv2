@@ -1,0 +1,73 @@
+<t:advertiser.Layout t:pageTitle="${message:check_the_site_information}" t:pageGroup="account" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers" style="width:500px;">
+		<div class="title"> 
+			${message:information_management} > ${message:check_the_site_information}
+		</div>
+		<form t:type="form" t:id="editSiteForm" class="form">
+			<table class="form_edit">
+					<t:errors />
+					<tr class="rowodd">
+						<td class="field_name">${message:user_name}</td>
+						<td class="field_value">
+							${user.name}
+						</td>
+					</tr>
+					
+					<tr class="roweven">
+						<td class="field_name">${message:website_condition}</td>
+						<td class="field_value">
+							${ognl:getSiteState(site.verified)}
+						</td>
+					</tr>
+					
+					<tr class="rowodd">
+						<td class="field_name">${message:website_name}</td>
+						<td class="field_value">
+							${site.name}
+						</td>
+					</tr>
+					
+					<tr class="roweven">
+						<td class="field_name">${message:website_address}</td>
+						<td class="field_value">
+							${site.url}
+						</td>
+					</tr>
+					
+					<tr class="rowodd">
+						<td class="field_name">${message:about_us}</td>
+						<td class="field_value">
+							${site.description}
+						</td>
+					</tr>
+					
+					<tr class="roweven">
+						<td class="field_name">${message:self-assessment_daily_flow}</td>
+						<td class="field_value">
+							${ognl:getDateFlow(site.pvPerDay)} pv/day
+						</td>
+					</tr>
+					
+					<tr class="rowodd">
+						<td colspan="2" class="center">
+							<button t:type="t5components/Button" type="button" event="delete" class="button_margin">
+								${message:delete}
+							</button>
+							
+							<t:if test="site.verified">
+								<t:parameter name="else">
+									<button t:type="t5components/Button" type="button" event="audit" class="button_margin">
+										${message:verify}
+									</button>
+					            </t:parameter>
+							</t:if>
+							
+							<button t:type="t5components/Button">
+								${message:return}
+							</button>
+						</td>
+					</tr>		
+			</table>
+		</form>
+	</div>
+</t:advertiser.Layout>

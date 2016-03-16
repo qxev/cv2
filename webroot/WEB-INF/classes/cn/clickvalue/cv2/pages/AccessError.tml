@@ -1,0 +1,23 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div style="width: 600px; height: 400px; border: #ddd 1px solid; position: absolute; left: 50%; top: 10%; margin-left: -300px;">
+		<div style="background: transparent url(/assets/images/head-bg.gif) repeat-x scroll center top; width: 100%; height: 75px;"> </div>
+		<div style="width: 100%; height: 8px; background: #9f9"> </div>
+		<div style="background: transparent url(/assets/images/aboutRobots.png) no-repeat; height: 175px; margin: 20px 50px; padding: 15px 0 0 100px; border: #ddd 0px solid;">
+			<strong>We have come to visit you in peace and with goodwill!</strong>
+			<ul>
+			<li>Robots may not injure a human being or, through inaction, allow a human being to come to harm.</li>
+			<li>Robots have seen things you people wouldn't believe.</li>
+			<li>Robots are Your Plastic Pal Who's Fun To Be With.</li>
+			<li>Robots have shiny metal posteriors which should not be bitten.</li>
+    		</ul>
+		</div>
+		<div style="text-align:center; border: #ddd 0px solid; margin-top: 150px; font-size: 12px;">
+			<a href="/public/about_us.html">${message:about_us}</a> | 
+			<a href="/public/contact.html">${message:Contact_us}</a>
+			<br />
+			沪ICP备08015558号
+			<br />
+			Copyright © 2007 - 2010 Darwin Marketing.
+		</div>		
+	</div>
+</html>

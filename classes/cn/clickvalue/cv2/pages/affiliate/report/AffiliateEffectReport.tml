@@ -1,0 +1,78 @@
+<t:affiliate.Layout t:pageTitle="${message:user_login}" t:pageGroup="resultReport" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	
+	<t:form t:id="SearchForm" >
+		<p class="welcome"> 广告活动> 广告活动申请 </p>
+		<ul class="add_right">
+			<li class="arrow"><strong>快速查询:</strong>
+				<select t:type="select" value="site" model="sitesSelectionModel" encoder="sitesValueEncoder" blankLabel="所有"/>
+		        <t:daterange t:dateBegin="startDate" t:dateEnd="endDate" />
+				<t:submit t:id="search" class="search" value="search"/>
+			</li>  
+  		</ul>
+		<div class="table_clear">
+			<table cellspacing="5" cellpadding="0" border="0">
+				<tbody>
+					<tr>
+						<td colspan="3">
+							<font style="color: rgb(255, 0, 0);">黑色数字代表总佣金金额，蓝色数字代表已确认佣金金额</font>
+						</td>
+				    </tr>
+				    <tr>
+				    	<td>点击(CPC)数:${cpcSum}<span class="blue">(${confirmedCpcSum})</span></td>	
+				    	<td>点击(CPL)数:${cplSum}<span class="blue">(${confirmedCplSum})</span></td>	
+				    	<td>点击(CPS)数:${cpsSum}<span class="blue">(${confirmedCpsSum})</span></td>	
+				    	<td>点击(CPM)数:${cpmSum}<span class="blue">(${confirmedCpmSum})</span></td>	
+				    </tr>	
+				       <tr>
+				    	<td>点击(CPC)佣金:${cpcMoney}${message:yuan}<span class="blue">(${confirmedCpcMoney})${message:yuan}</span></td>	
+				    	<td>点击(CPL)佣金:${cplMoney}${message:yuan}<span class="blue">(${confirmedCplMoney})${message:yuan}</span></td>	
+				    	<td>点击(CPL)佣金:${cpsMoney}${message:yuan}<span class="blue">(${confirmedCpsMoney})${message:yuan}</span></td>	
+				    	<td>点击(CPL)佣金:${cpmMoney}${message:yuan}<span class="blue">(${confirmedCpmMoney})${message:yuan}</span></td>	
+				    </tr>	
+			    </tbody>
+			</table>	
+		</div>
+		<div class="table_clear">
+			<table style="BORDER-COLLAPSE: collapse;" borderColor="#ced5b1" cellSpacing="0" cellPadding="0" width="100%" border="1"
+	             			t:id="myGrid" t:type="Grid" source="dataSource" row="effectReport" model="beanModel" pagerPosition="literal:bottom" rowsPerPage="${noOfRowsPerPage}">
+		    	
+		    	<t:parameter name="createTimeCell">
+		    		${ognl:@cn.clickvalue.cv2.common.util.DateUtil@dateToString(effectReport.createTime)}
+				</t:parameter>
+		    	
+		    	<t:parameter name="cpcCell">
+		    		${effectReport.cpc} <span class="blue">(${effectReport.confirmedCpc})</span>
+				</t:parameter>
+				
+				<t:parameter name="cpcMoneyCell">
+		    		${effectReport.cpcMoney} <span class="blue">(${effectReport.confirmedCpcMoney})</span>
+				</t:parameter>
+				
+				<t:parameter name="cplCell">
+		    		${effectReport.cpl} <span class="blue">(${effectReport.confirmedCpl})</span>
+				</t:parameter>
+		    
+		    	<t:parameter name="cplMoneyCell">
+		    		${effectReport.cplMoney} <span class="blue">(${effectReport.confirmedCplMoney})</span>
+				</t:parameter>
+				
+				<t:parameter name="cpsCell">
+		    		${effectReport.cps} <span class="blue">(${effectReport.confirmedCps})</span>
+				</t:parameter>
+				
+				<t:parameter name="cpsMoneyCell">
+		    		${effectReport.cpsMoney} <span class="blue">(${effectReport.confirmedCpsMoney})</span>
+				</t:parameter>
+		    
+		    	<t:parameter name="cpmCell">
+		    		${effectReport.cpm} <span class="blue">(${effectReport.confirmedCpm})</span>
+				</t:parameter>
+				
+				<t:parameter name="cpmMoneyCell">
+		    		${effectReport.cpmMoney} <span class="blue">(${effectReport.confirmedCpmMoney})</span>
+				</t:parameter>
+		    	
+		    </table>
+	    </div>
+	</t:form>
+</t:affiliate.Layout>

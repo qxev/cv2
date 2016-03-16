@@ -1,0 +1,86 @@
+﻿<t:affiliate.Layout t:pageTitle="${message:website}" t:pageGroup="account" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers">
+		<div class="title">${message:website} > ${message:view}/${message:apply}/${message:delete}</div>
+		<t:if test="site">
+			<form t:type="form" t:id="form" style="width: 500px;">
+				<t:errors />
+				<div class="form">
+					<table class="form_edit">
+						<tr class="rowodd">
+							<td class="field_name">${message:User_Name}</td>
+							<td class="field_value">
+								${clientSession.userName}
+							</td>
+						</tr>
+					
+						<tr class="roweven">
+							<td class="field_name">${message:joins_condition}</td>
+							<td class="field_value">
+								<t:if test="site.deleted">
+									<div class="red">${message:the_site_has_been_deleted}</div>
+									<t:parameter name="else">
+										${status:site.verified}
+									</t:parameter>
+								</t:if>
+							</td>
+						</tr>
+
+						<tr class="rowodd">
+							<td class="field_name">${message:website}</td>
+							<td class="field_value">
+								${site.name}
+							</td>
+						</tr>
+					
+						<tr class="roweven">
+							<td class="field_name">URL</td>
+							<td class="field_value">
+								${site.url}
+							</td>
+						</tr>
+					
+						<tr class="rowodd">
+							<td class="field_name">${message:description}</td>
+							<td class="field_value">
+								<t:outputraw value="site.description"/>
+							</td>
+						</tr>
+						
+						<tr class="roweven">
+							<td class="field_name">${message:The_website_classifies}</td>
+							<td class="field_value">
+								 ${affiliateCategory}
+							</td>
+						</tr>
+					
+						<tr class="rowodd">
+							<td class="field_name">${message:Self-assessment_daily_flow}</td>
+							<td class="field_value">
+								${ognl:@cn.clickvalue.cv2.common.constants.Constants@getDayFlow(messages,site.pvPerDay)} pv/day
+							</td>
+						</tr>
+						<tr class="roweven">
+							<td colspan="3" style="text-align: center;">
+								<t:if test="isDelete()">
+									<button t:id="delete" t:type="t5components/Button" type="submit" style="margin-right: 30px;" onclick="return confirm('${message:Whether_to_confirm_deletes}')">
+										${message:delete}
+									</button>
+								</t:if>
+								
+								<t:if test="isAudit()">
+									<button t:type="t5components/Button" type="button" event="audit" style="margin-right: 30px;">
+										${message:apply}
+									</button>
+								</t:if>
+								<button t:type="t5components/Button">${message:back}</button>
+							</td>
+						</tr>		
+					</table>
+				</div>
+			</form>
+			<t:parameter name="else">
+				<div class="form">${message:the_site_does_not_exist}</div>
+			</t:parameter>
+		</t:if>
+	</div>
+</t:affiliate.Layout>

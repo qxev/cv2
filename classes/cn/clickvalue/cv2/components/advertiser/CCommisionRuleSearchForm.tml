@@ -1,0 +1,25 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<t:form t:id="SearchForm" >
+<p class="welcome"> ${message:campaign_manage} > ${message:commision_rule} </p><br />
+<ul class="add_left">
+<li class="add_left_menua">	
+<a href="/advertiser/newcommisionrulepage">${message:new_rule}</a>
+</li>
+</ul><br />
+<ul class="add_right">
+<li class="arrow">
+<strong>${message:search}:</strong>
+${message:campaign_name}
+ 
+${message:commision_type}
+<t:advertiser.CCommisionType t:pageTitle="${message:user_login}" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+</t:advertiser.CCommisionType>
+
+  <label>
+  <input type="submit" t:type="submit" t:id="search" class="search" value="${message:search}" />
+  </label>
+</li>  
+</ul>
+</t:form>
+
+</html>

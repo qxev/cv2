@@ -1,0 +1,3 @@
+<t:admin.Layout t:navigation="${message:campaign_manage} > ${message:campaigns}" t:pageTitle="CampaignList" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+  admin homepage
+</t:admin.Layout>

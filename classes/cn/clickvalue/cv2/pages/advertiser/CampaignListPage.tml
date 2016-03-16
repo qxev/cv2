@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:advertiser.Layout pageTitle="${message:campaign}" pageGroup="campaign" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers">
+		<div class="title">${message:campaign} > ${message:campaign_list}</div>
+		<t:form class="form">
+			${message:campaign_name}
+			<input t:type="textfield" t:value="campName"/>&nbsp;
+			<t:advertiser.CApplyingMode/>&nbsp;
+			<input t:id="search" t:type="submit" value="${message:search}"/>
+			<t:sliderdoor text="${message:new_campaign}" href="/advertiser/campaignEditPage/0" clear="true"/>
+			<div t:id="grid" style="width:100%;">
+				
+				<t:parameter name="logoCell">
+					<img src="${campaign.site.logo}" width="120" />
+				</t:parameter>
+			
+	            <t:parameter name="nameCell">
+	            	<t:pagelink t:page="advertiser/campaignviewpage" t:context="campaign.id">${campaign.name}</t:pagelink>
+	            </t:parameter>
+	            
+	            <t:parameter name="cpaCell">
+			    	<t:outputraw value="campaign.cpa"/>
+				</t:parameter>
+				
+				<t:parameter name="regionCell">
+					${formatRegion}
+				</t:parameter>
+				
+				<t:parameter name="VerifiedCell">
+					${verifiedStatus}
+				</t:parameter>
+				
+				<t:parameter name="onlineStatusCell">
+					${onlineStatus}
+				</t:parameter>
+				
+				<t:parameter name="bannerCountCell">
+					${bannerCount}
+				</t:parameter>
+				
+				
+				<t:parameter name="operateCell">
+				    <select onchange="redirect(this)">
+						<option value="">${message:select}</option>
+						<option value="/advertiser/commisionrulelistpage/${campaign.id}">${message:examines_commission_rule}</option>
+						<option value="/advertiser/landingpagelist/${campaign.id}">${message:examines_advertisement_goal_page}</option>
+						<option value="/advertiser/bannerlistpage/${campaign.id}">${message:examines_the_ad}</option>
+						<option value="/advertiser/commisionruleeditpage/${campaign.id}">${message:establish_commission_rule}</option>
+						<option value="/advertiser/landingpageedit/${campaign.id}">${message:establish_advertisement_goal_page}</option>
+								
+		                <!-- ${message:has_not_applied_for} -->
+						<span t:type="t5components/Equals" left="prop:campaign.verified.toString()" right="literal:0">
+						    <option value="/advertiser/campaigneditpage/${campaign.id}">${message:modify_campaign}</option>
+							<option value="/advertiser/campaignlistpage/submitApp/${campaign.id}" msg="${message:apply_campaign}？">${message:apply_campaign}</option>
+					        <option value="/advertiser/campaignlistpage/delete/${campaign.id}" msg="${message:delete_campaign}？">${message:delete_campaign}</option>
+						</span>
+						
+						<!-- ${message:wait_for_examining_and_verifying} -->
+						<span t:type="t5components/Equals" left="prop:campaign.verified.toString()" right="literal:1">
+							<option value="/advertiser/campaigneditpage/${campaign.id}">${message:modify_campaign}</option>
+							<option value="/advertiser/campaignlistpage/cancelApp/${campaign.id}" msg="${message:cancle_on-line_application}？">${message:cancle_on-line_application}</option>
+					        <option value="/advertiser/campaignlistpage/delete/${campaign.id}" msg="${message:delete_campaign}？">${message:delete_campaign}</option>
+						</span>
+						
+						<!-- ${message:has_approved} -->			
+						<span t:type="t5components/Equals" left="prop:campaign.verified.toString()" right="literal:2">
+						    <option value="/advertiser/campaignlistpage/offlineApp/${campaign.id}" msg="${message:submit_offline_application}？">${message:submit_offline_application}</option>
+						    <option value="/advertiser/AffiliateListPage/${campaign.id}">${message:review_the_main_site}</option>
+						</span>
+						
+					    <!-- ${message:has_rejected} -->
+						<span t:type="t5components/Equals" left="prop:campaign.verified.toString()" right="literal:3">
+							<option value="/advertiser/campaigneditpage/${campaign.id}">${message:modify_campaign}</option>
+					        <option value="/advertiser/campaignlistpage/delete/${campaign.id}" msg="${message:delete_campaign}？">${message:delete_campaign}</option>
+						</span>
+				    </select>			
+			    </t:parameter>
+		    </div>
+		</t:form>
+	</div>
+</t:advertiser.Layout>

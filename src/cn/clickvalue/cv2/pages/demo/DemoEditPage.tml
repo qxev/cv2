@@ -1,0 +1,40 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" xml:space="preserve">
+<body>
+<table class="content">
+	<tr>
+		<td colspan="2">
+		<h1>ADD NEW USER</h1>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<table>
+			<tr>
+				<td>
+				<form t:type="form" t:id="demoForm"><t:errors />
+				<table cellpadding="5" cellspacing="10">
+					<tr>
+						<td><t:label for="adDemoUserName" /></td>
+						<td></td>
+						<td><input t:type="TextField" t:id="adDemoUserName" value="Demo.name"
+							validate="required,minlength=3" size="20" label="User Name"
+						/></td>
+					</tr>
+					<tr>
+						<td colspan="3" align="center">
+						<div class="buttons">
+						<button type="submit" class="positive">Save</button>
+						<a t:type="pagelink" page="demo/DemoListPage" class="negative"> Cancel </a> 
+						<a t:type="Actionlink" t:id="clear"> Clear </a></div>
+						</td>
+					</tr>
+				</table>
+				</form>
+				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

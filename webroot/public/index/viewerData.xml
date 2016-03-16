@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="gb2312"?>
+<viewer interval="4000" isRandom="1">
+	#foreach($banner in $banners)
+	<item title="$banner.desc" img="$banner.img" url="$banner.url" target="_blank" />
+	#end
+</viewer>

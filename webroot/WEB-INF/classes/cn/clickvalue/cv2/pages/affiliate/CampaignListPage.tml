@@ -1,0 +1,70 @@
+<t:affiliate.Layout t:pageTitle="${message:List_of_advertising_campaigns}" t:pageGroup="campaign" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers">
+		<div class="title">${message:all_advertising_campaigns} > ${message:search}</div>
+		<t:form t:id="SearchForm" class="form">
+			${message:campaign}
+			<input t:type="textfield" t:id="campaignName"/>
+			${message:commision_rule}
+			<select t:type="select" t:id="cpa"/>
+			<t:submit t:id="search" class="search" value="${message:search}"/>
+		</t:form>
+	</div>
+	<div class="table_clear" style="width: 100%;"></div>
+	
+	<div style="padding: 0 20px 0 20px;">
+		<table width="100%" cellspacing="1" cellpadding="2" border="0">
+			<tr>
+				<td><t:eventlink t:id="clearFilterByIndustry">${message:all}(${allCount})</t:eventlink></td>
+			</tr>
+			<t:loop source="industryLists" value="var:industries">
+			<tr>
+				<t:loop source="var:industries" value="industry">
+				<td><t:OutputRaw t:value="industryHtml" /></td>
+	        	</t:loop>
+        	</tr>
+	        </t:loop>
+		</table>
+		<t:loop source="industryLists" value="var:industries">
+			<t:loop source="var:industries" value="industry">
+			
+        	</t:loop>
+        </t:loop>
+	</div>
+	
+	<div t:id="grid" style="width: 100%;">
+		<t:parameter name="logoCell">
+			<img src="${campaign.site.logo}" width="120" alt="${message:site}logo" />
+		</t:parameter>
+	
+		<t:parameter name="nameCell">
+			<t:pagelink page="affiliate/AffiliateCampaignViewPage" context="campaign">${campaign.name}</t:pagelink>
+		</t:parameter>
+		
+		<t:parameter name="siteNameCell">
+			${campaign.site.name}
+		</t:parameter>
+		
+		<t:parameter name="industryCell">
+			${industryLabel}
+		</t:parameter>
+
+		<t:parameter name="startDateCell">
+			${dateformat:campaign.startDate}
+		</t:parameter>
+		
+		<t:parameter name="cpaCell">
+			<t:pagelink page="affiliate/AffiliateCampaignViewPage" context="campaign"><t:outputraw value="campaign.cpa" /></t:pagelink>
+		</t:parameter>
+		
+		<t:parameter name="endDateCell">
+			${dateformat:campaign.endDate}
+		</t:parameter>
+		
+		<t:parameter name="operateCell">
+			<t:pagelink page="affiliate/affiliatecampaignviewpage" context="campaign">${message:view}</t:pagelink>
+			<t:if test="needApply" >
+			 | <t:pagelink page="affiliate/applysitelistpage" context="campaign">${message:apply}</t:pagelink>
+			</t:if>
+		</t:parameter>
+	</div>
+</t:affiliate.Layout>

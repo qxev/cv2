@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+		<title>Darwin Marketing</title>
+		<LINK  href="../../stylesheets/base.css" rel=stylesheet>
+		<LINK  href="../../stylesheets/css_cn.css" rel=stylesheet>
+		<script language="javascript" src="../js/userLinksFuns.js" type="text/javascript"></script>
+		<script language="JavaScript" type="text/javascript">
+			var FILE_EXT = '.html';
+		</script>
+	</head>
+<body>
+	<div class="content">
+	  <div class="pageTitle">银行帐户管理&nbsp;-&nbsp;新增</div>
+	  <table border="0" cellspacing="1" cellpadding="0" class="list">
+		<form name="form" method="get" action="../../Act.html">
+		  <input name="act" type="hidden" value="insert">
+		  <tr class="title">
+			<td colspan="2">新增银行帐户</td>
+		  </tr>
+		  <tr class="row1">
+			<td class="row_required">银行名称</td>
+			<td><select name="plist_bank_name">
+				<option value="" selected="selected">--请选择--</option>
+				<option value="中国银行">中国银行</option>
+				<option value="建设银行">建设银行</option>
+				<option value="农业银行">农业银行</option>
+				<option value="工商银行">工商银行</option>
+				<option value="招商银行">招商银行</option>
+				<option value="民生银行">民生银行</option>
+				<option value="交通银行">交通银行</option>
+				<option value="兴业银行">兴业银行</option>
+			  </select></td>
+		  </tr>
+		  <tr class="row1">
+			<td class="row_required">支行名称</td>
+			<td><select name="plist_bank_state" onclick="javascript:sdistrict(document.form.plist_bank_city,this.value)">
+				<option value="" selected="selected">--请选择--</option>
+				<option value="北京市">北京市</option>
+				<option value="上海市">上海市</option>
+				<option value="天津市">天津市</option>
+				<option value="重庆市">重庆市</option>
+				<option value="广东省">广东省</option>
+				<option value="福建省">福建省</option>
+				<option value="浙江省">浙江省</option>
+				<option value="江苏省">江苏省</option>
+				<option value="山东省">山东省</option>
+				<option value="辽宁省">辽宁省</option>
+				<option value="江西省">江西省</option>
+				<option value="四川省">四川省</option>
+				<option value="陕西省">陕西省</option>
+				<option value="湖北省">湖北省</option>
+				<option value="河南省">河南省</option>
+				<option value="河北省">河北省</option>
+				<option value="山西省">山西省</option>
+				<option value="内蒙古">内蒙古</option>
+				<option value="吉林省">吉林省</option>
+				<option value="黑龙江">黑龙江</option>
+				<option value="安徽省">安徽省</option>
+				<option value="湖南省">湖南省</option>
+				<option value="广西区">广西区</option>
+				<option value="海南省">海南省</option>
+				<option value="云南省">云南省</option>
+				<option value="贵州省">贵州省</option>
+				<option value="西藏区">西藏区</option>
+				<option value="甘肃省">甘肃省</option>
+				<option value="宁夏区">宁夏区</option>
+				<option value="青海省">青海省</option>
+				<option value="新疆区">新疆区</option>
+				<option value="香港区">香港区</option>
+				<option value="澳门区">澳门区</option>
+				<option value="台湾省">台湾省</option>
+				<option value="全国">全国</option>
+			  </select>
+			  <select name="plist_bank_city">
+				<option value="" selected="selected">--请选择--</option>
+			  </select>
+			  <input name="plist_bank_subsidiary" type="text">
+			  （例：xx省xx市分行xx县xx区xx路支行）</td>
+		  </tr>
+		  <tr class="row1">
+			<td class="row_required">银行帐号</td>
+			<td><input name="plist_bank_num" type="text"></td>
+		  </tr>
+		  <tr class="row1">
+			<td class="row_required">开户人</td>
+			<td><input name="plist_bank_person" type="text"></td>
+		  </tr>
+		  <tr class="row1">
+			<td class="row_required">身份证</td>
+			<td><input name="plist_idcard" type="text"></td>
+		  </tr>
+		  <tr class="row1">
+			<td class="row_required">联系电话</td>
+			<td><input name="plist_phone" type="text"></td>
+		  </tr>
+		  <tr class="row1">
+			<td class="row_required">联系地址</td>
+			<td><select name="plist_address_state" onclick="javascript:sdistrict(document.form.plist_address_city,this.value)">
+				<option value="" selected="selected">--请选择--</option>
+				<option value="北京市">北京市</option>
+				<option value="上海市">上海市</option>
+				<option value="天津市">天津市</option>
+				<option value="重庆市">重庆市</option>
+				<option value="广东省">广东省</option>
+				<option value="福建省">福建省</option>
+				<option value="浙江省">浙江省</option>
+				<option value="江苏省">江苏省</option>
+				<option value="山东省">山东省</option>
+				<option value="辽宁省">辽宁省</option>
+				<option value="江西省">江西省</option>
+				<option value="四川省">四川省</option>
+				<option value="陕西省">陕西省</option>
+				<option value="湖北省">湖北省</option>
+				<option value="河南省">河南省</option>
+				<option value="河北省">河北省</option>
+				<option value="山西省">山西省</option>
+				<option value="内蒙古">内蒙古</option>
+				<option value="吉林省">吉林省</option>
+				<option value="黑龙江">黑龙江</option>
+				<option value="安徽省">安徽省</option>
+				<option value="湖南省">湖南省</option>
+				<option value="广西区">广西区</option>
+				<option value="海南省">海南省</option>
+				<option value="云南省">云南省</option>
+				<option value="贵州省">贵州省</option>
+				<option value="西藏区">西藏区</option>
+				<option value="甘肃省">甘肃省</option>
+				<option value="宁夏区">宁夏区</option>
+				<option value="青海省">青海省</option>
+				<option value="新疆区">新疆区</option>
+				<option value="香港区">香港区</option>
+				<option value="澳门区">澳门区</option>
+				<option value="台湾省">台湾省</option>
+				<option value="全国">全国</option>
+			  </select>
+			  <select name="plist_address_city">
+				<option value="" selected="selected">--请选择--</option>
+			  </select>
+			  <input name="plist_address" type="text">
+			  （例：xx省xx市xx区xx路xx弄xx号xx室）</td>
+		  </tr>
+		  <tr class="row1">
+			<td class="row_required">邮编</td>
+			<td><input name="plist_zipcode" type="text"></td>
+		  </tr>
+		  <tr class="row1">
+			<td colspan="2" align="center"><input name="submit" type="submit" value="添加">
+			  &nbsp;&nbsp;&nbsp;
+			  <input name="back" type="button" onclick="javascript:history.go(-1)" value="返回">
+			</td>
+		  </tr>
+		</form>
+	  </table>
+	</div>
+	<div class="footer">
+	  <div class="copyright"><a href="/darwin_2.html">关于我们</a>&nbsp;|&nbsp;<a href="/darwin_3.html">联系我们</a>&nbsp;|&nbsp;<a href="systemPassSession.php">论坛</a>&nbsp;<br />
+		沪ICP备06035438号<br />
+		Copyright &copy; 2006 - 2007 Darwin Marketing.<br />
+		<!--L_G_FOOT_CNZZ-->
+		<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script><script type="text/javascript">_uacct = "UA-259227-4";urchinTracker();</script>  </div>
+	</div>
+	</div>
+</body>
+</html>

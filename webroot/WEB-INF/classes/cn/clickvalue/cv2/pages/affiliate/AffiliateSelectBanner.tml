@@ -1,0 +1,42 @@
+<t:affiliate.Layout t:pageTitle="${message:Examines_and_chooses_advertisement}" t:pageGroup="campaign" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<div class="page_headers" style="width: 90%;">
+		
+		<t:if test="hasCampaign()">
+			<div class="title">${message:campaign}: ${campaign.name} > ${message:Examines_and_chooses_advertisement}</div>
+			<div class="form">
+		    	<t:form t:id="searchForm">
+			    		${message:landingpage}:
+		    		<select t:type="select" value="formLanding" model="landingsSelectionModel" encoder="landingsValueEncoder" blankLabel="${message:all}" style="margin-right: 5px;"/>
+			    	${message:ad_type}:
+		    		<select t:type="select" value="formType" model="typesSelectionModel" encoder="typesValueEncoder" blankLabel="${message:all}" style="margin-right: 5px;"/>
+		    		<input t:type="submit" value="${message:search}" t:id="searchButton" />
+				</t:form>
+			</div>
+			<table t:id="grid" style="margin: 0; width: 100%;">
+				<t:parameter name="bannerContentCell">
+					<div style="text-align:left;">
+						<t:BannerContent banner="advertise.banner" isExact="false"/>
+					</div>
+				</t:parameter>
+				
+				<t:parameter name="whCell">
+					${advertise.banner.width}  *  ${advertise.banner.height}
+				</t:parameter>
+				
+				<t:parameter name="selectedCell">
+					<t:SliderDoor text="${message:Choose_ads_site}" href="/affiliate/AffiliateSelectLandingPage/${campaign.id}/${advertise.banner.id}" style="margin: 0 auto; float:none; width:130px;"/>		
+				</t:parameter>
+				
+				<t:parameter name="bannerBannerTypeCell">
+					${ognl:@cn.clickvalue.cv2.common.constants.Constants@getBannerType(advertise.banner.bannerType)}
+				</t:parameter>
+			</table>
+		</t:if>
+		
+		<t:unless test="hasCampaign()">
+			<div class="title">${message:ad_campaign}: 无 > ${message:choose_ad}</div>
+			<div>${message:Advertising_campaigns_have_been_deleted_or_offline}</div>
+			<div><a href="/affiliate/CampaignListPage">${message:Click_on_the_link_to_return_to_the_list_of_advertising_campaigns}</a></div>
+		</t:unless>
+	</div>
+</t:affiliate.Layout>

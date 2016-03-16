@@ -1,0 +1,39 @@
+<t:admin.Layout t:pageTitle="CampaignList" t:navigation="管理员管理 > 详细信息" pageGroup="system" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <body>
+    	<table style="BORDER-COLLAPSE: collapse;width:70%" borderColor="#ced5b1" 
+            cellSpacing="0" cellPadding="0" width="100%" border="1">
+			<tr>
+				<td class="green_bg" colspan="2"><strong>广告详细信息</strong></td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg" width="20%">所属广告活动</td>
+				<td class="greenwithe" width="80%">
+				   ${banner.campaign.name}
+				</td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">广告类型</td>
+				<td class="greenwithe">
+				    ${bannerTypeFormat:banner.bannerType}
+				</td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">广告尺寸(宽*高)</td>
+				<td class="greenwithe">
+				    ${banner.width}*${banner.height} 
+				</td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">广告内容</td>
+				<td class="greenwithe">
+				    <t:bannerContent banner="prop:banner" />
+				</td>
+			</tr>
+			<tr>
+				<td class="center" colspan="2">
+					<input type="button" onclick="window.location.href='/admin/banner/listpage'" value="back" />
+				</td>
+			</tr>
+		</table>
+    </body>
+</t:admin.Layout>

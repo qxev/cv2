@@ -1,0 +1,66 @@
+<t:advertiser.Layout pageTitle="${message:advertisement}" navigation="${message:campaign_manage} > ${message:banners}" pageGroup="campaign" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	
+	<div class="page_headers">
+		<div class="title">
+			${message:campaign}: <a href="/advertiser/campaignviewpage/${campaign.id}">${campaign.name}</a> > 
+			${message:banners}
+		</div>
+		<t:form t:id="searchForm" class="form">
+			${message:campaign}:
+			<input t:type="textfield" value="formCampaignName"/>
+			${message:ad_type}:
+			<select t:type="select" value="formbannerType" model="bannerTypeListSelectionModel" encoder="bannerTypeListValueEncoder" blankLabel="${message:all}"/>
+			<input t:type="submit" value="${message:search}" t:id="searchButton"/>
+			<t:sliderdoor text="${message:new_image_ad}" href="/advertiser/NewImageAdPage/${campaignId}"/>
+			<t:sliderdoor text="${message:new_text_ad}" href="/advertiser/NewTextAdPage/${campaignId}"/>
+			<t:sliderdoor text="${message:new_flash_ad}" href="/advertiser/NewFlashAdPage/${campaignId}"/>
+			<t:sliderdoor text="${message:new_html_ad}" href="/advertiser/NewHtmlAdPage/${campaignId}"/>
+			<t:sliderdoor text="${message:new_iframe_ad}" href="/advertiser/NewImageAdPage/${campaignId}/-1" clear="true"/>
+			
+			<table style="width:100%;" t:id="myGrid" t:type="Grid" source="dataSource" row="banner" model="beanModel" pagerPosition="literal:bottom" rowsPerPage="${noOfRowsPerPage}">
+				<t:parameter name="sizeCell">
+					${banner.width}*${banner.height}
+				</t:parameter>
+				
+				<t:parameter name="bannerTypeCell">
+					${bannerType}
+				</t:parameter>
+				
+				<t:parameter name="campaignNameCell">
+					<t:pagelink t:page="advertiser/campaignviewpage" t:context="banner.campaign.id">${banner.campaign.name}</t:pagelink>
+				</t:parameter>
+				
+				<t:parameter name="contentCell">
+					<t:bannerContent banner="prop:banner" isExact="false" />
+				</t:parameter>
+				
+				<t:parameter name="operateCell">
+					<select onchange="redirect(this)">
+						<option value="">${message:select}</option>
+						<option value="/advertiser/bannerviewpage/${banner.id}">${message:view}</option>
+						<span t:type="t5components/Equals" left="prop:banner.actived.toString()" right="literal:0">
+							<option value="/advertiser/bannerlistpage/delete/${banner.id}" msg="${message:delete_the_target_page_of_ads}?">${message:delete}</option>
+						</span>
+						<!-- ${message:has_not_applied_for} -->
+						<span t:type="t5components/Equals" left="prop:banner.verified.toString()" right="literal:0">
+						</span>
+
+						<!-- ${message:wait_for_examining_and_verifying} -->
+						<span t:type="t5components/Equals" left="prop:banner.verified.toString()" right="literal:1">
+						</span>
+
+						<!-- ${message:has_approved} -->			
+						<span t:type="t5components/Equals" left="prop:banner.verified.toString()" right="literal:2">
+						</span>
+
+						<!-- ${message:has_rejected} -->
+						<span t:type="t5components/Equals" left="prop:banner.verified.toString()" right="literal:3">
+						</span>
+					
+					</select>	
+				</t:parameter>
+				
+			</table>
+		</t:form>
+	</div>
+</t:advertiser.Layout>

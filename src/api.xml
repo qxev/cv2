@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<app>
+	<cv2>
+		<campaign-config>
+			<static-path>
+				<template-path>src/cn/clickvalue/cv2/tracking/configs/template.html</template-path>
+				<trust-template-path>src/cn/clickvalue/cv2/tracking/configs/dwap.html</trust-template-path>
+				<publish-root>/var/www/</publish-root>
+			</static-path>
+		</campaign-config>
+		<database>
+			<source-cv2>
+				<connection-url>jdbc:mysql://192.168.1.199:3306/cv2?autoReconnect=true</connection-url>
+				<username>cv2_developer</username>
+				<password>cv2_pwd</password>
+			</source-cv2>
+			<!-- sv2数据源 -->
+			<source-sv2>
+				<connection-url>jdbc:mysql://192.168.1.199:3306/cv2?autoReconnect=true</connection-url>
+				<username>cv2_developer</username>
+				<password>cv2_pwd</password>
+			</source-sv2>
+		</database>
+		<reports>
+			<images>
+				<sortable>sortable.png</sortable>
+				<sortasc>sort-asc.png</sortasc>
+				<sortdesc>sort-desc.png</sortdesc>
+			</images>
+			<header-fields>
+			
+				<report_date>
+					<cn>报表时间</cn>
+					<en>Report Date</en>
+				</report_date>
+				
+				<advertiserid>
+					<cn>广告主ID</cn>
+					<en>Advertiser ID</en>
+				</advertiserid>
+				<advertisername>
+					<cn>广告主</cn>
+					<en>Advertiser</en>
+				</advertisername>
+				
+				<campaignid>
+					<cn>广告活动ID</cn>
+					<en>Campaign ID</en>
+				</campaignid>
+				<campaignname>
+					<cn>广告活动</cn>
+					<en>Campaign</en>
+				</campaignname>
+				
+				<siteid>
+					<cn>站点ID</cn>
+					<en>Website ID</en>
+				</siteid>
+				<sitename>
+					<cn>站点名称</cn>
+					<en>Website Title</en>
+				</sitename>
+				
+				<clicks>
+					<cn>点击(CPC)</cn>
+					<en>Clicks(CPC)</en>
+					<compared>sales</compared>
+				</clicks>
+				<sales>
+					<cn>销售(CPS)</cn>
+					<en>Sales(CPS)</en>
+					<compared>clicks</compared>
+				</sales>
+				
+				<cpc_count>
+					<cn>CPC数</cn>
+					<en>CPC count</en>
+					<compared>cpc_count</compared>
+				</cpc_count>
+				<cps_count>
+					<cn>CPS数</cn>
+					<en>CPS count</en>
+					<compared>cps_count</compared>
+				</cps_count>
+				<cpl_count>
+					<cn>CPL数</cn>
+					<en>CPL count</en>
+					<compared>cpl_count</compared>
+				</cpl_count>
+				<cpm_count>
+					<cn>CPM数</cn>
+					<en>CPM count</en>
+					<compared>cpm_count</compared>
+				</cpm_count>
+				
+				<cpc_commision>
+					<cn>CPC佣金</cn>
+					<en>CPC commision</en>
+					<compared>cpc_commision</compared>
+				</cpc_commision>
+				<cps_commision>
+					<cn>CPS佣金</cn>
+					<en>CPS commision</en>
+					<compared>cps_commision</compared>
+				</cps_commision>
+				<cpl_commision>
+					<cn>CPL佣金</cn>
+					<en>CPL commision</en>
+					<compared>cpl_commision</compared>
+				</cpl_commision>
+				<cpm_commision>
+					<cn>CPM佣金</cn>
+					<en>CPM commision</en>
+					<compared>cpm_commision</compared>
+				</cpm_commision>
+				
+				<darwin_commision>
+					<cn>达闻佣金</cn>
+					<en>darwin commision</en>
+					<compared>darwin_commision</compared>
+				</darwin_commision>
+				
+				<commision_total>
+					<cn>合计</cn>
+					<en>Total</en>
+					<compared>commision_total</compared>
+				</commision_total>
+				
+				<uploaded_ads>
+					<cn>广告已发布数</cn>
+					<en>Uploaded Ads</en>
+					<compared>uploaded_ads</compared>
+				</uploaded_ads>
+				
+				<watched_ads>
+					<cn>广告被关注数</cn>
+					<en>Watched Ads</en>
+					<compared>watched_ads</compared>
+				</watched_ads>
+				
+				<published_ads>
+					<cn>广告被投放数</cn>
+					<en>Published Ads</en>
+					<compared>published_ads</compared>
+				</published_ads>
+				
+				<affiliated_advertisers>
+					<cn>已加盟的广告主</cn>
+					<en>Affiliated Advertisers</en>
+					<compared>affiliated_advertisers</compared>
+				</affiliated_advertisers>
+				
+				<current_month_clicks>
+					<cn>本月点击数</cn>
+					<en>Current Month Clicks</en>
+					<compared>current_month_clicks</compared>
+				</current_month_clicks>
+				
+				<current_month_cpls>
+					<cn>本月引导数</cn>
+					<en>Current Month Cpls</en>
+					<compared>current_month_cpls</compared>
+				</current_month_cpls>
+				
+				<current_month_sales>
+					<cn>本月销售数</cn>
+					<en>Current Month Sales</en>
+					<compared>current_month_sales</compared>
+				</current_month_sales>
+				
+				<current_month_unconfirmed_commisions>
+					<cn>本月未确认佣金</cn>
+					<en>Current Month Unconfirmed Commisions</en>
+					<compared>current_month_unconfirmed_commisions</compared>
+				</current_month_unconfirmed_commisions>
+				
+			</header-fields>
+		</reports>
+	</cv2>
+</app>

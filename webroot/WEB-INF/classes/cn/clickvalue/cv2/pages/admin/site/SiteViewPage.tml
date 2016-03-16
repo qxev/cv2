@@ -1,0 +1,57 @@
+<t:admin.Layout t:pageTitle="CampaignList" t:navigation="网站管理 > 详细信息" pageGroup="system" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <body>
+    	<table style="BORDER-COLLAPSE: collapse;width:70%" borderColor="#ced5b1" 
+            cellSpacing="0" cellPadding="0" width="100%" border="1">
+			<tr>
+				<td class="green_bg" colspan="2"><strong>网站详细信息</strong></td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">网站名称</td>
+				<td class="greenwithe">
+				    ${site.name} 
+				</td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg" width="20%">所属用户</td>
+				<td class="greenwithe" width="80%">
+				   ${site.user.name}
+				</td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">网站流量</td>
+				<td class="greenwithe">
+				    ${site.pvPerDay}
+				</td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">网站分类</td>
+				<td class="greenwithe">
+				    ${affiliateCategory}
+				</td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">描述</td>
+				<td class="greenwithe">
+				    ${site.description}
+				</td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">创建时间</td>
+				<td class="greenwithe">
+				    ${dateformat:site.createdAt}
+				</td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">最后更新时间</td>
+				<td class="greenwithe">
+				    ${dateformat:site.updatedAt}
+				</td>
+			</tr>
+			<tr>
+				<td class="center" colspan="2">
+					<input type="button" onclick="window.location.href='/admin/site/listpage'" value="back" />
+				</td>
+			</tr>
+		</table>
+    </body>
+</t:admin.Layout>

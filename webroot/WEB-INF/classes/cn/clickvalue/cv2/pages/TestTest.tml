@@ -1,0 +1,10 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<body>
+<t:form t:id="form">
+	<div t:type="ajaxformloop" t:id="paragraphs" source="paragraphs" encoder="encoder" value="paragraph">
+		${paragraph.id}
+		<t:removerowlink>remove</t:removerowlink>
+	</div>
+</t:form>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<t:admin.Layout t:pageTitle="CampaignList" t:navigation="管理员管理 > 详细信息" pageGroup="system" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <body>
+    	<table style="BORDER-COLLAPSE: collapse;width:100%" borderColor="#ced5b1" 
+            cellSpacing="0" cellPadding="0" width="100%" border="1">
+			<tr>
+				<td class="green_bg" colspan="3"><strong>管理员详细信息</strong></td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">用户名</td>
+				<td class="greenwithe">
+				    ${user.name} 
+				</td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">用户昵称</td>
+				<td class="greenwithe">
+				    ${user.nickName} 
+				</td>
+			</tr>
+			<tr>
+				<td class="greenwithe_bg">用户组</td>
+				<td class="greenwithe">
+				    ${user.userGroup.name} 
+				</td>
+			</tr>
+			
+		</table>
+
+      
+		<div class="center">
+			<input type="button" onclick="window.location.href='/admin/usermanage/editPage/${user.id}'" value="edit" />
+			<input type="button" onclick="window.location.href='/admin/usermanage/listPage'" value="back" />
+		</div>
+    </body>
+</t:admin.Layout>

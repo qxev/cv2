@@ -1,0 +1,13 @@
+<t:admin.Layout t:pageTitle="Advertiser Deposit page" t:navigation="${message:commission_report} > ${message:advertiser_deposit}" pageGroup="payment_report" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <body>
+    	<div class="form">
+	    	<t:form t:id="addDeposit">
+	    		<t:errors/>
+	    		<select t:type="select" value="selectedUser" model="usersSelectionModel" encoder="usersValueEncoder" blankLabel="选择广告主"/>
+	    		<select t:type="select" value="depositType" model="literal:银行,邮局,支票" blankLabel="请选择充值方式"/>
+	    		<input t:type="textfield" value="depositValue" t:id="depositValue"/>
+	    		<input t:type="submit" value="充值" t:id="searchButton" />
+	    	</t:form>
+		</div>
+    </body>
+</t:admin.Layout>

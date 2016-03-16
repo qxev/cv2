@@ -1,0 +1,20 @@
+<t:admin.Layout pageTitle="sql管理" pageGroup="system" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<div class="action">
+<div class="new_menu">
+<t:eventlink t:id="addExcelOutput">新增sql</t:eventlink>
+</div>
+</div>
+<div class="table_clear">
+  <table style="BORDER-COLLAPSE: collapse;" borderColor="#ced5b1" cellSpacing="0" cellPadding="0" width="55%" border="1"
+             t:id="myGrid" t:type="Grid" source="dataSource" row="excelOutput" model="beanModel" pagerPosition="literal:bottom" rowsPerPage="${noOfRowsPerPage}">
+			<t:parameter name="operateCell">
+			    <select onchange="redirect(this)">
+					<option value="">--选择操作--</option>
+			        <option value="/admin/system/sqleditpage/${excelOutput.id}">编辑sql</option>
+			        <option value="/admin/system/sqllistpage/del/${excelOutput.id}">删除sql</option>
+			    </select>			
+		    </t:parameter>
+	    </table>
+</div>	
+
+</t:admin.Layout>

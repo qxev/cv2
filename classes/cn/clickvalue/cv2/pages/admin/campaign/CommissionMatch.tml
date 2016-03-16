@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<t:admin.Layout pageTitle="CampaignList" navigation="佣金匹配" pageGroup="commission_match" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <body>
+    	<t:form t:id="searchForm">
+	    	<div class="form">
+		    	用户名:
+		    	<input type="text" t:type="textfield" t:value="userName" />
+		    	<input t:type="submit" value="查询" />
+			</div>
+    		<div t:id="grid" style="width: 100%;">
+	    		<t:parameter name="operateCell" >
+	    			<a href="/commision/userManage/CampaignListPage/${user.id}">查看广告活动</a>
+		   		</t:parameter>
+		   		
+		   		<t:parameter name="campaignSizeCell" >
+		   			${campaignSize}
+		   		</t:parameter>
+    		</div>
+		</t:form>
+    </body>
+</t:admin.Layout>
